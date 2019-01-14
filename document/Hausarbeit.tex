@@ -16,8 +16,8 @@
 % ---------------------------------------------------------------------
 
 % Wir nutzen Biblatex und biber für das Literaturverzeichnis
-\documentclass[12pt, twoside = false, bibliography=totoc]{scrbook}
-\usepackage[backend=biber, style=authoryear]{biblatex}
+\documentclass[12pt, twoside = false, bibliography = totoc, numbers = endperiod, headings = normal]{scrbook}
+\usepackage[backend=biber, style=authoryear-ibid, eprint=false, url=false, doi=false,isbn=false]{biblatex}
 \addbibresource{Bib.bib}
 
 % Daten der Hausarbeit
@@ -55,16 +55,28 @@
 
 \chapter{Einleitung}\label{Einleitung} %Das Label erscheint in den Überschriften der Seiten.
 
-Hier ist ein Beispiel mit einer Quelle und Seitenzahl \parencite[S. 103]{wangnerud_2009}. Hier ist ein Beispiel von \textcite{erikson_2018} mit einem Zitat im Text.
+Hier ist ein Beispiel mit einer Quelle und Seitenzahl \parencite[S. 103]{wangnerud_2009}. Hier ist ein Beispiel von \textcite{erikson_2018} mit einem Zitat im Text. Wenn ein Autor in einem Jahr öfter zitiert wird, wird daraus ein ebd. \parencite{erikson_2018}.
 
-Hier eine Tabelle, welche aus dem Ordner \enquote{Results} hereingeladen wird.
+Hier eine Tabelle, welche im Ordner \enquote{table} abgespeichert wurde und mit folgendem Befehl eingelesen werden kann. Verweise siehe Tabelle \ref{table:unterbrechung_stats}. Außerdem möchte ich hier noch auf die Abbildung \ref{fig:lda_example} auf Seite \pageref{fig:lda_example} verweisen. 
 
-\input{
+\begin{table}[htb]
+\centering
+\caption{Statistiken zu Unterbrechungen in den Bundestagsreden}
+\input{document/tables/stats_unterbrechungen.tex}
+\label{table:unterbrechung_stats}
+\end{table}
+
+\Blindtext
+
+\section{Unterkapitel}
+
+\blindtext
+
+\includegraphics[]{document/images}
 
 
 \setlength{\parskip}{8pt}
 \setstretch{1.0}
 \printbibliography[title={Literaturverzeichnis}]
 
-    
 \end{document}
