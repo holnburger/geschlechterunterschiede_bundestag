@@ -97,7 +97,7 @@ bt_comments_overview %>%
             n = n(),
             var = var(neg_kommentare)) %>%
   knitr::kable(format = "latex", booktabs = TRUE) %>%
-  kableExtra::kable_as_image(., "results/unterbrechung_stats", file_format = "png")
+  write_file(., "results/unterbrechungen_pro_rede.tex")
 
 hist(bt_comments_overview$neg_kommentare, main = "Histogram: Unterbrechungen während \n Bundestagsreden", 
      xlab = "Unterbrechungen")
@@ -107,22 +107,6 @@ bt_comments_overview %>% select(gender, neg_kommentare) %>% split(.$gender) %>% 
 #----------------------#
 #  Hypotheses Testing  #
 #----------------------#
-
-# Lineare Regression der Unterbrechungen
-
-m1 <- lm(neg_kommentare ~ gender, data = bt_comments_overview)
-m2 <- lm(neg_kommentare ~ gender + opposition, data = bt_comments_overview)
-m3 <- lm(neg_kommentare ~ gender + opposition + rechts, data = bt_comments_overview)
-m4 <- lm(neg_kommentare ~ gender + opposition + rechts + is_afd, data = bt_comments_overview)
-m5 <- lm(neg_kommentare ~ gender + alter, data = bt_comments_overview)
-m6 <- lm(neg_kommentare ~ gender + anzahl_wahlperioden, data = bt_comments_overview)
-m7 <- lm(neg_kommentare ~ gender + vorsitz, data = bt_comments_overview)
-
-stargazer(m1, m2, m3, m4, m5, m6, m7, type = "html", omit.stat=c("LL","ser","f"), no.space=TRUE, 
-          title = "Lineare Regression", dep.var.caption = "Abhängige Variable",
-          dep.var.labels = c("Unterbrechungen in Reden"),
-          covariate.labels = c("Geschlecht", "Opposition", "Rechts", "AfD", "Alter", "Anzahl Mandate im BT", "Fraktionsvorsitz"),
-          out = "results/lm_unterbrechungen.html")
 
 # Negative Binominalregression
 
@@ -134,11 +118,11 @@ m5 <- glm.nb(neg_kommentare ~ gender + alter, data = bt_comments_overview)
 m6 <- glm.nb(neg_kommentare ~ gender + anzahl_wahlperioden, data = bt_comments_overview)
 m7 <- glm.nb(neg_kommentare ~ gender + vorsitz, data = bt_comments_overview)
 
-stargazer(m1, m2, m3, m4, m5, m6, m7, type = "html", omit.stat=c("LL","ser","f"), no.space=TRUE, 
+stargazer(m1, m2, m3, m4, m5, m6, m7, type = "latex", omit.stat=c("LL","ser","f"), no.space=TRUE, 
           title = "Negative Binominalregression", dep.var.caption = "Abhängige Variable",
           dep.var.labels = c("Unterbrechungen in Reden"),
           covariate.labels = c("Geschlecht", "Opposition", "Rechts", "AfD", "Alter", "Anzahl Mandate im BT", "Fraktionsvorsitz"),
-          out = "results/glm_nb_unterbrechungen.html")
+          out = "results/glm_nb_unterbrechungen.tex")
 
 #--------------------#
 #  Data-Preperation  #
@@ -175,23 +159,6 @@ write_rds(bt_zwischenfragen, "data/BT_19/zwischenfragen_overview.RDS")
 #  Hypotheses Testing  #
 #----------------------#
 
-# Lineare Regression
-
-m1 <- lm(anzahl_anfrage_zwischenfrage ~ gender, data = bt_zwischenfragen)
-m2 <- lm(anzahl_anfrage_zwischenfrage ~ gender + opposition, data = bt_zwischenfragen)
-m3 <- lm(anzahl_anfrage_zwischenfrage ~ gender + opposition + rechts, data = bt_zwischenfragen)
-m4 <- lm(anzahl_anfrage_zwischenfrage ~ gender + opposition + rechts + is_afd, data = bt_zwischenfragen)
-m5 <- lm(anzahl_anfrage_zwischenfrage ~ gender + alter, data = bt_zwischenfragen)
-m6 <- lm(anzahl_anfrage_zwischenfrage ~ gender + anzahl_wahlperioden, data = bt_zwischenfragen)
-m7 <- lm(anzahl_anfrage_zwischenfrage ~ gender + vorsitz, data = bt_zwischenfragen)
-
-
-stargazer(m1, m2, m3, m4, m5, m6, m7, type = "html", omit.stat=c("LL","ser","f"), no.space=TRUE, 
-          dep.var.labels = c("Anfragen zu Zwischenfragen während der Rede"), dep.var.caption = "Abhängige Variable",
-          title = "Lineare Regression",
-          covariate.labels = c("Geschlecht", "Opposition", "Rechts", "AfD", "Alter", "Anzahl Mandate", "Fraktionsvorsitz"),
-          out = "results/lm_zwischenfragen.html")
-
 # Negative Binomialregression
 
 m1 <- glm.nb(anzahl_anfrage_zwischenfrage ~ gender, data = bt_zwischenfragen)
@@ -203,8 +170,8 @@ m6 <- glm.nb(anzahl_anfrage_zwischenfrage ~ gender + anzahl_wahlperioden, data =
 m7 <- glm.nb(anzahl_anfrage_zwischenfrage ~ gender + vorsitz, data = bt_zwischenfragen)
 
 
-stargazer(m1, m2, m3, m4, m5, m6, m7, type = "html", omit.stat=c("LL","ser","f"), no.space=TRUE, 
+stargazer(m1, m2, m3, m4, m5, m6, m7, type = "latex", omit.stat=c("LL","ser","f"), no.space=TRUE, 
           dep.var.labels = c("Anfragen zu Zwischenfragen während der Rede"), dep.var.caption = "Unabhängige Variable",
           title = "Negative Binomialregression",
           covariate.labels = c("Geschlecht", "Opposition", "Rechts", "AfD", "Alter", "Anzahl Mandate", "Fraktionsvorsitz"),
-          out = "results/glm_nb_zwischenfragen.html")
+          out = "results/glm_nb_zwischenfragen.tex")
