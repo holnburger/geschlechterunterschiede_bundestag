@@ -1,0 +1,513 @@
+---
+title: "Geschlechterunterschiede in den Reden des Deutschen Bundestages"
+subtitle: "Auswertung des 19. Deutschen Bundestags"
+author: "Gina-Gabriela Görner, Josef Holnburger"
+date: "14.01.2019"
+output:
+  xaringan::moon_reader:
+    css: ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css", "template/holnburger.css", "template/holnburger-fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: ["template/macros.js", "https://platform.twitter.com/widgets.js"]
+    includes:
+      in_header: "template/header.html"
+---
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(stm)
+
+bt_data <- read_rds("data/mdb_data.RDS")
+bt_overview <- read_rds("data/BT_19/overview.RDS")
+bt_speeches <- read_rds("data/BT_19/speeches.RDS")
+bt_comments_overview <- read_rds("data/BT_19/comments_overview.RDS")
+
+stm_speeches <- read_rds("data/stm/stm_speeches_fit.RDS")
+speeches_clean <- read_rds("data/stm/speeches_clean.rds")
+out <- read_rds("data/stm/out.RDS")
+
+library(RefManageR)
+BibOptions(check.entries = FALSE, 
+           bib.style = "authoryear", 
+           cite.style = 'authoryear', 
+           style = "markdown",
+           hyperlink = FALSE, 
+           dashed = FALSE)
+
+bib <- ReadBib("Bib.bib", check = FALSE)
+```
+
+class: larger
+# Veränderungen der Forschungsfrage
+
+Mit dem Feedback des Forschungsseminar präziseren wir unsere Forschungsfrage und konzentrieren uns auf folgende Teilaspekte.
+
+--
+
+.column-left[
+![:scale 50%](image/speech.png)
+Genderinklusive Sprache
+]
+
+.column-center[
+![:scale 50%](image/interruption.png)
+Genderbezogenes Verhalten
+]
+
+.column-right[
+![:scale 50%](image/topics.png)
+Genderbezogene Themen
+]
+
+---
+class: middle, center, larger, inverse
+
+### Zentrale Forschungsfrage:
+## Inwieweit unterscheiden sich die Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität?
+
+---
+class: larger
+
+# Daten des 19. Bundestages
+
+Die Protokolle des 19. Bundestages liegen im XML-Format (*Extensible Markup Language*) in TEI-Kodierung (*Text Encoding Initiative*) vor. Außerdem bietet der Bundestag eine Übersicht der MdB nach Geschlecht, Partei, Wahlperiode und Ausschussmitgliedschaften. <sup>1</sup>
+
+Insgesamt liegen **6.823 Reden** des aktuellen Bundestages vor (6.024 von MdB, 799 Reden von Regierungsmitgliedern oder Gästen).
+
+.footnote[
+[1] https://www.bundestag.de/service/opendata
+]
+
+???
+
+Insgesamt stammen 4569 Reden von Männern, 2124 Reden von Frauen. 130 Reden können keinem Geschlecht zugeordnet werden, weil der Bundestag hierzu keine Daten hinterlegt hat (Gäste, Landesminister\*innen oder Landesregierungsmitglieder, Parlamentarische Sekretär\*innen). Damit stammen insgesamt etwa 31 % der Reden von Frauen, und damit ziemlich genau den Anteil an Frauen im Bundestag.
+
+Wir haben noch die Problematik der fraktionslosen Mitglieder: Diese nutzen das Parlament vor allem als Bühne. Frauke Petry hat mitunter die meisten Beiträge -- und sie haben ein Geschlechterverhältnis von 50/50. Uns interessieren nur die MdBs der Fraktionsmitglieder.
+---
+class: center, middle, inverse
+
+![:scale 20%](image/speech.png)
+# Genderinklusive Sprache
+
+---
+.left-column[
+## Sprache I
+]
+
+.right-column[.large[
+**Hypothese 1**: Frauen verwenden in ihren Reden häufiger gender-fair language als Männer.
+
+Das heißt:
+* Genderinklusve Ansprache (Kolleginnen und Kollegen)
+* Nutzen des *Gender-Gaps* (Kolleg_innen, Kolleg*innen)
+* Geschlechtsneutrale Bezeichnungen (Studierende)
+]
+]
+
+---
+
+.left-column[
+## Sprache I
+
+## Sprache II
+]
+
+.right-column[.large[**Überprüfung der Hypothese 1:** 
+Wie häufig nutzen Frauen im Vergleich zu Männern geschlechterinklusive Sprache? Spielt eher das Geschlecht oder andere Faktoren eine Rolle?
+
+{{ content }}
+]
+]
+--
+
+#### Überprüfung durch Kontrollvariablen
+* Parteispektrum (links/rechts)
+* Regierung/Opposition
+* Alter
+* Parlamentszugehörigkeit (Anzahl der Bundestagsmandate)
+* Partei- oder Fraktionsvorsitz
+
+---
+.left-column[
+## Sprache I
+
+## Sprache II
+
+## Sprache III
+]
+
+.right-column[.large[
+**Operationalisierung**
+
+* Die Reden können auf Nutzung von **inklusive Ansprachen** (Kolleginnen und Kollegen) vs. Ansprachen im generischen Maskulin überprüft werden.
+
+* Die Überprüfung auf **geschlechtsneutrale** Formulierung (Studierende) kann über ein Lexikon überprüft werden -- dies muss  noch entworfen werden.
+
+* Die Aussprache von **Gender-Gaps** wird als generisches Feminimum protkolliert (Kolleginnen).
+
+]]
+
+---
+.left-column[
+## Sprache I
+
+## Sprache II
+
+## Sprache III
+
+## Methodik
+]
+
+.right-column[.large[
+**Ausstehend**
+
+]
+]
+---
+class: middle, inverse, center
+
+![:scale 20%](image/interruption.png)
+# Genderbezogenes Verhalten
+
+---
+.left-column[
+## Aktivität I
+]
+
+.right-column[.large[
+**Hypothese 2a**: Frauen werden häufiger als Männer während der Rede negativ unterbrochen <br>
+**Hypothese 2b**: Frauen erfahren häufiger Rückfragen in ihren Reden, wenn wenige andere
+Frauen zu diesem Thema gesprochen haben <br>
+
+Diese Hypothesen müssen auch im Vergleich zum relativen Anteil der Frauen im Bundestag gesetzt werden.
+
+#### Überprüfung durch Kontrollvariablen
+* Parteispektrum (links/rechts)
+* Regierung/Opposition
+* Alter
+* Parlamentszugehörigkeit (Anzahl der Bundestagsmandate)
+* Partei- oder Fraktionsvorsitz
+]]
+
+---
+.left-column[
+## Aktivität I
+
+## Aktivität II
+]
+
+.right-column[.large[**Problematik**: Unterschiedliche Interpretation der Unterbrechungen möglich.
+
+Beispiele: 
+
+> {{ content }}
+
+]]
+
+--
+
+(Volker Kauder [CDU/CSU]: Nein! – Michael Grosse-Brömer [CDU/CSU]: Jetzt verstehe ich Ihren Antrag!)
+
+> {{ content }}
+
+--
+
+(Dr. Alice Weidel [AfD]: Und AfD!)
+
+> {{ content }}
+
+--
+
+(Beifall bei der SPD – Lachen bei der FDP – Christian Lindner [FDP]: Da sind wir aber jetzt gespannt!)
+
+> {{ content }}
+
+--
+
+(Nationalhymne – Beifall)
+
+---
+.left-column[
+## Aktivität I
+
+## Aktivität II
+
+## Aktivität III
+]
+
+.right-column[.large[
+Überprüfung der **Hypothese 2a** mit negativ konnotierten Unterbrechungen: 
+
+* Zwischenrufe
+* Lachen
+* Zurufe
+* Widerspruch
+
+Insgesamt können wir **57.702 Unterbrechungen durch Abgeordnete oder Regierungsmitglieder** feststellen.
+
+{{ content }}
+
+]
+]
+
+--
+
+Von diesen Unterbrechungen sind wiederum **22.616 _negative_ Unterbrechungen**.
+
+???
+
+Wichtig: Lachen ist negativ konnotiert. Heiterkeit ist das Lachen über einen Witz. Deshalb ist hier lachen negativ gemeint.
+
+Bei den Unterbrechungen sind auch Begrüßungsklatscher dabei oder Unterbrechungen durch das Präsidium.
+
+---
+.left-column[
+## Aktivität I
+
+## Aktivität II
+
+## Aktivität III
+
+## Methodik
+]
+
+.right-column[.large[
+Überprüfung der **Hypothese 2a und 2b** durch eine Regressions- oder Kontingenzanalyse: Werden Frauen signifikant häufiger unterbrochen bzw. erfahren sie mehr Rückfragen als Männer?
+
+Geschlecht allerdings nicht einziger bestimmender Faktor. **Überprüfung durch Kontrollvariablen**.
+
+Mögliche Optionen:
+* Negative Binomialregression
+* OLS-Regression
+* ANOVA (Fisher oder Welch's)
+* Chi-Quadrat-Unabhängigkeits-Test & Exakter Fisher-Test
+]
+]
+
+---
+class: middle, inverse, center
+
+![:scale 20%](image/interruption.png)
+# Genderbezogene Themen
+
+---
+.left-column[
+## Themen
+]
+
+.right-column[.large[
+Um einen Bias und die Reproduktion von Steroetypen zu vermeiden, werden vermeintliche *geschlechtertypische* Themen nicht vorselektiert.
+
+**Hypothese 3:** Es sind unterschiedliche, geschlechtsspezifische Thematisierungen in den Reden
+der Abgeordneten feststellbar
+
+Diese Hypothese kann mit unterschiedlichen Methoden und Vorgehensweisen überprüft werden:
+{{ content }}
+]
+]
+
+--
+
+* manuelle Codierung der Reden durch die TOPs der Protokolle
+{{ content }}
+
+--
+
+* qualitative Inhaltsanalyse der Reden
+{{ content }}
+
+--
+* automatisiertes Topic Modeling mit LDA oder stm
+
+---
+.left-column[
+## Themen
+
+## Themen II
+]
+
+.right-column[.large[
+Aufgrund der **hohen Anzahl an Redebeiträgen** im Bundestag (etwa 6.000 Reden in der bisherigen Legislaturperiode) soll ein automatisiertes Topic Modeling genutzt werden.
+
+**Innerhalb** einer Rede können **unterschiedliche Topics** addressiert werden -- dies würde durch eine manuelle Codierung der Reden durch die **TOPs** vernächlässigt werden.
+
+Die Methode des **_structural topic model_** `r Cite(bib, "roberts_2018")` erlaubt ein automatisiertes topic modeling der Reden -- im Gegensatz zu LDA müssen die Anzahl der Topics im gesamten Korpus nicht vorgegeben werden.
+]
+]
+
+---
+.left-column[
+## Themen
+
+## Themen II
+
+## Themen III
+]
+
+.right-column[
+
+![](image/lda_topic_model.png)
+Aus: Blei, David M. “Probabilistic Topic Models.” Communications of the ACM 55, no. 4 (April 1, 2012): 77. https://doi.org/10.1145/2133806.2133826.
+]
+
+---
+.left-column[
+## Themen
+
+## Themen II
+
+## Themen III
+
+## Themen IV
+]
+
+.right-column[
+.center[
+![:scale 80%](image/stm_example_1.png)]
+
+
+Aus: Roberts, Margaret E., Brandon M. Stewart, and Dustin Tingley. Stm: R Package for Structural Topic Models, 2018. http://www.structuraltopicmodel.com.
+]
+
+---
+.left-column[
+## Themen
+
+## Themen II
+
+## Themen III
+
+## Themen IV
+
+## Themen V
+]
+
+.right-column[
+.center[
+![:scale 80%](image/stm_example_2.png)]
+
+
+Aus: Roberts, Margaret E., Brandon M. Stewart, and Dustin Tingley. Stm: R Package for Structural Topic Models, 2018. http://www.structuraltopicmodel.com.
+]
+
+
+
+---
+class: middle, center, inverse
+
+# Diskussion
+
+---
+class: middle, center, inverse
+
+# Ergebnisse
+## Im Zuge der Datenerfassung und Operationalisierung konnten bereits explorativ Methoden und Thesen getestet werden
+
+---
+.left-column[
+## Unter- brechungen
+
+Das Histogram und die Zusammenfassung zeigt eine sehr schiefe Verteilung und eine hohe Varianz der Daten.
+]
+
+.right-column[
+```{r, echo = FALSE, fig.align="center", fig.width=8, fig.height=4, dev="svg"}
+hist(bt_comments_overview$neg_kommentare, breaks = 25, main = "Histogram der Unterbrechungen pro Rede", ylab = "Anzahl", xlab = "Unterbrechungen")
+```
+
+.center[
+![:scale 80%](image/unterbrechung_stats.png)
+]]
+
+---
+.center[
+![:scale 80%](image/glm_results.png)
+]
+
+---
+.left-column[
+## Themen
+
+Eine erste Auswertung zeigt etwa 85 Topics in unserem Datensatz. Hier werden 20 Topics beispielhaft gezeigt. 
+
+Angezeigt werden außerdem die Top 3 Wörter pro Topic.
+
+Es können auch weitere Wörter angezeigt und andere Algorithmen angewandt werden, etwa der FREX-Alogrithmus von `r Citet(bib, "airoldi_2016")`.
+]
+
+.right-column[
+```{r, dev = "svg", fig.align="center", echo = FALSE, fig.height=6.5}
+plot.STM(stm_speeches, topics = 20:40, main = "20 Topics in den Reden im Bundestag")
+```
+]
+
+---
+.left-column[
+## Themen
+
+Beispielhaft die Top Wörter in den Topics 40, 27 und 28. Es handelt sich mit hoher Wahrscheinlichkeit um die Topics "Ehe für Alle", "Schwangerschaftsabbruch" und "Brexit".
+]
+
+.right-column[
+```{r, dev="svg", fig.align="center", echo = FALSE}
+stm::plot.STM(stm_speeches, topics = c(40, 27, 28), type = "labels")
+```
+]
+
+---
+.left-column[
+## Themen
+
+Beispielhaft die Top Wörter in den Topics 40, 27 und 28 nach dem FREX Algorithmus von  `r Citet(bib, "airoldi_2016")`.
+]
+
+.right-column[
+```{r, dev="svg", fig.align="center", echo = FALSE, message=FALSE, warning=FALSE}
+stm::plot.STM(stm_speeches, topics = c(40, 27, 28), type = "labels", labeltype = "frex")
+```
+]
+
+---
+.left-column[
+## Themen
+
+Mit STM kann auch untersucht werden, welche Faktoren mit den Topics in Verbindung gebracht werden können. Hier: Werden Themen eher durch Männer oder Frauen behandelt?
+
+Die Kontrollvariablen (Opposition, Alter, Mandatszeit, AfD-Fraktionsmitgliedschaft, Fraktionsvorsitzende) und weitere Daten (Sitzungsdatum) können hier ebenfalls überprüft werden.
+]
+
+.right-column[
+
+```{r, echo = FALSE, fig.align="center", dev="svg", fig.height=5}
+prep <- estimateEffect(~ geschlecht, stm_speeches,
+                       meta = out$meta, uncertainty = "Global")
+
+plot(prep, covariate = "geschlecht", topics = c(40, 27, 28),
+     model = stm_speeches, method = "difference",
+     xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
+     labeltype = "custom", main = "Geschlechterspezifische Effekte zu den Topics im Bundestag",
+     custom.labels = c("Ehe für Alle", "Schwangerschaftsabbruch", "Brexit"),
+     xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt")
+```
+]
+
+---
+class:inverse, middle, center
+
+# Danke für die Aufmerksamkeit!
+
+
+---
+#Referenzen und Literatur
+
+```{r, 'refs', results='asis', echo=FALSE}
+NoCite(bib, "blei_2012")
+NoCite(bib, "back_2018")
+NoCite(bib, "back_2014")
+
+PrintBibliography(bib)
+```
+

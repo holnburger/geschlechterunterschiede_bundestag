@@ -1,0 +1,827 @@
+\documentclass[12pt,ngerman,]{article}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+
+
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+
+
+
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+
+\renewenvironment{abstract}
+ {{%
+    \setlength{\leftmargin}{0mm}
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \relax}
+ {\endlist}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
+
+
+
+
+\setcounter{secnumdepth}{0}
+
+
+
+\title{Geschlechterunterschiede in den Reden des Deutschen Bundestages  }
+
+
+
+\author{\Large Josef Holnburger\vspace{0.05in} \newline\normalsize\emph{Universität Hamburg}   \and \Large Gina Gabriela Görner\vspace{0.05in} \newline\normalsize\emph{Universität Hamburg}  }
+
+
+\date{}
+
+\usepackage{titlesec}
+
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\itshape}
+\titleformat*{\subsubsection}{\normalsize\itshape}
+\titleformat*{\paragraph}{\normalsize\itshape}
+\titleformat*{\subparagraph}{\normalsize\itshape}
+
+
+
+
+
+\newtheorem{hypothesis}{Hypothesis}
+\usepackage{setspace}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \PassOptionsToPackage{hyphens}{url}\usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \PassOptionsToPackage{hyphens}{url}\usepackage[unicode=true]{hyperref}
+\fi
+}
+
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Josef Holnburger (Universität Hamburg) and Gina Gabriela Görner (Universität Hamburg)},
+             pdfkeywords = {},  
+            pdftitle={Geschlechterunterschiede in den Reden des Deutschen Bundestages},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=black,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage[german]{babel}
+\usepackage[german=quotes]{csquotes}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\singlespacing\small}
+
+
+% add tightlist ----------
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+	
+% \pagenumbering{arabic}% resets `page` counter to 1 
+%
+% \maketitle
+
+{% \usefont{T1}{pnc}{m}{n}
+\setlength{\parindent}{0pt}
+\thispagestyle{plain}
+{\fontsize{18}{20}\selectfont\raggedright 
+\maketitle  % title \par  
+
+}
+
+{
+   \vskip 13.5pt\relax \normalsize\fontsize{11}{12} 
+\textbf{\authorfont Josef Holnburger} \hskip 15pt \emph{\small Universität Hamburg}   \par \textbf{\authorfont Gina Gabriela Görner} \hskip 15pt \emph{\small Universität Hamburg}   
+
+}
+
+}
+
+
+
+
+
+
+
+
+\begin{abstract}
+
+    \hbox{\vrule height .2pt width 39.14pc}
+
+    \vskip 8.5pt % \small 
+
+\noindent Mit Feedback der vorangegangenen Sitzung des Forschungsseminars soll die
+Forschungsfrage „Inwieweit unterscheiden sich die Redebeiträge und
+Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen
+Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität``
+untersucht werden. \newline Es soll untersucht werden, ob Frauen in
+ihren Reden beispielsweise signifikant häufiger unterbrochen werden als
+Männer, ob Frauen eher geschlechterinklusive Sprache verwenden und ob
+signifikante Unterschiede in den Themen der Reden festzustellen sind,
+welche sich auf das Geschlecht zurückführen lassen. Hierfür werden 5.965
+Reden von den Mitgliedern des Deutschen Bundestages (MdB) anhand der
+Bundestagsprotokolle ausgewertet.
+
+
+    \hbox{\vrule height .2pt width 39.14pc}
+
+
+\end{abstract}
+
+
+\vskip 6.5pt
+
+
+\noindent \doublespacing Eine Vielzahl an Studien beschäftigt sich mit den Repräsentations- und
+Partizipationsunterschieden von Frauen und Männern in Parlamenten
+(Blaxill/Beelen \protect\hyperlink{ref-blaxill_2016}{2016}: 416). Eine
+umfassende Untersuchung von Geschlechterunterschieden in Bezug auf
+Sprache, Thematik sowie Verhalten der Parlamentsmitglieder des Deutschen
+Bundestages ist allerdings bis zu diesem Zeitpunkt noch ausstehend.
+
+Anne Phillips gilt als eine der wichtigsten Vertreterinnen auf dem
+Gebiet der parlamentarischen Representativität von Frauen. In ihrem Werk
+\enquote{The Politics of Presence} analyisiert Phillips
+(\protect\hyperlink{ref-phillips_1998}{1998}) unter anderem die
+Bereitschaft von Frauen, als Parlamentskandidatin ausgewählt zu werden,
+Ministerin zu werden und Wahlen zu gewinnen (vgl. Blaxill/Beelen
+\protect\hyperlink{ref-blaxill_2016}{2016}: 416f.). Da Frauen im
+täglichen Leben andere Erfahrungen sammeln als Männer -- insbesondere
+bezüglich der Kindererziehung, Bildung sowie der Auswahl an Berufen und
+der Spalting in bezahlte und unbezahlte Arbeit, Gewalterfahrungen sowie
+sexuellen Belästigungen -- plädierte Philips für die notwendige
+Repräsentation von Frauen im Parlament, um andere Frauen vertreten zu
+können und diese Situationen sichtbar zu machen (vgl. Wängnerud
+\protect\hyperlink{ref-wangnerud_2009}{2009}: 52).
+
+\begin{quote}
+\enquote{There are particular needs, interests, and concerns that arise
+from women's experience, and these will be inadequately addressed in a
+politics that is dominated by men. Equal rights to a vote have not
+proved strong enough to deal with this problem; there must also be
+equality among those elected to once} (Phillips
+\protect\hyperlink{ref-phillips_1998}{1998}: 66)
+\end{quote}
+
+Die Theorie der \emph{politics of presence} (Phillips
+\protect\hyperlink{ref-phillips_1998}{1998}) diente Wängnerud
+(\protect\hyperlink{ref-wangnerud_2000}{2000}) als Ausgangspunkt für
+ihre Forschung im Schwedischen Parlament (\enquote{Testing the Politics
+of Presence, Women's Representation in the Swedish Riksdag}, 2000).
+Wägnerud konzentriert sich hierbei auf die Repräsentation von Frauen und
+prüft die Hypothese, dass weibliche Politikerinnen die Interessen von
+Frauen stärker vertreten als männliche Politiker (Wängnerud
+\protect\hyperlink{ref-wangnerud_2000}{2000}: 84). \enquote{{[}It is{]}
+difficult to repudiate the conclusion that women's interes are primarily
+represented by female politicians}
+(\protect\hyperlink{ref-wangnerud_2000}{2000}: 84). Folglich tritt die
+Zahl der Frauen im Parlament zunehmen in den Vordergrund der
+wissenschaftlichen Auseinandersetzung und der Politik.
+
+Bei der Forschung zu Frauen im Parlament wird generell zwischen einer
+deskriptiven und einer substantiellen Repräsentation (in einigen Fällen
+außerdem die symoblische Form der Repräsenttation) unterschieden. Bei
+der substantiellen Repräsentation von Frauen handelt es sich um ein
+bisher weniger wissenschaftlich erforschtes Feld als die Analyse der
+deskriptiven Repräsentation (Wängnerud
+\protect\hyperlink{ref-wangnerud_2009}{2009}: 59). Letzteres legt den
+Schwerpunkt auf die Analyse der Anzahl von Frauen in representativen
+Institutionen, ersteres untersucht hingegen die Auswirkung der Präsenz
+von Frauen in Parlamenten (Coffe/Schnellecke
+\protect\hyperlink{ref-coffe_2013}{2013}: 14; Wängnerud
+\protect\hyperlink{ref-wangnerud_2009}{2009}: 52). Die zentrale Fragen
+lauten hierbei:
+
+\begin{quote}
+\enquote{{[}W{]}hether the widely professed aspiration to feminise
+democracy -- and in so doing to politically empower women -- is a matter
+largely of symbolism or substance {[}\ldots{}{]}}
+\enquote{{[}\ldots{}{]} wheter the priority should simply be to increase
+the proportion of women MPs in Parliament {[}\ldots{}{]} or as Hanna
+Pitkin argued in 1967, to represent minds as well as bodies.}
+{[}blaxill\_2016, S. 413{]}
+\end{quote}
+
+Bereits Piktin (\protect\hyperlink{ref-pitkin_1972}{1972}) argumentierte
+in ihrem Hauptwerk \enquote{The Concept of Representation}, dass der
+Interessenbegriff in der Repräsentationsdebatte omnipräsent
+(\enquote{ubiquitious}) ist (Wängnerud
+\protect\hyperlink{ref-wangnerud_2000}{2000}: 69). Für Pitkin sind es
+die Parliamentarierinnen, welche sich den Wünschen und Interessen, dem
+Wohlergehen sowie Themen der Frauen widmen und diese vertreten (vgl.
+Blaxill/Beelen \protect\hyperlink{ref-blaxill_2016}{2016}: 413; Pitkin
+\protect\hyperlink{ref-pitkin_1972}{1972}). Nach Phillips Theorie der
+\emph{politics of presence}
+(\protect\hyperlink{ref-phillips_1998}{1998}) kann angenommen werden,
+dass weibliche Politikerinnen die Interessen und Wünsche weiblicher
+Bürger*innen repräsentieren können. Hierbei wird die deskripitve und
+substantielle Representation verknüpft (Wängnerud
+\protect\hyperlink{ref-wangnerud_2009}{2009}: 52) -- ein höherer
+Frauenanteil in Parlamenten führt auch zu einer stärkeren Thematisierung
+der Belange von Frauen.
+
+~
+
+Die Forschung von Celis et al.
+(\protect\hyperlink{ref-celis_2008}{2008}) greift diese Annahmen
+nachmals empirisch auf und untersucht, in welchem Ausmaß die Beürfnisse
+und Interessen von Frauen gesteigert werden, wenn die Anzahl an Frauen
+in politischen Entscheidungen zunimmt (vgl. auch Galligan/Meier
+\protect\hyperlink{ref-galligan_2016}{2016}: 4). Ein einfacher Anstieg
+der Anzahl von Frauen reicht jedoch nicht aus, um einen signifikanten
+Einfluss zu erreichen. Vielmehr müssen weibliche Abgeordnete, in
+Anlehnung an Caul (\protect\hyperlink{ref-caul_2001}{2001}) auch in
+einflussreichen, wichtigen Positionen vertreten sein, um tatsächliche
+substantielle Repräsentanz zu erreichen (Caul
+\protect\hyperlink{ref-caul_2001}{2001}; vgl. auch Coffe/Schnellecke
+\protect\hyperlink{ref-coffe_2013}{2013}: 14).
+
+~
+
+Es lässt sich resümieren, dass es in der Literatur unterschiedliche
+Einschätzungen darüber gibt, welche Auswirkungen zu erwarten sind, wenn
+die Zahl der Frauen im Parlament steigt (Wängnerud
+\protect\hyperlink{ref-wangnerud_2009}{2009}: 59). Besonders
+hervorzuheben ist hierbei die Ländervergleichsstudie von Bäck/Debus
+(\protect\hyperlink{ref-back_2018}{2018}) in welcher die Autor*innen
+sieben europäische Länder bezüglich der Themen und Redeanteilen von
+weiblichen Abgeordneten untersuchen. Bäck/Debus
+(\protect\hyperlink{ref-back_2018}{2018}) resümieren zwar, dass Frauen
+in Parlamenten länderübergreifend seltener das Wort ergreifen, dies
+allerdings nicht auf einen generell niedrigeren Anteil an Frauen in den
+Parlamenten zurückzuführen ist. Frauen in Parteien mit einem geringen
+Frauenanteil ergreifen laut der Untersuchung von Bäck und Debus sogar
+öfter das Wort als Frauen in Fraktionen mit einem hohen Anteil an
+weiblichen Mitgliedern (Bäck/Debus
+\protect\hyperlink{ref-back_2018}{2018}: 17).
+
+~
+
+Vor diesem Hintergrund soll in dieser Forschungsarbeit neben dem Anteil
+an Reden von Frauen im Deutschen Bundestag auch inhaltlich auf die Reden
+eingegangen werden und auch das Verhalten der Abgeordneten auf
+geschlechtsspezifische Besondernheiten hin untersucht werden. Die
+zentrale Forschungsfrage lautet deshalb \emph{\enquote{Inwieweit
+unterscheiden sich die Redebeiträge und Verhalten von weiblichen und
+männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit,
+Thematik und Geschlechterneutralität}}.
+
+Während sich ein großer Teil der wissenschaftlichen Arbeiten aus den in
+den vorherigen Absätzen aufgezeigten Perspektiven mit der Partizipation
+und Repräsentation von Frauen in Parlamenten auseinandersetzt, soll sich
+im folgenden auch auf geschlechterspezifische Unterschiede und
+Reproduktion von Geschlechterungerechtigkeit durch auf Sprache gewidmet
+werden.
+
+\hypertarget{der-einfluss-von-sprache-auf-geschlechtergerechtigkeit}{%
+\section{Der Einfluss von Sprache auf
+Geschlechtergerechtigkeit}\label{der-einfluss-von-sprache-auf-geschlechtergerechtigkeit}}
+
+Laut Menegatti/Rubini (\protect\hyperlink{ref-menegatti_2017}{2017}) ist
+die Sprache eine der einflussreichsten Faktoren, wodurch Sexismus und
+Geschlechterdiskriminierung gefördert und reproduziert werden
+(\protect\hyperlink{ref-menegatti_2017}{2017}: 1). Sprache kann hierbei
+insbesondere die sozialen Asymmetrien von Status und Macht zugunsten des
+Mannes reprodizeren (ebd.). Es existier{[}t{]}en eivernehmliche Normen,
+wonach der prototypische Mensch ein Mann ist, was sich in den Strukturen
+vieler Sprachen widerspiegelt und darin verankert ist. Viele
+grammatikalische und syntaktische Regeln sind dabie so aufgebaut, dass
+weibliche Ausdrücke normalerweise von entsprechenden männlichen Formen
+abgeleitet werden (ebd.).
+
+Männliche Substantive und Pronomen werden beispielsweise häufig mit
+einer generischen Funktion verwendet um sich sowohl auf Männer als auch
+auf Frauen zu beziehen. Auf diese Weise verschwinden Frauen allerdings
+aus der mentalen Repräsentationen (vgl. Menegatti/Rubini
+\protect\hyperlink{ref-menegatti_2017}{2017}; Stahlberg/Sczesny
+\protect\hyperlink{ref-stahlberg_2001}{2001}). Maskuline Generika lassen
+Leser*innen und Hörer*innen mehr in männlichen als weiblichen
+Personenkategorien denken (Sczesny et al.
+\protect\hyperlink{ref-sczesny_2016}{2016}: 2; Stahlberg et al.
+\protect\hyperlink{ref-stahlberg_2007}{2007}).
+
+\begin{quote}
+\enquote{Given that language not only reflects stereotypical beliefs but
+also affects recipients' cognition and behavior, the use of expressions
+consistent with gender stereotypes contributes to transmit and reinforce
+such belief system and can produce actual discrimination against women}.
+(Menegatti/Rubini \protect\hyperlink{ref-menegatti_2017}{2017}: 2)
+\end{quote}
+
+Die Verwendung von \emph{gender-fail linguistic} (GFL) kann diese
+negativen Auswirkungen effektiv verhindern und Geschlechtergerechtigkeit
+fördern (Menegatti/Rubini \protect\hyperlink{ref-menegatti_2017}{2017}:
+1). GFL wurde unter anderem im Rahmen eines umfassenden Versuchs zur
+Verringerung von Stereotypen und Diskriminierung in der Sprache
+eingeführt (Sczesny et al. \protect\hyperlink{ref-sczesny_2016}{2016}:
+2). Feminiserung und Neutralisierung sowie die Kombination beider sind
+die bevorzugten Strategien einer geschlechtergerechten oder
+geschlechterneutralen Sprache. Auch die Verwendung von Wortpaaren
+(Lehrerinnen und Lehrer) zählt ebenso zu den Ausdrucksformen der GFL.
+Neben Wortpaaren sind auch geschlechtsneutrale Formen (Studierende statt
+Student) mögliche GFL-Ausdrucksformen (Sczesny et al.
+\protect\hyperlink{ref-sczesny_2016}{2016}: 2).
+
+Aus den bereits genannten Problematiken ist es notwendig, die
+Sprachgewohnheit dahingehend zu ändern, GFL umfassend zu etablieren, um
+Vorurteile bezüglich der Geschlechter zu reduzieren und eine
+Reproduktion von Stereotypen zu vermeiden. Die Verwendung von
+geschlechtergerechter Ausdrücke anstelle von maskulinen Generika ist für
+den Abbau von Geschlechtervoreingenommenheit und die Förderung der
+Gleichstellung der Geschlechter laut Menegatti und Rubini unabdingbar
+(\protect\hyperlink{ref-menegatti_2017}{2017}: 3).
+
+Die Umsetzung und Etablierung von GFL hat in verschiedenen Ländern
+bisher unterschiedliche Stadien erreicht und wird beispielsweise von der
+UNESCO und der Europäischen Kommission empfohlen und in deren Dokumenten
+angewandt (Sczesny et al. \protect\hyperlink{ref-sczesny_2016}{2016}:
+4).
+
+\begin{quote}
+\enquote{{[}\ldots{}{]} language does not merely reflect the way we
+think: it also shapes our thinking. If words and expressions that imply
+that women are inferior to men are constantly used, that assumption of
+inferiority tends to become part of our mindset; hence the need to
+adjust our language when our ideas evolve.} (UNESCO 2011)
+\end{quote}
+
+Auf Basis der Argumentation von Wängnerud
+(\protect\hyperlink{ref-wangnerud_2000}{2000}, @wangnerud\_2009) wird
+erwartet, dass sich vor allem Frauen über die Ausgrenzungserfahrung
+durch Sprache bewusst sind oder entsprechende Erfahrungen bereits
+gemacht wurden und entsprechend eher eine geschlechterneutrale und
+geschlechtergerechte Sprache anwenden als Männer.
+
+\textbf{Hypothese 1:} \emph{Frauen verwenden in ihren Reden häufiger
+gender-fair language als Männer}
+
+\hypertarget{geschlechterbezogene-verhaltensunterschiede-im-bundestag}{%
+\section{Geschlechterbezogene Verhaltensunterschiede im
+Bundestag}\label{geschlechterbezogene-verhaltensunterschiede-im-bundestag}}
+
+Die von Erikson und Josefsson durchgeführte Befragung zum
+Arbeitsumwangefeld von schwedischen Abgeordneten konnte zeigen, dass
+weibliche Abgeordnete mehr Stress und Druck in ihrem Umfeld ausgesetzt
+sind und häufiger Opfer negativer Behandlungungen im Parlament sind als
+männliche Abgeordnete (Erikson/Josefsson
+\protect\hyperlink{ref-erikson_2018}{2018}). Sie werden eher in den
+Debatten unterbrochen, sind eher Opfer sexistischer Witze und ihre
+Äußerlichkeiten wird häufiger negativ kommentiert als die Erscheinung
+männlicher Kollegen (ebd., S. 13).
+
+Diese Mehrbelastung kann laut Erikson und Josefsson zu höheren
+\enquote{Kosten} für Frauen bezüglich des parlamentarischen Engagements
+führen -- sie müssen mit mehr negativen Erfahrungen rechnen als Männer,
+entsprechend könnte dies auch ein Grund für eine geringere Beteiligung
+von Frauen in Parlamentsdebatten oder generell für die Partizipation von
+Frauen in poitischen Insitution darstellen (vgl. Erikson/Josefsson
+\protect\hyperlink{ref-erikson_2018}{2018}; vgl. Bäck et al.
+\protect\hyperlink{ref-back_2014}{2014}).
+
+Es wird erwartet, dass ein solches negatives Verhalten gegenüber Frauen
+auch im Deutschen Bundestag zu beobachten ist. Entsprechend soll
+untersucht werden, wie häufig Abgeordnete in ihren Reden \emph{negativ}
+unterbrochen werden. Entsprechend sollen Reden bezüglich der Anzahl an
+Zurufen, Gegenrufen, Widerspruch und Lachen über den*die Redner*in
+untersucht werden.\footnote{Diese Unterbrechungen werden in den
+  Bundestagsprotokollen vermerkt. \emph{Lachen} kann hier als
+  \emph{auslachen} oder \emph{lachen über den Inhalt} verstanden werden
+  -- das Lachen beispielsweise über einen Witz wird in
+  Bundestagsprotokollen als \emph{Heiterkeit} protokolliert.
+  \emph{Positive} Unterbrechungen wären beispielsweise Beifall.}
+
+\textbf{Hypothese 2a:} \emph{Frauen werden häufiger als Männer während
+der Rede negativ Unterbrochen}
+
+~
+
+Eine weitere \emph{negative} Unterbrechung der Render*innen können
+Rückfragen darstelen -- allerdings ist hier eine eindeutige negative
+Intention nicht anzunehmen. Entsprechend sollen Rückfragen gesondert
+untersucht werden. Auf Basis der Arbeiten von Brescoll
+(\protect\hyperlink{ref-brescoll_2011}{2011}) und Eagly/Karau
+(\protect\hyperlink{ref-eagly_2002}{2002}) wird allerdings erwartet,
+dass Frauen bei Themen, welche stereotypisch eher nicht mit Frauen
+verbunden werden, häufiger Inkompetenz unterstellt wird als männlichen
+Abgeordneten. Dies kann sich in der Anzahl an Rückfragen äußern, welche
+während einer Rede gestellt werden.
+
+\textbf{Hypothese 2b:} \emph{Frauen erfahren häufiger Rückfragen in
+ihren Reden, wenn wenige andere Frauen zu diesem Thema gesprochen
+haben}\footnote{Diese Hypothese kann nur in Verbindung mit der
+  nachfolgenden Hypothese zur Thematisierung in den Reden überprüft
+  werden.}
+
+~
+
+\hypertarget{geschlechterspezifische-themen-der-reden}{%
+\section{Geschlechterspezifische Themen der
+Reden}\label{geschlechterspezifische-themen-der-reden}}
+
+Bäck et al. (\protect\hyperlink{ref-back_2014}{2014}) konnten in ihrer
+Untersuchung des schwedischen Parlaments nachweisen, dass bezüglich der
+Themen der Reden Geschlechterunterschiede festzustellen sind. Männer
+sprechen laut Bäck et. al.~im schwedischen \emph{Riksdag} häufiger zu
+sogenanntenn \emph{hard policies} (etwa Wirtschaft, Energie,
+Infrastruktur). Bei sogenannten \emph{soft policies} (Erziehung, Soiale
+Sicherung, Bildung) ist hingegen kein Unterschied bezüglich des
+Redeanteils und Geschlecht der Abgeordneten festzustellen (Bäck et al.
+\protect\hyperlink{ref-back_2014}{2014}: 514f.).
+
+Die von Bäck et. al.~vorgenommene Klassifiierung soll in unserer
+Forschung nicht vorgenommen werden, da hier die Gefahr besteht, in der
+Gesellschaft vorhandene Stereotypen zu reproduzieren, indem eine
+klassifizierung in vermeintliche geschlechtsspezifische Themen
+vorgenommen wird.
+
+Dennoch wird, auf Basis der Argumentation von Wängnerud
+(\protect\hyperlink{ref-wangnerud_2000}{2000}, @wangnerud\_2009) und der
+Arbeit von Bäck et al. (\protect\hyperlink{ref-back_2014}{2014})
+untersucht werden, ob eine geschlechtsspezifische, unterschiedliche
+Thematisierung in den Reden feststellbar ist.
+
+\textbf{Hypothese 3:} \emph{Es ist unterschiedliche,
+geschlechtsspezifische Thematisierungen in den Reden der Abgeordneten
+feststellbar.}
+
+\hypertarget{weitere-erganzende-untersuchungen}{%
+\section{Weitere ergänzende
+Untersuchungen}\label{weitere-erganzende-untersuchungen}}
+
+Da die derzeitige Legislaturperiode noch nicht Gegenstand der
+Untersuchungen der Partizipation von Frauen waren, sollen auch weitere
+Metriken erhoben werden, etwa die Anzahl an Reden von Frauen nach
+Fraktion im Vergleich zu anteiligen Sitzungen von Frauen nach Fraktion.
+Da Bäck/Debus (\protect\hyperlink{ref-back_2018}{2018}) in einem
+Ländervergleich allerdings keine Verbindungen zwischen der Anzahl an
+Frauen in den Fraktionen und Anzahl der Reden in Parlamenten von Frauen
+aufzeigen konnte, soll dies nur als Ergänzung zu den Untersuchungen
+aufgenommen werden.
+
+\pagebreak
+
+\hypertarget{datengrundlage-und-operationalisierung}{%
+\section{Datengrundlage und
+Operationalisierung}\label{datengrundlage-und-operationalisierung}}
+
+Seit der 19. Wahlperiode liegen die Protokolle des Deutschen Bundestags
+im TEI-Format (Text Encoding Initative)\footnote{\url{http://www.tei-c.org/guidelines/}}
+als XML-Dateien (Extensible Markup Language) vor. Abgerufen werden
+können sie über das \emph{Open Data Portal} des Deutschen
+Bundestags.\footnote{\url{https://www.bundestag.de/service/opendata}} In
+Verbindung mit den biografischen Daten aller
+Bundestagsabgeordneten\footnote{\url{https://www.bundestag.de/blob/472878/e207ab4b38c93187c6580fc186a95f38/mdb-stammdaten-data.zip}}
+können Aussagen über Anzahl und Inhalte der Reden nach Geschlecht,
+Alter, Fraktion und beispielsweise Anzahl der Bundestagsperioden
+getroffen werden.
+
+Insgesamt liegen 5.965 Reden\footnote{Es liegen auch Reden der
+  Regierungsmitglieder und Reden von Gästen vor, diese werden allerdings
+  nicht ausgewertet, da hierbei keine Angaben zum Geschlecht der
+  Redner*innen durch den Bundestag bereitsgestellt werden und auch nur
+  die Bundestagsdebatte und nicht die Berichterstattung durch die
+  Regierung ausgewertet werden soll.} von Bundestagsabgeordneten von
+Abgeordneten des Deutschen Bundestages mit Anmerkungen durch die
+Stenograf*innen vor. Diese Anmerkungen ermöglichen die
+Operationalisierung der Hypothesen -- so wird bei einer Rede auch ein
+Zwischenruf protokolliert und auch der*die Zwischenrufer*in im Protokoll
+vermerkt (solange der Zwischenruf zugeordnet werden kann). Auch Angaben
+über die Tagesordnungspunkte (TOPs), zu denen gesprochen wird, sind im
+Protokoll vermerkt.
+
+Die Daten werden mittels der Programmiersprache R (R Core Team
+\protect\hyperlink{ref-rcoreteam_2018}{2018}) und den Packeten
+\emph{rvest} (Wickham \protect\hyperlink{ref-wickham_2016}{2016}),
+\emph{xml2} (Wickham et al. \protect\hyperlink{ref-wickham_2018}{2018})
+und der Packetsammlung \emph{tidyverse} (Wickham
+\protect\hyperlink{ref-wickham_2017}{2017}) aufbereitet und ausgewertet.
+
+\begin{table}[!h]
+
+\caption{\label{tab:unnamed-chunk-1}Anteil der Reden im 19. Bundestag nach Geschlecht der Abgeordneten}
+\centering
+\begin{tabular}{lr}
+\toprule
+Geschlecht & Reden\\
+\midrule
+männlich & 4149\\
+weiblich & 1816\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\hypertarget{forschungsdesign-und-methodik}{%
+\section{Forschungsdesign und
+Methodik}\label{forschungsdesign-und-methodik}}
+
+Wie die Fragestellung \enquote{Inwieweit unterscheiden sich die
+Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im
+19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und
+Geschlechterneutralität} bereits suggeriert, wird davon ausgegangen,
+dass die Variable \emph{Geschlecht} einer von vielen Faktoren ist,
+welche das Verhalten, die Sprache und den Inhalt der Bundestagsreden
+beeinflussen. Entsprechend handelt es sich bei dieser Untersuchung um
+eine x-zentriertes Forschungsdesign, in welchem auch weitere Faktoren,
+welche auf die jeweilige abhängige Variable einwirken, untersucht werden
+sollen (vgl. Ganghof \protect\hyperlink{ref-ganghof_2005}{2005}: 3f.).
+
+~
+
+Die Überprüfung der \textbf{Hypothesen 1, 2a und 2b} sollen mittels
+Regressionsanalysen untersucht werden. Neben dem Geschlecht des*der
+Redner*in sollen folgende Faktoren als Kontrollvariablen erhoben und
+untersucht werden:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{der*die Rednerin ist Mitglied der Oppositions- bzw.
+  Regierungsfraktion}
+\end{itemize}
+
+Es wird erwartet, dass Mitglieder der Regierungsfraktion deutlich
+häufiger mit Rückfragen konfrontiert werden, da sie eine stärkere
+Einbindung in den Legislativprozess erfahren und die Kontrolle der
+Regierung zu den Kernaufgaben der Opposition zählen.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{der*die Redner*in ist Mitglied des Fraktionsvorsitzes}
+\end{itemize}
+
+Es wird erwartet, dass Mitglieder des Vorsitzes der Fraktionen
+beispielsweise häufiger unterbrochen werden. Zum einen, da Reden, welche
+auf Antrag der Opposition länger gehalten werden, häufig von den
+Fraktionsvorsitzenden gehalten werden, aber auch, da diese Reden häufig
+bei volleren Plenarsälen gehalten werden.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{der*die Redern*in ist Mitglied der Fraktion
+  \enquote{Alternative für Deutschland}}
+\end{itemize}
+
+Hier wird erwartet, dass Abgeordnete der AfD-Fraktion deutlich seltener
+GFL nutzen, wohingehend die Anzahl der Unterbrechungen deutlich höher
+erwartet wird. Populistische Parteien setzen sich unter anderem durch
+provokante Thesen und ein provokantes Auftreten von anderen Parteien ab
+(vgl. Decker \protect\hyperlink{ref-decker_populismus_2006}{2006};
+Priester \protect\hyperlink{ref-priester_2012}{2012}). Dies lässt
+vermuten, dass mehr Zwischenrufe von anderen Abgeordneten in den Reden
+der AfD-Mitglieder geäußert werden.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{die Anzahl der bisherigen Bundestagsmandate des*der Redner*in}
+\end{itemize}
+
+Bei dieser Variable wird kein Einfluss auf die abhängigen Variablen
+(Nutzung von GFL, Anzahl der Unterbrechungen, Anzahl der Rückfragen)
+erwartet, sie dient der Überprüfung der Validität der Methoden.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{das Alter des*der Redner*in}
+\end{itemize}
+
+Hier wird keine Einfluss auf die abhängigen Variablen erwartet. Diese
+Variable dient der Überprüfung der Validität der Methode.
+
+~
+
+Die \textbf{Hypothesen 1, 2a und 2b} werden über eine Regressionsanalyse
+überprüft. Die Variable Geschlecht wird hierbei als Dummy-Variable
+kodiert. Der Einfluss der Kontrollvariablen etwa auf die abhängige
+Variable \emph{Anzahl der Unterbrechungen} wird ebenfalls überprüft. Da
+es sich bei den abhängigen Variablen um Zähldaten handelt, wird
+vermutlich eine negative Binomialregression angewandt (welche auch bei
+Bäck et al. (\protect\hyperlink{ref-back_2014}{2014}) angewandt wurde)
+oder eine OLS-Regression untersucht (angewandt bei Coffe/Schnellecke
+(\protect\hyperlink{ref-coffe_2013}{2013})).
+
+\textbf{Hypothese 3} zur Untersuchung der Themen in den Reden der
+Abgeordneten soll über ein automatisiertes \emph{Topic Modeling}
+untersucht werden. Anders als bei Bäck et al.
+(\protect\hyperlink{ref-back_2014}{2014}), welche die Themen der Reden
+der Abgeordneten anhand der vorangegangen Reden von Minister*innen
+untersucht hat, soll durch ein automatisiertes \emph{Topic Modeling}
+einerseits einen geschlechterstereotypen Bias verhindern aber auch eine
+genauere Zuordnung an Themen ermöglichen. Automatisierte \emph{Topic
+Modelings} wurden bereits auf Reden des Europaparlaments angewandt, um
+Agenda-Trends zu identifizieren (vgl. Greene/Cross
+\protect\hyperlink{ref-greene_2016}{2016}) und werden auch in der
+vergangenen Studie von Bäck und Debus zur Identifikation von
+geschlechtsbezogener \emph{Topics} vorgeschlagen (Bäck/Debus
+\protect\hyperlink{ref-back_2018}{2018}: 18).
+
+Als automatisiertes \emph{Topic Modeling Framework} wird das von der
+University of Cambridge ausgezeichnete\footnote{\url{https://www.cambridge.org/core/membership/spm/about-us/awards/statistical-software-award/statistical-software-award-18}}
+\emph{Structural Topic Modeling} von Roberts et al.
+(\protect\hyperlink{ref-roberts_2018}{2018}) angewendet. Dies ermöglicht
+es, auch innerhalb von Reden mehrere Inhalte zu identifizieren und
+erlaubt so ein genaueres Vorgehen bei der Untersuchung möglicher
+geschlechterbezogener Themen. In unserem Datensatz sind 6823 Reden
+enthalten.
+
+\pagebreak
+\section{Literatur- und Quellverzeichnis}
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
+\vspace*{-0.2in}
+\setstretch{1.0}
+
+\noindent
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-back_2018}{}%
+Bäck, Hanna/Debus, Marc (2018): When Do Women Speak? A Comparative
+Analysis of the Role of Gender in Legislative Debates. In:
+\emph{Political Studies}, DOI:
+\href{https://doi.org/10.1177/0032321718789358}{10.1177/0032321718789358}.
+Text abrufbar unter: \url{https://doi.org/10.1177/0032321718789358}.
+
+\leavevmode\hypertarget{ref-back_2014}{}%
+Bäck, Hanna/Debus, Marc/Müller, Jochen (2014): Who Takes the
+Parliamentary Floor? The Role of Gender in Speech-Making in the Swedish
+"Riksdag". In: \emph{Political Research Quarterly}, 67 (3), 504--518.
+
+\leavevmode\hypertarget{ref-blaxill_2016}{}%
+Blaxill, Luke/Beelen, Kaspar (2016): A Feminized Language of Democracy?
+The Representation of Women at Westminster Since 1945. In:
+\emph{Twentieth Century British History}, 27 (3), 412--449.
+
+\leavevmode\hypertarget{ref-brescoll_2011}{}%
+Brescoll, Victoria L. (2011): Who Takes the Floor and Why: Gender,
+Power, and Volubility in Organizations. In: \emph{Administrative Science
+Quarterly}, 56 (4), 622--641.
+
+\leavevmode\hypertarget{ref-caul_2001}{}%
+Caul, Miki (2001): Political Parties and the Adoption of Candidate
+Gender Quotas: A Cross-National Analysis. In: \emph{The Journal of
+Politics}, 63 (4), 1214--1229.
+
+\leavevmode\hypertarget{ref-celis_2008}{}%
+Celis, Karen/Childs, Sarah/Kantola, Johanna/Krook, Mona Lena (2008):
+RETHINKING WOMEN'S SUBSTANTIVE REPRESENTATION. In:
+\emph{Representation}, 44 (2), 99--110.
+
+\leavevmode\hypertarget{ref-coffe_2013}{}%
+Coffe, H./Schnellecke, K. (2013): Female Representation in German
+Parliamentary Committees. 1972--2009. Paper Prepared for Presentation at
+the European Consortium for Political Research General Conference.
+Bordeaux. Text abrufbar unter:
+\url{https://ecpr.eu/filestore/paperproposal/24876915-576b-42af-a5e8-55630fb57038.pdf}.
+
+\leavevmode\hypertarget{ref-decker_populismus_2006}{}%
+Decker, Frank (2006): Populismus: Gefahr Für Die Demokratie Oder
+Nützliches Korrektiv? VS Verlag für Sozialwissenschaften. Text abrufbar
+unter: \url{//www.springer.com/de/book/9783531145372} (Zugriff am
+3.3.2018).
+
+\leavevmode\hypertarget{ref-eagly_2002}{}%
+Eagly, Alice H./Karau, Steven J. (2002): Role Congruity Theory of
+Prejudice Toward Female Leaders. In: \emph{Psychological Review}, 109
+(3), 573--598.
+
+\leavevmode\hypertarget{ref-erikson_2018}{}%
+Erikson, Josefina/Josefsson, Cecilia (2018): The Legislature as a
+Gendered Workplace: Exploring Members of Parliament's Experiences of
+Working in the Swedish Parliament: In: \emph{International Political
+Science Review}, DOI:
+\href{https://doi.org/10.1177/0192512117735952}{10.1177/0192512117735952}.
+Text abrufbar unter:
+\url{https://journals.sagepub.com/doi/full/10.1177/0192512117735952}.
+
+\leavevmode\hypertarget{ref-galligan_2016}{}%
+Galligan, Yvonne/Meier, Petra (2016): The Gender-Sensitive Parliament:
+Recognising the Gendered Nature of Parliaments. Präsentiert auf: IPSA
+World Congress, Juli 2016, Poznan, Poland.
+
+\leavevmode\hypertarget{ref-ganghof_2005}{}%
+Ganghof, Steffen (2005): Kausale Perspektiven in der vergleichenden
+Politikwissenschaft: X-zentrierte und Y-zentrierte Forschungsdesigns.
+In: Kropp, Sabine/Minkenberg, Michael (Hrsg.), Vergleichen in der
+Politikwissenschaft. Wiesbaden: VS Verlag für Sozialwissenschaften,
+76--93.
+
+\leavevmode\hypertarget{ref-greene_2016}{}%
+Greene, Derek/Cross, James P. (2016): Exploring the Political Agenda of
+the European Parliament Using a Dynamic Topic Modeling Approach. In:
+Text abrufbar unter: \url{http://arxiv.org/abs/1607.03055} (Zugriff am
+11.1.2019).
+
+\leavevmode\hypertarget{ref-menegatti_2017}{}%
+Menegatti, Michela/Rubini, Monica (2017): Gender Bias and Sexism in
+Language. In: \emph{Oxford Research Encyclopedia of Communication}, DOI:
+\href{https://doi.org/10.1093/acrefore/9780190228613.013.470}{10.1093/acrefore/9780190228613.013.470}.
+Text abrufbar unter:
+\url{http://oxfordre.com/view/10.1093/acrefore/9780190228613.001.0001/acrefore-9780190228613-e-470}.
+
+\leavevmode\hypertarget{ref-phillips_1998}{}%
+Phillips, Anne (1998): The Politics of Presence. Oxford University
+Press.
+
+\leavevmode\hypertarget{ref-pitkin_1972}{}%
+Pitkin, Hanna Fenichel (1972): The Concept of Representation. 1.
+paperback ed., {[}Nachdr.{]}. Berkeley, Calif.: Univ. of California
+Press. OCLC: 838205515.
+
+\leavevmode\hypertarget{ref-priester_2012}{}%
+Priester, Karin (2012): Wesensmerkmale Des Populismus. In: \emph{Aus
+Politik und Zeitgeschichte}, 62. Jahrgang (5--6/2012), 3--9.
+
+\leavevmode\hypertarget{ref-rcoreteam_2018}{}%
+R Core Team (2018): R: A Language and Environment for Statistical
+Computing. Vienna, Austria: R Foundation for Statistical Computing. Text
+abrufbar unter: \url{https://www.R-project.org/}.
+
+\leavevmode\hypertarget{ref-roberts_2018}{}%
+Roberts, Margaret E./Stewart, Brandon M./Tingley, Dustin (2018): Stm: R
+Package for Structural Topic Models. Text abrufbar unter:
+\url{http://www.structuraltopicmodel.com}.
+
+\leavevmode\hypertarget{ref-sczesny_2016}{}%
+Sczesny, Sabine/Formanowicz, Magda/Moser, Franziska (2016): Can
+Gender-Fair Language Reduce Gender Stereotyping and Discrimination? In:
+\emph{Frontiers in Psychology}, 7.
+
+\leavevmode\hypertarget{ref-stahlberg_2001}{}%
+Stahlberg, Dagmar/Sczesny, Sabine (2001): Effekte des generischen
+Maskulinums und alternativer Sprachformen auf den gedanklichen Einbezug
+von Frauen. In: \emph{Psychologische Rundschau}, 52 (3), 131--140.
+
+\leavevmode\hypertarget{ref-stahlberg_2007}{}%
+Stahlberg, D./Braun, F./Irmen, L./Sczesny, S. (2007): Representation of
+the Sexes in Language. In: Fiedler, K. (Hrsg.), Social Communication. A
+Volume in the Series Frontiers of Social Psychology. NewYork: NY:
+Psychology Press, 163--187.
+
+\leavevmode\hypertarget{ref-wangnerud_2000}{}%
+Wängnerud, Lena (2000): Testing the Politics of Presence: Women's
+Representation in the Swedish Riksdag. In: \emph{Scandinavian Political
+Studies}, 23 (1), 67--91.
+
+\leavevmode\hypertarget{ref-wangnerud_2009}{}%
+Wängnerud, Lena (2009): Women in Parliaments: Descriptive and
+Substantive Representation. In: \emph{Annual Review of Political
+Science}, 12 (1), 51--69.
+
+\leavevmode\hypertarget{ref-wickham_2016}{}%
+Wickham, Hadley (2016): Rvest: Easily Harvest (Scrape) Web Pages. Text
+abrufbar unter: \url{https://CRAN.R-project.org/package=rvest}.
+
+\leavevmode\hypertarget{ref-wickham_2017}{}%
+Wickham, Hadley (2017): Tidyverse: Easily Install and Load the
+'Tidyverse'. Text abrufbar unter:
+\url{https://CRAN.R-project.org/package=tidyverse}.
+
+\leavevmode\hypertarget{ref-wickham_2018}{}%
+Wickham, Hadley/Hester, James/Ooms, Jeroen (2018): Xml2: Parse XML. Text
+abrufbar unter: \url{https://CRAN.R-project.org/package=xml2}.
+
+
+
+
+\newpage
+\singlespacing 
+\end{document}

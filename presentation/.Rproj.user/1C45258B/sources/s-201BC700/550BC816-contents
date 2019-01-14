@@ -1,0 +1,357 @@
+---
+title: "Geschlechterabhängige Partizipation im Deutschen Bundestag"
+subtitle: "Auswertung des 19. Deutschen Bundestags"
+author: "Gina Görner, Josef Holnburger"
+date: "14.01.2019"
+output:
+  xaringan::moon_reader:
+    css: ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css", "template/holnburger.css", "template/holnburger-fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: ["template/macros.js", "https://platform.twitter.com/widgets.js"]
+    includes:
+      in_header: "template/header.html"
+      
+---
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+
+bt_data <- read_rds("data/mdb_data.RDS")
+bt_overview <- read_rds("data/BT_19/overview.RDS")
+bt_speeches <- read_rds("data/BT_19/speeches.RDS")
+bt_comments_overview <- read_rds("data/BT_19/comments_overview.RDS")
+```
+
+class: larger
+# Veränderungen der Forschungsfrage
+
+Das Feedback des Forschungsseminar präziseren wir unsere Forschungsfrage und konzentrieren uns auf die Sprache im 19. Deutschen Bundestag in drei Teilfragen.
+
+--
+
+.column-left[
+![:scale 50%](image/speech.png)
+Genderinklusive Sprache
+]
+
+.column-center[
+![:scale 50%](image/interruption.png)
+Genderbezogene Aktivitäten
+]
+
+.column-right[
+![:scale 50%](image/topics.png)
+Genderbezogene Themen
+]
+
+---
+class: middle, center, larger, inverse
+
+### Zentrale Forschungsfrage:
+## Inwiefern unterscheiden sich Sprache, Aktivitität und Themen der Bundestagsabgeordneten nach Geschlecht?
+
+---
+class: larger
+
+# Daten des 19. Bundestags
+
+Die Protokolle des 19. Bundestags liegen im XML-Format (*Extensible Markup Language*) in TEI-Kodierung (*Text Encoding Initiative*) vor. Außerdem bietet der Bundestag eine Übersicht der MdB nach Geschlecht, Partei, Wahlperiode, Ausschussmitgliedschaften. <sup>1</sup>
+
+Insgesamt liegen **6.823 Reden** des aktuellen Bundestags vor (6.024 von MdB, 799 Reden von Regierungsmitgliedern oder Gästen).
+
+.footnote[
+[1] https://www.bundestag.de/service/opendata
+]
+
+???
+
+Insgesamt stammen 4569 Reden von Männern, 2124 Reden von Frauen. 130 Reden können keinem Geschlecht zugeordnet werden, weil der Bundestag hierzu keine Daten hinterlegt hat (Gäste, Landesminister\*innen oder Landesregierungsmitglieder, Parlamentarische Sekretär\*innen). Damit stammen insgesamt etwa 31 % der Reden von Frauen, und damit ziemlich genau den Anteil an Frauen im Bundestag.
+
+Wir haben noch die Problematik der fraktionslosen Partei: Diese nutzen das Parlament vor allem als Bühne. Frauke Petry hat mitunter die meisten Beiträge -- und sie haben ein Geschlechterverhältnis von 50/50. Uns interessieren nur die MdBs der Fraktionsmitglieder.
+---
+class: center, middle, inverse
+
+![:scale 20%](image/speech.png)
+# Genderinklusive Sprache
+
+---
+.left-column[
+## Sprache I
+]
+
+.right-column[.large[
+**Hypothese 1**: Frauen nutzen häufiger genderinklusive Sprache als männliche Abgeordnete.
+
+Das heißt:
+* Genderinklusve Ansprache (Kolleginnen und Kollegen)
+* Nutzen des *Gender-Gaps* (Kolleg_innen, Kolleg*innen)
+* Geschlechtsneutrale Bezeichnungen (Studierende)
+* Nutzen des generischen Feminimum (?)
+]
+]
+
+---
+
+.left-column[
+## Sprache I
+
+## Sprache II
+]
+
+.right-column[.large[**Überprüfung der Hypothese 1:** 
+Wie häufig nutzen Frauen im Vergleich zu Männern geschlechterinklusive Sprache? Spielt eher das Geschlecht oder andere Faktoren eine Rolle?
+
+{{ content }}
+]
+]
+--
+
+#### Überprüfung durch Kontrollvariablen
+* Parteispektrum (links/rechts)
+* Regierung/Opposition
+* Alter
+* Parlamentszugehörigkeit (Anzahl der Bundestagsmandate)
+* Partei- oder Fraktionsvorsitz
+
+---
+.left-column[
+## Sprache I
+
+## Sprache II
+
+## Sprache III
+]
+
+.right-column[.large[
+**Operationalisierung**
+
+* Die Reden können auf Nutzung von **inklusive Ansprachen** (Kolleginnen und Kollegen) vs. Ansprachen im generischen Maskulin überprüft werden.
+
+* Die Überprüfung auf **geschlechtsneutrale** Formulierung (Studierende) kann über ein Lexikon überprüft werden -- dies muss  noch entworfen werden.
+
+* Die Aussprache von **Gender-Gaps** wird als generisches Feminimum protkolliert (Kolleginnen).
+
+]]
+
+---
+.left-column[
+## Sprache I
+
+## Sprache II
+
+## Sprache III
+
+## Methodik
+]
+
+.right-column[.large[
+**Ausstehend**
+
+]
+]
+---
+class: middle, inverse, center
+
+![:scale 20%](image/interruption.png)
+# Genderbezogene Aktivitäten
+
+---
+.left-column[
+## Aktivität I
+]
+
+.right-column[.large[
+**Hypothese 2a**: Frauen werden häufiger unterbrochen als Männer <br>
+**Hypothese 2b**: Frauen erfahren häufiger Rückfragen als Männer <br>
+
+Diese Hypothesen müssen auch im Vergleich zum relativen Anteil der Frauen im Bundestag gesetzt werden.
+
+#### Überprüfung durch Kontrollvariablen
+* Parteispektrum (links/rechts)
+* Regierung/Opposition
+* Alter
+* Parlamentszugehörigkeit (Anzahl der Bundestagsmandate)
+* Partei- oder Fraktionsvorsitz
+]]
+
+---
+.left-column[
+## Aktivität I
+
+## Aktivität II
+]
+
+.right-column[.large[**Problematik**: Unterschiedliche Interpretation der Unterbrechungen möglich.
+
+Beispiele: 
+
+> {{ content }}
+
+]]
+
+--
+
+(Volker Kauder [CDU/CSU]: Nein! – Michael Grosse-Brömer [CDU/CSU]: Jetzt verstehe ich Ihren Antrag!)
+
+> {{ content }}
+
+--
+
+(Dr. Alice Weidel [AfD]: Und AfD!)
+
+> {{ content }}
+
+--
+
+(Beifall bei der SPD – Lachen bei der FDP – Christian Lindner [FDP]: Da sind wir aber jetzt gespannt!)
+
+> {{ content }}
+
+--
+
+(Nationalhymne – Beifall)
+
+---
+.left-column[
+## Aktivität I
+
+## Aktivität II
+
+## Aktivität III
+]
+
+.right-column[.large[
+Überprüfung der **Hypothese 2a** mit negativ konnotierten Unterbrechungen: 
+
+* Zwischenrufe
+* Lachen
+* Zurufe
+* Widerspruch
+
+Insgesamt können wir **57.702 Unterbrechungen durch Abgeordnete oder Regierungsmitglieder** feststellen.
+
+{{ content }}
+
+]
+]
+
+--
+
+Von diesen Unterbrechungen sind wiederum **22.616 _negative_ Unterbrechungen**.
+
+???
+
+Wichtig: Lachen ist negativ konnotiert. Heiterkeit ist das Lachen über einen Witz. Deshalb ist hier lachen negativ gemeint.
+
+Bei den Unterbrechungen sind auch Begrüßungsklatscher dabei oder Unterbrechungen durch das Präsidium.
+
+---
+.left-column[
+## Aktivität I
+
+## Aktivität II
+
+## Aktivität III
+
+## Methodik
+]
+
+.right-column[.large[
+Überprüfung der **Hypothese 2a und 2b** durch lineare Regression: Werden Frauen signifikant häufiger unterbrochen bzw. erfahren sie mehr Rückfragen als Männer?
+
+Geschlecht allerdings nicht einziger bestimmender Faktor. **Überprüfung durch Kontrollvariablen**.
+
+Mögliche Optionen:
+* Negative Binomialregression
+* OLS-Regression
+* ANOVA (Fisher oder Welch's)
+]
+]
+
+---
+class: middle, inverse, center
+
+![:scale 20%](image/interruption.png)
+# Genderbezogene Themen
+
+---
+.left-column[
+## Themen
+]
+
+.right-column[.large[
+Um einen Bias und die Reproduktion von Steroetypen zu vermeiden, werden vermeintliche *geschlechtertypische* Themen nicht vorselektiert.
+
+**Hypothese 3:** Es lassen sich geschlechterspezifische Unterschiede in der Thematisierung der Bundestagsreden feststellen.
+
+Diese Hypothese kann mit unterschiedlichen Methoden und Vorgehensweisen überprüft werden:
+{{ content }}
+]
+]
+
+--
+
+* manuelle Codierung der Reden durch die TOPs der Protokolle
+{{ content }}
+
+--
+
+* qualitative Inhaltsanalyse der Reden
+{{ content }}
+
+--
+* automatisiertes Topic Modeling mit LDA oder stm
+
+---
+.left-column[
+## Themen
+
+## Themen II
+]
+
+.right-column[.large[
+Aufgrund der **hohen Anzahl an Redebeiträgen** im Bundestag (etwa 6.000 Reden in der bisherigen Legislaturperiode) soll ein automatisiertes Topic Modeling genutzt werden.
+
+**Innerhalb** einer Rede können **unterschiedliche Topics** addressiert werden -- dies würde durch eine manuelle Codierung der Reden durch die **TOPs** vernächlässigt werden.
+
+Die Methode des **_structural topic model_** (Roberts et. al. 2018) erlaubt ein automatisiertes topic modeling der Reden -- im Gegensatz zu LDA müssen die Anzahl der Topics im gesamten Korpus nicht vorgegeben werden.
+]
+]
+
+---
+.left-column[
+## Themen
+
+## Themen II
+
+## Themen III
+]
+
+.right-column[.large[
+**GENAUERE ERKLÄRUNG DES STM TOPIC MODELING**
+]
+]
+
+---
+class: middle, center, inverse
+
+# Diskussion
+
+---
+# Diskussion
+
+.larger[
+* Hier Fragen für die Diskussion
+]
+---
+class: middle, center, inverse
+
+# Ergebnisse
+## Im Zuge der Datenerfassung und Operationalisierung konnten bereits explorativ Methoden und Thesen getestet werden
+
+---
+# Folien folgen noch
