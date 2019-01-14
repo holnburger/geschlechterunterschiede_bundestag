@@ -1,0 +1,229 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: true
+    latex_engine: pdflatex
+    template: template/svm-latex-ms.tex
+    number_sections: true
+title: "Geschlechterunterschiede in den Reden des Deutschen Bundestages"
+#subtitle: "Operationalisierung"
+# thanks: "Arbeitstitel"
+author:
+- name: Josef Holnburger
+  affiliation: Universität Hamburg
+- name: Gina Gabriela Görner
+  affiliation: Universität Hamburg
+abstract: 'Mit Feedback der vorangegangenen Sitzung des Forschungsseminars soll die Forschungsfrage „Inwieweit unterscheiden sich die Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität“ untersucht werden. \newline Es soll untersucht werden, ob Frauen in ihren Reden beispielsweise signifikant häufiger unterbrochen werden als Männer, ob Frauen eher geschlechterinklusive Sprache verwenden und ob signifikante Unterschiede in den Themen der Reden festzustellen sind, welche sich auf das Geschlecht zurückführen lassen. Hierfür werden 5.965 Reden von den Mitgliedern des Deutschen Bundestages (MdB) anhand der Bundestagsprotokolle ausgewertet.'
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 12pt
+spacing: double
+csl: "template/universitat-bremen-institut-fur-politikwissenschaft.csl"
+biblio-style: "template/universitat-bremen-institut-fur-politikwissenschaft.csl"
+bibliography: Bib.bib
+link-citations: yes
+linkcolor: black
+lang: de
+header-includes: 
+  - \usepackage[german]{babel}
+  - \usepackage[german=quotes]{csquotes}
+  - \usepackage{booktabs}
+  - \usepackage{float}
+  - \usepackage{etoolbox}
+  - \AtBeginEnvironment{quote}{\singlespacing\small}
+---
+
+```{r setup, include = FALSE, warning = FALSE, messages = FALSE}
+library(tidyverse)
+
+bt_data <- read_rds("data/mdb_data.RDS")
+speeches <- read_rds("data/BT_19/speeches.RDS")
+overview <- read_rds("data/BT_19/overview.RDS")
+
+fraktionen <- c("SPD", "DIE LINKE", "FDP", "CDU/CSU", "AfD", "BÜNDNIS 90/DIE GRÜNEN")
+
+corr_traeger <- bt_data %>%
+  filter(id == "11004426") %>%
+  mutate(id = "999190001")
+
+corr_voellers <- bt_data %>%
+  filter(id == "11004942") %>%
+  mutate(id = "10000")
+
+bt_data <- bt_data %>%
+  bind_rows(corr_traeger) %>%
+  bind_rows(corr_voellers)
+```
+
+Eine Vielzahl an Studien beschäftigt sich mit den Repräsentations- und Partizipationsunterschieden von Frauen und Männern in Parlamenten [@blaxill_2016, S. 416]. Eine umfassende Untersuchung von Geschlechterunterschieden in Bezug auf Sprache, Thematik sowie Verhalten der Parlamentsmitglieder des Deutschen Bundestages ist allerdings bis zu diesem Zeitpunkt noch ausstehend. 
+
+Anne Phillips gilt als eine der wichtigsten Vertreterinnen auf dem Gebiet der parlamentarischen Representativität von Frauen. In ihrem Werk "The Politics of Presence" analyisiert Phillips [-@phillips_1998] unter anderem die Bereitschaft von Frauen, als Parlamentskandidatin ausgewählt zu werden, Ministerin zu werden und Wahlen zu gewinnen [vgl. @blaxill_2016, S. 416f.]. 
+Da Frauen im täglichen Leben andere Erfahrungen sammeln als Männer -- insbesondere bezüglich der Kindererziehung, Bildung sowie der Auswahl an Berufen und der Spalting in bezahlte und unbezahlte Arbeit, Gewalterfahrungen sowie sexuellen Belästigungen -- plädierte Philips für die notwendige Repräsentation von Frauen im Parlament, um andere Frauen vertreten zu können und diese Situationen sichtbar zu machen [vgl. @wangnerud_2009, S. 52].
+
+> "There are particular needs, interests, and concerns that arise from women's experience, and these will be inadequately addressed in a politics that is dominated by men. Equal rights to a vote have not proved strong enough to deal with this problem; there must also be equality among those elected to once" [@phillips_1998, S. 66]
+
+Die Theorie der *politics of presence* [@phillips_1998] diente Wängnerud [-@wangnerud_2000] als Ausgangspunkt für ihre Forschung im Schwedischen Parlament ("Testing the Politics of Presence, Women's Representation in the Swedish Riksdag", 2000). Wägnerud konzentriert sich hierbei auf die Repräsentation von Frauen und prüft die Hypothese, dass weibliche Politikerinnen die Interessen von Frauen stärker vertreten als männliche Politiker [@wangnerud_2000, S. 84]. "[It is] difficult to repudiate the conclusion that women's interes are primarily represented by female politicians" [-@wangnerud_2000, S. 84]. Folglich tritt die Zahl der Frauen im Parlament zunehmen in den Vordergrund der wissenschaftlichen Auseinandersetzung und der Politik. 
+
+
+Bei der Forschung zu Frauen im Parlament wird generell zwischen einer deskriptiven und einer substantiellen Repräsentation (in einigen Fällen außerdem die symoblische Form der Repräsenttation) unterschieden. Bei der substantiellen Repräsentation von Frauen handelt es sich um ein bisher weniger wissenschaftlich erforschtes Feld als die Analyse der deskriptiven Repräsentation [@wangnerud_2009, S. 59]. Letzteres legt den Schwerpunkt auf die Analyse der Anzahl von Frauen in representativen Institutionen, ersteres untersucht hingegen die Auswirkung der Präsenz von Frauen in Parlamenten [@coffe_2013, S. 14; @wangnerud_2009, S. 52]. 
+Die zentrale Fragen lauten hierbei:
+
+> "[W]hether the widely professed aspiration to feminise democracy -- and in so doing to politically empower women -- is a matter largely of symbolism or substance […]"
+> "[…] wheter the priority should simply be to increase the proportion of women MPs in Parliament […] or as Hanna Pitkin argued in 1967, to represent minds as well as bodies." [blaxill_2016, S. 413]
+
+Bereits Piktin [-@pitkin_1972] argumentierte in ihrem Hauptwerk "The Concept of Representation", dass der Interessenbegriff in der Repräsentationsdebatte omnipräsent ("ubiquitious") ist [@wangnerud_2000, S. 69]. Für Pitkin sind es die Parliamentarierinnen, welche sich den Wünschen und Interessen, dem Wohlergehen sowie Themen der Frauen widmen und diese vertreten [vgl. @blaxill_2016, S. 413; @pitkin_1972]. Nach Phillips Theorie der *politics of presence* [-@phillips_1998] kann angenommen werden, dass weibliche Politikerinnen die Interessen und Wünsche weiblicher Bürger\*innen repräsentieren können. Hierbei wird die deskripitve und substantielle Representation verknüpft [@wangnerud_2009, S. 52] -- ein höherer Frauenanteil in Parlamenten führt auch zu einer stärkeren Thematisierung der Belange von Frauen. 
+
+\  
+
+Die Forschung von @celis_2008 greift diese Annahmen nachmals empirisch auf und untersucht, in welchem Ausmaß die Beürfnisse und Interessen von Frauen gesteigert werden, wenn die Anzahl an Frauen in politischen Entscheidungen zunimmt [vgl. auch @galligan_2016, S. 4]. Ein einfacher Anstieg der Anzahl von Frauen reicht jedoch nicht aus, um einen signifikanten Einfluss zu erreichen. Vielmehr müssen weibliche Abgeordnete, in Anlehnung an Caul [-@caul_2001] auch in einflussreichen, wichtigen Positionen vertreten sein, um tatsächliche substantielle Repräsentanz zu erreichen [@caul_2001; vgl. auch @coffe_2013, S. 14].
+
+\  
+
+Es lässt sich resümieren, dass es in der Literatur unterschiedliche Einschätzungen darüber gibt, welche Auswirkungen zu erwarten sind, wenn die Zahl der Frauen im Parlament steigt [@wangnerud_2009, S. 59]. Besonders hervorzuheben ist hierbei die Ländervergleichsstudie von @back_2018 in welcher die Autor\*innen sieben europäische Länder bezüglich der Themen und Redeanteilen von weiblichen Abgeordneten untersuchen. @back_2018 resümieren zwar, dass Frauen in Parlamenten länderübergreifend seltener das Wort ergreifen, dies allerdings nicht auf einen generell niedrigeren Anteil an Frauen in den Parlamenten zurückzuführen ist. Frauen in Parteien mit einem geringen Frauenanteil ergreifen laut der Untersuchung von Bäck und Debus sogar öfter das Wort als Frauen in Fraktionen mit einem hohen Anteil an weiblichen Mitgliedern [@back_2018, S. 17]. 
+
+\  
+
+Vor diesem Hintergrund soll in dieser Forschungsarbeit neben dem Anteil an Reden von Frauen im Deutschen Bundestag auch inhaltlich auf die Reden eingegangen werden und auch das Verhalten der Abgeordneten auf geschlechtsspezifische Besondernheiten hin untersucht werden. Die zentrale Forschungsfrage lautet deshalb *"Inwieweit unterscheiden sich die Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität"*.
+
+Während sich ein großer Teil der wissenschaftlichen Arbeiten aus den in den vorherigen Absätzen aufgezeigten Perspektiven mit der Partizipation und Repräsentation von Frauen in Parlamenten auseinandersetzt, soll sich im folgenden auch auf geschlechterspezifische Unterschiede und Reproduktion von Geschlechterungerechtigkeit durch auf Sprache gewidmet werden.
+
+# Der Einfluss von Sprache auf Geschlechtergerechtigkeit
+
+Laut @menegatti_2017 ist die Sprache eine der einflussreichsten Faktoren, wodurch Sexismus und Geschlechterdiskriminierung gefördert und reproduziert werden [-@menegatti_2017, S. 1]. Sprache kann hierbei insbesondere die sozialen Asymmetrien von Status und Macht zugunsten des Mannes reprodizeren (ebd.). Es existier[t]en eivernehmliche Normen, wonach der prototypische Mensch ein Mann ist, was sich in den Strukturen vieler Sprachen widerspiegelt und darin verankert ist. Viele grammatikalische und syntaktische Regeln sind dabie so aufgebaut, dass weibliche Ausdrücke normalerweise von entsprechenden männlichen Formen abgeleitet werden (ebd.).
+
+Männliche Substantive und Pronomen werden beispielsweise häufig mit einer generischen Funktion verwendet um sich sowohl auf Männer als auch auf Frauen zu beziehen. Auf diese Weise verschwinden Frauen allerdings aus der mentalen Repräsentationen [vgl. @menegatti_2017; @stahlberg_2001]. Maskuline Generika lassen Leser\*innen und Hörer\*innen mehr in männlichen als weiblichen Personenkategorien denken [@sczesny_2016, S.2; @stahlberg_2007].
+
+> "Given that language not only reflects stereotypical beliefs but also affects recipients’ cognition and behavior, the use of expressions consistent with gender stereotypes contributes to transmit and reinforce such belief system and can produce actual discrimination against women". [@menegatti_2017, S. 2]
+
+Die Verwendung von *gender-fail linguistic* (GFL) kann diese negativen Auswirkungen effektiv verhindern und Geschlechtergerechtigkeit fördern [@menegatti_2017, S. 1]. GFL wurde unter anderem im Rahmen eines umfassenden Versuchs zur Verringerung von Stereotypen und Diskriminierung in der Sprache eingeführt [@sczesny_2016, S. 2]. Feminiserung und Neutralisierung sowie die Kombination beider sind die bevorzugten Strategien einer geschlechtergerechten oder geschlechterneutralen Sprache. Auch die Verwendung von Wortpaaren (Lehrerinnen und Lehrer) zählt ebenso zu den Ausdrucksformen der GFL. Neben Wortpaaren sind auch geschlechtsneutrale Formen (Studierende statt Student) mögliche GFL-Ausdrucksformen [@sczesny_2016, S. 2].
+
+Aus den bereits genannten Problematiken ist es notwendig, die Sprachgewohnheit dahingehend zu ändern, GFL umfassend zu etablieren, um Vorurteile bezüglich der Geschlechter zu reduzieren und eine Reproduktion von Stereotypen zu vermeiden. Die Verwendung von geschlechtergerechter Ausdrücke anstelle von maskulinen Generika ist für den Abbau von Geschlechtervoreingenommenheit und die Förderung der Gleichstellung der Geschlechter laut Menegatti und Rubini unabdingbar [-@menegatti_2017, S. 3].
+
+Die Umsetzung und Etablierung von GFL hat in verschiedenen Ländern bisher unterschiedliche Stadien erreicht und wird beispielsweise von der UNESCO und der Europäischen Kommission empfohlen und in deren Dokumenten angewandt [@sczesny_2016, S. 4].
+
+> "[…] language does not merely reflect the way we think: it also shapes our thinking. If words and expressions that imply that women are inferior to men are constantly used, that assumption of inferiority tends to become part of our mindset; hence the need to adjust our language when our ideas evolve." (UNESCO 2011)
+
+Auf Basis der Argumentation von Wängnerud [-@wangnerud_2000, -@wangnerud_2009] wird erwartet, dass sich vor allem Frauen über die Ausgrenzungserfahrung durch Sprache bewusst sind oder entsprechende Erfahrungen bereits gemacht wurden und entsprechend eher eine geschlechterneutrale und geschlechtergerechte Sprache anwenden als Männer. 
+
+**Hypothese 1:** *Frauen verwenden in ihren Reden häufiger gender-fair language als Männer*
+
+# Geschlechterbezogene Verhaltensunterschiede im Bundestag
+
+Die von Erikson und Josefsson durchgeführte Befragung zum Arbeitsumwangefeld von schwedischen Abgeordneten konnte zeigen, dass weibliche Abgeordnete mehr Stress und Druck in ihrem Umfeld ausgesetzt sind und häufiger Opfer negativer Behandlungungen im Parlament sind als männliche Abgeordnete [@erikson_2018]. Sie werden eher in den Debatten unterbrochen, sind eher Opfer sexistischer Witze und ihre Äußerlichkeiten wird häufiger negativ kommentiert als die Erscheinung männlicher Kollegen (ebd., S. 13).
+
+Diese Mehrbelastung kann laut Erikson und Josefsson zu höheren "Kosten" für Frauen bezüglich des parlamentarischen Engagements führen -- sie müssen mit mehr negativen Erfahrungen rechnen als Männer, entsprechend könnte dies auch ein Grund für eine geringere Beteiligung von Frauen in Parlamentsdebatten oder generell für die Partizipation von Frauen in poitischen Insitution darstellen [vgl. @erikson_2018; vgl. @back_2014].
+
+Es wird erwartet, dass ein solches negatives Verhalten gegenüber Frauen auch im Deutschen Bundestag zu beobachten ist. Entsprechend soll untersucht werden, wie häufig Abgeordnete in ihren Reden *negativ* unterbrochen werden. Entsprechend sollen Reden bezüglich der Anzahl an Zurufen, Gegenrufen, Widerspruch und Lachen über den\*die Redner\*in untersucht werden.[^1]
+
+**Hypothese 2a:** *Frauen werden häufiger als Männer während der Rede negativ Unterbrochen*
+
+\  
+
+[^1]: Diese Unterbrechungen werden in den Bundestagsprotokollen vermerkt. *Lachen* kann hier als *auslachen* oder *lachen über den Inhalt* verstanden werden -- das Lachen beispielsweise über einen Witz wird in Bundestagsprotokollen als *Heiterkeit* protokolliert. *Positive* Unterbrechungen wären beispielsweise Beifall.
+
+Eine weitere *negative* Unterbrechung der Render\*innen können Rückfragen darstelen -- allerdings ist hier eine eindeutige negative Intention nicht anzunehmen. Entsprechend sollen Rückfragen gesondert untersucht werden. Auf Basis der Arbeiten von @brescoll_2011 und @eagly_2002  wird allerdings erwartet, dass Frauen bei Themen, welche stereotypisch eher nicht mit Frauen verbunden werden, häufiger Inkompetenz unterstellt wird als männlichen Abgeordneten. Dies kann sich in der Anzahl an Rückfragen äußern, welche während einer Rede gestellt werden. 
+
+
+**Hypothese 2b:** *Frauen erfahren häufiger Rückfragen in ihren Reden, wenn wenige andere Frauen zu diesem Thema gesprochen haben*[^2]
+
+\  
+
+[^2]:Diese Hypothese kann nur in Verbindung mit der nachfolgenden Hypothese zur Thematisierung in den Reden überprüft werden.
+
+# Geschlechterspezifische Themen der Reden
+
+@back_2014 konnten in ihrer Untersuchung des schwedischen Parlaments nachweisen, dass bezüglich der Themen der Reden Geschlechterunterschiede festzustellen sind. Männer sprechen laut Bäck et. al. im schwedischen *Riksdag* häufiger zu sogenanntenn *hard policies* (etwa Wirtschaft, Energie, Infrastruktur). Bei sogenannten *soft policies* (Erziehung, Soiale Sicherung, Bildung) ist hingegen kein Unterschied bezüglich des Redeanteils und Geschlecht der Abgeordneten festzustellen [@back_2014, S. 514f.].
+
+Die von Bäck et. al. vorgenommene Klassifiierung soll in unserer Forschung nicht vorgenommen werden, da hier die Gefahr besteht, in der Gesellschaft vorhandene Stereotypen zu reproduzieren, indem eine klassifizierung in vermeintliche geschlechtsspezifische Themen vorgenommen wird.
+
+Dennoch wird, auf Basis der Argumentation von Wängnerud [-@wangnerud_2000, -@wangnerud_2009] und der Arbeit von @back_2014 untersucht werden, ob eine geschlechtsspezifische, unterschiedliche Thematisierung in den Reden feststellbar ist. 
+
+
+**Hypothese 3:** *Es ist unterschiedliche, geschlechtsspezifische Thematisierungen in den Reden der Abgeordneten feststellbar.*
+
+
+# Weitere ergänzende Untersuchungen
+
+Da die derzeitige Legislaturperiode noch nicht Gegenstand der Untersuchungen der Partizipation von Frauen waren, sollen auch weitere Metriken erhoben werden, etwa die Anzahl an Reden von Frauen nach Fraktion im Vergleich zu anteiligen Sitzungen von Frauen nach Fraktion. Da @back_2018 in einem Ländervergleich allerdings keine Verbindungen zwischen der Anzahl an Frauen in den Fraktionen und Anzahl der Reden in Parlamenten von Frauen aufzeigen konnte, soll dies nur als Ergänzung zu den Untersuchungen aufgenommen werden.
+
+\pagebreak
+
+# Datengrundlage und Operationalisierung
+
+Seit der 19. Wahlperiode liegen die Protokolle des Deutschen Bundestags im TEI-Format (Text Encoding Initative)[^3] als XML-Dateien (Extensible Markup Language) vor. Abgerufen werden können sie über das *Open Data Portal* des Deutschen Bundestags.[^4] In Verbindung mit den biografischen Daten aller Bundestagsabgeordneten[^5] können Aussagen über Anzahl und Inhalte der Reden nach Geschlecht, Alter, Fraktion und beispielsweise Anzahl der Bundestagsperioden getroffen werden.
+
+[^3]: http://www.tei-c.org/guidelines/
+[^4]: https://www.bundestag.de/service/opendata
+[^5]: https://www.bundestag.de/blob/472878/e207ab4b38c93187c6580fc186a95f38/mdb-stammdaten-data.zip
+
+
+Insgesamt liegen 5.965 Reden[^6] von Bundestagsabgeordneten von Abgeordneten des Deutschen Bundestages mit Anmerkungen durch die Stenograf\*innen vor. Diese Anmerkungen ermöglichen die Operationalisierung der Hypothesen -- so wird bei einer Rede auch ein Zwischenruf protokolliert und auch der\*die Zwischenrufer\*in im Protokoll vermerkt (solange der Zwischenruf zugeordnet werden kann). Auch Angaben über die Tagesordnungspunkte (TOPs), zu denen gesprochen wird, sind im Protokoll vermerkt.
+
+[^6]: Es liegen auch Reden der Regierungsmitglieder und Reden von Gästen vor, diese werden allerdings nicht ausgewertet, da hierbei keine Angaben zum Geschlecht der Redner\*innen durch den Bundestag bereitsgestellt werden und auch nur die Bundestagsdebatte und nicht die Berichterstattung durch die Regierung ausgewertet werden soll.
+
+Die Daten werden mittels der Programmiersprache R [@rcoreteam_2018] und den Packeten *rvest* [@wickham_2016], *xml2* [@wickham_2018] und der Packetsammlung *tidyverse* [@wickham_2017] aufbereitet und ausgewertet.
+
+```{r, echo=FALSE}
+overview %>%
+  filter(redner_fraktion %in% fraktionen) %>%
+  left_join(bt_data, by = c("redner_id" = "id")) %>%
+  group_by(geschlecht) %>%
+  count() %>%
+  rename(Geschlecht = geschlecht, Reden = n)  %>%
+  knitr::kable(format = "latex", caption = "Anteil der Reden im 19. Bundestag nach Geschlecht der Abgeordneten", booktabs = TRUE) %>%
+  kableExtra::kable_styling(latex_options = c("hold_position"))
+```
+
+# Forschungsdesign und Methodik
+
+Wie die Fragestellung "Inwieweit unterscheiden sich die Redebeiträge und Verhalten von weiblichen und männlichen
+Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität" bereits suggeriert, wird davon ausgegangen, dass die Variable *Geschlecht* einer von vielen Faktoren ist, welche das Verhalten, die Sprache und den Inhalt der Bundestagsreden beeinflussen. Entsprechend handelt es sich bei dieser Untersuchung um eine x-zentriertes Forschungsdesign, in welchem auch weitere Faktoren, welche auf die jeweilige abhängige Variable einwirken, untersucht werden sollen [vgl. @ganghof_2005, S. 3f.].
+
+\  
+
+Die Überprüfung der **Hypothesen 1, 2a und 2b** sollen mittels Regressionsanalysen untersucht werden. Neben dem Geschlecht des\*der Redner\*in sollen folgende Faktoren als Kontrollvariablen erhoben und untersucht werden:
+
+* __der\*die Rednerin ist Mitglied der Oppositions- bzw. Regierungsfraktion__
+
+Es wird erwartet, dass Mitglieder der Regierungsfraktion deutlich häufiger mit Rückfragen konfrontiert werden, da sie eine stärkere Einbindung in den Legislativprozess erfahren und die Kontrolle der Regierung zu den Kernaufgaben der Opposition zählen.
+
+* __der\*die Redner\*in ist Mitglied des Fraktionsvorsitzes__
+
+Es wird erwartet, dass Mitglieder des Vorsitzes der Fraktionen beispielsweise häufiger unterbrochen werden. Zum einen, da Reden, welche auf Antrag der Opposition länger gehalten werden, häufig von den Fraktionsvorsitzenden gehalten werden, aber auch, da diese Reden häufig bei volleren Plenarsälen gehalten werden.
+
+* __der\*die Redern\*in ist Mitglied der Fraktion "Alternative für Deutschland"__
+
+Hier wird erwartet, dass Abgeordnete der AfD-Fraktion deutlich seltener GFL nutzen, wohingehend die Anzahl der Unterbrechungen deutlich höher erwartet wird. Populistische Parteien setzen sich unter anderem durch provokante Thesen und ein provokantes Auftreten von anderen Parteien ab [vgl. @decker_populismus_2006; @priester_2012]. Dies lässt vermuten, dass mehr Zwischenrufe von anderen Abgeordneten in den Reden der AfD-Mitglieder geäußert werden.
+
+* __die Anzahl der bisherigen Bundestagsmandate des\*der Redner\*in__
+
+Bei dieser Variable wird kein Einfluss auf die abhängigen Variablen (Nutzung von GFL, Anzahl der Unterbrechungen, Anzahl der Rückfragen) erwartet, sie dient der Überprüfung der Validität der Methoden.
+
+* __das Alter des\*der Redner\*in__
+
+Hier wird keine Einfluss auf die abhängigen Variablen erwartet. Diese Variable dient der Überprüfung der Validität der Methode.
+
+\  
+
+Die **Hypothesen 1, 2a und 2b** werden über eine Regressionsanalyse überprüft. Die Variable Geschlecht wird hierbei als Dummy-Variable kodiert. Der Einfluss der Kontrollvariablen etwa auf die abhängige Variable *Anzahl der Unterbrechungen* wird ebenfalls überprüft. Da es sich bei den abhängigen Variablen um Zähldaten handelt, wird vermutlich eine negative Binomialregression angewandt (welche auch bei @back_2014 angewandt wurde) oder eine OLS-Regression untersucht (angewandt bei @coffe_2013).
+
+**Hypothese 3** zur Untersuchung der Themen in den Reden der Abgeordneten soll über ein automatisiertes *Topic Modeling* untersucht werden. Anders als bei @back_2014, welche die Themen der Reden der Abgeordneten anhand der vorangegangen Reden von Minister\*innen untersucht hat, soll durch ein automatisiertes *Topic Modeling* einerseits einen geschlechterstereotypen Bias verhindern aber auch eine genauere Zuordnung an Themen ermöglichen. 
+Automatisierte *Topic Modelings* wurden bereits auf Reden des Europaparlaments angewandt, um Agenda-Trends zu identifizieren [vgl. @greene_2016] und werden auch in der vergangenen Studie von Bäck und Debus zur Identifikation von geschlechtsbezogener *Topics* vorgeschlagen [@back_2018, S. 18].
+
+Als automatisiertes *Topic Modeling Framework* wird das von der University of Cambridge ausgezeichnete[^7] *Structural Topic Modeling* von @roberts_2018 angewendet. Dies ermöglicht es, auch innerhalb von Reden mehrere Inhalte zu identifizieren und erlaubt so ein genaueres Vorgehen bei der Untersuchung möglicher geschlechterbezogener Themen. In unserem Datensatz sind `r overview %>% nrow()` Reden enthalten.
+
+
+[^7]:https://www.cambridge.org/core/membership/spm/about-us/awards/statistical-software-award/statistical-software-award-18
+
+
+\pagebreak
+\section{Literatur- und Quellverzeichnis}
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
+\vspace*{-0.2in}
+\setstretch{1.0}
+\noindent
+
