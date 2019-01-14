@@ -8,6 +8,7 @@
 \usepackage[final]{listings}  
 \usepackage{ae,aecompl}
 \usepackage{blindtext}
+\usepackage{csquotes}
 
 % URL-Style normal
 \usepackage{url}
@@ -73,15 +74,6 @@
 \setlength{\textheight}{24cm}       % Texthöhe
 \setlength{\topmargin}{-12mm}       % oberer Rand
   
-% PDF Dokumentinformationen
-\hypersetup
-  {
-  	pdftitle     = \myTitle,
-  	pdfsubject   = {Universität Hamburg, \thesisType},
-  	pdfauthor    = \myName,
-  	pdfkeywords  = \myKeywords,
-  	plainpages   = false, pdfpagelabels
-  }
   
 % Listingsformatierung (Quelltexte)
 \definecolor{lightgrey}{rgb}{0.90,0.90,0.90}
@@ -101,6 +93,10 @@
 % Abbildungsformat fett und Tabellen passend in den Text
 \usepackage[labelfont=bf]{caption}
 \usepackage{float}
+
+% Punkte hinter den Kapiteln
+\renewcommand{\thechapter}{\arabic{chapter}.}
+\renewcommand{\thesection}{\thechapter\arabic{section}.}
   
 % Tabellenbezeichnungen als Überschriften
 \KOMAoptions{captions=tableheading}  
