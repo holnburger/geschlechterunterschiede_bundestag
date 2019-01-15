@@ -16,7 +16,7 @@
 % ---------------------------------------------------------------------
 
 % Wir nutzen Biblatex und biber für das Literaturverzeichnis
-\documentclass[12pt, twoside = false, bibliography = totoc, numbers = endperiod, headings = normal]{scrbook}
+\documentclass[12pt, twoside=false, bibliography=totoc, numbers=endperiod, headings=normal, toc=chapterentrydotfill]{scrbook}
 \usepackage[backend=biber, style=authoryear-ibid, eprint=false, url=false, doi=false,isbn=false]{biblatex}
 \addbibresource{Bib.bib}
 
@@ -55,15 +55,15 @@
 
 \chapter{Einleitung}\label{Einleitung} %Das Label erscheint in den Überschriften der Seiten.
 
-Hier ist ein Beispiel mit einer Quelle und Seitenzahl \parencite[S. 103]{wangnerud_2009}. Hier ist ein Beispiel von \textcite{erikson_2018} mit einem Zitat im Text. Wenn ein Autor in einem Jahr öfter zitiert wird, wird daraus ein ebd. \parencite{erikson_2018}.
+Hier ist ein Beispiel mit einer Quelle und Seitenzahl \parencite[S. 103]{wangnerud_2009}. Hier ist ein Beispiel von \textcite{erikson_2018} mit einem Verweis im Text. Wenn ein Autor in einem Absatz öfter zitiert wird, wird daraus ein ebd. \parencite{erikson_2018}.
 
 Hier eine Tabelle, welche im Ordner \enquote{table} abgespeichert wurde und mit folgendem Befehl eingelesen werden kann. Verweise siehe Tabelle \ref{table:unterbrechung_stats}. Außerdem möchte ich hier noch auf die Abbildung \ref{fig:lda_example} auf Seite \pageref{fig:lda_example} verweisen. 
 
 \begin{table}[htb]
-\centering
-\caption{Statistiken zu Unterbrechungen in den Bundestagsreden}
-\input{document/tables/stats_unterbrechungen.tex}
-\label{table:unterbrechung_stats}
+    \centering
+    \caption{Statistiken zu Unterbrechungen in den Bundestagsreden}
+    \input{document/tables/stats_unterbrechungen.tex}
+    \label{table:unterbrechung_stats}
 \end{table}
 
 \Blindtext
@@ -71,9 +71,20 @@ Hier eine Tabelle, welche im Ordner \enquote{table} abgespeichert wurde und mit 
 \section{Unterkapitel}
 
 \blindtext
+\\
 
-\includegraphics[]{document/images}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{document/images/lda_topic_model.png}
+    % Der Teil in eckigen Klammern ist der Kurztitel für das Table of Contents
+    \caption[Schematische Darstellung eines LDA Topic Modelings]{Schematische Darstellung eines LDA Topic Modelings. Quelle: \citetitle{blei_2012} \parencite{blei_2012}}
+    \label{fig:lda_example}
+\end{figure}
 
+% Wenn wir nicht wollen, dass ein Kapitel auf einer neuen Seite startet, nutzen wir das hier:
+{\let\clearpage\relax \chapter{Theoriefindung}}
+
+\Blindtext
 
 \setlength{\parskip}{8pt}
 \setstretch{1.0}
