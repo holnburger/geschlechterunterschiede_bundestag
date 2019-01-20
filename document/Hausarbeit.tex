@@ -1,59 +1,109 @@
-% ---------------------------------------------------------------------
-% Das Dokument kompiliert mit pdflatex und ist auf Basis 
-% von Koma-Script entstanden. 
-%
-% Autor des Templates (für Anmerkungen): 
-% Michael von Riegen, riegen@informatik.uni-hamburg.de
-%
-% Einzelne Code-Teile für das Titelblatt sind aus dem Template 
-% von Benjamin Kirchheim entnommen.
-% Neue Titelseite von Josef Holnburger
-%
-% 25.05.09, Frank Langanke: Vorlage auf aktuelle KOMA-Version aktualisiert
-% 26.05.09, Michael von Riegen: Anmerkung --> aktuelles Koma-Script ist nötig!
-% 17.10.2016 neues Uni logo
-% 21.08.2018 biblatex und scrlayer-scrpage statt scrpage2, anpassen auf SoWi-Layout
-% ---------------------------------------------------------------------
-
-% Wir nutzen Biblatex und biber für das Literaturverzeichnis
-\documentclass[12pt, twoside=false, bibliography=totoc, numbers=endperiod, headings=normal, toc=chapterentrydotfill]{scrbook}
-\usepackage[backend=biber, style=authoryear-ibid, eprint=false, url=false, doi=false,isbn=false]{biblatex}
+\documentclass[12pt, 
+    twoside=false, 
+    bibliography=totoc, 
+    numbers=endperiod, 
+    headings=normal, 
+    toc=chapterentrydotfill
+    ]{scrbook}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage[
+  	pdfstartview=FitH,   
+  	pdffitwindow=true,
+  	colorlinks,
+  	linkcolor=black,
+  	anchorcolor=black,
+  	citecolor=black,
+  	urlcolor=black
+  	]{hyperref}
+\usepackage[labelfont=bf]{caption}
+\usepackage{float}
+\usepackage[
+    backend=biber, 
+    style=authoryear-ibid, 
+    eprint=false,
+    url=false,
+    doi=false,
+    isbn=false
+    ]{biblatex}
 \addbibresource{Bib.bib}
 
-% Daten der Hausarbeit
-\newcommand\myTitle{Geschlechterunterschiede in den Reden des Deutschen Bundestages}
-\newcommand\mySubTitle{Auswertung des 19. Deutschen Bundestages}
-\newcommand\thesisType{Projektarbeit}
-\newcommand\dateOfSubmission{XX.XX.XXXX}
-
-% Import von Paketen und Optionen die das gesamte Dokument betreffen
-% sind in myPreamble.sty ausgelagert.
-\usepackage{myPreamble}
+\setkomafont{sectioning}{\normalcolor\bfseries}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-\topskip}}
+\KOMAoptions{headsepline = true}
 
 \begin{document}
 
+\begin{titlepage}
+    \begin{minipage}[t]{0.6\textwidth}
+    \flushleft 
+    Universität Hamburg \\
+    Fachbereich: Sozialwissenschaften \\
+    Fachgebiet: Politikwissenschaft \\
+    Seminar: Forschungsseminar Vergleichende und Regionalstudien \\ 
+    Dozenten: Prof. Kai-Uwe Schnapp \\
+    PD Dr. Falk Daviter \\
+    Wintersemester 2018/19 \\
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t][1.7cm][b]{0.35\textwidth}
+    \includegraphics[width=\textwidth]{images/UHH-Logo_2010_Farbe_CMYK.pdf}
+    \end{minipage}
+    
+    \vspace*{\fill}
+    \begin{center}
+	\vspace{1cm}\noindent {\textbf{Projektarbeit}} \vspace{0.2cm} \\
+	\textbf{\Large Geschlechterunterschiede} \\
+	\textbf{WIP} \\
+	\vspace{0.2cm}
+	30.03.2019
+	\end{center}
+    \vspace*{\fill}
+	
+	\begin{minipage}[t]{0.48\textwidth}
+    \flushleft 
+    Gina-Gabriela Görner \\
+    Matrikelnummer: XXX \\
+    XXX \vspace{0.1cm} \\ 
+	XXX \vspace{0.1cm}  \\
+	E-Mail: XXX \\ 
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+	\flushleft
+	Josef Holnburger \\
+	Matrikelnummer: XXX \\
+	XXX \vspace{0.1cm} \\
+	XXX \vspace{0.1cm} \\
+	E-Mail: josef@holnburger.com \\
+    \end{minipage}
 
-% TITELSEITE
-\include{_titlepage}
+\end{titlepage}
 
-% VERZEICHNISSE (Inhaltsverzeichnis, Abkürzungen)
-% Vorspann einleiten --> Seitennummerierung römisch
 \frontmatter
 
-% Inhaltsverzeichnis
 \tableofcontents
 
-% Abbildungs- und Tabllenverzeichnis auf einer Seite
 \listoffigures
 \addcontentsline{toc}{chapter}{\listfigurename}
 \vspace*{24pt}
 {\let\clearpage\relax \listoftables}	
 \addcontentsline{toc}{chapter}{\listtablename}
 
-% Hauptteil einleiten --> Seitennummerierung wieder arabisch
 \mainmatter
 
-\chapter{Einleitung}\label{Einleitung} %Das Label erscheint in den Überschriften der Seiten.
+\setstretch{1.5}
+
+\chapter{Introduction}
+
+\Blindtext
+
+\chapter{Einleitung}\label{Einleitung} 
 
 Hier ist ein Beispiel mit einer Quelle und Seitenzahl \parencite[S. 103]{wangnerud_2009}. Hier ist ein Beispiel von \textcite{erikson_2018} mit einem Verweis im Text. Wenn ein Autor in einem Absatz öfter zitiert wird, wird daraus ein ebd. \parencite{erikson_2018}.
 
@@ -71,7 +121,6 @@ Hier eine Tabelle, welche im Ordner \enquote{table} abgespeichert wurde und mit 
 \section{Unterkapitel}
 
 \blindtext
-\\
 
 \begin{figure}
     \centering
