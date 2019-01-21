@@ -163,7 +163,7 @@ Insgesamt liegen 5.965 Reden[^6] von Bundestagsabgeordneten von Abgeordneten des
 
 [^6]: Es liegen auch Reden der Regierungsmitglieder und Reden von Gästen vor, diese werden allerdings nicht ausgewertet, da hierbei keine Angaben zum Geschlecht der Redner\*innen durch den Bundestag bereitsgestellt werden und auch nur die Bundestagsdebatte und nicht die Berichterstattung durch die Regierung ausgewertet werden soll.
 
-Die Daten werden mittels der Programmiersprache R [@rcoreteam_2018] und den Packeten *rvest* [@wickham_2016], *xml2* [@wickham_2018] und der Packetsammlung *tidyverse* [@wickham_2017] aufbereitet und ausgewertet.
+Die Daten werden mittels der Programmiersprache R [@rcoreteam_2018] und den Packeten *rvest* [@wickham_2016], *xml2* [@wickham_2018] und der Packetsammlung *tidyverse* [@wickham_2017] aufbereitet und ausgewertetetet.
 
 ```{r, echo=FALSE}
 overview %>%
