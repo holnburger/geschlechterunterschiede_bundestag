@@ -131,7 +131,7 @@ Die zentrale Fragen lauten hierbei:
 
 Bereits Piktin \parencite*{pitkin_1972} argumentierte in ihrem Hauptwerk "The Concept of Representation", dass der Interessenbegriff in der Repräsentationsdebatte omnipräsent ("ubiquitious") ist \parencite[69]{wangnerud_2000}. Für Pitkin sind es die Parliamentarierinnen, welche sich den Wünschen und Interessen, dem Wohlergehen sowie Themen der Frauen widmen und diese vertreten \parencites[vgl.][413]{blaxill_2016}{pitkin_1972}. 
 
-Nach Phillips Theorie der \emph{politics of presence} \parencite*{phillips_1998} kann angenommen werden, dass weibliche Politikerinnen die Interessen und Wünsche weiblicher Bürger\*innen repräsentieren können. Hierbei wird die deskripitve und substantielle Representation verknüpft \parencite[52]{wangnerud_2009} - ein höherer Frauenanteil in Parlamenten führt auch zu einer stärkeren Thematisierung der Belange von Frauen. wat
+Nach Phillips Theorie der \emph{politics of presence} \parencite*{phillips_1998} kann angenommen werden, dass weibliche Politikerinnen die Interessen und Wünsche weiblicher Bürger\*innen repräsentieren können. Hierbei wird die deskripitve und substantielle Representation verknüpft \parencite[52]{wangnerud_2009} - ein höherer Frauenanteil in Parlamenten führt auch zu einer stärkeren Thematisierung der Belange von Frauen.
 
 Die Forschung von \textcite{celis_2008} greift diese Annahmen nachmals empirisch auf und untersucht, in welchem Ausmaß die Beürfnisse und Interessen von Frauen gesteigert werden, wenn die Anzahl an Frauen in politischen Entscheidungen zunimmt \parencite[vgl. auch][4]{galligan_2016}. Ein einfacher Anstieg der Anzahl von Frauen reicht jedoch nicht aus, um einen signifikanten Einfluss zu erreichen. Vielmehr müssen weibliche Abgeordnete, in Anlehnung an Caul \parencite*{caul_2001} auch in einflussreichen, wichtigen Positionen vertreten sein, um tatsächliche substantielle Repräsentanz zu erreichen \parencites{caul_2001}[vgl. auch][14]{coffe_2013}.
 
@@ -200,13 +200,49 @@ Da die derzeitige Legislaturperiode noch nicht Gegenstand der Untersuchungen der
 
 \chapter{Datengrundlage und Operationalisierung}
 
-Seit der 19. Wahlperiode liegen die Protokolle des Deutschen Bundestags im TEI-Format (Text Encoding Initative)\footnote{http://www.tei-c.org/guidelines/} als XML-Dateien (Extensible Markup Language) vor. Abgerufen werden können sie über das /emph{Open Data Portal} des Deutschen Bundestags.\footnote{https://www.bundestag.de/service/opendata} In Verbindung mit den biografischen Daten aller Bundestagsabgeordneten{https://www.bundestag.de/blob/472878/e207ab4b38c93187c6580fc186a95f38/mdb-stammdaten-data.zip} können Aussagen über Anzahl und Inhalte der Reden nach Geschlecht, Alter, Fraktion und beispielsweise Anzahl der Bundestagsperioden getroffen werden.
+Seit der 19. Wahlperiode liegen die Protokolle des Deutschen Bundestags im TEI-Format (Text Encoding Initative)\footnote{http://www.tei-c.org/guidelines/} als XML-Dateien (Extensible Markup Language) vor. Abgerufen werden können sie über das /emph{Open Data Portal} des Deutschen Bundestags.\footnote{https://www.bundestag.de/service/opendata} In Verbindung mit den biografischen Daten aller Bundestagsabgeordneten\footnote{https://www.bundestag.de/blob/472878/e207ab4b38c93187c6580fc186a95f38/mdb-stammdaten-data.zip} können Aussagen über Anzahl und Inhalte der Reden nach Geschlecht, Alter, Fraktion und beispielsweise Anzahl der Bundestagsperioden getroffen werden.
 
 
 Insgesamt liegen 5.965 Reden\footnote{Es liegen auch Reden der Regierungsmitglieder und Reden von Gästen vor, diese werden allerdings nicht ausgewertet, da hierbei keine Angaben zum Geschlecht der Redner\*innen durch den Bundestag bereitsgestellt werden und auch nur die Bundestagsdebatte und nicht die Berichterstattung durch die Regierung ausgewertet werden soll.} von Bundestagsabgeordneten von Abgeordneten des Deutschen Bundestages mit Anmerkungen durch die Stenograf\*innen vor. Diese Anmerkungen ermöglichen die Operationalisierung der Hypothesen -- so wird bei einer Rede auch ein Zwischenruf protokolliert und auch der\*die Zwischenrufer\*in im Protokoll vermerkt (solange der Zwischenruf zugeordnet werden kann). Auch Angaben über die Tagesordnungspunkte (TOPs), zu denen gesprochen wird, sind im Protokoll vermerkt.
 
 Die Daten werden mittels der Programmiersprache R \parencite{rcoreteam_2018} und den Packeten \emph{rvest} \parencite{wickham_2016}, \emph{xml2} \parencite{wickham_2018} und der Packetsammlung \emph{tidyverse} \parencite{wickham_2017} aufbereitet und ausgewertet.
 
+\chapter{Forschungsdesign und Methodik}
+
+Wie die Fragestellung \enquote{Inwieweit unterscheiden sich die Redebeiträge und Verhalten von weiblichen und männlichen
+Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität} bereits suggeriert, wird davon ausgegangen, dass die Variable \emph{Geschlecht} einer von vielen Faktoren ist, welche das Verhalten, die Sprache und den Inhalt der Bundestagsreden beeinflussen. Entsprechend handelt es sich bei dieser Untersuchung um eine x-zentriertes Forschungsdesign, in welchem auch weitere Faktoren, welche auf die jeweilige abhängige Variable einwirken, untersucht werden sollen  \parencites[vgl.][3f.]{ganghof_2005}.
+
+Die Überprüfung der \textbf{Hypothesen 1, 2a und 2b} sollen mittels Regressionsanalysen untersucht werden. Neben dem Geschlecht des\*der Redner\*in sollen folgende Faktoren als Kontrollvariablen erhoben und untersucht werden: (KRITIK HIERBEI; MUSS NACH OBEN; NICHT ERST HIER! GEHÖRT ZUR KONZEPTION)
+
+\textbf{der\*die Rednerin ist Mitglied der Oppositions- bzw. Regierungsfraktion}
+
+Es wird erwartet, dass Mitglieder der Regierungsfraktion deutlich häufiger mit Rückfragen konfrontiert werden, da sie eine stärkere Einbindung in den Legislativprozess erfahren und die Kontrolle der Regierung zu den Kernaufgaben der Opposition zählen.
+
+\textbf{der\*die Redner\*in ist Mitglied des Fraktionsvorsitzes}
+
+Es wird erwartet, dass Mitglieder des Vorsitzes der Fraktionen beispielsweise häufiger unterbrochen werden. Zum einen, da Reden, welche auf Antrag der Opposition länger gehalten werden, häufig von den Fraktionsvorsitzenden gehalten werden, aber auch, da diese Reden häufig bei volleren Plenarsälen gehalten werden.
+
+\textbf{der\*die Redern\*in ist Mitglied der Fraktion "Alternative für Deutschland"}
+
+Hier wird erwartet, dass Abgeordnete der AfD-Fraktion deutlich seltener GFL nutzen, wohingehend die Anzahl der Unterbrechungen deutlich höher erwartet wird. Populistische Parteien setzen sich unter anderem durch provokante Thesen und ein provokantes Auftreten von anderen Parteien ab \parencites[vgl.][]{decker_populismus_2006}{priester_2012}. Dies lässt vermuten, dass mehr Zwischenrufe von anderen Abgeordneten in den Reden der AfD-Mitglieder geäußert werden.
+
+\textbf{die Anzahl der bisherigen Bundestagsmandate des\*der Redner\*in}
+
+Bei dieser Variable wird kein Einfluss auf die abhängigen Variablen (Nutzung von GFL, Anzahl der Unterbrechungen, Anzahl der Rückfragen) erwartet, sie dient der Überprüfung der Validität der Methoden.
+
+\textbf{das Alter des\*der Redner\*in}
+
+Hier wird keine Einfluss auf die abhängigen Variablen erwartet. Diese Variable dient der Überprüfung der Validität der Methode.
+
+Die {Hypothesen 1, 2a und 2b} werden über eine Regressionsanalyse überprüft. Die Variable Geschlecht wird hierbei als Dummy-Variable kodiert. Der Einfluss der Kontrollvariablen etwa auf die abhängige Variable \emph{Anzahl der Unterbrechungen} wird ebenfalls überprüft. Da es sich bei den abhängigen Variablen um Zähldaten handelt, wird vermutlich eine negative Binomialregression angewandt (welche auch bei \textcite{back_2014} angewandt wurde) oder eine OLS-Regression untersucht (angewandt bei \textcite{coffe_2013}).
+
+
+\textbf{Hypothese 3} zur Untersuchung der Themen in den Reden der Abgeordneten soll über ein automatisiertes \emph{Topic Modeling} untersucht werden. Anders als bei \textcite{back_2014}, welche die Themen der Reden der Abgeordneten anhand der vorangegangen Reden von Minister\*innen untersucht hat, soll durch ein automatisiertes \emph{Topic Modeling} einerseits einen geschlechterstereotypen Bias verhindern aber auch eine genauere Zuordnung an Themen ermöglichen. 
+Automatisierte \emph{Topic Modelings} wurden bereits auf Reden des Europaparlaments angewandt, um Agenda-Trends zu identifizieren \parencite[vgl.][]{greene_2016} und werden auch in der vergangenen Studie von Bäck und Debus zur Identifikation von geschlechtsbezogener \emph{Topics} vorgeschlagen \parencite*[18]{back_2018}.
+
+Als automatisiertes \emph{Topic Modeling Framework} wird das von der University of Cambridge ausgezeichnete\footnote{https://www.cambridge.org/core/membership/spm/about-us/awards/statistical-software-award/statistical-software-award-18} \emph{Structural Topic Modeling} von \textcite{roberts_2018} angewendet. Dies ermöglicht es, auch innerhalb von Reden mehrere Inhalte zu identifizieren und erlaubt so ein genaueres Vorgehen bei der Untersuchung möglicher geschlechterbezogener Themen. In unserem Datensatz sind \textbf{XXX} Reden enthalten.
+
+\chapter{Beispiele LaTeX}
 
 Hier eine Tabelle, welche im Ordner \enquote{table} abgespeichert wurde und mit folgendem Befehl eingelesen werden kann. Verweise siehe Tabelle \ref{table:unterbrechung_stats}. Außerdem möchte ich hier noch auf die Abbildung \ref{fig:lda_example} auf Seite \pageref{fig:lda_example} verweisen. 
 
@@ -231,7 +267,7 @@ Hier eine Tabelle, welche im Ordner \enquote{table} abgespeichert wurde und mit 
     \label{fig:lda_example}
 \end{figure}
 
-% Wenn wir nicht wollen, dass ein Kapitel auf einer neuen Seite startet, nutzen wir das hier:
+% Wenn wir nicht wollen, dass ein Kapitel auf einer neuen Seite startet, nutzen wir folgenden Befehl hier:
 {\let\clearpage\relax \chapter{Theoriefindung}}
 
 \Blindtext
