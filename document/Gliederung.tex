@@ -1,0 +1,182 @@
+\documentclass[12pt, 
+    twoside=false, 
+    bibliography=totoc, 
+    numbers=endperiod, 
+    headings=normal, 
+    toc=chapterentrydotfill
+    ]{scrbook}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage[
+  	pdfstartview=FitH,   
+  	pdffitwindow=true,
+  	colorlinks,
+  	linkcolor=black,
+  	anchorcolor=black,
+  	citecolor=black,
+  	urlcolor=black
+  	]{hyperref}
+\usepackage[labelfont=bf]{caption}
+\usepackage{float}
+\usepackage[
+    backend=biber, 
+    style=authoryear-ibid, 
+    eprint=false,
+    url=false,
+    doi=false,
+    isbn=false,
+    dashed=false
+    ]{biblatex}
+\addbibresource{Bib.bib}
+
+% Layoutanpassungen
+\setkomafont{sectioning}{\normalcolor\bfseries}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-\topskip}}
+\KOMAoptions{headsepline = true}
+\setlength{\textheight}{1.05\textheight}
+\AtBeginEnvironment{quote}{\singlespacing\small}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{minipage}[t]{0.6\textwidth}
+    \flushleft 
+    Universität Hamburg \\
+    Fachbereich: Sozialwissenschaften \\
+    Fachgebiet: Politikwissenschaft \\
+    Seminar: Forschungsseminar Vergleichende und Regionalstudien \\ 
+    Dozenten: Prof. Kai-Uwe Schnapp \\
+    PD Dr. Falk Daviter \\
+    Wintersemester 2018/19 \\
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t][1.7cm][b]{0.35\textwidth}
+    \includegraphics[width=\textwidth]{images/UHH-Logo_2010_Farbe_CMYK.pdf}
+    \end{minipage}
+    
+    \vspace*{\fill}
+    \begin{center}
+	\vspace{1cm}\noindent {\textbf{Projektarbeit}} \vspace{0.2cm} \\
+	\textbf{\Large Geschlechterunterschiede} \\
+	\textbf{WIP} \\
+	\vspace{0.2cm}
+	30.03.2019
+	\end{center}
+    \vspace*{\fill}
+	
+	\begin{minipage}[t]{0.48\textwidth}
+    \flushleft 
+    Gina-Gabriela Görner \\
+    Matrikelnummer: XXX \\
+    XXX \vspace{0.1cm} \\ 
+	XXX \vspace{0.1cm}  \\
+	E-Mail: XXX \\ 
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+	\flushleft
+	Josef Holnburger \\
+	Matrikelnummer: XXX \\
+	XXX \vspace{0.1cm} \\
+	XXX \vspace{0.1cm} \\
+	E-Mail: josef@holnburger.com \\
+    \end{minipage}
+
+\end{titlepage}
+
+\frontmatter
+
+\tableofcontents
+
+\mainmatter
+
+\setstretch{1.5}
+
+\chapter{Einleitung}
+
+\begin{itemize}
+    \item Keine \emph{detective story}
+    \item Kurze Begründung der Relevanz des Forschungsgebiets
+    \item Kurze Vorstellung der Forschungsfrage und der Besonderheit des Datensatzes und der Methodik
+    \item Was hebt diese Arbeit von anderen Arbeiten ab
+    \item Kurzes anreissen erster Ergebnisse (finde ich besser als Erzählstil)
+\end{itemize}
+
+\chapter{Relevanz des Forschungsgegenstandes}
+
+\begin{itemize}
+    \item Generelle Begründung der Forschungsrelevanz über \emph{politics of presence} von \textcite{phillips_1998} und \textcite{pitkin_1972} - Repräsentanz von Frauen in Parlamenten. Vorbildfunktion und Veränderung durch Repräsentation.
+    \item Sehr kurz nur das Thema \emph{gendered parliament} von \textcite{shelley_2011}
+    \item Relevanz der Sprache über \textcite*{stahlberg_2001} und \textcite{stahlberg_2007} und auch \textcite{menegatti_2017}
+    \item Problematik: nicht zu viele 
+Nebenbastellen aufmachen. Hier nur wichtig: Repräsentation von Frauen für die Demokratie elementar wichtig. Sprache macht etwas mit Menschen: Reproduktion von Stereotypen und \enquote{Vergessen} bestimmter Personengruppen. Sprache kann sichtbar machen und Stereotypen brechen \parencite{sczesny_2016}.
+    \item Es soll aber nicht einfach nur \enquote{gezählt} werden, sondern auch untersucht werdne, ob es bei den Themen Unterschiede gibt. Bezug wieder auf \emph{politics of presence}u\end{itemize}
+
+\section{Derzeitiger Forschungsstand und relevante Studien}
+\begin{itemize}
+    \item Hier nur empirische Studien, nicht die Theorie neu aufmachen
+    \item Sagen, auf welche Theorie sich die Erhebungen stützen
+    \item \textcite{eagly_2002} stützt sich beispielsweise die auf die \emph{congruity theory} und konnte Nachweisen, dass Frauen eher Diskriminierung erfahren als männliche Kollegen
+    \item Am nächsten zu unserer Arbeit ist \textcite{back_2014} sowie \textcite{back_2018}, allerdings hier die Problematik der \emph{hard} und \emph{soft topics}, welche nicht in der Arbeit wiederholt werden soll. Außerdem Problematik des \emph{topic modelings}
+    \item Ebenfalls relevant ist die zusammenfassende Arbeit von Wängnerud \parencites*{wangnerud_2000}{wangnerud_2009} da \textcite{back_2014} darauf aufbaut.
+\end{itemize}
+
+\chapter{Übergeordnete Forschungsfrage und Konzeption der Arbeit}
+\begin{itemize}
+    \item Basierend auf der dargestellten Relevanz und des derzeitigen Forschungsstandes
+    \item Vorstellung der übergeordneten Forschungsfrage
+    \item Aufklärung, dass diese in drei Teile zerlegt wird
+    \item Sprache, Themen und Unterbrechungen
+\end{itemize}
+
+\section{Hypothese Genderinklusive Sprache}
+
+\section{Hypothese Themen in den Reden}
+
+\section{Hypothese Unterbrechungen und Rückfragen in den Reden}
+
+\section{Kontrollvariablen}
+\begin{itemize}
+    \item Klar, dass es nicht nur Sprache ist, die Auswirkungen zeigt
+    \item x-zentrierte Untersuchung
+    \item Erklärung, welche Kontrollvariablen untersucht werden
+    \item Auch: Warum? Andere Studien, Erwartungen etc.
+\end{itemize}
+
+\chapter{Datengrundlage und Methodik}
+\begin{itemize}
+    \item Besonderheit der Protokolle des 19. Bundestags, Format und Hintergrund
+\end{itemize}
+
+\section{Vorgehen zur Auswertung der Bundestagsprotokolle}
+\begin{itemize}
+    \item Beispiele zur Porotkollierung aus dem Bundestag
+    \item R und die verwendeten Pakete
+\end{itemize}
+
+\section{Methodik Regression und automated topic modelling}
+
+\subsection{Hintergrund stm}
+
+\chapter{Ergebnisse und Auswertungen}
+
+\section{Genderinklusive Sprache}
+
+\section{Themen der Reden}
+
+\section{Unterbrechungen und Rückfragen}
+
+\chapter{Methodenkriktik und Forschungsausblick}
+
+\chapter{Fazit}
+
+\setstretch{1.0}
+\printbibliography[title={Literaturverzeichnis}]
+
+\end{document}
