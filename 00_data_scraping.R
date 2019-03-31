@@ -4,7 +4,7 @@ library(xml2)
 library(rvest)
 library(tidyverse)
 
-# Download the Data of MdBs------------------------------------------------
+# Daten der Bundestagsabgeordneten-----------------------------------------
 
 link_zip <- "https://www.bundestag.de/blob/472878/e207ab4b38c93187c6580fc186a95f38/mdb-stammdaten-data.zip"
 
@@ -12,9 +12,9 @@ download.file(link_zip, file.path("raw/mdb", basename(link_zip)))
 
 unzip("raw/mdb/mdb-stammdaten-data.zip", exdir = "raw/mdb/")
 
-# Download Protocols of the 19th Bundestag -------------------------------
+# Download der Protokolle des 19. BT --------------------------------------
 
-bt_website <- "https://www.bundestag.de/ajax/filterlist/de/service/opendata/-/543410"
+bt_website <- "https://www.bundestag.de/ajax/filterlist/de/services/opendata/543410-543410"
 
 last_protocol <- bt_website %>% 
   read_html() %>%
@@ -39,7 +39,8 @@ prot_links <- map(prot_websites, ~get_prot_links(.)) %>% unlist()
 prot_links %>% map(~download.file(., file.path("raw/prot_19", basename(.))))
 
 
-# Download Protocols of the 13 - 18th Bundestag ---------------------------
+# Protokolle des 13 bis 18. Bundestags ---------------------------------
 
-# Will be cloned from Github to raw/prot_13-18 
+# Kopie in raw/prot_13-18 
 # Source: https://github.com/PolMine/GermaParlTEI by Andreas Blätte.
+# Wird allerdings nicht für die weitere Arbeit genutzt, da nur der 19. BT ausgewertet wird.

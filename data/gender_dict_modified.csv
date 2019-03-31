@@ -34,7 +34,7 @@ Anbieter,Herstellung
 Anbieter,angebotsstellende Person
 Anbieter,angebotsmachende Person
 andere,Gegenüber
-der ein oder andere,die eine oder der andere
+der ein oder andere,"die eine oder der andere"
 Anfänger,Unerfahrene
 Anfänger,Menschen ohne Vorkenntnisse
 Anfänger,Menschen ohne Vorerfahrung
@@ -57,12 +57,12 @@ Anleger,Anlegende
 Anleiter,anleitende Person
 Ansprechpartner,Ansprechperson
 Ansprechpartner,Kontakt
-Ansprechpartner,Auskunft gibt 
+Ansprechpartner,Auskunft gibt
 Antragsteller,beantragende Person
 Antragsteller,beantragende Einrichtung
 Antragsteller,"die Person, die einen Antrag stellt"
 Antragsteller,die antragstellende Person
-Antragsteller,Antrag gestellt von 
+Antragsteller,Antrag gestellt von
 Anwalt,Rechtsbeistand
 Anwaltskosten,Kosten für die Rechtsvertretung
 Anwender,Nutzende
@@ -114,7 +114,6 @@ Arztköfferchen,Medizinköfferchen
 Arztkosten,Behandlungskosten
 Arzt-Patienten-Verhältnis,ärztliches Vertrauendverhältnis
 Arzt-Patienten-Verhältnis,medizinisches Behandlungsverhältnis
-Arztpraxis,Praxis für (\\w+)medizin
 Arztpraxis,ärztliche Praxis
 Arzttermin,Behandlungstermin
 Arzttermin,Vorsorgetermin
@@ -220,7 +219,7 @@ Benutzerordnung,Nutzungsordnung
 Beobachter,Beobachtende
 Berater,beratende Person
 Berater,die Beratung erfolgt durch
-Berater,Sie werden beraten von 
+Berater,Sie werden beraten von
 Beratertätigkeit,beratende Tätigkeit
 Beratertätigkeit,Beratung
 Berichterstatter,Bericht erstattende Person
@@ -241,7 +240,6 @@ Betreiber,betreibende Firma
 Betreuer,Betreuungsperson
 Betriebsrat,Mitglied des Betriebsrates
 Betriebsräte,Mitglieder des Betriebsrates
-Betriebsräte,der Betriebsrat
 Betriebsräte,Mitarbeitendenvertretung
 Betriebsräte,der Personalrat
 Betroffener,betroffene Person
@@ -313,7 +311,7 @@ Dienstleister,dienstleistende Person
 Dienstleister,dienstleistendes Unternehmen
 Diplomingenieur,diplomierte technische Fachkraft
 Direktor,Leitung
-Dirigent,unter dem Dirigat von 
+Dirigent,unter dem Dirigat von
 Dirigent,unter Leitung vons
 Doktoranden,Promovierende
 Doktorandenkolleg,Promotionskolleg
@@ -335,7 +333,7 @@ Ehrenamtler,Ehrenamtliche
 Ehrenamtler,Freiwillige
 Ehrenamtler,Engagierte
 Ehrenmann,Ehrenperson
-Eigentümer,Eigentum von 
+Eigentümer,Eigentum von
 Immobilieneigentümer,Eigentumspartei
 Hauseigentümer,Eigentumspartei
 Immobilieneigentümer,Vermietende
@@ -355,10 +353,10 @@ Einwohner,Bevölkerung
 Einwohnerdichte,Bevölkerungsdichte
 Empfänger,empfangsberechtigte Person
 Empfänger,empfangen von
-Empfänger,bestimmt für 
+Empfänger,bestimmt für
 Enkel,Enkelkind
-Entdecker,entdeckt von 
-Entdecker,entdeckt von 
+Entdecker,entdeckt von
+Entdecker,entdeckt von
 Entdecker,entdeckende Personen /Kinder
 Entdecker,Forschende
 Entdecker,Entdeckende
@@ -516,7 +514,7 @@ Gruppenleiter,Gruppenleitende
 Gruppenleiter,Gruppenleitung
 Guru,spirituelles Vorbild
 Guru,spiritutelles Idol
-Gutachter,begutachtet von 
+Gutachter,begutachtet von
 Gutachter,Sachverständige
 Hacker,"Personen, die fremde Digitaldaten nutzen"
 Hacker,Hackende
@@ -544,7 +542,7 @@ Helfer,Helfende
 ehrenamtliche Helfer,Ehrenamtliche
 ehrenamtliche Helfer,Freiwillige
 ehrenamtliche Helfer,Engagierte
-Herausgeber,herausgegeben von 
+Herausgeber,herausgegeben von
 einer Sache Herr werden,etwas in den Griff bekommen
 einer Sache Herr werden,etwas unter Kontrolle bekommen
 einer Sache Herr werden,etwas besser überblicken zu können
@@ -757,8 +755,8 @@ Leserbriefe,Ihre Meinungen
 Leserbriefe,Ihre Meinungen
 Leserbriefe,offene Zuschriften
 leserfreundlich,lesefreundlich
-Lieber ,An 
-Lieber ,Hallo 
+Lieber ,An
+Lieber ,Hallo
 Lieber ,Guten Tag
 Lieferant,Lieferfirma
 Linkshänder,linkshändige Person
@@ -768,16 +766,12 @@ Macher,Aktive
 Mädchen für alles,Mensch für alles
 Mädchenname,Geburtsname
 Magier,Zauberkunst ausübende Person
-man,Sie
-man,viele
-man,wir
-man,ich
 Man glaubt es kaum,Ich glaube es kaum
 Manager,Management
 Manager,Unternehmensführung
 Manager,Führungskraft
 manch einem,manch einer Person
-Mann ,Person 
+Mann ,Person
 alle Mann an Bord!,alle an Bord!
 etwas am Mann tragen,etwas bei sich tragen
 Not am Mann,Notsituation
@@ -879,7 +873,7 @@ Mitbürger,Staatsangehörige
 Mitfahrergelegenheit,Mitfahrgelegenheit
 Mitglieder,Zugehörige
 Mitglieder,Angehörige
-Mitglieder,Teil von 
+Mitglieder,Teil von
 Mitschüler,andere Kinder aus der Klasse
 Mitschüler,andere Kinder aus der Schule
 Mitschüler,Mitlernende
@@ -933,7 +927,7 @@ Ombudsmann,Ombudsperson
 Organisatoren,Organisation
 Organisatoren,Organisationsteam
 Organisatoren,Organisationskomitee
-Organisatoren,organisiert von 
+Organisatoren,organisiert von
 Organisatoren,Organisierende
 Organspender,Organ Spendende
 Organspender,Organ spendende Personen
@@ -1087,7 +1081,7 @@ Referent,referierende Person
 Referent,vortragende Person
 Referenten,Referierende
 Referenten,Vortragende
-Referenten warens,Es referierten 
+Referenten warens,Es referierten
 Reiseleiter,Reiseleitung
 Rekrut,Nachwuchs
 Rektor,Schulleitung
@@ -1309,7 +1303,7 @@ Unternehmer,Geschäftsleute
 Unternehmer,Gewerbe Betreibende
 Unterstützer,support
 Unterstützer,Geldgebende
-Unterstützer,Förderung durch 
+Unterstützer,Förderung durch
 Urheberrecht,Copyright
 Urheberrecht,Recht auf geistiges Eigentum
 Urlauber,Reisende
@@ -1376,7 +1370,7 @@ Vorreiter,Person an der Spitze
 Vorreiter,"Person, die etwas vorlebt"
 Vorreiter,"Person, die voraus denkt"
 Vorreiter,"Person, die voraus handelt"
-Vorsitzender,den 1. Vorsitz hat 
+Vorsitzender,den 1. Vorsitz hat
 Vorstand,Vorstandsmitglied
 Vorstand,im Vorstand
 Wächter,Wache

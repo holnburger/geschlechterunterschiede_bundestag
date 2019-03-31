@@ -14,7 +14,7 @@ alternative_list <- site %>%
 
 missing_entry <- "noch kein passender Begriff gefunden"
 
-gender_dict <- data_frame(word_list, alternative_list) %>%
+gender_dict <- tibble(word_list, alternative_list) %>%
   filter(!str_detect(alternative_list, missing_entry)) %>% # Fehlende Einträge raus
   mutate(word_list = str_remove_all(word_list, "\\(.*\\)")) %>% # Alles in Klammern löschen
   mutate(alternative_list = str_remove_all(alternative_list, "\\(.*\\)")) %>%
@@ -48,3 +48,6 @@ gender_dict_clean <- gender_dict %>%
   mutate(word_list = str_remove_all(word_list, "\\.\\.\\.$"),
          alternative_list = str_remove_all(alternative_list, "\\.\\.\\.$"))
 
+# Weitere Veränderungen müssen manuell vorgenommen werden.
+
+write_csv(gender_dict_clean %>% select(word_list, alternative_list), "data/gender_dict.csv")

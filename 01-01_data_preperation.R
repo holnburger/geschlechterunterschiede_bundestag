@@ -5,7 +5,7 @@ library(rvest)
 library(tidyverse)
 
 
-# clean MdB data ----------------------------------------------------------
+# MdB Daten bereinigen -----------------------------------------------------
 
 file_raw <- read_xml("raw/mdb/MDB_STAMMDATEN.XML")
 
@@ -37,7 +37,7 @@ mdb_data <- get_data_mdb(file_raw)
 
 write_rds(mdb_data, "data/mdb_data.RDS")
 
-# functions for protocol cleaning -----------------------------------------
+# Funktionen für die Bereinigung der Protokolle -----------------------------------
 
 get_speeches_df <- function(x){
   raw <- x
@@ -50,7 +50,7 @@ get_speeches_df <- function(x){
   typ <- x %>% xml_name()
   status <- x %>% xml_attr("klasse")
   
-  data_frame(raw, rede, id, vorname, nachname, fraktion, rolle, typ, status) %>%
+  tibble(raw, rede, id, vorname, nachname, fraktion, rolle, typ, status) %>%
     mutate(rede_id = map(raw, ~xml_parent(.) %>% xml_attr("id")) %>% as.character()) %>%
     select(-raw) %>%
     mutate(status = ifelse(typ == "kommentar", typ, status)) %>%
@@ -78,10 +78,10 @@ get_overview_df <- function(x){
   datum <- x %>% xml_find_first("//datum") %>% xml_attr("date") %>% lubridate::dmy()
   wahlperiode <- x %>% xml_find_first("//wahlperiode") %>% xml_text() %>% as.integer()
   
-  data_frame(rede_id, redner_id, redner_vorname, redner_nachname, redner_fraktion, redner_rolle, sitzung, datum, wahlperiode)
+  tibble(rede_id, redner_id, redner_vorname, redner_nachname, redner_fraktion, redner_rolle, sitzung, datum, wahlperiode)
 }
 
-# prepare the protocol data (19th Bundestag) ----------------------------------------
+# Vorbereitung der Protokolldaten des 19. Bundestages -------------------------------
 
 prot_files <- list.files("raw/prot_19/", full.names = TRUE)
 
@@ -89,11 +89,11 @@ prot_extract <- map(prot_files, ~read_html(.) %>% xml_find_all("//rede"))
 
 class(prot_extract) <- "xml_nodeset"
 
-# overview of the protocols (19th Bundestag) ------------------------------
+# Überblick der Protokolldaten ------------------------------
 
-prot_overview <- map_dfr(prot_extract, ~get_overview_df(.))
+prot_overview <- map_dfr(prot_extract, get_overview_df)
 
-# clean data because of misspellings
+# Fehler in den Protokollen ausbessern (Falsche Dokumentation/Rechtschreibfehler)
 
 prot_overview <- prot_overview %>%
   mutate(redner_fraktion = ifelse(redner_fraktion == "Bündnis 90/Die Grünen", "BÜNDNIS 90/DIE GRÜNEN", redner_fraktion)) %>%
@@ -101,13 +101,15 @@ prot_overview <- prot_overview %>%
 
 write_rds(prot_overview, "data/BT_19/overview.RDS")
 
-# speeches in the 19th Bundestag ------------------------------------------
+# Reden des 19. Bundestages ------------------------------------------
 
 speech_extract <- map(prot_files, ~read_html(.) %>% xml_find_all("//rede/*"))
 
 class(speech_extract) <- "xml_nodeset"
 
-prot_speeches <- map_dfr(speech_extract, ~get_speeches_df(.)) %>%
+# Abermals Rechtschreibfehler/falsche Dokumentation ausbessern
+
+prot_speeches <- map_dfr(speech_extract, get_speeches_df) %>%
   mutate(fraktion = ifelse(fraktion == "Bündnis 90/Die Grünen", "BÜNDNIS 90/DIE GRÜNEN", fraktion)) %>%
   mutate(fraktion = ifelse(fraktion == "Bremen", NA, fraktion)) 
 

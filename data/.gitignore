@@ -2,3 +2,5 @@
 *
 # Except this file
 !.gitignore
+!gender_dict.csv
+!gender_dict_modified.csv

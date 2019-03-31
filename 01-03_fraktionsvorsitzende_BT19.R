@@ -1,5 +1,5 @@
 library(rvest)
-library(tnameyverse)
+library(tidyverse)
 
 # Fraktionsvorsitzende CDU/CSU
 
