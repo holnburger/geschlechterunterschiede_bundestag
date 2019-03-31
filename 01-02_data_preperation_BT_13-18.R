@@ -1,3 +1,9 @@
+#--------------------------------------------------#
+# !!! Dieses Script wurde nicht weitergepfelgt !!! #
+#   Da nur der die Reden des 19. Bundestages für   #
+#   diese Arbeit ausgewertet werden.               #
+#--------------------------------------------------#
+
 
 # Setup -------------------------------------------------------------------
 
