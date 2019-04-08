@@ -1,3 +1,5 @@
+# Setup
+
 library(tidyverse)
 library(knitr)
 library(kableExtra)
@@ -9,37 +11,25 @@ gend_dict <- read_csv("data/gender_dict_modified.csv")
 mdb_data <- read_rds("data/mdb_data.RDS")
 mdb_overview <- read_rds("data/BT_19/overview.RDS")
 
-# Korrekturdaten
-# Carsten Träger und Marja-Lisa Völlers haben teilweise falsche Angaben zur ID in den Protokollen
-
-corr_traeger <- mdb_data %>%
-  filter(id == "11004426") %>%
-  mutate(id = "999190001")
-
-corr_voellers <- mdb_data %>%
-  filter(id == "11004942") %>%
-  mutate(id = "10000")
-
-mdb_data <- mdb_data %>%
-  bind_rows(corr_traeger) %>%
-  bind_rows(corr_voellers)
-
-
 # Reden jeweils zusammengefasst, ohne Unterbrechungen und Zwischenrufe
-mdb_speeches <- read_rds("data/BT_19/speeches.RDS") %>%
-  left_join(mdb_overview %>% select(rede_id, redner_rolle),
-            by = "rede_id") %>%                # Nur die Reden von MdBs
-  filter(is.na(redner_rolle)) %>%
-  filter(typ != "kommentar") %>%               # Nur die Reden ohne Kommentare
-  group_by(rede_id) %>%                        # Eine Rede pro Row
-  mutate(rede_full = paste0(rede, collapse = "\n "))%>%
-  distinct(rede_id, rede_full, id, vorname, nachname, präsidium) %>%
-  filter(präsidium == FALSE) %>%               # Keine Kommentare des Präsidiums
-  left_join(mdb_overview, by = "rede_id") %>%  # Redner-ID abgleich
-  mutate(woerter = str_count(rede_full, "\\w+")) %>%       # Anzahl der Wörter pro Rede
-  filter(woerter > 20) %>%                     # Mindestens 20 Wörter in einer Rede
-  left_join(mdb_data %>%
-              select(id, geschlecht), by = "id") # Abgleich mit den Stammdaten für Geschlechtsangaben
+mdb_speeches <- read_rds("data/BT_19/speeches.RDS")
+
+mdb_full_speeches <- mdb_overview %>%          # Übersicht der Reden
+  filter(is.na(redner_rolle)) %>%              # Nur Reden von MdBs
+  left_join(mdb_data %>% select(id, geschlecht), by = c("redner_id" = "id")) %>%
+  left_join(mdb_speeches, by = "rede_id") %>%  # Mit den anderen Daten verknüpfen
+  filter(typ != "kommentar") %>%               # Keine Kommentare (Zwischenrufe)
+  filter(präsidium == FALSE) %>%               # Keine Kommentare des Präsidiums (Aufrufe)
+  group_by(rede_id) %>%                        # Komprimieren auf eine Rede pro Zeile
+  mutate(rede_full = paste0(rede, collapse = "\n ")) %>%
+  distinct(rede_id, .keep_all = TRUE) %>%
+  mutate(woerter = str_count(rede_full, "\\w+")) %>% # Anzahl der Wörter in einer Rede
+  select(rede_id, redner_id, redner_vorname, redner_nachname, redner_fraktion, sitzung, datum, wahlperiode,
+         geschlecht, rede_full, woerter)
+
+# Reden speichern
+write_rds(mdb_full_speeches, "data/BT_19/full_speeches.RDS")
+
 
 # Daten sind nun fertig aufbereitet.
 # Abgleich der vewendeten, nicht Geschlechterinklusiven Wörter pro Rede über Gender-Diktionär
@@ -56,8 +46,8 @@ gend_dict %>%
 # Beispiel: Mutterschutz --> Elternschutz. Hier macht es einen eklatanten Unterschied,
 # Es gibt auch üblicherweise mehr als einen erseztenden Begriff (Lehrling --> Azubi).
 
-# Wie viele "Übliche Begriffe" und wie viele genderinklusive Begriffe enthalten die jeweiligen
-# Reden.
+# Vor diesem Hintergrund wird nicht die Verwendung von genderinklusiven Wörtern sondern von genderexklusiven
+# Begriffen untersucht.
 
 # Zwei Characterstrings: Einer zum Erkennen üblicher Begriffe, einer für genderinklusvie Begriffe
 
@@ -80,8 +70,11 @@ tibble("Übliche Begriffe" = nrow(uebliche_begriffe),
 # !! Problem: Case Sensitiv! Ändern. Und er findet noch komische Daten.
 
 # Diese Auswertung dauert sehr lange. Circa eine Stunde für die Auswertung.
-mdb_inkl_words <- mdb_speeches %>%
-  mutate(genderinkl_words = str_count(rede_full, paste(genderinkl_begriffe$alternative_list, collapse = "|"))) %>%
+mdb_inkl_words <- mdb_full_speeches %>%
+  mutate(rede)
+  mutate(genderinkl_words = str_extract_all(rede_full, paste(uebliche_begriffe$word_list, collapse = "|"))) 
+
+%>%
   select(rede_id, geschlecht, genderinkl_words, woerter, rede_full) %>%
   mutate(uebliche_words = str_count(rede_full, paste(uebliche_begriffe$word_list, collapse = "|"))) %>%
   arrange(-genderinkl_words)
