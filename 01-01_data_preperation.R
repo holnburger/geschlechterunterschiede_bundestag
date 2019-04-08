@@ -3,7 +3,9 @@
 library(xml2)
 library(rvest)
 library(tidyverse)
-
+library(knitr)
+library(kableExtra)
+require(scales)
 
 # MdB Daten bereinigen -----------------------------------------------------
 
@@ -115,3 +117,43 @@ prot_speeches <- map_dfr(speech_extract, get_speeches_df) %>%
 
 write_rds(prot_speeches, "data/BT_19/speeches.RDS")
 
+# Überblick der Reden nach Geschlecht für das Dokument
+# Insgesamt 8.764 Reden, untersucht werden aber nur reden von Parlamentariern, nicht die der Regierung oder von Gästen
+# Hintergrund: Zum einen liegen nur von den MdBs die Daten vor - und es handelt sich hier auch um inhaltliche Debatten
+# zu Themen des BT.
+
+# Korrekturdaten
+# Carsten Träger, Marja-Lisa Völlers und Gisela Manderla haben teilweise falsche Angaben zur ID in den Protokollen
+
+corr_traeger <- mdb_data %>%
+  filter(id == "11004426") %>%
+  mutate(id = "999190001")
+
+corr_voellers <- mdb_data %>%
+  filter(id == "11004942") %>%
+  mutate(id = "10000")
+
+corr_manderla <- mdb_data %>%
+  filter(id == "11004348") %>%
+  mutate(id = "999980200")
+
+mdb_data <- mdb_data %>%
+  bind_rows(corr_traeger) %>%
+  bind_rows(corr_voellers) %>%
+  bind_rows(corr_manderla)
+
+
+# Anzahl der Reden von Parlamentariern
+prot_overview %>% filter(is.na(redner_rolle)) %>% nrow()
+# 7.696 Reden
+
+# Geschlecht der Redner*innen
+prot_overview %>%
+  filter(is.na(redner_rolle)) %>%
+  left_join(mdb_data, by = c("redner_id" = "id")) %>%
+  count(geschlecht) %>%
+  rename(Geschlecht = geschlecht, Reden = n) %>%
+  mutate(Anteil = scales::percent(Reden/sum(Reden))) %>%
+  mutate(Reden = scales::comma(Reden, big.mark = ".", decimal.mark = ",")) %>%
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
+  write_file(., "document/tables/uebersicht_reden.tex")
