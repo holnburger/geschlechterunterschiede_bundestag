@@ -37,6 +37,26 @@ get_data_mdb <- function(x){
 
 mdb_data <- get_data_mdb(file_raw)
 
+# Korrekturdaten
+# Carsten Träger, Marja-Lisa Völlers und Gisela Manderla haben teilweise falsche Angaben zur ID in den Protokollen
+
+corr_traeger <- mdb_data %>%
+  filter(id == "11004426") %>%
+  mutate(id = "999190001")
+
+corr_voellers <- mdb_data %>%
+  filter(id == "11004942") %>%
+  mutate(id = "10000")
+
+corr_manderla <- mdb_data %>%
+  filter(id == "11004348") %>%
+  mutate(id = "999980200")
+
+mdb_data <- mdb_data %>%
+  bind_rows(corr_traeger) %>%
+  bind_rows(corr_voellers) %>%
+  bind_rows(corr_manderla)
+
 write_rds(mdb_data, "data/mdb_data.RDS")
 
 # Funktionen für die Bereinigung der Protokolle -----------------------------------
@@ -121,27 +141,6 @@ write_rds(prot_speeches, "data/BT_19/speeches.RDS")
 # Insgesamt 8.764 Reden, untersucht werden aber nur reden von Parlamentariern, nicht die der Regierung oder von Gästen
 # Hintergrund: Zum einen liegen nur von den MdBs die Daten vor - und es handelt sich hier auch um inhaltliche Debatten
 # zu Themen des BT.
-
-# Korrekturdaten
-# Carsten Träger, Marja-Lisa Völlers und Gisela Manderla haben teilweise falsche Angaben zur ID in den Protokollen
-
-corr_traeger <- mdb_data %>%
-  filter(id == "11004426") %>%
-  mutate(id = "999190001")
-
-corr_voellers <- mdb_data %>%
-  filter(id == "11004942") %>%
-  mutate(id = "10000")
-
-corr_manderla <- mdb_data %>%
-  filter(id == "11004348") %>%
-  mutate(id = "999980200")
-
-mdb_data <- mdb_data %>%
-  bind_rows(corr_traeger) %>%
-  bind_rows(corr_voellers) %>%
-  bind_rows(corr_manderla)
-
 
 # Anzahl der Reden von Parlamentariern
 prot_overview %>% filter(is.na(redner_rolle)) %>% nrow()
