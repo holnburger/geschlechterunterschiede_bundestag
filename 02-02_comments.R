@@ -14,21 +14,6 @@ bt_data <- read_rds("data/mdb_data.RDS")
 bt_speeches <- read_rds("data/BT_19/speeches.RDS")
 fraktionsvorsitz <- read_rds("data/BT_19/fraktionsvorsitzende.RDS")
 
-# Korrekturdaten
-# Carsten Träger und Marja-Lisa Völlers haben teilweise falsche Angaben zur ID in den Protokollen
-
-corr_traeger <- bt_data %>%
-  filter(id == "11004426") %>%
-  mutate(id = "999190001")
-
-corr_voellers <- bt_data %>%
-  filter(id == "11004942") %>%
-  mutate(id = "10000")
-
-bt_data <- bt_data %>%
-  bind_rows(corr_traeger) %>%
-  bind_rows(corr_voellers)
-
 # Ergänzende Daten
 
 parteien <- c("SPD", "DIE LINKE", "FDP", "CDU/CSU", "AfD", "BÜNDNIS 90/DIE GRÜNEN")

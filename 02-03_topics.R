@@ -11,21 +11,6 @@ speeches <- read_rds("data/BT_19/speeches.RDS")
 
 parteien <- c("SPD", "DIE LINKE", "FDP", "CDU/CSU", "AfD", "BÜNDNIS 90/DIE GRÜNEN")
 
-# Korrekturdaten
-# Carsten Träger und Marja-Lisa Völlers haben teilweise falsche Angaben zur ID in den Protokollen
-
-corr_traeger <- mdb_data %>%
-  filter(id == "11004426") %>%
-  mutate(id = "999190001")
-
-corr_voellers <- mdb_data %>%
-  filter(id == "11004942") %>%
-  mutate(id = "10000")
-
-mdb_data <- mdb_data %>%
-  bind_rows(corr_traeger) %>%
-  bind_rows(corr_voellers)
-
 # Redebeiträge des 19. Bundestag, nur von Abgeordneten, ohne Unterbrechungen und Zwischenfragen
 
 speeches_clean <- speeches %>%
