@@ -30,7 +30,6 @@ mdb_full_speeches <- mdb_overview %>%          # Übersicht der Reden
 # Reden speichern
 write_rds(mdb_full_speeches, "data/BT_19/full_speeches.RDS")
 
-
 # Daten sind nun fertig aufbereitet.
 # Abgleich der vewendeten, nicht Geschlechterinklusiven Wörter pro Rede über Gender-Diktionär
 
@@ -38,7 +37,7 @@ write_rds(mdb_full_speeches, "data/BT_19/full_speeches.RDS")
 # Zufällige Wörter, mit Seed, damit auch in Zukunft immer die gleichen Wörter
 set.seed(42)
 gend_dict %>%
-  rename("Übliche Begriffe" = word_list, "Genderinklusive Varianten" = alternative_list) %>%
+  rename("Genderexklusive Begriffe" = word_list, "Genderinklusive Varianten" = alternative_list) %>%
   sample_n(10) %>%
   knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
   write_file(., "document/tables/genderinklusive_woerter_beispiel.tex")
@@ -51,7 +50,7 @@ gend_dict %>%
 
 # Zwei Characterstrings: Einer zum Erkennen üblicher Begriffe, einer für genderinklusvie Begriffe
 
-uebliche_begriffe <- gend_dict %>%
+genderexkl_begriffe <- gend_dict %>%
   select(word_list) %>%
   distinct(word_list)
 
@@ -60,7 +59,7 @@ genderinkl_begriffe <- gend_dict %>%
   distinct(alternative_list)
 
 # Tabelle um zu zeigen, auf wie viele Begriffe überprüft wird
-tibble("Übliche Begriffe" = nrow(uebliche_begriffe),
+tibble("Genderexklusive Begriffe" = nrow(genderexkl_begriffe),
   "Genderinklusive Begriffe" = nrow(genderinkl_begriffe)) %>%
   knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
   write_file(., "document/tables/genderinklusive_woerter_anzahl.tex")
@@ -70,16 +69,13 @@ tibble("Übliche Begriffe" = nrow(uebliche_begriffe),
 # !! Problem: Case Sensitiv! Ändern. Und er findet noch komische Daten.
 
 # Diese Auswertung dauert sehr lange. Circa eine Stunde für die Auswertung.
-mdb_inkl_words <- mdb_full_speeches %>%
-  mutate(rede)
-  mutate(genderinkl_words = str_extract_all(rede_full, paste(uebliche_begriffe$word_list, collapse = "|"))) 
+mdb_exkl_words <- mdb_full_speeches %>%
+  mutate(rede_full = tolower(rede_full)) %>%
+  mutate(genderexkl_words = str_extract_all(rede_full, paste(tolower(genderexkl_begriffe$word_list), collapse = "|"))) %>%
+  mutate(genderexkl_anzahl = lenghts(genderexkl_words)) %>%
+  arrange(-genderexkl_anzahl)
 
-%>%
-  select(rede_id, geschlecht, genderinkl_words, woerter, rede_full) %>%
-  mutate(uebliche_words = str_count(rede_full, paste(uebliche_begriffe$word_list, collapse = "|"))) %>%
-  arrange(-genderinkl_words)
-
-write_rds(mdb_inkl_words, "data/BT_19/genderinclusive_words.RDS")
+write_rds(mdb_exkl_words, "data/BT_19/genderexklusive_words.RDS")
 
 # Wie hoch ist der Anteil an genderinklusiven Wörtern pro Rede in Wörtern? Im Vergleich zu "nicht-genderinklusiven" Begriffen?
 
