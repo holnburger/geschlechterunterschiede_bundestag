@@ -35,20 +35,17 @@ write_rds(mdb_full_speeches, "data/BT_19/full_speeches.RDS")
 
 # Zunächst: Tabelle über Genderinklusive Wörter generieren, für Veranschaulichung in der Arbeit
 # Zufällige Wörter, mit Seed, damit auch in Zukunft immer die gleichen Wörter
-set.seed(42)
+set.seed(123)
 gend_dict %>%
   rename("Genderexklusive Begriffe" = word_list, "Genderinklusive Varianten" = alternative_list) %>%
   sample_n(10) %>%
   knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
   write_file(., "document/tables/genderinklusive_woerter_beispiel.tex")
 # Es handelt sich nur um Beispiele, die auch zeigen, dass das Wörterbuch nicht ideal ist
-# Beispiel: Mutterschutz --> Elternschutz. Hier macht es einen eklatanten Unterschied,
+# Beispiel: Schüler --> Kinder. Hier macht es einen eklatanten Unterschied,
 # Es gibt auch üblicherweise mehr als einen erseztenden Begriff (Lehrling --> Azubi).
 
-# Vor diesem Hintergrund wird nicht die Verwendung von genderinklusiven Wörtern sondern von genderexklusiven
-# Begriffen untersucht.
-
-# Zwei Characterstrings: Einer zum Erkennen üblicher Begriffe, einer für genderinklusvie Begriffe
+# Zwei Characterstrings: Einer zum Erkennen genderexklusiver Begriffe, einer für genderinklusvie Begriffe
 
 genderexkl_begriffe <- gend_dict %>%
   select(word_list) %>%
@@ -66,14 +63,46 @@ tibble("Genderexklusive Begriffe" = nrow(genderexkl_begriffe),
 
 # Test der Hypothese: Frauen benutzen eher genderinklusive Sprache als Männer.
 # Test über: Anteil genderinklusiver Sprache in den Reden von Frauen und Männern. Anteil über Wörter.
-# !! Problem: Case Sensitiv! Ändern. Und er findet noch komische Daten.
 
 # Diese Auswertung dauert sehr lange. Circa eine Stunde für die Auswertung.
-mdb_exkl_words <- mdb_full_speeches %>%
+mdb_gfl_speeches <- mdb_full_speeches %>%
   mutate(rede_full = tolower(rede_full)) %>%
-  mutate(genderexkl_words = str_extract_all(rede_full, paste(tolower(genderexkl_begriffe$word_list), collapse = "|"))) %>%
-  mutate(genderexkl_anzahl = lenghts(genderexkl_words)) %>%
-  arrange(-genderexkl_anzahl)
+  mutate(genderexkl_words = 
+           str_extract_all(rede_full,
+                           paste(tolower(genderexkl_begriffe$word_list), collapse = "|"))) %>%
+  mutate(genderexkl_anzahl = lengths(genderexkl_words)) %>%
+  mutate(genderinkl_words = 
+           str_extract_all(rede_full,
+                           paste(tolower(genderinkl_begriffe$alternative_list), collapse = "|"))) %>%
+  mutate(genderinkl_anzahl = lengths(genderinkl_words)) %>%
+  arrange(-genderinkl_anzahl)
+
+write_rds(mdb_gfl_speeches, "data/BT_19/gfl_speeches.RDS")
+# mdb_gfl_speeches <- read_rds("data/BT_19/gfl_speeches.RDS")
+
+# Allerdings findet man nicht nur GFL Ansprache über das Diktionär, sondern auch über "Kolleginnen und Kollegen"
+# "Arzt und Ärztin". Wir versuchen, über regular expressions diese "Floskeln" zu finden.
+
+mdb_gfl_ansprache <- mdb_gfl_speeches %>%                                # extrahiert alle mit "und" oder "oder" getrennten Wörter
+  mutate(gfl_ansprache = str_extract_all(rede_full, "(\\w+\\sund\\s\\w+|\\w+\\soder\\s\\w+)")) %>%     
+  select(rede_id, gfl_ansprache) %>%                                     # wir brauchen nur die rede_id und die Wörter
+  unnest(gfl_ansprache) %>%                                              # wir suchen nur Kombinationen, die mit *innen oder *in Enden
+  mutate(gfl_detect_female = str_detect(gfl_ansprache, "\\w{4,}(in(\\s|$)|innen(\\s|$))")) %>%  
+  # wobei mindestens 4 Buchstaben vor dem *in/innen kommen müssen
+  mutate(gfl_detect_male = str_detect(gfl_ansprache, "\\w{4,}(e(\\s|$)|er(\\s|$)|en.*?(en))")) %>%
+  # Erkennt *e und *er am Ende, und wenn zwei mal *en vorkommt (Kolleginnen und Kollegen).
+  # Als nächstes: Nur wenn detect_male und detect_female TRUE ist, ist es genderinklusiv
+  mutate(gfl_true = case_when(gfl_detect_female == TRUE & gfl_detect_male == TRUE ~ TRUE,
+                              TRUE ~ FALSE)) %>%
+  select(rede_id, gfl_true, gfl_ansprache) %>%
+  filter(gfl_true == TRUE) %>%
+  group_by(gfl_ansprache) %>%
+  count(gfl_ansprache, sort = TRUE)
+
+write_csv(mdb_gfl_ansprache, "data/gfl_ansprache_dictionär.csv")
+  
+
+
 
 write_rds(mdb_exkl_words, "data/BT_19/genderexklusive_words.RDS")
 
