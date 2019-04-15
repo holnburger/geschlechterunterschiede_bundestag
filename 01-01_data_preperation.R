@@ -144,7 +144,7 @@ write_rds(prot_speeches, "data/BT_19/speeches.RDS")
 
 # Anzahl der Reden von Parlamentariern
 prot_overview %>% filter(is.na(redner_rolle)) %>% nrow()
-# 7.696 Reden
+# 8.294 Reden
 
 # Geschlecht der Redner*innen
 prot_overview %>%
