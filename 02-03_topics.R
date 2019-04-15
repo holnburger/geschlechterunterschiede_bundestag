@@ -49,16 +49,16 @@ out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
 
 K <- c(60, 70, 80, 90, 100, 110, 120)
 
-test_k <- searchK(out$documents, out$vocab, K, cores = 12)
+test_k <- searchK(out$documents, out$vocab, K, cores = 6)
 
 plot(test_k)
 
-write_rds(test_k, "data/stm/test_k.RDS")
+write_rds(test_k, "data/stm/test_k_multi.RDS")
 # Mit einer groben Bestimmung landen wir zwischen 100 und 120 Topics
 
-K_fine <- c(100:120)
+K_fine <- c(80:140)
 
-test_k_fine <- searchK(out$documents, out$vocab, K_fine)
+test_k_fine <- searchK(out$documents, out$vocab, K_fine, cores = 6)
 
 plot(test_k_fine)
 
@@ -68,7 +68,7 @@ test_k_fine <- read_rds("data/stm/test_k_fine.RDS")
 
 # Den besten fit haben wir bei etwa 90 Topics, dies muss im weiteren Verlauf noch verbessert werden
 
-stm_speeches_fit <- stm(documents = out$documents, vocab = out$vocab, K = 116,
+stm_speeches_fit <- stm(documents = out$documents, vocab = out$vocab, K = 115,
                         prevalence = ~geschlecht, max.em.its = 10, data = out$meta,
                         init.type = "Spectral")
 
