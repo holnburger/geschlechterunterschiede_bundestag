@@ -83,23 +83,23 @@ write_rds(mdb_gfl_speeches, "data/BT_19/gfl_speeches.RDS")
 # Allerdings findet man nicht nur GFL Ansprache über das Diktionär, sondern auch über "Kolleginnen und Kollegen"
 # "Arzt und Ärztin". Wir versuchen, über regular expressions diese "Floskeln" zu finden.
 
-mdb_gfl_ansprache <- mdb_gfl_speeches %>%                                # extrahiert alle mit "und" oder "oder" getrennten Wörter
-  mutate(gfl_ansprache = str_extract_all(rede_full, "(\\w+\\sund\\s\\w+|\\w+\\soder\\s\\w+)")) %>%     
-  select(rede_id, gfl_ansprache) %>%                                     # wir brauchen nur die rede_id und die Wörter
-  unnest(gfl_ansprache) %>%                                              # wir suchen nur Kombinationen, die mit *innen oder *in Enden
-  mutate(gfl_detect_female = str_detect(gfl_ansprache, "\\w{4,}(in(\\s|$)|innen(\\s|$))")) %>%  
+mdb_gfl_phrases <- mdb_gfl_speeches %>%                                  # extrahiert alle mit "und" oder "oder" getrennten Wörter
+  mutate(gfl_phrases = str_extract_all(rede_full, "(\\w+\\sund\\s\\w+|\\w+\\soder\\s\\w+)")) %>%     
+  select(rede_id, gfl_phrases) %>%                                     # wir brauchen nur die rede_id und die Wörter
+  unnest(gfl_phrases) %>%                                              # wir suchen nur Kombinationen, die mit *innen oder *in Enden
+  mutate(gfl_detect_female = str_detect(gfl_phrases, "\\w{4,}(in(\\s|$)|innen(\\s|$))")) %>%  
   # wobei mindestens 4 Buchstaben vor dem *in/innen kommen müssen
-  mutate(gfl_detect_male = str_detect(gfl_ansprache, "\\w{4,}(e(\\s|$)|er(\\s|$)|en.*?(en))")) %>%
+  mutate(gfl_detect_male = str_detect(gfl_phrases, "\\w{4,}(e(\\s|$)|er(\\s|$)|en.*?(en))")) %>%
   # Erkennt *e und *er am Ende, und wenn zwei mal *en vorkommt (Kolleginnen und Kollegen).
   # Als nächstes: Nur wenn detect_male und detect_female TRUE ist, ist es genderinklusiv
   mutate(gfl_true = case_when(gfl_detect_female == TRUE & gfl_detect_male == TRUE ~ TRUE,
                               TRUE ~ FALSE)) %>%
-  select(rede_id, gfl_true, gfl_ansprache) %>%
+  select(rede_id, gfl_true, gfl_phrases) %>%
   filter(gfl_true == TRUE) %>%
-  group_by(gfl_ansprache) %>%
-  count(gfl_ansprache, sort = TRUE)
+  group_by(gfl_phrases) %>%
+  count(gfl_phrases, sort = TRUE)
 
-write_csv(mdb_gfl_ansprache, "data/gfl_ansprache_dictionär.csv")
+write_csv(mdb_gfl_phrases %>% select(gfl_phrases), "data/gfl_phrases.csv")
   
 
 
