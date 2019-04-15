@@ -156,3 +156,47 @@ prot_overview %>%
   mutate(Reden = scales::comma(Reden, big.mark = ".", decimal.mark = ",")) %>%
   knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
   write_file(., "document/tables/uebersicht_reden.tex")
+
+# Übersicht der Sitzanteile von Frauen und Anteil der Reden nach Fraktion
+# Quelle Kürschner (2019), abgewandelt
+freq_seats <- tibble::tribble( ~fraktion, ~Frauen, ~Männer, ~gesamt,
+                              "CDU/CSU",      51,     195,     246,
+                                  "SPD",      65,      87,     152,
+                                  "AfD",      10,      81,      91,
+                                  "FDP",      19,      61,      80,
+                            "Die Linke",      37,      32,      69,
+               "Bündnis 90/ Die Grünen",      39,      28,      67,
+                         "fraktionslos",       1,       3,       4
+               ) %>%
+  mutate(freq_seats = scales::percent(Frauen/gesamt, 
+                                           big.mark = ".", decimal.mark = ","))
+
+# Anteil Reden von Frauen nach Fraktion, Namen müssen zum Ende angepasst werden
+freq_speeches <- prot_overview %>%
+  filter(!is.na(redner_fraktion)) %>%
+  left_join(mdb_data, by = c("redner_id" = "id")) %>%
+  group_by(redner_fraktion, geschlecht) %>%
+  summarise(n = n()) %>%
+  mutate(freq_speeches = scales::percent(n / sum(n),
+                         big.mark = ".", 
+                         decimal.mark = ",", 
+                         accuracy = 0.1)) %>%
+  filter(geschlecht == "weiblich") %>%
+  rename(fraktion = redner_fraktion) %>%
+  ungroup(fraktion) %>%
+  mutate(fraktion = ifelse(fraktion == "BÜNDNIS 90/DIE GRÜNEN",
+                           "Bündnis 90/ Die Grünen", 
+                           fraktion)) %>%
+  mutate(fraktion = ifelse(fraktion == "DIE LINKE",
+                           "Die Linke", 
+                           fraktion))
+
+# Tabelle zur Übersicht
+freq_seats %>%
+  left_join(freq_speeches) %>%
+  select(fraktion, freq_seats, freq_speeches) %>%
+  rename(Fraktion = fraktion,
+         "Sitzanteil\\Frauen" = freq_seats,
+         "Redenanteil\\nFrauen" = freq_speeches) %>%
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
+  write_file(., "document/tables/vergleich_sitze_reden.tex")
