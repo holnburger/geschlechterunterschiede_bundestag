@@ -152,7 +152,7 @@ prot_overview %>%
   left_join(mdb_data, by = c("redner_id" = "id")) %>%
   count(geschlecht) %>%
   rename(Geschlecht = geschlecht, Reden = n) %>%
-  mutate(Anteil = scales::percent(Reden/sum(Reden))) %>%
+  mutate(Anteil = scales::percent(Reden/sum(Reden), decimal.mark = ",")) %>%
   mutate(Reden = scales::comma(Reden, big.mark = ".", decimal.mark = ",")) %>%
   knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
   write_file(., "document/tables/uebersicht_reden.tex")
