@@ -8,6 +8,7 @@ plan(multiprocess)
 mdb_data <- read_rds("data/mdb_data.RDS")
 overview <- read_rds("data/BT_19/overview.RDS")
 speeches <- read_rds("data/BT_19/speeches.RDS")
+full_speeches <- read_rds("data/BT_19/full_speeches.RDS")
 
 parteien <- c("SPD", "DIE LINKE", "FDP", "CDU/CSU", "AfD", "BÜNDNIS 90/DIE GRÜNEN")
 
@@ -30,13 +31,17 @@ write_rds(speeches_clean, "data/stm/speeches_clean.rds")
 
 # Wir definieren zunächst eine Anzahl an Stopwörtern, welche uns aufgrund der Häufigkeit nicht interessieren.
 
-bt_stopwords = c("bundestag", "kolleginnen", "kollegen", "präsident", "haben", "wollen", "müssen", "mehr", "wurden",
-                 "unser", "herren", "damen", "bundesregierung", "frau", "herr", "dass", "deutschland", "schon")
+bt_stopwords = c("bundestag", "kolleginnen", "kollegen", "präsident",
+                 "haben", "wollen", "müssen", "mehr", "wurden",
+                 "unser", "herren", "damen", "bundesregierung", "frau",
+                 "herr", "dass", "deutschland", "schon")
 
 processed <- textProcessor(speeches_clean$rede,
+                           removestopwords = TRUE,
+                           stem = FALSE,
                            metadata=speeches_clean,
-                           language = "german", 
-                           customstopwords = bt_stopwords)
+                           customstopwords = bt_stopwords,
+                           language = "german")
 
 out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
 
@@ -44,16 +49,27 @@ out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
 
 K <- c(60, 70, 80, 90, 100, 110, 120)
 
-test_k <- searchK(out$documents, out$vocab, K)
+test_k <- searchK(out$documents, out$vocab, K, cores = 12)
 
 plot(test_k)
 
 write_rds(test_k, "data/stm/test_k.RDS")
+# Mit einer groben Bestimmung landen wir zwischen 100 und 120 Topics
+
+K_fine <- c(100:120)
+
+test_k_fine <- searchK(out$documents, out$vocab, K_fine)
+
+plot(test_k_fine)
+
+write_rds(test_k_fine, "data/stm/test_k_fine.RDS")
+
+test_k_fine <- read_rds("data/stm/test_k_fine.RDS")
 
 # Den besten fit haben wir bei etwa 90 Topics, dies muss im weiteren Verlauf noch verbessert werden
 
-stm_speeches_fit <- stm(documents = out$documents, vocab = out$vocab, K = 0,
-                        prevalence = ~geschlecht, max.em.its = 75, data = out$meta,
+stm_speeches_fit <- stm(documents = out$documents, vocab = out$vocab, K = 116,
+                        prevalence = ~geschlecht, max.em.its = 10, data = out$meta,
                         init.type = "Spectral")
 
 write_rds(stm_speeches_fit, "data/stm/stm_speeches_fit.RDS")
@@ -67,9 +83,11 @@ out$meta$geschlecht <- as.factor(out$meta$geschlecht)
 prep <- estimateEffect(~ geschlecht, stm_speeches,
                        meta = out$meta, uncertainty = "Global")
 
-plot(prep, covariate = "geschlecht", topics = c(40, 27, 28),
+plot(stm_speeches)
+
+plot(prep, covariate = "geschlecht", topics = c(21:30),
      model = stm_speeches, method = "difference",
      xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
-     labeltype = "custom", main = "Geschlechterspezifische Effekte zu den Topics im Bundestag",
-     custom.labels = c("Ehe für Alle", "Schwangerschaftsabbruch", "Brexit"),
+     main = "Geschlechterspezifische Effekte zu den Topics im Bundestag",
+     #custom.labels = c("Ehe für Alle", "Schwangerschaftsabbruch", "Brexit"), labeltype = "custom",
      xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt")
