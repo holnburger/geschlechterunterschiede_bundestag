@@ -195,8 +195,7 @@ freq_speeches <- prot_overview %>%
 freq_seats %>%
   left_join(freq_speeches) %>%
   select(fraktion, freq_seats, freq_speeches) %>%
-  rename(Fraktion = fraktion,
-         "Sitzanteil\\\\Frauen" = freq_seats,
-         "Redenanteil\\\\Frauen" = freq_speeches) %>%
-  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
+  knitr::kable(format = "latex", booktabs = TRUE,
+               col.names = c("Fraktion", "Sitzanteil Frauen", "Redeanteil Frauen")) %>%
+  kableExtra::column_spec(2:3, width = "5cm" ) %>%
   write_file(., "document/tables/vergleich_sitze_reden.tex")
