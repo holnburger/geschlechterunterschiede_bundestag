@@ -195,8 +195,8 @@ freq_speeches <- prot_overview %>%
                            fraktion))
 
 # Tabelle zur Übersicht
-freq_seats %>%
-  left_join(freq_speeches) %>%
+freq_speeches %>%
+  left_join(freq_seats) %>%
   select(fraktion, freq_seats, freq_speeches) %>%
   rename(Fraktion = fraktion,
          "Sitzanteil Frauen" = freq_seats,
