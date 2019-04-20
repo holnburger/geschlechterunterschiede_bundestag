@@ -154,7 +154,8 @@ prot_overview %>%
   rename(Geschlecht = geschlecht, Reden = n) %>%
   mutate(Anteil = scales::percent(Reden/sum(Reden), decimal.mark = ",")) %>%
   mutate(Reden = scales::comma(Reden, big.mark = ".", decimal.mark = ",")) %>%
-  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "",
+               align = c("l", "r", "r")) %>%
   write_file(., "document/tables/uebersicht_reden.tex")
 
 # Übersicht der Sitzanteile von Frauen und Anteil der Reden nach Fraktion
@@ -177,7 +178,9 @@ freq_speeches <- prot_overview %>%
   left_join(mdb_data, by = c("redner_id" = "id")) %>%
   group_by(redner_fraktion, geschlecht) %>%
   summarise(n = n()) %>%
-  mutate(freq_speeches = scales::percent(n / sum(n),
+  mutate(freq_speeches = n/sum(n)) %>%
+  arrange(-freq_speeches) %>%
+  mutate(freq_speeches = scales::percent(freq_speeches,
                          big.mark = ".", 
                          decimal.mark = ",", 
                          accuracy = 0.1)) %>%
@@ -195,6 +198,10 @@ freq_speeches <- prot_overview %>%
 freq_seats %>%
   left_join(freq_speeches) %>%
   select(fraktion, freq_seats, freq_speeches) %>%
-  knitr::kable(format = "latex", booktabs = TRUE, linesep = "", escape = FALSE,
-               col.names = c("Fraktion", "Sitzanteil\\\\Frauen", "Redeanteil\\\\Frauen")) %>%
+  rename(Fraktion = fraktion,
+         "Sitzanteil Frauen" = freq_seats,
+         "Redeanteil Frauen" = freq_speeches) %>%
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "",
+               align = c("l", "r", "r")) %>%
+  column_spec(1:3, width = "2.5cm") %>%
   write_file(., "document/tables/vergleich_sitze_reden.tex")
