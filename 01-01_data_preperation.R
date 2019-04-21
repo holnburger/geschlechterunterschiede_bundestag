@@ -215,6 +215,12 @@ prot_overview %>%
   select(name, redner_fraktion, n) %>%
   head(10) %>%
   rename(Name = name, Fraktion = redner_fraktion, Reden = n) %>%
+  mutate(Fraktion = ifelse(Fraktion == "BÜNDNIS 90/DIE GRÜNEN",
+                           "Bündnis 90/ Die Grünen", 
+                           Fraktion)) %>%
+  mutate(Fraktion = ifelse(Fraktion == "DIE LINKE",
+                           "Die Linke", 
+                           Fraktion)) %>%
   kable(format = "latex", booktabs = TRUE, linesep = "",
                align = c("l", "l", "r")) %>%
   write_file(., "document/tables/top_redner.tex")
