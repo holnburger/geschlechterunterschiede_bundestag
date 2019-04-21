@@ -384,13 +384,23 @@ Obwohl \textcite{back_2018} in dem Ländervergleich keine Verbindungen zwischen 
 
 \section{Kontrollvariablen}
 
+\begin{itemize}
+    \item Geschlecht ist nur eine von vielen Variablen, welche sich beispielsweise auf die Anzahl der Unterbrechungen in einer Bundestagsrede auswirken könnte. Es ist davon auszugehen, dass Fraktionsvorsitzende z. B. während ihrer Reden häufiger unterbrochen werden als Abgeordnete, welche nicht den Vorsitz stellen. 
+    \item Es handelt sich bei dieser Arbeit um eine x-zentrierte Forschungsfrage - inwiefern spielt das Geschlecht eine Rolle?
+    \item Mit Kontrollvariablen kann das Risiko einer Scheinkorrelation minimiert werden, da auf mehr Faktoren als nur das geschlecht kontrolliert wird
+    \item Neben den Variablen, bei denen ein Einfluss auf die zu überprüfenden abhängigen Variablen erwartet wird (beispielsweise Fraktionsvorsitz, Mitglied der Opposition) sollen auch Variablen, überprüft werden, bei denen keine Auswirkungen auf den Untersuchungsgegenstand erwartet wird -- beispielsweise das Alter des*der Redner*in bezüglich der Anzahl der Unterbrechungen. Hiermit sollen die genutzten Methoden überprüft werden. 
+\end{itemize}
+
 \chapter{Datengrundlage und Methodik}
 
-Seit der 19. Wahlperiode liegen die Protokolle des Deutschen Bundestags im TEI-Format (Text Encoding Initative)\footnote{http://www.tei-c.org/guidelines/} als XML-Dateien (Extensible Markup Language) vor. Abgerufen werden können sie über das \emph{Open Data Portal} des Deutschen Bundestags.\footnote{https://www.bundestag.de/service/opendata} In Verbindung mit den biografischen Daten aller Bundestagsabgeordneten\footnote{https://www.bundestag.de/blob/472878/e207ab4b38c93187c6580fc186a95f38/mdb-stammdaten-data.zip} können Aussagen über Anzahl und Inhalte der Reden nach Geschlecht, Alter, Fraktion und beispielsweise Anzahl der Bundestagsperioden getroffen werden.
+Seit der 19. Wahlperiode liegen die Protokolle des Deutschen Bundestags als XML-Dateien (Extensible Markup Language) vor, die Struktur der abgelegten Protokolle sind umfassend dokumentiert \parencite{bundestag_2015}. Abgerufen werden können sie über das \emph{Open Data Portal} des Deutschen Bundestags.\footnote{https://www.bundestag.de/service/opendata} In Verbindung mit den dort abgelegten biografischen Daten aller Bundestagsabgeordneten können Aussagen über Anzahl und Inhalte der Reden nach Geschlecht, Alter, Fraktion und beispielsweise Anzahl der Bundestagsperioden getroffen werden.
 
 Die Bundestagsprotokolle werden durch den Stenografischen Dienst des Deutschen Bundestages verfasst -- die Stenograf*innen erfassen in den Protokollen neben den Inhalten der Reden auch Zwischenrufe, Beifallsbekundungen, Lachen\footnote{Lachen kann in den Bundestagsprotokollen eher als \enquote{auslachen} oder \enquote{lachen über den Inhalt} verstanden werden - das Lachen beispielsweise über einen Witz wird in Bundestagsprotokollen als \enquote{Heiterkeit} protokolliert.} und weitere Unterbrechungen. Dies ermöglicht eine umfassende Auswertung nach Art der Unterbrechung da sowohl eine Unterscheidung zwischen positiv intendierten Unterbrechungen (Beifall, Heiterkeit) und (zumeist) negativ intendierten Unterbrechungen (Zwischenrufe, lachen) möglich als auch die Anzahl an Rückfragen an den*die Redner* feststellbar ist.
 
-\section{Vorgehen zur Auswertung und Überblick der Bundestagsprotokolle}
+Die Daten werden mittels der Programmiersprache R \parencite[]{rcoreteam_2018} und der \emph{tidyverse}-Paketsammlung \parencite{wickham_2017} aufbereitet und auswertet. Des weiteren werden die Pakete \emph{xml2} \parencite{wickham_2018}, \emph{rvest} \parencite{wickham_2016}, \emph{furrr} \parencite{vaughan_2018}, \emph{stargazer} \parencite{hlavac_2018}, \emph{knitr} \parencite{xie_2014} und \emph{kableExtra} \parencite{zhu_2019} genutzt. 
+Alle dieser Arbeit zugrunde liegenden Daten und die zur Auswertung und Aufbereitung entwickelten Skripte werden öffentlich zugänglich gemacht und können zur Reproduktion und Überprüfung der Eregbnisse genutzt werden.\footnote{Die Daten können Github eingesehen und heruntergeladen werden: https://github.com/holnburger/geschlechterunterschiede_bundestag}
+
+\section{Überblick der Reden im Deutschen Bundestag}
 
 Bis 12. April 2019 wurden 8.764 Reden im 19. Deutschen Bundestag gehalten -- dies beinhaltet auch Reden von Gästen und Regierungsmitgliedern. Allerdings stellt das \emph{Open Data Portal} des Bundestages umfassende (biografische) Daten (beispielsweise Geburtsjahr, Geschlecht, Wahlkreis, Ausschussmitgliedschaften) nur bei den Abgeordenten bereit. Da nachfolgend die Debatten im Parlament ausgewertet werden sollen und die Reden von Regierungsmitgliedern eher berichtenden und die Rede von Gästen informativen Charakter besitzen, sollen nachfolgend nur die Redebeiträge von Abgeordneten untersucht werden.
 
@@ -414,27 +424,17 @@ Der größte Unterschied zwischen Anzahl der Sitze von Frauen und Redeanteil fin
 \end{table}
 
 In der weiteren Auswertung wird nicht auf die Reden von fraktionslosen Abgeordneten eingegangen. Hintergrund hierfür ist sowohl die geringe Anzahl an fraktionslosen Redner*innen im Bundestag (zum Auswertungszeitraum waren vier der 709 Abgeordneten fraktionslos\footnote{Frauke Petry und Mario Mieruch traten kurz nach der Wahl aus der AfD aus und waren von Beginn des 19. Bundestags nicht Mitglied einer Fraktion. Im November 2018 verlies der Abgeordnete Marco Bülow die SPD-Bundestagsfraktion, im Dezember 2018 trat Uwe Kamann aus der AfD-Fraktion aus.}) als auch Problematiken in der Erhebung -- Marco Bülow und Uwe Kamann hielten ihre Reden sowohl als Mitglieder ihrer Fraktion (SPD bzw. AfD) und später auch als fraktionslose Abgeordnete des Bundestags. Der Redenanteil von Frauen bei fraktionslosen Abgeordneten (vgl. Tablle \ref{table:vergleich_sitze_reden}) ist deshalb verzerrt -- dies trifft auch auf die Rede- und Sitzanteile bei den Fraktionen der AfD und der SPD zu, allerdings ist diese Verzerrung aufgrund der Anzahl an Reden und Sitzen vernachlässigbar.
-Gleichzeitig gelten für fraktionslose Abgeordnete angepasste Regelungen bezüglich Anzahl der Reden und Redezeit im Vergleich zu den übrigen Abgeordneten \parencite[vgl.][583f.]{schreiner_2005}. Wie in Tabelle \ref{table:top_redner} ersichtlich, machen die fraktionslosen Abgeordneten Frauke Petry und Mario Mieruch besonders häufig von ihrem Rederecht Gebrauch. Dies lässt sich unter anderem durch die insgesamt politisch schwächere Position von fraktionslosen Abgeordneten erklären \parencite[372]{molrok_2018} -- da sie kein Antragsrecht und keine Stimmrecht und Rederecht in Ausschüssen besitzen \parencite[vgl.][]{molrok_2018}, nutzen diese vor allem ihr Rederecht im Plenum.
+Gleichzeitig gelten für fraktionslose Abgeordnete angepasste Regelungen bezüglich Anzahl der Reden und Redezeit im Vergleich zu den übrigen Abgeordneten \parencite[vgl.][583f.]{schreiner_2005}. Wie in Tabelle \ref{table:top_redner} ersichtlich, machen die fraktionslosen Abgeordneten Frauke Petry und Mario Mieruch besonders häufig von ihrem Rederecht Gebrauch.\footnote{Diese Tabelle berücksichtigt nur Bundestagsabgeordnete. Die meisten Reden wurden durch Angela Merkel (126), Heiko Maas (98) und Jens Spahn (76) gehalten.} Dies lässt sich unter anderem durch die insgesamt politisch schwächere Position von fraktionslosen Abgeordneten erklären \parencite[372]{morlok_2018} -- da sie kein Antragsrecht und keine Stimmrecht und Rederecht in Ausschüssen besitzen \parencite[vgl.][]{morlok_2018}, nutzen diese vor allem ihr Rederecht im Plenum.
 
-Da sich das Redeverhalten und Rechte von fraktionslosen Abgeordneten zu den Abgeordnten in Fraktionen derart unterscheidet, werden diese in der weiteren Auswertung nicht berücksichtigt, da diese das Ergebniss verzerren könnten.
+Da sich das Redeverhalten und Rechte von fraktionslosen Abgeordneten zu den Abgeordnten in Fraktionen derart unterscheidet, werden diese in der weiteren Auswertung nicht berücksichtigt, da diese das Ergebnis verzerren könnten.
 
 \begin{table}[htb]
     \centering
-    \caption{Die häufigsten Redner*innen im 19. Deutschen Bundestag}
-    \input{document/tables/vergleich_sitze_reden.tex}
+    \caption{Abgeordnete mit den meisten Reden im 19. Deutschen Bundestag}
+    \input{document/tables/top_redner.tex}
     \label{table:top_redner}
 \end{table}
 
-
-\begin{itemize}
-    \item Die Sitzanteile von Frauen unterscheiden sich in den Fraktionen teilweise erheblich, die AfD hat beispielsweise mit 11,0\% den niedrigsten Anteil an Frauen im Parlament. Auch der Anteil von Reden der Fraktion ist nicht immer äquivalent mit der Anzahl an Sitzen, der größte Unterschied findet sich hier bei der Fraktion der CDU/CSU mit 20,7\% Frauen, welche lediglich 16,0\% der Reden der Unionsfraktion hielten (vgl. Tabelle \ref{table:vergleich_sitze_reden}).\footnote{}
-\end{itemize}
-
-
-
-
-
-Die Daten werden mittels der Programmiersprache R \parencite{rcoreteam_2018} und den Paketen \emph{rvest} \parencite{wickham_2016}, \emph{xml2} \parencite{wickham_2018} und der Paketsammlung \emph{tidyverse} \parencite{wickham_2017} aufbereitet und ausgewertet.
 
 Wie die Fragestellung \enquote{Inwieweit unterscheiden sich die Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität} bereits suggeriert, wird davon ausgegangen, dass die Variable \emph{Geschlecht} einer von vielen Faktoren ist, welche das Verhalten, die Sprache und den Inhalt der Bundestagsdebatte beeinflussen. Entsprechend handelt es sich bei dieser Untersuchung um ein x-zentriertes Forschungsdesign, in welchem auch weitere Faktoren, welche auf die jeweilige abhängige Variable einwirken, untersucht werden sollen  \parencites[vgl.][3f.]{ganghof_2005}.
 
