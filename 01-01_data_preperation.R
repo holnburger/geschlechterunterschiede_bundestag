@@ -205,3 +205,17 @@ freq_speeches %>%
                align = c("l", "r", "r")) %>%
   column_spec(1:3, width = "2.5cm") %>%
   write_file(., "document/tables/vergleich_sitze_reden.tex")
+
+# Tabelle häufigste Redner*innen
+prot_overview %>%
+  left_join(mdb_data, by = c("redner_id" = "id")) %>%
+  count(redner_id, redner_vorname, redner_nachname, redner_fraktion, sort = TRUE) %>%
+  mutate(name = paste(redner_vorname, redner_nachname)) %>%
+  filter(!is.na(redner_fraktion)) %>%
+  select(name, redner_fraktion, n) %>%
+  head(10) %>%
+  rename(Name = name, Fraktion = redner_fraktion, Reden = n) %>%
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "",
+               align = c("l", "r", "r")) %>%
+  write_file(., "document/tables/top_redner.tex")
+
