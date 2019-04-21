@@ -201,7 +201,7 @@ freq_speeches %>%
   rename(Fraktion = fraktion,
          "Sitzanteil Frauen" = freq_seats,
          "Redeanteil Frauen" = freq_speeches) %>%
-  knitr::kable(format = "latex", booktabs = TRUE, linesep = "",
+  kable(format = "latex", booktabs = TRUE, linesep = "",
                align = c("l", "r", "r")) %>%
   column_spec(1:3, width = "2.5cm") %>%
   write_file(., "document/tables/vergleich_sitze_reden.tex")
@@ -215,7 +215,7 @@ prot_overview %>%
   select(name, redner_fraktion, n) %>%
   head(10) %>%
   rename(Name = name, Fraktion = redner_fraktion, Reden = n) %>%
-  knitr::kable(format = "latex", booktabs = TRUE, linesep = "",
-               align = c("l", "r", "r")) %>%
+  kable(format = "latex", booktabs = TRUE, linesep = "",
+               align = c("l", "l", "r")) %>%
   write_file(., "document/tables/top_redner.tex")
 
