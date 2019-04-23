@@ -15,7 +15,7 @@ mdb_overview <- read_rds("data/BT_19/overview.RDS")
 mdb_speeches <- read_rds("data/BT_19/speeches.RDS")
 
 mdb_full_speeches <- mdb_overview %>%          # Übersicht der Reden
-  filter(is.na(redner_rolle)) %>%              # Nur Reden von MdBs
+  filter(!is.na(redner_fraktion)) %>%              # Nur Reden von MdBs
   left_join(mdb_data %>% select(id, geschlecht), by = c("redner_id" = "id")) %>%
   left_join(mdb_speeches, by = "rede_id") %>%  # Mit den anderen Daten verknüpfen
   filter(typ != "kommentar") %>%               # Keine Kommentare (Zwischenrufe)
@@ -100,16 +100,9 @@ mdb_gfl_phrases <- mdb_gfl_speeches %>%                                  # extra
   count(gfl_phrases, sort = TRUE)
 
 write_csv(mdb_gfl_phrases %>% select(gfl_phrases), "data/gfl_phrases.csv")
+# mdb_gfl_phrases <- read_csv("data/gfl_phrases.csv")
+
+# Auch hier muss die Tabelle wieder manuell angepasst werden, da dies nicht immer funktioniert.
+# Beispiel für Fälle, in denen dies nicht funktioniert.
+mdb_gfl_phrases[90:100,] %>%
   
-
-
-
-write_rds(mdb_exkl_words, "data/BT_19/genderexklusive_words.RDS")
-
-# Wie hoch ist der Anteil an genderinklusiven Wörtern pro Rede in Wörtern? Im Vergleich zu "nicht-genderinklusiven" Begriffen?
-
-mdb_inkl_words %>%
-  filter(!is.na(geschlecht)) %>%
-  mutate(rel_inkl_words = genderinkl_words/woerter) %>%
-  arrange(-rel_inkl_words) %>%
-  View("wat")
