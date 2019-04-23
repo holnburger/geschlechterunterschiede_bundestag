@@ -466,45 +466,31 @@ Da sich das Redeverhalten und Rechte von fraktionslosen Abgeordneten zu den Abge
     \item Zwei Wörter, welche durch ein \enquote{und} oder \enquote{oder} getrennt werden
     \item Eines dieser Wörter endet mit den Buchstaben \enquote{in} oder \enquote{innen}, wobei das andere Wort mit \enquote{e}, \enquote{er} oder \enquote{en} endet.
     \item Die Wörter bestehen aus jeweils mindestens vier Buchsten vor den jeweiligen Endungen
-    \item Mittels dieser Regel konnten insgesamt zunächst 507 genderinklusive Formulierungen identifiziert werden, die häufigsten zehn genderinklusiven Ansprachen finden sich in Tabelle  -- nach manueller Bereinigung wurden diese auf 417 Formulierungen reduziert. Die
+    \item Mittels dieser Regel konnten insgesamt zunächst 507 genderinklusive Formulierungen identifiziert werden, die häufigsten zehn genderinklusiven Ansprachen finden sich in Tabelle \ref{table:top_gender_phrasen}  -- nach manueller Bereinigung wurden diese auf 417 Formulierungen reduziert.
 \end{itemize}
 
+\begin{table}[htb]
+    \centering
+    \caption[Häufigste genderinklusive Ansprachen in den Reden des 19. Deutschen Bundestages]{Häufigste genderinklusive Ansprachen in den Reden des 19. Deutschen Bundestages. Die Kleinschreibung ist technisch bedingt.}
+    \input{document/tables/genderinklusive_formulierungen_top.tex}
+    \label{table:top_gender_phrasen}
+\end{table}
 
-!!!!!  Das kommt in ein anderes Kapitel!!!!! Die von \textcite{back_2014} vorgenommene Klassifizierung der Themen in \emph{soft} und \emph{hard policies} soll in dieser Forschung nicht übernommen werden, da auf diese Weise in der Gesellschaft vorhandenen Stereotypen reproduziert werden. !!!!! (Methode...) 
+\begin{itemize}
+    \item Somit konnte für diese Arbeit ein Diktionär entwickelt werden, welches genderexklusive Begriffe und genderinklusive Varianten sowie Formulierungen enthält. 
+    \item Kritisch ist hierbei die bereits beschriebene Datengrundlage zu bewerten -- da diese nicht wissenschaftlich entwickelt sondern durch einem ehrenamtliches Projekt enstammen, sind die Ergebnisse und Rückschlüsse der Arbeit, welche auf diesem Diktionär basieren, entsprechend kritisch zu bewerten. 
+    \item Es braucht hier zukünftig weitere Erhebungen und möglichst interdisziplinäre Zusammenarbeit, um ein akurates Diktionär für die weitere Arbeiten im deutschsprachigen Raum zu entwickeln.
+    \item Das in diesem Rahmen entwickelte Diktionär umfasst insgesamt 417 genderinklusvie Formulierunge, 1.059 genderinklusive Begriffe und 605 genderexklusive Begriffe (vgl. Tablle \ref
+\end{itemize}
 
+\begin{table}[htb]
+    \centering
+    \caption[Zusammenfassung der Daten des entwickelten Diktionärs]{Zusammenfassung der Daten des entwickelten Diktionärs}
+    \input{document/tables/genderinklusive_woerter_anzahl.tex}
+    \label{table:zusammenfassung_dict}
+\end{table}
 
 \section{Methodik Regression und automated topic modelling}
-
-
-Die Überprüfung der \textbf{Hypothesen 1, 2a und 2b} sollen mittels Regressionsanalysen untersucht werden. Neben dem Geschlecht des*der Redner*in sollen folgende Faktoren als Kontrollvariablen erhoben und untersucht werden: (KRITIK HIERBEI; MUSS NACH OBEN; NICHT ERST HIER! GEHÖRT ZUR KONZEPTION)
-
-\textbf{der*die Rednerin ist Mitglied der Oppositions- bzw. Regierungsfraktion}
-
-Es wird erwartet, dass Mitglieder der Regierungsfraktion deutlich häufiger mit Rückfragen konfrontiert werden, da sie eine stärkere Einbindung in den Legislativprozess erfahren und die Kontrolle der Regierung zu den Kernaufgaben der Opposition zählen.
-
-\textbf{der*die Redner*in ist Mitglied des Fraktionsvorsitzes}
-
-Es wird erwartet, dass Mitglieder des Vorsitzes der Fraktionen beispielsweise häufiger unterbrochen werden. Zum einen, da Reden, welche auf Antrag der Opposition länger gehalten werden, häufig von den Fraktionsvorsitzenden gehalten werden, aber auch, da diese Reden häufig bei volleren Plenarsälen gehalten werden.
-
-\textbf{der*die Redern*in ist Mitglied der Fraktion "Alternative für Deutschland"}
-
-Hier wird erwartet, dass Abgeordnete der AfD-Fraktion deutlich seltener GFL nutzen, wohingehend die Anzahl der Unterbrechungen deutlich höher erwartet wird. Populistische Parteien setzen sich unter anderem durch provokante Thesen und ein provokantes Auftreten von anderen Parteien ab \parencites[vgl.][]{decker_populismus_2006}{priester_2012}. Dies lässt vermuten, dass mehr Zwischenrufe von anderen Abgeordneten in den Reden der AfD-Mitglieder geäußert werden.
-
-\textbf{die Anzahl der bisherigen Bundestagsmandate des*der Redner*in}
-
-Bei dieser Variable wird kein Einfluss auf die abhängigen Variablen (Nutzung von GFL, Anzahl der Unterbrechungen, Anzahl der Rückfragen) erwartet, sie dient der Überprüfung der Validität der Methoden.
-
-\textbf{das Alter des*der Redner*in}
-
-Hier wird keine Einfluss auf die abhängigen Variablen erwartet. Diese Variable dient der Überprüfung der Validität der Methode.
-
-Die {Hypothesen 1, 2a und 2b} werden über eine Regressionsanalyse überprüft. Die Variable Geschlecht wird hierbei als Dummy-Variable kodiert. Der Einfluss der Kontrollvariablen etwa auf die abhängige Variable \emph{Anzahl der Unterbrechungen} wird ebenfalls überprüft. Da es sich bei den abhängigen Variablen um Zähldaten handelt, wird vermutlich eine negative Binomialregression angewandt (welche auch bei \textcite{back_2014} angewandt wurde) oder eine OLS-Regression untersucht (angewandt bei \textcite{coffe_2013}).
-
-
-\textbf{Hypothese 3} zur Untersuchung der Themen in den Reden der Abgeordneten soll über ein automatisiertes \emph{Topic Modeling} untersucht werden. Anders als bei \textcite{back_2014}, welche die Themen der Reden der Abgeordneten anhand der vorangegangen Reden von Minister*innen untersucht hat, soll durch ein automatisiertes \emph{Topic Modeling} einerseits einen geschlechterstereotypen Bias verhindern aber auch eine genauere Zuordnung an Themen ermöglichen. 
-Automatisierte \emph{Topic Modelings} wurden bereits auf Reden des Europaparlaments angewandt, um Agenda-Trends zu identifizieren \parencite[vgl.][]{greene_2016} und werden auch in der vergangenen Studie von Bäck und Debus zur Identifikation von geschlechtsbezogener \emph{Topics} vorgeschlagen \parencite*[18]{back_2018}.
-
-Als automatisiertes \emph{Topic Modeling Framework} wird das von der University of Cambridge ausgezeichnete\footnote{https://www.cambridge.org/core/membership/spm/about-us/awards/statistical-software-award/statistical-software-award-18} \emph{Structural Topic Modeling} von \textcite{roberts_2018} angewendet. Dies ermöglicht es, auch innerhalb von Reden mehrere Inhalte zu identifizieren und erlaubt so ein genaueres Vorgehen bei der Untersuchung möglicher geschlechterbezogener Themen. In unserem Datensatz sind \textbf{XXX} Reden enthalten.
 
 \subsection{Hintergrund stm}
 
@@ -556,6 +542,38 @@ Hier eine Tabelle, welche im Ordner \enquote{table} abgespeichert wurde und mit 
 
 % Wenn wir nicht wollen, dass ein Kapitel auf einer neuen Seite startet, nutzen wir folgenden Befehl hier:
 {\let\clearpage\relax \chapter{Theoriefindung}}
+
+
+
+Die Überprüfung der \textbf{Hypothesen 1, 2a und 2b} sollen mittels Regressionsanalysen untersucht werden. Neben dem Geschlecht des*der Redner*in sollen folgende Faktoren als Kontrollvariablen erhoben und untersucht werden: (KRITIK HIERBEI; MUSS NACH OBEN; NICHT ERST HIER! GEHÖRT ZUR KONZEPTION)
+
+\textbf{der*die Rednerin ist Mitglied der Oppositions- bzw. Regierungsfraktion}
+
+Es wird erwartet, dass Mitglieder der Regierungsfraktion deutlich häufiger mit Rückfragen konfrontiert werden, da sie eine stärkere Einbindung in den Legislativprozess erfahren und die Kontrolle der Regierung zu den Kernaufgaben der Opposition zählen.
+
+\textbf{der*die Redner*in ist Mitglied des Fraktionsvorsitzes}
+
+Es wird erwartet, dass Mitglieder des Vorsitzes der Fraktionen beispielsweise häufiger unterbrochen werden. Zum einen, da Reden, welche auf Antrag der Opposition länger gehalten werden, häufig von den Fraktionsvorsitzenden gehalten werden, aber auch, da diese Reden häufig bei volleren Plenarsälen gehalten werden.
+
+\textbf{der*die Redern*in ist Mitglied der Fraktion "Alternative für Deutschland"}
+
+Hier wird erwartet, dass Abgeordnete der AfD-Fraktion deutlich seltener GFL nutzen, wohingehend die Anzahl der Unterbrechungen deutlich höher erwartet wird. Populistische Parteien setzen sich unter anderem durch provokante Thesen und ein provokantes Auftreten von anderen Parteien ab \parencites[vgl.][]{decker_populismus_2006}{priester_2012}. Dies lässt vermuten, dass mehr Zwischenrufe von anderen Abgeordneten in den Reden der AfD-Mitglieder geäußert werden.
+
+\textbf{die Anzahl der bisherigen Bundestagsmandate des*der Redner*in}
+
+Bei dieser Variable wird kein Einfluss auf die abhängigen Variablen (Nutzung von GFL, Anzahl der Unterbrechungen, Anzahl der Rückfragen) erwartet, sie dient der Überprüfung der Validität der Methoden.
+
+\textbf{das Alter des*der Redner*in}
+
+Hier wird keine Einfluss auf die abhängigen Variablen erwartet. Diese Variable dient der Überprüfung der Validität der Methode.
+
+Die {Hypothesen 1, 2a und 2b} werden über eine Regressionsanalyse überprüft. Die Variable Geschlecht wird hierbei als Dummy-Variable kodiert. Der Einfluss der Kontrollvariablen etwa auf die abhängige Variable \emph{Anzahl der Unterbrechungen} wird ebenfalls überprüft. Da es sich bei den abhängigen Variablen um Zähldaten handelt, wird vermutlich eine negative Binomialregression angewandt (welche auch bei \textcite{back_2014} angewandt wurde) oder eine OLS-Regression untersucht (angewandt bei \textcite{coffe_2013}).
+
+
+\textbf{Hypothese 3} zur Untersuchung der Themen in den Reden der Abgeordneten soll über ein automatisiertes \emph{Topic Modeling} untersucht werden. Anders als bei \textcite{back_2014}, welche die Themen der Reden der Abgeordneten anhand der vorangegangen Reden von Minister*innen untersucht hat, soll durch ein automatisiertes \emph{Topic Modeling} einerseits einen geschlechterstereotypen Bias verhindern aber auch eine genauere Zuordnung an Themen ermöglichen. 
+Automatisierte \emph{Topic Modelings} wurden bereits auf Reden des Europaparlaments angewandt, um Agenda-Trends zu identifizieren \parencite[vgl.][]{greene_2016} und werden auch in der vergangenen Studie von Bäck und Debus zur Identifikation von geschlechtsbezogener \emph{Topics} vorgeschlagen \parencite*[18]{back_2018}.
+
+Als automatisiertes \emph{Topic Modeling Framework} wird das von der University of Cambridge ausgezeichnete\footnote{https://www.cambridge.org/core/membership/spm/about-us/awards/statistical-software-award/statistical-software-award-18} \emph{Structural Topic Modeling} von \textcite{roberts_2018} angewendet. Dies ermöglicht es, auch innerhalb von Reden mehrere Inhalte zu identifizieren und erlaubt so ein genaueres Vorgehen bei der Untersuchung möglicher geschlechterbezogener Themen. In unserem Datensatz sind \textbf{XXX} Reden enthalten.
 
 
 
