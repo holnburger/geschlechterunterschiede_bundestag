@@ -45,22 +45,6 @@ gend_dict %>%
 # Beispiel: Schüler --> Kinder. Hier macht es einen eklatanten Unterschied,
 # Es gibt auch üblicherweise mehr als einen erseztenden Begriff (Lehrling --> Azubi).
 
-# Zwei Characterstrings: Einer zum Erkennen genderexklusiver Begriffe, einer für genderinklusvie Begriffe
-
-genderexkl_begriffe <- gend_dict %>%
-  select(word_list) %>%
-  distinct(word_list)
-
-genderinkl_begriffe <- gend_dict %>%
-  select(alternative_list) %>%
-  distinct(alternative_list)
-
-# Tabelle um zu zeigen, auf wie viele Begriffe überprüft wird
-tibble("Genderexklusive Begriffe" = nrow(genderexkl_begriffe),
-  "Genderinklusive Begriffe" = nrow(genderinkl_begriffe)) %>%
-  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
-  write_file(., "document/tables/genderinklusive_woerter_anzahl.tex")
-
 # Test der Hypothese: Frauen benutzen eher genderinklusive Sprache als Männer.
 # Test über: Anteil genderinklusiver Sprache in den Reden von Frauen und Männern. Anteil über Wörter.
 
@@ -102,7 +86,30 @@ mdb_gfl_phrases <- mdb_gfl_speeches %>%                                  # extra
 write_csv(mdb_gfl_phrases %>% select(gfl_phrases), "data/gfl_phrases.csv")
 # mdb_gfl_phrases <- read_csv("data/gfl_phrases.csv")
 
+mdb_gfl_phrases %>%
+  head(10) %>%
+  rename(Forumulierung = gfl_phrases) %>%
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
+  write_file(., "document/tables/genderinklusive_formulierungen_top.tex")
+
 # Auch hier muss die Tabelle wieder manuell angepasst werden, da dies nicht immer funktioniert.
-# Beispiel für Fälle, in denen dies nicht funktioniert.
-mdb_gfl_phrases[90:100,] %>%
-  
+# Tabelle als Beispiel für die zehn häufigst genutzten Genderinklusiven Ansprachen.
+
+gfl_modified_phrases <- read_csv("data/gfl_phrases_modified.csv")
+
+# Abschließende Tabelle mit der Anzahl an Begriffen.
+genderexkl_begriffe <- gend_dict %>%
+  distinct(word_list)
+
+genderinkl_begriffe <- gend_dict %>%
+  distinct(alternative_list)
+
+dict_summary_table <- tibble("Genderinklusive Formulierungen" = nrow(gfl_modified_phrases), 
+  "Genderinklusive Begriffe" = nrow(genderinkl_begriffe), 
+  "Genderexklusive Begriffe" = nrow(genderexkl_begriffe)) 
+
+dict_summary_table %>%
+  gather() %>% 
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "",
+               col.names = c("", "Anzahl")) %>%
+  write_file(., "document/tables/genderinklusive_woerter_anzahl.tex")
