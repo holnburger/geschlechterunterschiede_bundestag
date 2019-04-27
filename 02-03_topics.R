@@ -21,6 +21,7 @@ speeches_clean <- speeches %>%
   group_by(rede_id) %>%
   mutate(rede = paste0(rede, collapse = "\n")) %>%
   distinct(rede, .keep_all = TRUE) %>%
+  mutate(rede = str_remove_all(rede, "„|“")) %>%
   mutate(name = paste0(vorname, " ", nachname, ", ", fraktion)) %>%
   select(-vorname, -nachname, -präsidium, -typ, -status) %>%
   left_join(mdb_data %>% select(id, geschlecht, partei, geburtsjahr, anzahl_wahlperioden), by = "id")
@@ -38,7 +39,7 @@ bt_stopwords = c("bundestag", "kolleginnen", "kollegen", "präsident",
 
 processed <- textProcessor(speeches_clean$rede,
                            removestopwords = TRUE,
-                           stem = FALSE,
+                           stem = TRUE,
                            metadata=speeches_clean,
                            customstopwords = bt_stopwords,
                            language = "german")
@@ -56,7 +57,7 @@ plot(test_k)
 write_rds(test_k, "data/stm/test_k_multi.RDS")
 # Mit einer groben Bestimmung landen wir zwischen 100 und 120 Topics
 
-K_fine <- c(80:140)
+K_fine <- c(100:120)
 
 test_k_fine <- searchK(out$documents, out$vocab, K_fine, cores = 6)
 
@@ -68,8 +69,8 @@ test_k_fine <- read_rds("data/stm/test_k_fine.RDS")
 
 # Den besten fit haben wir bei etwa 90 Topics, dies muss im weiteren Verlauf noch verbessert werden
 
-stm_speeches_fit <- stm(documents = out$documents, vocab = out$vocab, K = 115,
-                        prevalence = ~geschlecht, max.em.its = 10, data = out$meta,
+stm_speeches_fit <- stm(documents = out$documents, vocab = out$vocab, K = 110,
+                        prevalence = ~geschlecht, max.em.its = 500, data = out$meta,
                         init.type = "Spectral")
 
 write_rds(stm_speeches_fit, "data/stm/stm_speeches_fit.RDS")
@@ -83,11 +84,17 @@ out$meta$geschlecht <- as.factor(out$meta$geschlecht)
 prep <- estimateEffect(~ geschlecht, stm_speeches,
                        meta = out$meta, uncertainty = "Global")
 
-plot(stm_speeches)
+plot(stm_speeches, topics = 38, type = "labels", labeltype = "frex")
+plot(stm_speeches, topics = 38, type = "labels", n = 30)
+labelTopics(stm_speeches, topics = c(20:30), n = 10)
 
-plot(prep, covariate = "geschlecht", topics = c(21:30),
+plot(prep, covariate = "geschlecht", topics = c(31:40),
      model = stm_speeches, method = "difference",
      xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
      main = "Geschlechterspezifische Effekte zu den Topics im Bundestag",
      #custom.labels = c("Ehe für Alle", "Schwangerschaftsabbruch", "Brexit"), labeltype = "custom",
      xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt")
+
+findThoughts(stm_speeches, texts = speeches_clean, topics = 28)
+
+plot(prep, topics = c(1:20), model = stm_speeches, method = "labels")
