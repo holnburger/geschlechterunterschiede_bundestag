@@ -26,10 +26,11 @@
   	urlcolor=black
   	]{hyperref}
 \usepackage[labelfont=bf]{caption}
+\usepackage[draft]{todonotes} 
 \usepackage{float}
 \usepackage[
     backend=biber, 
-    style=authoryear-ibid, 
+    style=authoryear-icomp, 
     eprint=false,
     url=false,
     doi=false,
@@ -44,6 +45,17 @@
 \KOMAoptions{headsepline = true}
 \setlength{\textheight}{1.05\textheight}
 \AtBeginEnvironment{quote}{\singlespacing\small}
+\makeatletter
+% Keine Seitenvorschübe bei \Chapter
+\newcommand\Chapter{%
+                    \par\vspace{1.5cm}% anpassen
+                    \global\@topnum\z@
+                    \@afterindentfalse
+                    \secdef\@chapter\@schapter}
+\makeatother
+\DefineBibliographyStrings{ngerman}{
+   andothers = {{et\,al\adddot}},
+}
 
 \begin{document}
 
@@ -66,10 +78,10 @@
     \vspace*{\fill}
     \begin{center}
 	\vspace{1cm}\noindent {\textbf{Projektarbeit}} \vspace{0.2cm} \\
-	\textbf{\Large Geschlechtsbezogene Repräsentationsunterschiede in Parlamentsdebatten \\
+	\textbf{\Large Geschlechtsbezogene Repräsentationsunterschiede im Deutschen Bundestag \\
 	\vspace {0,5cm} \small\emph{Inwiefern unterscheiden sich Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität}} \\
 	\vspace{0.5cm}
-	30.03.2019
+	30.04.2019
 	\end{center}
     \vspace*{\fill}
 	
@@ -79,7 +91,7 @@
     Matrikelnummer: 6436971 \\
     Friedensallee 15 \vspace{0.1cm} \\ 
 	22765 Hamburg \vspace{0.1cm}  \\
-	E-Mail: gina-gabriela.goerner@uni-hamburg.de \\
+	\href{mailto:gina-gabriela.goerner@uni-hamburg.de}{gina-gabriela.goerner@uni-hamburg.de} \\
     % Hab das geändert, e-mails schreibt man idR klein, wie webseiten. Sind nicht case-sensitiv
     \end{minipage}
     \begin{minipage}[t]{0.48\textwidth}
@@ -88,7 +100,7 @@
 	Matrikelnummer: 6524900 \\
 	Beuthstraße 1 \vspace{0.1cm} \\
 	10117 Berlin \vspace{0.1cm} \\
-	E-Mail: josef@holnburger.com \\
+	\href{mailto:josef@holnburger.com}{josef@holnburger.com} \\
     \end{minipage}
 
 \end{titlepage}
@@ -116,9 +128,10 @@
     \enquote{Gender equality in political representation may be described within both optimistic and pessimistic stories.} \parencite[149]{celis_2018}
 \end{quote}
 
+\noindent
+Die machtpolitische Gleichstellung der Geschlechter sowie die politische Ressourcenverteilung in den industrialisierten Demokratien ist in den letzten fünfzig Jahren enorm gewachsen \parencite[318]{coffe_2010}. Es gibt mehr weibliche Parlamentarierinnen (aus dem englischen \emph{Members of Parliament} = MPs) als je zuvor und eine Rekordzahl von Frauen nimmt Führungspositionen in den nationalen Regierungen \parencites{lovenduski_2005}{paxton_2007}, mit vielen wichtigen Konsequenzen für politische Ergebnisse und Prioritäten \parencites{bolzendahl_2007}{carroll_2001}{waring_2000}[318]{coffe_2010}, ein. Dennoch sind derzeit weniger als ein Viertel Frauen (24,3 Prozent) in den weltweiten Parlamenten vertreten \parencite{ipu_2019}. Repräsentative Institutionen werden trotz eines langen Kampfes um Gleichstellung noch immer von Männern dominiert \parencites[149]{celis_2018}[497 f.]{childs_2013}{dahlerup_2013} {bjarnegard_2013} und es ist nicht umstritten zu behaupten, dass die Gleichstellung der Geschlechter nicht erreicht wurde \parencite[150]{celis_2018}. Eine Gleichstellung wird hierbei nicht nur über die Anzahl der Sitze in repräsentativen Parlamenten bestimmt, sondern ergibt sich durch eine Vielzahl an Faktoren, unter anderem auch der sprachlichen Einbeziehung aller Geschlechter\footnote{In der Literatur herrscht ein Minimalkonsens darüber, dass es sich bei Geschlecht um eine soziale Konstruktion handelt \parencite[2]{meissner_2008}. Üblicherweise wird hier zwischen der sozial konstruierte Geschlechtsidentität oder Geschlechtsrolle (englisch \emph{gender}) und dem biologischen Geschlecht (englisch \emph{sex}) unterschieden \parencite[3f.]{meissner_2008}. Allerdings gibt es Menschen, welche sich keiner konstruierten binären Geschlechtisdentität zuordnen wollen oder können (oft als \emph{genderqueer}, \emph{genderfluid} oder \emph{non-binary} bezeichnet). Auch biologisch ist ein streng binäres Geschlechtermodell nicht haltbar -- intersexuelle Menschen weichen hier von einem solchen Modell ab und sind oft von Marginalisierung und Ausgrenzung betroffen \parencite[vgl.][]{richards_2016}. Um eine solche Marginalisierung zu vermeiden und auf die Vielzahl an Geschlechtern hinzuweisen, wird in dieser Arbeit eine genderinklusive Schreibweise genutzt. Die Schreibweise mittels des sogenannten \emph{Gendersternchen} (beispielsweise \enquote{Polikter*innen} soll hierbei zugleich Männer und Frauen, als auch alle weiteren Geschlechteridentitäten repräsentieren. Generell wird versucht, auf genderexklusive Begriffe (etwa \emph{Student}) zu verzichten und stattdessen eine genderinklusive Begriffe zu nutzen (\enquote{Studierende}). Da die überwiegende Forschung zur Repräsentanz von Geschlechtern in Parlamente ein binäres Geschlechtermodell anwendet -- etwa der Vergleich des Anzahls der Sitze von Frauen in repräsentativen Parlamenten durch die Inter-Parliamentary Union \textcite{ipu_2019} -- wird auch in dieser Arbeit vorwiegend ein binäres Modell verglichen. Möglichkeiten zur besseren Repräsentation von \emph{genderqueeren} und intersexuellen Menschen in Parlamenten finden sich beispielsweise bei \textcite{squires_2008}. Eine kritische Auseinandersetzung mit der hier beschriebenen Proplematik findet sich bei \parencite[6ff.]{meissner_2008}.} in den Parlamentsdebatten und dem Nichtvorhandensein von geschlechterspezifischem Verhalten sowie einer geschlechterunspezifischen Themenwahl. Da die Gleichstellung und Repräsentation von Frauen in Parlamenten in Form der Anzahl an Sitzen im Parlament in einer Vielzahl an Erhebungen bereits untersucht wurde\footnote{Eine Vergleich der Sitzanteile von Frauen nach Ländern findet sich etwa auf der Seite der Inter-Parliamentary Union unter \url{https://www.ipu.org/resources/publications/infographics/2019-03/women-in-politics-2019}}, sollen in der hier vorliegenden Arbeit eine tiefgründigere Untersuchung der Repräsentation von Frauen vorgenommen werden. 
 
-Die machtpolitische Gleichstellung der Geschlechter sowie die politische Ressourcenverteilung in den industrialisierten Demokratien ist in den letzten fünfzig Jahren enorm gewachsen \parencite[318]{coffe_2010}. Es gibt mehr weibliche Parlamentarierinnen (aus dem englischen \emph{Members of Parliament} = MPs) als je zuvor und eine Rekordzahl von Frauen nimmt Führungspositionen in den nationalen Regierungen \parencites{lovenduski_2005}{paxton_2007}, mit vielen wichtigen Konsequenzen für politische Ergebnisse und Prioritäten \parencites{bolzendahl_2007}{carroll_2001}{waring_2000}[318]{coffe_2010}, ein. Dennoch sind derzeit weniger als ein Viertel Frauen (24,3 Prozent) in den weltweiten Parlamenten vertreten \parencite{ipu_2019}. Repräsentative Institutionen werden trotz eines langen Kampfes um Gleichstellung noch immer von Männern dominiert \parencites[149]{celis_2018}[497 f.]{childs_2013}{dahlerup_2013} {bjarnegard_2013} und es ist nicht umstritten zu behaupten, dass die Gleichstellung der Geschlechter nicht erreicht wurde \parencite[150]{celis_2018}. Eine Gleichstellung wird hierbei nicht nur über die Anzahl der Sitze in repräsentativen Parlamenten bestimmt, sondern ergibt sich durch eine Vielzahl an Faktoren, u.a. auch der sprachlichen Einbeziehung aller Geschlechter\footnote{In der Literatur herrscht ein Minimalkonsens darüber, dass es sich bei Geschlecht um eine soziale Konstruktion handelt \parencite[2]{meisner_2008}. Üblicherweise wird hier zwischen der sozial konstruierte Geschlechtsidentität oder Geschlechtsrolle (englisch \emph{gender}) und dem biologischen Geschlecht (englisch \emph{sex}) unterschieden \parencite[3f.]{meissner_2008}. Allerdings gibt es Menschen, welche sich keiner konstruierten binären Geschlechtisdentität zuordnen wollen oder können (oft als \emph{genderqueer}, \emph{genderfluid} oder \emph{non-binary} bezeichnet). Auch biologisch ist ein streng binäres Geschlechtermodell nicht haltbar -- intersexuelle Menschen weichen hier von einem solchen Modell ab und sind oft von Marginalisierung und Ausgrenzung betroffen \parencite[vgl.][]{richards_2016}. Um eine solche Marginalisierung zu vermeiden und auf die Vielzahl an Geschlechtern hinzuweisen, wird in dieser Arbeit eine genderinklusive Schreibweise genutzt. Die Schreibweise mittels des sogenannten \emph{Gendersternchen} (beispielsweise \enquote{Polikter*innen} soll hierbei zugleich Männer und Frauen, als auch alle weiteren Geschlechteridentitäten repräsentieren. Generell wird versucht, auf genderexklusive Begriffe (etwa \emph{Student}) zu verzichten und stattdessen eine genderinklusive Begriffe zu nutzen (\enquote{Studierende}). Da die überwiegende Forschung zur Repräsentanz von Geschlechtern in Parlamente ein binäres Geschlechtermodell anwendet -- etwa der Vergleich des Anzahls der Sitze von Frauen in repräsentativen Parlamenten durch die Inter-Parliamentary Union \textcite{ipu_2019} -- wird auch in dieser Arbeit vorwiegend ein binäres Modell verglichen. Möglichkeiten zur besseren Repräsentation von \emph{genderqueeren} und intersexuellen Menschen in Parlamenten finden sich beispielsweise bei \textcite{squires_2008}. Eine kritische Auseinandersetzung mit der hier beschriebenen Proplematik findet sich bei \parencite[6ff.]{meissner_2008}.} in den Parlamentsdebatten und dem Nichtvorhandensein von geschlechterspezifischem Verhalten sowie einer geschlechterunspezifischen Themenwahl. Da die Gleichstellung und Repräsentation von Frauen in Parlamenten in Form der Anzahl an Sitzen im Parlament in einer Vielzahl an Erhebungen bereits untersucht wurde (QUELLLEN!!!!!), sind letztere Faktoren Untersuchungsgegenstand der vorliegenden Arbeit. 
-
+\citereset
 \begin{quote}
      \enquote{Gender equal representation is not only about the proportion of men and women legislators or the outcomes of politics}\parencite[197]{erikson_2018}
  \end{quote}
@@ -126,90 +139,126 @@ Die machtpolitische Gleichstellung der Geschlechter sowie die politische Ressour
 In Anlehnung an \textcite{erikson_2018} wird eine geschlechtergerechte Repräsentation in der vorliegenden Arbeit weder daran gemessen, ob eine gleiche Anzahl an Frauen und Männern im Parlament vertreten ist, noch anhand der politischen Ergebnisse. Ausgangspunkt dieser Arbeit für eine \emph{geschlechtergerechtere Repräsentation} ist ein mehrdimensionaler Repräsentationsbegriff:
 
 Repräsentation gilt als ein Kernkonzept in der Erforschung und Praxis der Politik und kann in verschiedenen, miteinander verbundenen Dimensionen betrachtet werden. Es kann hierbei zwischen dem, was repräsentiert wird, wie es repräsentiert wird und wer repräsentiert, unterschieden werden \parencite[557]{galligan_2007}. In den meisten Fällen bieten sowohl die Wähler*innen, Parteien, Wahlen und Gesetzgeber*innen den Hintergrund für eine Diskussion über eine oder mehrere Elemente der jeweiligen Repräsentationsdimension \parencite[557]{galligan_2007}.
-In der vorliegenden Arbeit werden fünf Repräsentations-Dimensionen definiert und differenziert voneinander betrachtet. Obwohl keine der im Folgenden genannten Dimension gänzlich unabhängig von den anderen Dimensionen analysiert werden kann, werden sie in dieser Arbeit zunächst klar voneinander getrennt um die Komplexität der verschiedenen Dimensionen zu reduzieren. Eine Hierarchisierung der Dimensionen ist kein Bestandteil dieser Analyse. Das Ziel liegt in einer differenziert gewichteten Analyse der folgenden fünf Repräsentationsebenen:
+In der vorliegenden Arbeit sollen fünf Repräsentations-Dimensionen definiert und differenziert voneinander betrachtet. Obwohl keine der im Folgenden genannten Dimension gänzlich unabhängig von den anderen Dimensionen analysiert werden kann, werden sie in dieser Arbeit zunächst klar voneinander getrennt um die Komplexität der verschiedenen Dimensionen zu reduzieren. Eine Hierarchisierung der Dimensionen ist kein Bestandteil dieser Analyse. Das Ziel liegt in einer differenziert gewichteten Analyse der folgenden fünf Repräsentationsebenen:
+\todo[inline]{gewichtet würde ich rausnehmen - das machen wir nicht, da wir nicht eines schwerer wichten als das andere}
 
 \begin{itemize}
-    \item Ebene A: Weibliche Repräsentation im Parlament: Sind Frauen im Parlament vertreten? Wie viele Frauen sind relativ und absolut im Parlament vertreten? 
-    \item Ebene B: Weibliche Repräsentation bei den Parlaments-Debatten: Nehmen Frauen an den Parlaments-Debatten teil? Nehmen Frauen relativ und absolut gleich viel an den Parlaments-Debatten teil? 
-    \item Ebene C: Repräsentation von Frauen in den Parlaments-Debatten: Werden in den Parlaments-Debatten Frauen ebenso wie Männer sprachlich repräsentiert? Wird Gender-Fair-Language (GFL) genutzt? Wird GFL von weiblichen und männlichen MPs in gleichem Maße genutzt? 
-    \item Ebene D: Repräsentation von geschlechtsbezogenen Stereotypisierungen: Werden gesellschaftliche geschlechtsbezogene Stereotypisierungen reproduziert? Unterscheidet sich die Thematisierung in den Reden von Frauen und Männern? 
-    \item Ebene E: Repräsentation von geschlechtsspezifischen Verhaltensmustern: Werden in den Parlaments-Debatten frauenfeindliche Verhaltensmuster reproduziert? Werden Frauen häufiger negativ unterbrochen?  
+    \item Ebene A: Weibliche Repräsentation im Parlament: Sind Frauen im Parlament vertreten? Wie viele Frauen sind relativ und absolut im Parlament vertreten? \todo[inline]{Wieso ist hier die Frage nach absolut und relativ gestellt? Das mach mMn hier keinen Sinn. Wenn eine Frau im Parlament vertreten ist, sind sie dann absolut vertreten? Wie kann man die Frage \enquote{Sind Frauen relativ im Paralament vertreten} beantworten? Relativ vertreten wären sie, wenn sie 50\% hätten, da die Geschlechterverteilung fast 50\% ist.}
+    \item Ebene B: Weibliche Repräsentation bei den Parlamentsdebatten: Nehmen Frauen an den Parlamentsdebatten teil? Nehmen Frauen relativ und absolut gleich viel an den Parlamentsdebatten teil? \todo[inline]{Hab hier die Unterscheidung zwischen \enquote{absolut} und \enquote{relativ} nicht verstanden. Wenn Frauen nicht 50\% der Reden halten, haben sie dann absolut oder relativ weniger Reden? Vorschlag: \enquote{Entspricht der Redeanteil von Frauen deren Anteil an Sitzen im Parlament?}} 
+    \item Ebene C: Repräsentation von Frauen in den Parlamentsdebatten: Werden in den Debatten Frauen ebenso wie Männer sprachlich repräsentiert? Wird Gender-Fair-Language (GFL) genutzt? Wird GFL von weiblichen und männlichen MPs in gleichem Maße genutzt? 
+    \item Ebene D: Repräsentation von geschlechtsbezogenen Stereotypisierungen: Werden gesellschaftliche geschlechtsbezogene Stereotype reproduziert? Unterscheidet sich die Thematisierung in den Reden von Frauen und Männern? 
+    \item Ebene E: Repräsentation von geschlechtsspezifischen Verhaltensmustern: Werden in den Parlamentsdebatten frauenfeindliche Verhaltensmuster reproduziert? Werden Frauen häufiger negativ unterbrochen? 
+    \todo[inline]{Die Überschriften der jeweiligen Ebenen finde ich noch ein bisschen problematisch: Während man A bis C ja haben will (weibliche Repräsentation) will man doch Stereotypen (auch nicht Stereotypisierung, das ist, was Stereotypen auslösen mMn) nicht repräsentieren. Vorschlag:
+    Ebene A: Repräsenation von Frauen im Parlament
+    Ebene B: Beteiligung von Frauen im Parlament
+    Ebene C: Berücksichtigung von Frauen in der Sprache des Parlaments
+    Ebene D: Vermeidung von Stereotypisierung in den Themen
+    Ebene F: Verhinderung von frauenfeindlichen Verhaltensmustern
+    
+    Passt das besser? Problem: Repräsentation von geschlechtsspezifischen Verhaltensmustern - Damit bauen wir doch selbst einen Stereotyp auf, nämlich, dass es solche Verhaltensmuster gibt.}
 \end{itemize}
 
-In der abschließenden !!!Diskussion/ (oder) in Kapitel ?? wird!!! ausführlich auf eine mögliche Vernetzung der einzelnen Dimensionen eingegangen, sodass diese 5 Dimensionen zunächst gesondert voneinander betrachtet und analysiert werden können.  !!! Hinweis: Diese Dimensionen sind mir jetzt neu, und ich weiß noch nicht, wieso sie als Ebenen definiert werden. Hier brauchen wir noch fundierten Hintergrund. Muss erst Ebene 1 erreicht werden, um Ebene 2 zu erfüllen? Welche Hintergrund hat diese Argumentaiton? !!!
+In der abschließenden !!!Diskussion/ (oder) in Kapitel ?? wird!!! ausführlich auf eine mögliche Vernetzung der einzelnen Dimensionen eingegangen, sodass diese fünf Dimensionen zunächst gesondert voneinander betrachtet und analysiert werden können. 
+
+\todo[inline]{Ich würde das ein wenig anders schreiben. Vorschlag:
+
+Der theoretische Hintergrund, die Relevanz des Untersuchungsgegenstandes sowie bisherige Untersuchungen zur Repräsentation von Frauen sollen zunächst detailliert dargestellt werden. Auf Basis dieses Hintergrunds ist eine anschließende Entwicklung von Hypothesen und Konzeption des Forschungsdesigns möglich, welche eine umfassende Untersuchung der Repräsentation von Frauen in Parlamenten möglich macht. Hierbei wird im besonderen auch auf die von \textcite[18]{back_2018} hingewiesenen Möglichkeiten der automatisierten Textanalyse durch neue empirische Methoden Gebrauch gemacht.
+
+Im Anschluss soll die Forschungsfrage \enquote{\emph{Inwiefern unterscheiden sich Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität}} umfassend untersucht werden. Da der 19. Deutsche Bundestag umfassende Daten zu Reden und Verhalten der Abgeordneten zur Verfügung stellt (siehe Kapitel \ref{kapitel:datengrundlage}) und bereits in der Studie von \textcite{back_2018} thematisiert wurde und dort eine weitergehende Untersuchung empfohlen wird, bietet sich dies als Untersuchungsgegenstand an.
+
+In der abschließenden Diskussion in Kapitel \ref{kapitel:diskussion} soll ausführlich auf die einzelnen Dimensionen der Repräsentation am Beispiel des 19. Bundestages eingegangen werden.}
 
 
-\chapter{Theoretischer Hintergrund}
+\Chapter{Theoretischer Hintergrund}
+
+\todo[inline]{Hinweis: Ich finde es immer gut, wenn hier nicht gleich die nächste Teilüberschrift kommt, sondern noch ein Absatz Einleitung kommt. Vorschlag:
+
+Nachfolgend soll insbesondere die Theorie des \emph{Workplace-Approach} von \textcite{erikson_2018} und das Konzept der \enquote{\emph{culture of masculinity}} von \textcite{lovenduski_2005} sowie \textcite{erikson_2018} dargestellt werden, welche maßgeblich für den Hintergrund und die weitere Argumentation dieser Arbeit dienen.}  
 
 \section{Workplace-Approach: Politik als Arbeitsperspektive} 
 
-Die bisherige Forschung zur politischen Repräsentation von Frauen fokussiert primär deskriptiven Themen, wie etwa die Frage danach, wie gesetzgebende Gremien durch Quoten geschlechtsgerechter strukturiert werden können \parencites [vgl.]{dahlerup_2005}{schwindt-bayer_2009} oder substantive Themen, welche beispielsweise untersuchen, ob weibliche Gesetzgeberinnen einen positiven Einfluss auf genderfreundliche politische Ergebnisse haben \parencites [199]{erikson_2018}{beckwith_2007}. Den inneren Mechanismen der gesetzgebenden Körperschaften sowie der Frage, \enquote{how the political game itself is gendered} wurde bisher weniger empirische Aufmerksamkeit gewidmet \parencites[199]{erikson_2018}[vgl.][]{childs_2016}{dahlerup_2013}{wangnerud_2015}.
+\todo[inline]{Finde hier den Begriff \emph{Arbeitsperspektive} etwas merkwürdig. Erikson, auf die wir uns hier häufig beziehen, hat die Politik als \emph{Arbeitsplatz} untersucht -- hätte das entsprechend auch eher als \enquote{Politik als Arbeitsplatz} geschrieben. Oder \enquote{Politik aus der Perspektive eines Arbeitsplatzes}.  Sollen wir das nachfolgend so schreiben?}
 
-Ein Ausgangspunkt der vorliegenden Arbeit ist, dass das legislative Arbeitsumfeld für sich genommen ebenso wichtig ist, wie die Möglichkeiten der weiblichen Gesetzgeberinnen, die Ergebnisse zu beeinflussen. Politikerinnen sollten in der Lage sein, ihre Aufgaben als Gesetzgeberinnen auf Augenhöhe mit ihren männlichen Kollegen zu erfüllen \parencite[199]{erikson_2018}. 
+Die bisherige Forschung zur politischen Repräsentation von Frauen fokussiert primär deskriptiven Themen, wie etwa die Frage danach, wie gesetzgebende Gremien durch Quoten geschlechtergerecht strukturiert werden können \parencites [vgl.]{dahlerup_2005}{schwindt-bayer_2009} oder substantive Themen, welche beispielsweise untersuchen, ob weibliche Gesetzgeberinnen (im Orignal: \emph{legislators})\todo[inline]{Hab' ich noch hinzugefügt, machts vielleicht klarer für später}, einen positiven Einfluss auf genderfreundliche politische Ergebnisse haben \parencites [199]{erikson_2018}{beckwith_2007}. Den inneren Mechanismen der gesetzgebenden Körperschaften sowie der Frage, \enquote{how the political game itself is gendered} wurde bisher weniger empirische Aufmerksamkeit gewidmet \parencites[199]{erikson_2018}[vgl.][]{childs_2016}{dahlerup_2013}{wangnerud_2015}.
 
-\textcites{dahlerup_2006}{dahlerup_1988} !!!HIER WICHTIG; DAHLERUP LESEN ALS PRIMÄR und wie formatieren?) unterscheidet zwischen zwei verschiedenen Perspektiven der substantiellen Repräsentation von Frauen. Zum Einen existiert die politische \emph{Outcome-Perspektive}, welche die wissenschaftliche Literatur zur substantiellen Repräsentation von Frauen tendenziell dominiert. Zum Anderen existiert die Perspektive der Politik als \emph{Arbeitsperspektive}, welche bisher weniger häufig diskutiert wurde \parencites[513]{dahlerup_2006}[199]{erikson_2018}. 
+Ein Ausgangspunkt der vorliegenden Arbeit ist, dass das legislative Arbeitsumfeld für sich genommen ebenso wichtig ist, wie die Möglichkeiten der weiblichen Gesetzgeberinnen die Ergebnisse zu beeinflussen. Politikerinnen sollten in der Lage sein, ihre Aufgaben als Gesetzgeberinnen auf Augenhöhe mit ihren männlichen Kollegen zu erfüllen \parencite[199]{erikson_2018}. 
+
+\textcites{dahlerup_2006}{dahlerup_1988} unterscheidet zwischen zwei verschiedenen Perspektiven der substantiellen Repräsentation von Frauen. Zum einen existiert die politische \emph{Outcome-Perspektive}, welche die wissenschaftliche Literatur zur substantiellen Repräsentation von Frauen tendenziell dominiert. Zum anderen existiert die Perspektive der Politik als \emph{Arbeitsplatz}, welche bisher weniger häufig diskutiert wurde \parencites[513]{dahlerup_2006}[199]{erikson_2018}. 
 
 Während sich die Outcome-Perspektive darauf konzentriert, ob weibliche Gesetzgeberinnen den Inhalt politischer Entscheidungen beeinflussen, indem sie diese geschlechtsfreundlicher gestalten oder eine feministische Agenda verfolgen, beschäftigt sich die zweite Perspektive mit den Möglichkeiten, wie weibliche MPs als Repräsentantinnen gleichberechtigt mit ihren männlichen Kollegen auftreten können \parencites[199]{erikson_2018}{dahlerup_2006}{dahlerup_1988}.
 
-Der in dieser Arbeit verwendete \emph{‚workplace approach‘} oder die bereits genannte Arbeitsperspektive zielt in Anlehnung an \textcite{erikson_2018} insgesamt darauf ab, die Repräsentation von Frauen aus einer breiteren Perspektive zu betrachten, indem der Fokus von den Ergebnissen auf die geschlechtsspezifischen Bedingungen innerhalb der Legislative verlagert wird. Mit Orientierung an die Arbeiten von \textcites{dahlerup_2006}{dahlerup_1988}{erikson_2018} werden die  Arbeitsbedingungen im deutschen Bundestag in der vorliegenden Arbeit als wichtig sowie als wesentlicher Bestandteil der Möglichkeiten, wie Frauen die politischen Ergebnisse beeinflussen können, eingestuft. Die sprachliche Einbeziehung von Frauen innerhalb der Parlamentsdebatten zählt hierbei ebenso wie geschlechterneutrales Verhalten zu den Arbeitsbedingungen im Deutschen Bundestag. (hier noch eine Überleitung? oä.? ....!!!!)
+Der in dieser Arbeit verwendete \emph{\enquote{workplace approach}} oder die bereits genannte Arbeitsperspektive zielt in Anlehnung an \textcite{erikson_2018} insgesamt darauf ab, die Repräsentation von Frauen aus einer breiteren Perspektive zu betrachten, indem der Fokus von den Ergebnissen auf die geschlechtsspezifischen Bedingungen innerhalb der Legislative verlagert wird. Mit Orientierung an die Arbeiten von \textcites{dahlerup_2006}{dahlerup_1988}{erikson_2018} werden die  Arbeitsbedingungen im deutschen Bundestag in der vorliegenden Arbeit als wichtig sowie als wesentlicher Bestandteil der Möglichkeiten, wie Frauen die politischen Ergebnisse beeinflussen können, eingestuft. Die sprachliche Einbeziehung von und das Verhalten gegenüber Frauen innerhalb der Parlamentsdebatten beeinflussen hierbei ebenso wie geschlechterneutrales Verhalten das Arbeitsumfeld von Poltikerinnen im Deutschen Bundestag.
 
-\section{Legislative Gremien als maskuline Organisation }
+Doch auch wenn sich in den niedergeschriebenen Regeln und den zugrundeliegenden Gesetzen des Bundestages keine \emph{per se} frauendiskriminierenden Passagen finden -- bis dato sind diese Insitutionen hauptsächlich durch Männer dominiert.
+\todo[inline]{Habe einen Übergang eingebaut.}
 
-Innerhalb der legislativen Gremien wurde das Geschlechterregime ebenso wie in anderen von Männern dominierten Sektoren häufig als ‚permeated by a culture of masculinity‘ beschrieben \parencites[200]{erikson_2018}{lovenduski_2005}. In Anlehnung an \textcite{acker_1990} zeigt sich dies beispielsweise in der Existenz von formalen Regeln, die von Männern geschaffen wurden und einer männlich dominierten Organisation angepasst sind, sowie in Normen, wie sich ein (männlicher) Politiker präsentieren und verhalten soll \parencites[200]{erikson_2018}[48]{acker_1990}. Frauen werden infolgedessen mit dieser bereits existierenden ‚culture of masculinity‘ konfrontiert, die als institutionelle Einschränkung fungieren kann wenn beispielsweise ihre Arbeit dadurch behindert wird \parencites[200]{erikson_2018}[47-56]{lovenduski_2005}. \textcite{erikson_2018} verweisen auf sozialpsychologische Forschungen, wonach Frauen in männerdominierten Bereichen häufig diskriminiert werden weil es an Übereinstimmungen zwischen den männerdominierten beruflichen Normen und den Eigenschaften mit denen Frauen typischerweise assoziiert werden mangelt \parencites[vgl.][]{burgess_1999}{eagly_2002}{heilman_2001}{heilman_2004} noch nicht geprüft !!!))). Frauen riskieren Diskriminierungen, weil sie entweder als weniger kompetent angesehen werden oder weil sie weibliche Attribute verletzen, wenn sie sich den Normen anpassen \parencite[200]{erikson_2018}. Die Folgen sind neben der Disqualifikation, die Abwertung der Leistungen sowie die ungleiche Behandlung von Frauen bishin zu Belästigungen \parencites[200]{erikson_2018}{heilman_2001}{burgess_1999}:
+\section{Legislative Gremien als maskuline Organisation}
 
+Das Geschlechterregime der legislativen Gremien wird, ebenso wie andere von Männern dominierten Sektoren, häufig als \enquote{\emph{permeated by a culture of masculinity}} beschrieben \parencites[200]{erikson_2018}{lovenduski_2005}. \todo[inline]{Hier stand vorher noch, dass innerhalb dieser Insitutionen das so beschrieben wird -- ich bezweifle, dass sich die Insitutionen innerhalb so genannt haben, das wird doch eher zugeschreiben statt als selbstzuschreibung genutzt, oder? Hab das umgeschrieben.} 
+In Anlehnung an \textcite{acker_1990} zeigt sich dies beispielsweise in der Existenz von formalen Regeln, die von Männern geschaffen wurden und einer männlich dominierten Organisation angepasst sind, sowie in Normen, wie sich ein (männlicher) Politiker präsentieren und verhalten soll \parencites[200]{erikson_2018}[48]{acker_1990}. Frauen werden infolgedessen mit dieser bereits existierenden \emph{culture of masculinity} konfrontiert, die als institutionelle Einschränkung fungieren kann wenn beispielsweise ihre Arbeit dadurch behindert wird \parencites[200]{erikson_2018}[47-56]{lovenduski_2005}. \textcite{erikson_2018} verweisen auf sozialpsychologische Erhebungen, wonach Frauen in männerdominierten Bereichen häufiger Diskriminierung ausgesetzt sind, da es an Übereinstimmungen zwischen den männerdominierten beruflichen Normen und den Eigenschaften mit denen Frauen typischerweise assoziiert werden, mangelt \parencites[vgl.][]{burgess_1999}{eagly_2002}{heilman_2001}{heilman_2004}. \todo[inline]{noch nicht geprüft.}
+%
+Frauen riskieren Diskriminierungen, weil sie entweder als weniger kompetent angesehen werden oder weil sie weibliche Attribute verletzen, wenn sie sich den Normen anpassen \parencite[200]{erikson_2018}. Die Folgen sind neben der Disqualifikation, die Abwertung der Leistungen sowie die ungleiche Behandlung von Frauen bis hin zu Belästigungen \parencites[200]{erikson_2018}{heilman_2001}{burgess_1999}:
+%
+
+\citereset
 \begin{quote}
-     \endquote{The gendered consequences of masculine norms are often manifested in the first case in the disqualification of women or the devaluation of their performance, whereas they often take the form of a disparate treatment of women in the second, including harassment}\parencite[200]{erikson_2018}
+     \endquote{The gendered consequences of masculine norms are often manifested in the first case in the disqualification of women or the devaluation of their performance, whereas they often take the form of a disparate treatment of women in the second, including harassment} \parencite[200]{erikson_2018}
 \end{quote}
 
-Informelle Praktiken und Normen innerhalb des Arbeitsumfeldes können als Hindernisse für die Schaffung eines geschlechtergerechten Arbeitsumfeldes angesehen werden \parencite[200]{erikson_2018}. Ausgangspunkt der vorliegenden Arbeit ist die Annahme, dass der 19. Deutschen Bundestag von einer 'culture of masculinity' durchzogen ist und u.a. dadurch die Geschlechtergerechtigkeit des Arbeitsumfeldes zum Nachteil von Frauen beeinflusst wird. (!!!oder?!!!)
+Informelle Praktiken und Normen innerhalb des Arbeitsumfeldes können als Hindernisse für die Schaffung eines geschlechtergerechten Arbeitsumfeldes angesehen werden \parencite[200]{erikson_2018}. Ausgangspunkt der vorliegenden Arbeit ist die Annahme, dass der 19. Deutschen Bundestag ebenfalls von einer \enquote{\emph{culture of masculinity}} geprägt ist und u. a. dadurch die Geschlechtergerechtigkeit des Arbeitsumfeldes zum Nachteil von Frauen beeinflusst wird. 
 
-\chapter{Relevanz des Forschungsgegenstandes}
+\Chapter{Relevanz des Forschungsgegenstandes}
 
 In demokratischen Systemen sind Parlamentarier*innen nicht nur wichtige Akteure als Gesetzgeber*innen, sondern auch als Teilnehmer*innen an der öffentlichen Debatte und als Mitwirkende an der öffentlichen Meinungsbildung \parencite[188]{dahlerup_2018}.
-In Anlehnung an \textcite{back_2018} gibt es mehrere Gründe, warum die Auswirkungen des Geschlechts auf das Verhalten der legislativen Debatte interessant sind. Ein wichtiger Grund ist hierbei die zentrale Rolle der legislativen Debatte in parlamentarischen Demokratien. Die Gesetzte werden in der Regel von Abgeordneten diskutiert bevor sie darüber abstimmen \parencites[2]{back_2018}{back_2016}{proksch_2015}. 
-Die Debatten können in Anlehnung an \textcite[1]{proksch_2015} ebenso als Foren für öffentliche Kommunikation angesehen werden, welche von den Parteien und ihren Abgeordneten für Wahlzwecke genutzt werden \parencite[2]{back_2018}. Ausgehend davon, dass Debatten Auswirkungen auf die Politikgestaltung haben und von Parteien genutzt werden, um die Medien und die Wähler*innen zu informieren und zu beeinflussen, ist es von Relevanz ob dabei ein Geschlecht unterrepräsentiert ist \parencite[2]{back_2018}. Welche Auswirkungen eine Unterrepräsentation von Frauen für politische Entscheidungen haben kann, wird in KAPITEL??? erläutert. \textcite{back_2018} argumentieren, dass selbst ohne signifikanten Einfluss der Debatte auf politische Ergebnisse, die geschlechtsspezifischen Sprachmuster zu einer geringeren Legitimität des demokratischen Systems führen können \parencite[2]{back_2018}.
-Die Relevanz von Geschlechtergleichheit auf politischer Ebene kann nicht (mehr) in Frage gestellt werden. Dennoch gibt es Uneinigkeit darüber, ob und inwiefern eine Geschlechtergleichheit bereits erreicht wurde und auf welchen Ebenen eine Gleichstellung der Geschlechter bereits abgeschlossen oder nahezu umgesetzt wurde.
+In Anlehnung an \textcite{back_2018} gibt es mehrere Gründe, warum die Auswirkungen des Geschlechts auf das Verhalten der legislativen Debatte interessant sind. Ein wichtiger Grund ist hierbei die zentrale Rolle der legislativen Debatte in parlamentarischen Demokratien, da Gesetze in der Regel von Abgeordneten diskutiert werden, bevor über sie abgestimmt wird \parencites[2]{back_2018}{back_2016}{proksch_2015}.
+Die Debatten können in Anlehnung an \textcite[1]{proksch_2015} ebenso als Foren für öffentliche Kommunikation angesehen werden, welche von den Parteien und ihren Abgeordneten für Wahlzwecke genutzt werden \parencite[2]{back_2018}. Ausgehend davon, dass Debatten Auswirkungen auf die Politikgestaltung haben und von Parteien genutzt werden, um die Medien und die Wähler*innen zu informieren und zu beeinflussen, ist es von Relevanz ob dabei ein Geschlecht unterrepräsentiert ist \parencite[2]{back_2018}. \citeauthor{back_2018} argumentieren, dass eine solche Unterrepräsentanz im Gesetzgebungsprozess und der Medialen Berichterstattung zu einem Bias gegen Frauen führen kann und \enquote{gendered speech patterns} der Legitimität des demokratischen Systems schaden können \parencite[2]{back_2018}.
+Die Relevanz von Geschlechtergleichheit auf politischer Ebene kann nicht (mehr) in Frage gestellt werden. Dennoch gibt es Uneinigkeit darüber, ob und inwiefern eine Geschlechtergleichheit bereits erreicht wurde und auf welchen Ebenen eine Gleichstellung der Geschlechter bereits abgeschlossen oder nahezu umgesetzt wurde. \todo[inline]{Haben wir hierfür noch eine gute Quelle für diese Debatte? Das Zitat danach passt noch nicht. Vielleicht ein besseres, anderes Zitat, das wird schon in der Einleitung verwendet.}
 
+\citereset
 \begin{quote}
-    \enquote{Gender equality in political representation may be described within both optimistic and pessimistic stories.} \parencite[149]{celis_2018} !!! Hinweis: Würde das nur einmal Quoten, wird ja schon bei der Einleitung gemacht.
+    \enquote{Gender equality in political representation may be described within both optimistic and pessimistic stories.} \parencite[149]{celis_2018}
 \end{quote} 
 
 In Anbetracht des Zitates von \textcite{celis_2018} und einer zunehmenden deskriptiven Repräsentation von Frauen in den Parlamenten ist es essentiell, eine Analyse nicht ausschließlich aus dieser Ebene der Repräsentation durchzuführen und sich optimistisch mit einer Zunahme an Frauen in den Parlamenten zufrieden zu geben, sondern die Forderung nach Geschlechtergerechtigkeit, auch im Sinne gleicher und gleichwertiger Repräsentation auf allen fünf Ebenen zu fordern und fördern. 
 
+\citereset
 \begin{quote}
     \enquote{While women have made substantive progress in their representation in politics, they are still well underrepresented in political life in most nations} \parencite[2]{coffe_2013}
 \end{quote}
 
-Wenngleich ein politischer Konsens darin besteht, dass Gleichheit und Gerechtigkeit, sowie implizit Geschlechtergleichheit und ,-gerechtigkeit eine fundamentale Komponente von Demokratie darstellt, gibt es noch immer einen weltweiten Gender-Gap in den Parlamenten (ausgenommen ist hierbei..!!!)weltweit jedem Parlament (NOCH MAL PRÜFEN - ob Ruanda).  
+\todo[inline]{Wenngleich ein politischer Konsens darin besteht, dass Gleichheit und Gerechtigkeit, sowie implizit Geschlechtergleichheit und ,-gerechtigkeit eine fundamentale Komponente von Demokratie darstellt, gibt es noch immer einen weltweiten Gender-Gap in den Parlamenten (ausgenommen ist hierbei..!!!)weltweit jedem Parlament (NOCH MAL PRÜFEN - ob Ruanda).  
+}
 
-!!! Repräsentation von Frauen für Demokratie notwendig  EINLEITEN/ÜBERLEITEN
-Überleitung??????!!!
- 
+\todo[inline]{Hier fehlt noch die Überleitung - hattest du geschrieben. Ich finde man kann es aber auch direkt so machen. Und es war Ruanda ;) }
 
+Anne Phillips gilt als eine der wichtigsten Vertreterinnen auf dem Gebiet der parlamentarischen Repräsentativität von Frauen -- sie baut in ihrem Werk \emph{The Politics of Presence} \parencite*{phillips_1998} die Annahme auf, dass eine höhere deskriptive Repräsentanz durch Sitze im Parlament auch zu einer höheren substanziellen Repräsentanz von Frauen \parencite[52]{wangnerud_2009}. Hierfür analyisiert Phillips unter anderem Umstände, unter denen Frauen als Kandidatinnen für die Parlamentssitze ausgewählt werden, erfolgreich an Wahlen teilnehmen und zu Ministerinnen werden \parencite[vgl.][416f.]{blaxill_2016}. Frauen sind im täglichen Leben anderen Erfahrungen ausgesetzt als Männer. Hierbei bezieht sich \textcite{phillips_1998} unter anderem auf die Kindererziehung, Bildung, Auswahl an Berufen, Unterscheidung von bezahlter und unbezahlter Arbeit sowie auf Gewalterfahrungen und sexuellen Belästigungen. \textcite{phillips_1998} plädiert aufgrund der unterschiedlichen Lebenserfahrungen für die notwendige Repräsentation von Frauen im Parlament, um andere Frauen vertreten zu können \parencite[vgl.][52]{wangnerud_2009}.
 
-Anne Phillips gilt als eine der wichtigsten Vertreterinnen auf dem Gebiet der parlamentarischen Repräsentativität von Frauen. In ihrem Werk \emph{politics of presence} \parencite*{phillips_1998} analyisiert Phillips unter anderem die Bereitschaft von Frauen, als Parlamentskandidatin ausgewählt zu werden, Ministerin zu werden und Wahlen zu gewinnen \parencite[vgl.][416f.]{blaxill_2016}. Frauen sammeln im täglichen Leben andere Erfahrungen als Männer. Hierbei bezieht sich \textcite{phillips_1998} unter anderem auf die Kindererziehung, Bildung, Auswahl an Berufen, Unterscheidung von bezahlter und unbezahlter Arbeit sowie auf Gewalterfahrungen und sexuellen Belästigungen. \textcite{phillips_1998} plädiert aufgrund der unterschiedlichen Lebenserfahrungen für die notwendige Repräsentation von Frauen im Parlament, um andere Frauen vertreten zu können \parencite[vgl.][52]{wangnerud_2009}.
-
+\citereset
 \begin{quote}
     \enquote{There are particular needs, interests, and concerns that arise from women's experience, and these will be inadequately addressed in a politics that is dominated by men. Equal rights to a vote have not proved strong enough to deal with this problem; there must also be equality among those elected to once} \parencite[66]{phillips_1998}
 \end{quote}
 
-Bereits Piktin \parencite*{pitkin_1972} argumentierte in ihrem Hauptwerk "The Concept of Representation", dass der Interessenbegriff in der Repräsentationsdebatte omnipräsent (\enquote{ubiquitious}) ist \parencite[69]{wangnerud_2000}. Für Pitkin sind es die Parlamentarier\emph{innen}, welche sich den Wünschen und Interessen, dem Wohlergehen sowie Themen der Frauen widmen und diese vertreten \parencites[vgl.][413]{blaxill_2016}{pitkin_1972}. In Anlehnung an Phillips' Theorie der \emph{politics of presence} \parencite*{phillips_1998} wird angenommen, dass weibliche Politikerinnen die Interessen und Wünsche weiblicher Bürgerinnen besser als männliche Politiker repräsentieren können. Hierbei wird die deskriptive mit der substantiellen Repräsentation verknüpft \parencite[52]{wangnerud_2009}: ein höherer Frauenanteil in Parlamenten führt zu einer stärkeren Thematisierung der Belange von Frauen.
+Hanna F. Piktin \parencite*{pitkin_1972} argumentierte bereit 1967 in ihrem Hauptwerk \emph{The Concept of Representation}, dass der Interessenbegriff in der Repräsentationsdebatte omnipräsent (\enquote{ubiquitious}) ist \parencite[69]{wangnerud_2000}. Für Pitkin sind es die Parlamentarier\emph{innen}, welche sich den Wünschen und Interessen, dem Wohlergehen sowie Themen der Frauen widmen und diese vertreten \parencites[vgl.][413]{blaxill_2016}{pitkin_1972}. In Anlehnung an Phillips' Theorie der \emph{politics of presence} \parencite*{phillips_1998} wird angenommen, dass weibliche Politikerinnen die Interessen und Wünsche weiblicher Bürgerinnen besser als männliche Politiker repräsentieren können. Hierbei wird die deskriptive mit der substantiellen Repräsentation verknüpft \parencite[52]{wangnerud_2009}: ein höherer Frauenanteil in Parlamenten führt zu einer stärkeren Thematisierung der Belange von Frauen.
 
 Während die Forderungen einer deskriptiven parlamentarischen Geschlechtergleichheit ebenso wie die Forderungen nach substantieller Geschlechtergleichheit bereits ihre Wege in die wissenschaftliche Diskussion und in die Politik gefunden haben, wurde der geschlechtergerechten Sprache sowie dem geschlechtsbezogenen Verhalten in den Parlamenten bisher weniger Aufmerksamkeit gewidmet. 
-Laut \textcite{menegatti_2017} ist die Sprache eine der einflussreichsten Faktoren, wodurch Sexismus und Geschlechterdiskriminierung gefördert und reproduziert werden \parencite*[1]{menegatti_2017}. Sprache kann hierbei insbesondere die sozialen Asymmetrien von Status und Macht zugunsten des Mannes reproduzieren \parencite[1]{menegatti_2017}. Es existier[t]en einvernehmliche Normen, wonach der prototypische Mensch ein Mann ist, was sich in den Strukturen vieler Sprachen widerspiegelt und darin verankert ist. Viele grammatikalische und syntaktische Regeln sind so aufgebaut, dass weibliche Ausdrücke normalerweise von entsprechenden männlichen Formen abgeleitet werden \parencite*[1]{menegatti_2017}. Männliche Substantive und Pronomen werden beispielsweise häufig mit einer generischen Funktion verwendet um sich sowohl auf Männer als auch auf Frauen zu beziehen. Auf diese Weise verschwinden Frauen aus der mentalen Repräsentationen \parencites{vaughan_2018}{stahlberg_2001}. Maskuline Generika lassen Leser*innen und Hörer*innen mehr in männlichen als weiblichen Personenkategorien denken \parencites[2]{sczesny_2016}{stahlberg_2007}.
+Laut \textcite{menegatti_2017} ist die Sprache jedoch eine der einflussreichsten Faktoren, wodurch Sexismus und Geschlechterdiskriminierung gefördert und reproduziert werden \parencite*[1]{menegatti_2017}. Sprache kann hierbei insbesondere die sozialen Asymmetrien von Status und Macht zugunsten des Mannes reproduzieren \parencite[1]{menegatti_2017}. Es existier[t]en einvernehmliche Normen, wonach der prototypische Mensch ein Mann ist, was sich in den Strukturen vieler Sprachen widerspiegelt und darin verankert ist. Viele grammatikalische und syntaktische Regeln sind so aufgebaut, dass weibliche Ausdrücke normalerweise von entsprechenden männlichen Formen abgeleitet werden \parencite*[1]{menegatti_2017}. Männliche Substantive und Pronomen werden beispielsweise häufig mit einer generischen Funktion verwendet um sich sowohl auf Männer als auch auf Frauen zu beziehen. Auf diese Weise verschwinden Frauen aus der mentalen Repräsentationen \parencites{vaughan_2018}{stahlberg_2001}. Maskuline Generika lassen Leser*innen und Hörer*innen mehr in männlichen als weiblichen Personenkategorien denken \parencites[2]{sczesny_2016}{stahlberg_2007}.
 
+\citereset
 \begin{quote}
     \enquote{Given that language not only reflects stereotypical beliefs but also affects recipients’ cognition and behavior, the use of expressions consistent with gender stereotypes contributes to transmit and reinforce such belief system and can produce actual discrimination against women} \parencite[2]{menegatti_2017}
 \end{quote}
 
-\begin{itemize}
-    \item - gendered -shelley et al ? (ich konnte dem Text nicht sehr viel entnehmen!) 
-    \item - Fehlt hier noch - Stereotypen als Theoretischer Unterbau und Unterbrechungen ...
-\end{itemize}
+\todo[inline]{gendered -shelley et al ? (ich konnte dem Text nicht sehr viel entnehmen!)
+Fehlt hier noch - Stereotypen als Theoretischer Unterbau und Unterbrechungen ...}
 
+\todo[inline]{Vorschlag:
+Neben einer mangelnden deskriptiven Repräsentanz in den meisten repräsentativen Institutionen parlamentarischer Demokratien \parencite[vgl.][]{ipu_2019} ist also auch eine mangelnde Repräsentanz von Frauen und anderen, marginalisierten Gruppen bei vielen Sprachen festzustellen. Dies kann sich doppelt negativ auf die substanzielle Repräsentanz von Frauen in parlamentarischen Demokratien äußern -- sie sind weder durch Sprache noch durch Anwesenheit \emph{sichtbar}. Ein solch mangelnder Einfluss auf den legislativen Prozess kann sich wiederum durch Gesetze äußern, welche sich gegen die Interessen von Frauen richten \parencite[2]{back_2018}.
 
+Die Stereotype würde ich dann beim Forschungsstand aufführen.}
 
-\section {Derzeitiger Forschungsstand und relevante Studien }
+\section {Derzeitiger Forschungsstand und relevante Studien}
+
+\todo[inline]{Auch hier fände ich wieder einen einleitenden Absatz gut. Ich überleg mir gleich noch was.}
 
 \subsection{Frauen im Parlament}
 
@@ -217,6 +266,7 @@ In der Forschung zu Frauen im Parlament wird generell zwischen einer deskriptive
 Letzteres legt den Schwerpunkt auf die Analyse der Anzahl von Frauen in repräsentativen Institutionen, ersteres untersucht hingegen die Auswirkung der Präsenz von Frauen in Parlamenten \parencites[14]{coffe_2013}[52]{wangnerud_2009}.
 Die zentralen Fragen lauten hierbei:
 
+\citereset
 \begin{quote}
   \enquote{[W]hether the widely professed aspiration to feminise democracy -- and in so doing to politically empower women -- is a matter largely of symbolism or substance […]}
   \enquote{[…] wheter the priority should simply be to increase the proportion of women MPs in Parliament […] or as Hanna Pitkin argued in 1967, to represent minds as well as bodies.}
@@ -224,99 +274,126 @@ Die zentralen Fragen lauten hierbei:
 \end{quote}
 
 %
-Die Theorie der \emph{politics of presence} \parencite{phillips_1998} diente \textcite{wangnerud_2000} als Ausgangspunkt für ihre Forschung im Schwedischen Parlament (\enquote{Testing the Politics of Presence, Women's Representation in the Swedish Riksdag}, 2000). Wägnerud prüft hierbei die Hypothese, ob weibliche Politikerinnen die Interessen von Frauen stärker vertreten als männliche Politiker \parencite[84]{wangnerud_2000} und kommt zu folgendem Ergebnis: \enquote{[It is] difficult to repudiate the conclusion that women's interest are primarily represented by female politicians} \parencite[][84]{wangnerud_2000}. Laut Wängnerud \parencite*{wangnerud_2000} bleibt es jedoch ausstehend welche Auswirkungen zu erwarten sind, wenn die Zahl der Frauen im Parlament steigt \parencite{wangnerud_2009}.
-Die Forschung von \textcite{celis_2008} greift diese Annahme empirisch auf und untersucht, in welchem Ausmaß die Bedürfnisse und Interessen von Frauen gesteigert werden, wenn die Anzahl von Frauen in politischen Entscheidungen zunimmt \parencite[vgl. auch][4]{galligan_2016}. Ein einfacher Anstieg der Anzahl von Frauen reicht nach \textcite{celis_2008} nicht aus, um einen signifikanten Einfluss zu erreichen. In Anlehnung an \textcite{caul_2001} sei es beispielsweise notwendig, dass weibliche Abgeordnete in einflussreichen, wichtigen Positionen vertreten sind, um substantielle Repräsentation zu ermöglichen \parencites{caul_2001}[vgl. auch][14]{coffe_2013}.
-Auch die Forschung von \textcite{back_2018} fragt nach den Auswirkungen, wenn die Zahl der Frauen im Parlament steigt und kommt zu folgendem Ergebnis: 
+Die Theorie der \emph{politics of presence} \parencite{phillips_1998} diente \textcite{wangnerud_2000} als Ausgangspunkt für ihre Forschung im Schwedischen Parlament (\emph{Testing the Politics of Presence, Women's Representation in the Swedish Riksdag}, 2000). Wägnerud prüft hierbei die Hypothese, ob weibliche Politikerinnen die Interessen von Frauen stärker vertreten als männliche Politiker \parencite[84]{wangnerud_2000} und kommt zu folgendem Ergebnis: \enquote{[It is] difficult to repudiate the conclusion that women's interest are primarily represented by female politicians} \parencite[][84]{wangnerud_2000}. Laut\citeauthor{wangnerud_2000} bleibt es jedoch ausstehend welche Auswirkungen zu erwarten sind, wenn die Zahl der Frauen im Parlament steigt \parencite{wangnerud_2009}.
+Die Forschung von \textcite{celis_2008} greift diese Annahme empirisch auf und untersucht, in welchem Ausmaß die Bedürfnisse und Interessen von Frauen gesteigert werden, wenn die Anzahl von Frauen in politischen Entscheidungen zunimmt \parencite[vgl. auch][4]{galligan_2016}. Ein einfacher Anstieg der Anzahl von Frauen reicht nach \textcite{celis_2008} nicht aus, um einen signifikanten Einfluss auf den Gesetzgebungsprozess zu erreichen. In Anlehnung an \textcite{caul_2001} sei es beispielsweise notwendig, dass weibliche Abgeordnete in einflussreichen, wichtigen Positionen vertreten sind, um substantielle Repräsentation zu ermöglichen \parencites{caul_2001}[vgl. auch][14]{coffe_2013}.
+Auch die Forschung von \textcite{back_2018} die Auswirkungen, wenn die Zahl der Frauen im Parlament steigt und kommt zu folgendem Ergebnis: 
 
+\citereset
 \begin{quote}
   \enquote{The variation found here is, however, not in line with the hypothesis suggesting that increased descriptive representation should lead to a rise in the substantive representation so that the prediction drawn from the critical mass theory is not given support here. Instead, we find that women are more underrepresented in legislative debates when they represent parties with many female MPs.}
   \parencite[17]{back_2018}
 \end{quote}
 
 \textcite{back_2018} untersuchen hierfür länderübergreifend sieben europäische Länder bezüglich der Themen und Redeanteile weiblicher Abgeordneter und resümieren, dass Frauen in Parlamenten seltener das Wort ergreifen. Dieses Ergebnis ist nicht auf einen generell niedrigeren Anteil an Frauen in den Parlamenten zurückzuführen, so \textcite{back_2018}. Frauen in Parteien mit einem geringen Frauenanteil ergreifen sogar häufiger das Wort als Frauen in Fraktionen mit einem hohen Anteil an weiblichen Mitgliedern \parencite*[17]{back_2018}. Die \emph{critical mass theory} konnte somit in der Arbeit von \textcite{back_2018} nicht nachgewiesen und sogar ein gegenteiliger Effekt beobachtet werden. Allerdings betonen die Autor*innen in ihrer Untersuchung auch, dass sich dieser Effekt bei den untersuchten Parteien und Parlamenten erheblich unterscheiden \parencite[17]{back_2018}. Eine Beleuchtung der Hintergründe eines solchen \enquote{backlash effect} -- Frauen sprechen seltener in Parlamenten bei einer größeren Präsenz von Frauen im Parlament -- und Kritik an der \emph{critical mass theory} findet sich zusammenfassend bei \textcite[4]{back_2018} und tiefgreifender bei \textcite{childs_2008}.
+\todo[inline]{Hier war vorher der Hinweis, ob wir die critical mass theory aufmachen sollten -- ich hab in dem vorherigen Absatz das mal zusammengefasst, aber vielleicht sollte man da noch einen kleinen Absatz bei der Politics of Presence dazu schreiben. Reicht ja wirklich zwei Sachen.
+Die \emph{critical mass theory} von XXX geht davon aus, dass die Interessen von Personengruppen (in diesem Fall Frauen) erst Wahrnehmung finden, wenn diese in einer \enquote{kritischen Masse} im legislativen Prozess beteiligt ist. Erst wenn mehr als nur ein paar wenige Frauen in einem Parlament vertreten sind, ist es ihnen möglich, effektiv zusammenzuarbeiten und \enquote{frauenfreundliche} Inhalte im legislativen Prozess durchzusetzen \parencite[752]{childs_2008}.
 
-besser: nicht das Kapitel critical mass aufmachen, oder?????? !!! Würd ich schon machen, ist halt ein Ergebnis der Arbeit von Bäck, und wir nehmen später noch mal darauf Bezug !!!
+Könnte man einfach nach Philips Politics of Presence setzen.}
 
-Aus den Untersuchungen von \textcite{kathlene_1994} zu US-Staatsgesetzten und \textcite{back_2014} zum schwedischen Riksdag geht hervor, dass Frauen in Debatten seltener sprechen, während andere Fallstudien von \textcite{broughton_1999}, \textcite{murray_2010} und \textcite{wang_2014} zeigen, !!! Hinweis: Der Satz ist noch komisch. Lieber ausformulieren? Haben ja nicht alle das selbe gesagt!!! dass \enquote{women are equally active debate participants as their male colleagues} \parencites[254]{taylor-robinson_2014}[2]{back_2018}. In Anlehnung an \textcite{back_2018} kann davon ausgegangen werden, dass es eine länderübergreifende Variation der Rolle des Geschlechts in Debatten gibt\parencite[2]{back_2018}. Eine gesonderte Untersuchung der Rolle des Geschlechts in den Debatten des Deutschen Bundestags erscheint auch aus dieser Perspektive notwendig. 
-[[[[[Das könnte im weiteren verlauf vll eine gute Verbindung sein, aber noch zu prüfen::!!! Taylor-Robinson (2014) looks at debate participation as one type of substantive representation and refers to a seminal study of US state legislatures which shows that women speak less frequently in debates \parencite{kathlene_1994}.]]]] !!! Kann das irgendwie noch nicht einschätzen. Den ersten Teil des Satzes find ich noch ganz gut - Parlamentsreden sind ja nur ein Faktor von vielen -- kann ja auch die Beteiligung in Ausschüssen sein. !!!
+Aus den Untersuchungen von \textcite{kathlene_1994} zu US-Staatsgesetzen und \textcite{back_2014} zum schwedischen Riksdag geht hervor, dass Frauen in Debatten seltener sprechen, während andere Fallstudien von \textcite{broughton_1999}, \textcite{murray_2010} und \textcite{wang_2014} zeigen, dass \enquote{women are equally active debate participants as their male colleagues} \parencites[254]{taylor-robinson_2014}[2]{back_2018}. \todo[inline]{Finde das noch ein bisschen komisch weil der Satz suggeriert, dass sich in fünf Werken das selbe Zitat findet. Vielleicht einfach besser ausschreiben: Während die Fallstudien von  \textcite{broughton_1999}, \textcite{murray_2010} und \textcite{wang_2014} dies nicht beobachten konnten. Auch bei Tyler Robinson finde ich den Satz gerade auf die Schnelle nicht und passt auch nicht zu der Erhebung von Tylor Robinson, oder?}. In Anlehnung an \textcite{back_2018} kann davon ausgegangen werden, dass es eine länderübergreifende Variation der Rolle des Geschlechts in Debatten gibt \parencite[2]{back_2018}. Eine gesonderte Untersuchung der Rolle des Geschlechts in den Debatten des Deutschen Bundestags erscheint auch aus dieser Perspektive notwendig. 
+\todo[inline]{[Das könnte im weiteren verlauf vll eine gute Verbindung sein, aber noch zu prüfen::!!! Taylor-Robinson (2014) looks at debate participation as one type of substantive representation and refers to a seminal study of US state legislatures which shows that women speak less frequently in debates \parencite{kathlene_1994}.}
+\todo[inline]{Irgendwas fehlt da aber noch, oder?}
 
-
-In einer früheren Studie konnte zudem festgestellt werden, dass außerdem Geschlechterunterschiede bezüglich der Themen der Reden festzustellen sind \parencite[514f.]{back_2014}. \textcite{back_2014} konnten in ihrer Untersuchung des schwedischen Parlaments nachweisen, dass Männer im schwedischen \emph{Riksdag} häufiger zu sogenanntenn \emph{hard policies} (etwa Wirtschaft, Energie, Infrastruktur) sprechen. Bei sogenannten \emph{soft policies} (Erziehung, Soiale Sicherung, Bildung) ist hingegen kein Unterschied bezüglich des Redeanteils und Geschlecht der Abgeordneten festzustellen \parencite[514f.]{back_2014}. 
+In einer früheren Studie konnte zudem festgestellt werden, dass geschlechterbezogene Unterschiede bei der gewählten Themen der Reden festzustellen sind \parencite[514f.]{back_2014}. \textcite{back_2014} konnten in ihrer Untersuchung des schwedischen Parlaments nachweisen, dass Männer im schwedischen \emph{Riksdag} häufiger zu sogenanntenn \emph{hard policies} (etwa Wirtschaft, Energie, Infrastruktur) sprechen. Bei sogenannten \emph{soft policies} (Erziehung, Soiale Sicherung, Bildung) war hingegen kein Unterschied bezüglich des Redeanteils und Geschlecht der Abgeordneten festzustellen \parencite[514f.]{back_2014}. 
 
 Eine umfassende Untersuchung von Geschlechterunterschieden in Bezug auf Sprache, Thematik sowie Verhalten der Parlamentsmitglieder des Deutschen Bundestages ist allerdings bis zu diesem Zeitpunkt noch ausstehend, wenngleich erforderlich: 
 
 \citereset
-% Mit einem citereset setzen wir (ebd.) zurück. Ist notwendig, wenn wir Quoten, da Blockquotes nicht mit ebd. geführt werden sollen.
 \begin{quote}
  \enquote{Our research clearly suggest that gender plays a role in parliamentary speech-making and the selection of the MPs who take the parliamentary floor, which calls for further comparative research on the role of gender in legislative  debates in different institutional contexts and with varying degrees of descriptive representation}
   \parencite[515]{back_2014}
 \end{quote}
 
+\todo[inline]{\citeauthor{back_2014} haben in ihrer Studie nur untersucht, welcher Minister vor einer Rede spricht und danach die Thematisierung festgestellt. In der neueren, länderübergreifenden Untersuchung machen \citeauthor{back_2018} darauf aufmerksam, dass man die Thematisierung in den Reden durch neue Möglichkeiten der automatisierten Inhaltsanalyse wie beispielsweise der \emph{Latent Semnatic Analysis} bei \textcite{gustafssonsenden_2015} auf Parlamentsdebatten anwenden sollte, um diese Thematik tiefergehend zu erforschen-}
+
 \subsection{Geschlechterspezifische Unterschiede im Parlament}\label{kapitel:geschlechterunterschiede}
 
-In Bezug auf die Interaktion zwischen GesetzgeberInnen konnten frühere Untersuchungen zeigen, dass Frauen und Männer innerhalb der gesetzgebenden Gremien nicht nur unterschiedliche Politik betreiben, sondern außerdem unterschiedlich behandelt werden \parencites[201]{erikson_2018}{childs_2004}. Zudem gibt es Hinweise darauf, dass männliche Gesetzgeber bei einem zunehmenden Frauenanteil im Parlament, unhöflich und respektlos gegenüber weiblichen Gesetzgeberinnen sein können \parencites[201]{erikson_2018}{kathlene_1994}{kathlene_2004} !!! Hinweis: Ich finde nix zu kathlene 2004 !!! und dass weibliche Gesetzgeberinnen offener Diskriminierungen und sexueller Belästigung ausgesetzt sind \parencites[201]{erikson_2018}[76]{lovenduski_2005}{lovenduski_2004}.
+In Bezug auf die Interaktion zwischen Gesetzgeber*innen konnten frühere Untersuchungen zeigen, dass Frauen und Männer innerhalb der gesetzgebenden Gremien nicht nur unterschiedliche Politik betreiben, sondern außerdem unterschiedlich behandelt werden \parencites[201]{erikson_2018}{childs_2004}. Zudem gibt es Hinweise darauf, dass männliche MPs bei einem zunehmenden Frauenanteil im Parlament, unhöflich und respektlos gegenüber weiblichen Gesetzgeberinnen sein können \parencites[201]{erikson_2018}{kathlene_1994}{kathlene_2004} und dass weibliche Gesetzgeberinnen offener Diskriminierungen und sexueller Belästigung ausgesetzt sind \parencites[201]{erikson_2018}[76]{lovenduski_2005}{lovenduski_2004}. \todo[inline]{Ich finde noch nichts zu Kathlene 2004, bitte in Zotero nachtragen.}
 
+\citereset
 \begin{quote}
     \enquote{Gender equal representation is not only about the proportion of men and women legislators or the outcomes of politics}\parencite[197]{erikson_2018}
 \end{quote}
+\todo[inline]{Ich weiß noch nicht, ob ich noch ein besseres Zitat finde, aber das Zitat finde ich hier noch nicht so gut weil es das wiederholt, was wir über die letzten Seiten schon geschrieben haben. Lieber rausnehmen, haben ja gleich noch eins von Erikson.}
  
 Die Untersuchungen von \textcite{erikson_2018} liefern neue Erkenntnisse über die Existenz von anhaltenden geschlechtsspezifischen Mustern im schwedischen Parlament. Wenngleich das schwedische Parlament im Bereich der Gleichstellung der Geschlechter formal und deskriptiv vielen anderen Ländern voraus ist, lassen die Ergebnisse dennoch auf Elemente einer maskulinen Kultur hinweisen \parencite[211]{erikson_2018}:
 
+\citereset
 \begin{quote}
     \enquote{Although changing formal rules may end officially sanctioned gender discrimination, more than two decades of nearly genderequal descriptive representation have not been enough to change informal norms and practices and overcome all institutionalized forms of male bias} \parencite[211]{erikson_2018}
 \end{quote}
 
- Dies ist unabhängig davon, dass es sich beim schwedischen Parlament formal um ein geschlechtergerechten Arbeitsplatz handelt und sich die Regeln und Vorschriften für Männer und Frauen nicht unterscheiden \parencite[211]{erikson_2018}. In Anlehnung an \textcite{erikson_2018} stellt sich hierbei die Frage, aus welchem Grund weibliche MPs mehr Druck, Angst und negative Behandlungen erfahren. Es wird vermutet, dass informelle Aspekte des Arbeitsumfelds im Parlament in einer Weise geschlechtsspezifisch sind, die weibliche MPs trotz ihrer formalen und deskriptiven Geschlechtergleichstellung weiterhin benachteiligen \parencite[210]{erikson_2018}.
+ Dies ist unabhängig davon, dass es sich beim schwedischen Parlament formal um ein geschlechtergerechten Arbeitsplatz handelt und sich die Regeln und Vorschriften für Männer und Frauen nicht unterscheiden \parencite[211]{erikson_2018}. In Anlehnung an \citeauthor{erikson_2018} stellt sich hierbei die Frage, aus welchem Grund weibliche MPs mehr Druck, Angst und negative Behandlungen erfahren. Es wird vermutet, dass informelle Aspekte des Arbeitsumfelds im Parlament in einer Weise geschlechtsspezifisch sind, die weibliche MPs trotz ihrer formalen und deskriptiven Geschlechtergleichstellung weiterhin benachteiligen \parencite[210]{erikson_2018}.
 
-\textcite{erikson_2018} verweisen auf die Notwendigkeit einer Gleichstellungsarbeit im Parlament, welche nicht ausschließlich die formalen Aspekte der Arbeitsbedingungen berücksichtigen, sondern ebenso das Bewusstsein der GesetzgeberInnen für die Notwendigkeit der Transformation etablierter Normen und Praktiken schärfen \parencite[211]{erikson_2018}.
-Mit der vorliegenden Arbeit wird teilweise auf die Forderung von\textcite{erikson_2018} eingegangen, die von Ihnen festgestellten Ergebnisse mit den empirischen Studien anderer legislativen Körperschaften und unterschiedlichen Formalen Bedingungen (in diesem Fall der 19. Deutsche Bundestag) zu vergleichen um jene Mechanismen zu identifizieren, welche geschlechtsspezifische Arbeitsbedingungen für die GesetzgeberInnen fördern oder behindern \parencite[211]{erikson_2018}. Letzeres kann in dieser Arbeit allerdings nicht geleistet werden und bedarf weiterer Forschung. 
+\citeauthor{erikson_2018} verweisen auf die Notwendigkeit einer Gleichstellungsarbeit im Parlament, welche nicht ausschließlich die formalen Aspekte der Arbeitsbedingungen berücksichtigen, sondern ebenso das Bewusstsein der MPs für die Notwendigkeit der Transformation etablierter Normen und Praktiken schärfen \parencite[211]{erikson_2018}.
+Mit der vorliegenden Arbeit wird teilweise auf die Forderung von\citeauthor{erikson_2018} eingegangen, die von Ihnen festgestellten Ergebnisse mit den empirischen Studien anderer legislativen Körperschaften und unterschiedlichen formalen Bedingungen (in diesem Fall der 19. Deutsche Bundestag) zu vergleichen um jene Mechanismen zu identifizieren, welche geschlechtsspezifische Arbeitsbedingungen für die Gesetzgeber*innen fördern oder behindern \parencite[211]{erikson_2018}. Letzeres kann in dieser Arbeit allerdings nicht geleistet werden und bedarf weiterer Forschung. 
 
 
 \subsection{Gender-Fair-Language zur Reduktion von Stereotypisierungen und Reduktion von Diskriminierung}
 
-?Aktueller Forschungsstand . ggf. sczency formanowicz und moser???? !!! Wir sollten hier unbedingt noch Formanowicz reinnehmen - einfach auch um Besipiele aufzuzeigen, was eigentlic GFL ist weil wir das später noch verwenden -- also sowas wie \enquote{he or she} weil wir später noch von \enquote{Kolleginnen und Kollegen} schreiben. Kann ich aber selbst noch ergänzen wenn genwünscht !!!
+\todo[inline]{Aktueller Forschungsstand . ggf. sczency formanowicz und moser}
+\todo[inline]{Wir sollten hier unbedingt noch Formanowicz reinnehmen - einfach auch um Besipiele aufzuzeigen, was eigentlic GFL ist weil wir das später noch verwenden -- also sowas wie \enquote{he or she} weil wir später noch von \enquote{Kolleginnen und Kollegen} schreiben. Kann ich aber selbst noch ergänzen wenn gewünscht}
 
 Nach \textcite{menegatti_2017} handelt es sich bei der Sprache um eine der einflussreichsten Faktoren, wodurch Sexismus und Geschlechterdiskriminierung gefördert und reproduziert werden \parencite*[1]{menegatti_2017}. Es existier[t]en einvernehmliche Normen, wonach der prototypische Mensch ein Mann ist, was sich in den Strukturen vieler Sprachen widerspiegelt und darin verankert ist. Sprache kann soziale Asymmetrien von Status und Macht zugunsten des Mannes reproduzieren \parencite{menegatti_2017}.
-Maskuline Generika werden geschlechterspezifisch in Bezug auf männliche Personen genutzt sowie generell in Bezug auf Gruppen mit gemischten Geschlechtern und in Bezug auf Personen oder Gruppen deren Geschlecht ungewiss oder irrelevant ist, mit folgendem Ergebnis: „In this way they equate maleness and humanness“ \parencite[169]{stahlberg_2007}. Durch die maskulinen Generika verschwinden Frauen aus der mentalen Repräsentationen \parencites{vaughan_2018}{stahlberg_2001}.In der feministischen Linguistik wird generell angenommen, dass maskuline Bezeichnungen weibliche Personen weniger vorstellbar und sichtbar machen \parencite[131]{stahlberg_2001}. Maskuline Generika lassen Leser*innen und Hörer*innen mehr in männlichen als weiblichen Personenkategorien denken \parencites[2]{sczesny_2016}{stahlberg_2007}. In Anlehnung an \textcite{stahlberg_2007} wird in der feministischen Sprachkritik davon ausgegangen, dass die maskulinen Generika aus einem grundlegenden Androzentrismus entspringen (\enquote{the Male-as-Norm-view}), diesen aufrechterhalten und die Frauen unsichtbar machen \parencites[170]{stahlberg_2007}{miller_1976}{silveira_1980}.
+\todo[inline]{Problematisch: Exakt den selben Absatz haben wir schon wieter oben aufgeführt -- entsprechend können wir in hier nicht einfach noch mal nutzen. Der muss raus und anders eingeleitet werden. Hier muss mehr über die Studien geredet werden, Menegatti ist mehr Theorie.}
+Maskuline Generika werden geschlechterspezifisch in Bezug auf männliche Personen genutzt sowie generell in Bezug auf Gruppen mit gemischten Geschlechtern und in Bezug auf Personen oder Gruppen deren Geschlecht ungewiss oder irrelevant ist, mit folgendem Ergebnis: \enquote{In this way they equate maleness and humanness} \parencite[169]{stahlberg_2007}. Durch die maskulinen Generika verschwinden Frauen aus der mentalen Repräsentationen \parencites{vaughan_2018}{stahlberg_2001}.In der feministischen Linguistik wird generell angenommen, dass maskuline Bezeichnungen weibliche Personen weniger vorstellbar und sichtbar machen \parencite[131]{stahlberg_2001}. Maskuline Generika lassen Leser*innen und Hörer*innen mehr in männlichen als weiblichen Personenkategorien denken \parencites[2]{sczesny_2016}{stahlberg_2007}. In Anlehnung an \textcite{stahlberg_2007} wird in der feministischen Sprachkritik davon ausgegangen, dass die maskulinen Generika aus einem grundlegenden Androzentrismus entspringen (\enquote{\emph{the Male-as-Norm-view}}), diesen aufrechterhalten und die Frauen unsichtbar machen \parencites[170]{stahlberg_2007}{miller_1976}{silveira_1980}.
 
+\citereset
 \begin{quote}
     \enquote{Given that language not only reflects stereotypical beliefs but also affects recipients’ cognition and behavior, the use of expressions consistent with gender stereotypes contributes to transmit and reinforce such belief system and can produce actual discrimination against women} \parencite[2]{menegatti_2017}
 \end{quote}
 
-Die Verwendung von \emph{gender-fair linguistic} (GFL)!!! Müssen wir aufpassen -- bedeutet es jetzt Gener Fair Language oder Linguistic? !!! kann diese negativen Auswirkungen effektiv verhindern und Geschlechtergerechtigkeit fördern \parencite[1]{menegatti_2017}. GFL wurde unter anderem im Rahmen eines umfassenden Versuchs zur Verringerung von Stereotypen und Diskriminierung in der Sprache eingeführt \parencite[2]{sczesny_2016}. Feminiserung und Neutralisierung sowie die Kombination beider sind die bevorzugten Strategien einer geschlechtergerechten oder geschlechterneutralen Sprache. Auch die Verwendung von Wortpaaren (Lehrerinnen und Lehrer) zählt ebenso zu den Ausdrucksformen der GFL. Neben Wortpaaren sind auch geschlechtsneutrale Formen (Studierende statt Student) mögliche GFL-Ausdrucksformen \parencite[2]{sczesny_2016}.
+Die Verwendung von \emph{gender-fair linguistic} (GFL) kann diese negativen Auswirkungen effektiv verhindern und Geschlechtergerechtigkeit fördern \parencite[1]{menegatti_2017}.
+\todo[inline]{Wir müssen hier aufpassen, hier beschreiben wir GFL als gender-fair linguistic, wo anders schreiben wir gender fair language -- wenn es unterschiedliche Begrifflichkeiten gibt, sollten wir das kurz erläutern. Einfach mit (auch als \emph{gender-fair language} bezeichnet)} GFL wurde unter anderem im Rahmen eines umfassenden Versuchs zur Verringerung von Stereotypen und Diskriminierung in der Sprache eingeführt \parencite[2]{sczesny_2016}. \todo[inline]{Hier sollten wir mehr auf die Ergebnisse eingehen, nicht was draus geschlussfolgert wurde.} Feminiserung und Neutralisierung sowie die Kombination beider sind die bevorzugten Strategien einer geschlechtergerechten oder geschlechterneutralen Sprache. Auch die Verwendung von Wortpaaren (Lehrerinnen und Lehrer) zählt ebenso zu den Ausdrucksformen der GFL. Neben Wortpaaren sind auch geschlechtsneutrale Formen (Studierende statt Student) mögliche GFL-Ausdrucksformen \parencite[2]{sczesny_2016}.
 
 Aufgrund der oben genannten Benachteiligungen für die Frauen ist es notwendig, die Sprachgewohnheit dahingehend zu ändern, GFL umfassend zu etablieren, um Vorurteile bezüglich der Geschlechter zu reduzieren und gleichzeitig eine Reproduktion von Stereotypen zu vermeiden. Die Verwendung von geschlechtergerechten Ausdrücken anstelle von maskulinen Generika ist für den Abbau von Geschlechtervoreingenommenheit und die Förderung der Gleichstellung der Geschlechter laut Menegatti und Rubini unabdingbar \parencite*{menegatti_2017}.
 
 Die Umsetzung und Etablierung von GFL hat in verschiedenen Ländern bisher unterschiedliche Stadien erreicht und wird beispielsweise von der UNESCO und der Europäischen Kommission empfohlen und in deren Dokumenten angewandt \parencite[4]{sczesny_2016}.
 
+\citereset
 \begin{quote}
     \enquote{[…] language does not merely reflect the way we think: it also shapes our thinking. If words and expressions that imply that women are inferior to men are constantly used, that assumption of inferiority tends to become part of our mindset; hence the need to adjust our language when our ideas evolve.} \parencite {unesco_2011} 
 \end{quote}
 
-\chapter{Übergeordete Forschungsfrage und Konzeption der Arbeit}
+\todo[inline]{Dieser Teil müsste noch umgebaut werden. Er geht viel zu sehr auf den theoretischen Background und nicht auf die Ergebnisse relevanter Studien zu dem Thema ein.}
 
-Während sich eine Vielzahl der wissenschaftlichen Forschung mit der Repräsentation von Frauen in Parlamenten aus einer deskriptiven und substantiellen Perspektive auseinandersetzt, fokussiert die vorliegende Forschungsarbeit die geschlechterspezifischen Repräsentationsunterschiede bezüglich der Parlamentsdebatten auf fünf Ebenen. !!!Hier nochmal die fünf Ebenen nennen?!!!
-Neben dem Anteil an Reden von Frauen im Deutschen Bundestag werden die Reden des Deutschen Bundestages inhaltlich analysiert und das Verhalten der Abgeordneten in Bezug auf geschlechtsspezifische Besonderheiten untersucht. Die zentrale Forschungsfrage lautet: \enquote{\emph{Inwieweit unterscheiden sich die Redebeiträge und das Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität}}.
+\Chapter{Übergeordete Forschungsfrage und Konzeption der Arbeit}
+
+Während sich, wie eingangs beschrieben, eine Vielzahl der wissenschaftlichen Forschung mit der Repräsentation von Frauen in Parlamenten aus einer deskriptiven und substantiellen Perspektive auseinandersetzt, fokussiert die vorliegende Forschungsarbeit die geschlechterspezifischen Repräsentationsunterschiede bezüglich der Parlamentsdebatten auf fünf Ebenen (siehe Kapitel \ref{Einleitung}). 
+\todo[inline]{Hier nochmal die fünf Ebenen nennen?}
+\todo[inline]{Wenn dann nur die Überschriften, wenn geändert, anpassen.
+Vorschlag:}
+\todo[inline]{\begin{itemize}
+    \item Ebene A: Weibliche Repräsentation im Parlament
+    \item Ebene B: Weibliche Repräsentation bei den Parlamentsdebatten
+    \item Ebene C: Repräsentation von Frauen in den Parlamentsdebatten
+    \item Ebene D: Vermeidung von geschlechtsbezogenen Stereotypen
+    \item Ebene E: Reproduktion von geschlechtsspezifischen Verhaltensmustern
+\end{itemize}}
+
+Neben dem Anteil an Reden von Frauen im Deutschen Bundestag werden die Reden des Deutschen Bundestages inhaltlich analysiert und das Verhalten der Abgeordneten in Bezug auf geschlechtsspezifische Besonderheiten untersucht. Die zentrale Forschungsfrage lautet: \enquote{\emph{Inwiefern unterscheiden sich die Redebeiträge und das Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität}}.
 
 
 \section{Hypothese Genderinklusive Sprache}
 
-Auf Basis der Argumentation von Wängnerud \parencites*{wangnerud_2000}{wangnerud_2009} wird erwartet, dass sich vor allem Frauen über die Ausgrenzungserfahrung durch Sprache bewusst sind, entsprechende Erfahrungen bereits gemacht haben und daher eher eine geschlechterneutrale und geschlechtergerechte Sprache verwenden als Männer.  (WOHER IST DAS? ARGUMENTATION VON WÄNGNERUD FINDE ICH NICHT!!!???!!!???!))) 
+Auf Basis der Argumentation von Wängnerud \parencites*{wangnerud_2000}{wangnerud_2009} wird erwartet, dass sich vor allem Frauen über die Ausgrenzungserfahrung durch Sprache bewusst sind, entsprechende Erfahrungen bereits gemacht haben und daher eher eine geschlechterneutrale und geschlechtergerechte Sprache verwenden als Männer. 
+\todo[inline]{WOHER IST DAS? ARGUMENTATION VON WÄNGNERUD FINDE ICH NICHT!!!???!!!???!}
+\todo[inline]{Wängnerud ist der Überzeugung, dass Frauen andere Erfahrungen gemacht haben als Männer, auch Ausgrenzungserfahrung -- aber eben auch Erziehung usw. Deshalb meint sie doch, dass es wichtig ist, dass Frauen in Parlamenten sind, ansonsten würden diese Erfahrungen gar nicht umgesetzt werden -- orientiert sich auch ziemlich an Phillips. Da Frauen diese Erfahrungen vermutlich machen mussten, werden sie wahrscheinlich eher das nutzen. Deswegen ist es auch nur die Basis der Argumentation Wängneruds, und nicht ihre Aussage.}
 
-\textcite{koeser_2014} untersuchten, inwiefern Personen (WELCHE Sprecherinnen, wo!!!???) !!! Hinweis: Da ging es um die generelle Nutzung von GFL und wie man sie promotet !!! ermutigt werden können, eine geschlechtergerechte Sprache zu verwenden und zu akzeptieren. Die Ergebnisse zeigten, dass Personen ihr Sprachverhalten zu einem geschlechtergerechten Gebrauch hin änderten, wenn sie entsprechenden Argumenten ausgesetzt waren. Die Studie bestätigt, dass Argumente zur Förderung einer geschlechtergerechten Sprache motivieren können, geschlechtergerechte Formulierungen zu verwenden \parencite[548]{koeser_2014}. Auffällig war allerdings, dass Frauen ihren Sprachgebrauch eher als Männer in Bezug auf geschlechtergerechte Sprache ändern. Eine Erklärung hierfür vermuten die Autorinnen in den Korrelationsmustern: Der zuvor gemessene Sprachgebrauch korrelierte signifikant mit den Einstellungen, wobei Frauen eine geschlechtergerechte Sprache mehr bevorzugten als Männer\parencite[555]{koeser_2014}.
+\textcite{koeser_2014} untersuchten, inwiefern Personen ermutigt werden können, eine geschlechtergerechte Sprache zu verwenden und zu akzeptieren. \todo[inline]{(WELCHE Sprecherinnen, wo!!!???)} \todo[inline]{Da ging es um die generelle Nutzung von GFL und wie man sie promotet, sollte aber in die relevaten Studien hoch, da ist GFL sowieso noch nicht so gut abgedeckt.} Die Ergebnisse zeigten, dass Personen ihr Sprachverhalten zu einem geschlechtergerechten Gebrauch hin änderten, wenn sie entsprechenden Argumenten ausgesetzt waren. Die Studie bestätigt, dass Argumente zur Förderung einer geschlechtergerechten Sprache motivieren können, geschlechtergerechte Formulierungen zu verwenden \parencite[548]{koeser_2014}. Auffällig war allerdings, dass Frauen ihren Sprachgebrauch eher als Männer in Bezug auf geschlechtergerechte Sprache ändern. Eine Erklärung hierfür vermuten die Autorinnen in den Korrelationsmustern: Der zuvor gemessene Sprachgebrauch korrelierte signifikant mit den Einstellungen, wobei Frauen eine geschlechtergerechte Sprache mehr bevorzugten als Männer\parencite[555]{koeser_2014}.
+\todo[inline]{Der ganze Absatz und das Zitat müssen in das Kapitel relevante Studie zu GFL.}
 
+\citereset
 \begin{quote}
     \enquote {Surprisingly, women changed their language use more in the direction of gender-fair language than men.} \parencite[555]{koeser_2014}
 \end{quote}
 
-
-NOCH MEHR LIT?!?!??!?!?! !!!! Hinweis: Ja, sollten wir. Das ist von allen Hypothesen noch ein wenig dürftig untermauert. Ich such gleich noch bisschen was raus.
+\todo[inline]{NOCH MEHR LIT?!?!??!?!?!}
+\todo[inline]{Das Thema GFL ist leider noch das dürftigste mMn. Alle anderen sind super. Mehr Literatur schadet uns da auf keinen Fall.}
 
 Ausgehend von diesen Ergebnissen, stellen wir die folgende Hypothese auf: 
 
-
 \textbf{Hypothese 1:} \emph{Frauen verwenden in ihren Reden häufiger gender-fair language als Männer}
-
 
 
 \section{Hypothese Themen der Reden}
@@ -325,15 +402,18 @@ Ausgehend von diesen Ergebnissen, stellen wir die folgende Hypothese auf:
     \enquote{Legislatures thus remain strongly gendered institutions, with a marked division of labor between men and women politicians that becomes especially visible in the realm of social policy ” \parencite[250]{ennser-jedenastik_2017}}
 \end{quote}
 
-Es gibt diverse Erklärungsansätze für die unterschiedliche Themenwahl von Männern und Frauen bei Parlamentsdebatten. Laut \textcite{wangnerud_1996}  gibt es zwei mögliche Erklärungsansätze für eine \emph{horizontale Arbeitsteilung} bezüglich der Zuordnung von MPs zu den jeweiligen Gremien. Zum einen nennt Wängnerud hierbei die Stereotypisierungen dessen, was als männlich oder weiblich angesehen wird. Zum anderen kann es auch Unterschiede bezüglich der Interessen geben, so Wängnerud (HIER WICHTIG SPÄTER KRITISCH REAGIEREN!!!!). \textcite{back_2014} verweist diesbezüglich darauf, dass die Präferenzen und Entscheidungen der MPs nicht unabhängig von der Zugehörigkeit zu einer sozialen Gruppe und von den eigenen Lebenserfahrungen analysiert werden können. Die MPs beziehen sich bei der Entwicklung ihrer Präferenzen bewusst oder unbewusst auf ihre Biographie, so  \textcite[507]{back_2014}. 
+Es gibt diverse Erklärungsansätze für die unterschiedliche Themenwahl von Männern und Frauen bei Parlamentsdebatten. Laut \textcite{wangnerud_1996}  gibt es zwei mögliche Erklärungsansätze für eine \emph{horizontale Arbeitsteilung} bezüglich der Zuordnung von MPs zu den jeweiligen Gremien. Zum einen nennt \citeauthor{wangnerud_1996} hierbei die Stereotypisierungen dessen, was als männlich oder weiblich angesehen wird. Zum anderen kann es auch Unterschiede bezüglich der Interessen geben \parencite{wangnerud_1996}. \todo[inline]{HIER WICHTIG SPÄTER KRITISCH REAGIEREN!!!!} \todo[inline]{Hier sollten wir auch genauer zitieren, wo findet sich diese Argumentation bei Wägnerud?} \citeauthor{back_2014} verweist diesbezüglich darauf, dass die Präferenzen und Entscheidungen der MPs nicht unabhängig von der Zugehörigkeit zu einer sozialen Gruppe und von den eigenen Lebenserfahrungen analysiert werden können. Die MPs beziehen sich bei der Entwicklung ihrer Präferenzen bewusst oder unbewusst auf ihre Biographie, so \textcite[507]{back_2014}. 
 In den Jahren 1985, 1988 und 1994 wurden Umfragen der schwedischen MPs durchgeführt, anhand derer \textcite[81]{wangnerud_2000} feststellen konnte, dass es einen Zusammenhang zwischen dem Geschlecht der Politiker*innen und dem Ausmaß, in dem sie sozialpolitische Fragen verfolgen, gibt \parencites[506]{back_2014}[82]{wangnerud_2000}. Weibliche MPs sprechen in ihrem Wahlkampf vermehrt zu Themen der Sozialpolitik, der Familienpolitik, der Seniorenpflege sowie des Gesundheitswesens. Zudem wurde von weiblichen MPs betont, dass Wohlfahrtsfragen in ihren eigenen Interessengebieten liegen. Laut \textcite[82]{wangnerud_2000} waren Politikerinnen immer die Gruppe, die sozialpolitische Themen in ihrer parlamentarischen Arbeit am stärksten verfolgt haben \parencites[vgl.][507]{back_2014}.
-In ihrer Untersuchung zum schwedischen Parlament konnten \textcite{back_2014} nachweisen, dass Geschlechterunterschiede bezüglich der Themen der Reden festzustellen sind. Männer sprechen laut \textcite{back_2014} im schwedischen \emph{Riksdag} häufiger zu \emph{hard policies} (Wirtschaft, Energie, Infrastruktur). Bei \emph{soft policies} (Erziehung, Soziale Sicherung, Bildung) ist hingegen kein Unterschied bezüglich des Redeanteils und dem Geschlecht der Abgeordneten festzustellen \parencite[514f.]{back_2014}. Eine Analyse der Reden bezüglich möglicher Themenunterschiede zwischen den Geschlechtern, auf Basis der bisherigen Befunde im schwedischen Parlament (\parencites{wangnerud_2000}{wangnerud_2009}{back_2014}), ist für den 19. Deutschen Bundestag bisher noch ausstehend. Daher wird im Folgenden untersucht, ob eine geschlechtsspezifische, unterschiedliche Thematisierung in den Reden feststellbar ist: !!!!(NOCH MEHR BEGRÜNDEN; WARUM DAS RELEVANT IST - STEREOTYPEN FÖRDERN,etc...)!!!!
+In ihrer Untersuchung zum schwedischen Parlament konnten \textcite{back_2014} nachweisen, dass Geschlechterunterschiede bezüglich der Themen der Reden festzustellen sind. Männer sprechen laut \textcite{back_2014} im schwedischen \emph{Riksdag} häufiger zu \emph{hard policies} (Wirtschaft, Energie, Infrastruktur). Bei \emph{soft policies} (Erziehung, Soziale Sicherung, Bildung) ist hingegen kein Unterschied bezüglich des Redeanteils und dem Geschlecht der Abgeordneten festzustellen \parencite[514f.]{back_2014}. Eine Analyse der Reden bezüglich möglicher Themenunterschiede zwischen den Geschlechtern, auf Basis der bisherigen Befunde im schwedischen Parlament (\parencites{wangnerud_2000}{wangnerud_2009}{back_2014}), ist für den 19. Deutschen Bundestag bisher noch ausstehend. Daher wird im Folgenden untersucht, ob eine geschlechtsspezifische, unterschiedliche Thematisierung in den Reden feststellbar ist: 
+\todo[inline]{!!!!(NOCH MEHR BEGRÜNDEN; WARUM DAS RELEVANT IST - STEREOTYPEN FÖRDERN,etc...)!!!!}
+\todo[inline]{Teilweise haben wiir hier wieder aussagen doppelt. Ich würde sagen, mehr nach oben und in den Hypthesen eher verweisen auf die relevante Literatur.}
 
-\textbf{Hypothese 2:} \emph{Es sind unterschiedliche Thematisierungen in den Reden der Abgeordneten feststellbar.}  !!! Hinweis: Habe jetzt die Reihenfolge schon angepasst, müssen darauf achten, dass das auch weiterhin so passt.
+\textbf{Hypothese 2:} \emph{Es sind unterschiedliche Thematisierungen in den Reden der Abgeordneten feststellbar.}
 
-Falls es sich bei den Reden von weiblichen und männlichen MPs um unterschiedliche Themen handelt, kann keine Aussage darüber getroffen werden, warum diese Unterschiede existieren. !!! Hinweis: Hört sich noch komisch an, vielleicht sollten wir auch schreiben, dass es hierzu unterschiedliche Erklärungsansätze gibt. Finde den nachfolgenden Satz viel besser und würde den hier einfach streichen!!!
-Wie \textcite{back_2014} bereits aufzeigen konnte, gibt es unterschiedliche Erklärungsansätze. Eine ausführliche Auseinandersetzung mit den Ursachen der möglichen Themenunterschiede kann in der vorliegen Arbeit nicht geleistet werden. Mögliche Gründe für Themenunterschiede können (a) Entscheidungen der MPs aufgrund ihrer persönlichen Interessen, (b) Stereotypisierungen und/oder Normen in der Gesellschaft und/oder innerhalb der Parteien oder (c) Strategien, Hierarchien oder bestimmte Netzwerke innerhalb der Parteien sein \parencites[507]{back_2014}. \textcite [250]{ennser-jedenastik_2017} betont bezugnehmend auf \textcites{baekgaard_2012}{thomas_1994} dass es sich bei der Wahl von sozialpolitischen Themen der Frauen um die Selbstauswahl und nicht die offene Diskriminierung dieses Musters handelt \parencite[250]{ennser-jedenastik_2017}. \textcite{herrnson_2003} berichtet, dass weibliche Kandidatinnen, die stereotypische weibliche Themen betonen und in ihren Kampangnen Frauengruppe ansprachen, durch diese Strategie einen Wahlvorteil erhielten \parencite[250]{ennser-jedenastik_2017}. Auch \textcite{celis_2018} nehmen Bezug auf die unterschiedliche Themenwahl von männlichen und weiblichen MPs und begründen diese auf potentielle Erfolgsaussichten:
+Falls es sich bei den Reden von weiblichen und männlichen MPs um unterschiedliche Themen handelt, kann keine Aussage darüber getroffen werden, warum diese Unterschiede existieren. \todo[inline]{Hört sich noch komisch an, vielleicht sollten wir auch schreiben, dass es hierzu unterschiedliche Erklärungsansätze gibt. Finde den nachfolgenden Satz viel besser und würde den hier einfach streichen}
+Wie \textcite{back_2014} bereits aufzeigen konnte, gibt es unterschiedliche Erklärungsansätze. Eine ausführliche Auseinandersetzung mit den Ursachen der möglichen Themenunterschiede kann in der vorliegen Arbeit nicht geleistet werden. Mögliche Gründe für Themenunterschiede können (a) Entscheidungen der MPs aufgrund ihrer persönlichen Interessen, (b) Stereotype und/oder Normen in der Gesellschaft und/oder innerhalb der Parteien oder (c) Strategien, Hierarchien oder bestimmte Netzwerke innerhalb der Parteien sein \parencites[507]{back_2014}. \textcite [250]{ennser-jedenastik_2017} betont bezugnehmend auf \textcites{baekgaard_2012}{thomas_1994} dass es sich bei der Wahl von sozialpolitischen Themen der Frauen um die Selbstauswahl und nicht die offene Diskriminierung dieses Musters handelt \parencite[250]{ennser-jedenastik_2017}. \textcite{herrnson_2003} berichtet, dass weibliche Kandidatinnen, die stereotypische weibliche Themen betonen und in ihren Kampangnen Frauengruppe ansprachen, durch diese Strategie einen Wahlvorteil erhielten \parencite[250]{ennser-jedenastik_2017}. Auch \textcite{celis_2018} nehmen Bezug auf die unterschiedliche Themenwahl von männlichen und weiblichen MPs und begründen diese auf potentielle Erfolgsaussichten:
 
+\citereset
 \begin{quote}
     \enquote{Women’s issues and interests can be represented with greater success when they fit the dominant views and discourses about the type of issues and interests that representatives should be concerned with. However, these have a gendered and elitist bias, and strategically framing decisions [...] to fit with these dominant conceptions, by definition, distorts the selection of the types of issues and interests that will be represented” \parencite[151]{celis_2018}}.
 \end{quote}
@@ -355,11 +435,13 @@ Es wird erwartet, dass ein solches negatives Verhalten gegenüber Frauen auch im
 Eine weitere \emph{negative} Unterbrechung der Render*innen können Rückfragen darstellen - allerdings ist hier eine eindeutige negative Intention nicht anzunehmen. Entsprechend sollen Rückfragen gesondert untersucht werden. Auf Basis der Arbeiten von \textcite{brescoll_2011} und \textcite{eagly_2002} wird erwartet, dass Frauen bei Themen, welche stereotypisch eher nicht mit Frauen verbunden werden, häufiger Inkompetenz unterstellt wird als männlichen Abgeordneten. Dies kann sich in der Anzahl an Rückfragen äußern, welche während einer Rede gestellt werden. 
 
 \textbf{Hypothese 3b:} \emph{Frauen erfahren häufiger Rückfragen in ihren Reden, wenn wenige andere Frauen zu diesem Thema gesprochen haben}\footnote{Diese Hypothese kann nur in Verbindung mit der Hypothese 3 zur Thematisierung in den Reden überprüft werden.}
+\todo[inline]{Ich bin mir noch nicht sicher, ob wir die tatsächlich untersuchen werden können. Ich stoße da ziemlich auf Probleme. Ich würde sonst Vorschlagen: Streichen und in die Kritik mit rein. Wir werden nicht sehen, dass Frauen eher unterbrochen werden -- vielleicht werden ihnen aber eher Rückfragen und damit Inkompetenz unterstellt. Unsere Arbeit hat dafür einen ersten Teil der Analyse gestellt und weitergehnde Forschung dazu ist notwendig.}
 
 \section{Weitere ergänzende Untersuchungen}
 
 Da der 19. Deutsche Bundestag bisher noch nicht Gegenstand einer Untersuchungen der unterschiedlichen Repräsentation von Frauen und Männern bezüglich der Parlamentsdebatten war, soll ebenso die Anzahl an Reden von weiblichen Abgeordneten (auch nach Fraktion) untersucht ermittelt werden. \textcite{back_2014} konnte zeigen, dass weibliche Abgeordnete im schwedischen Riksdag deutlich weniger Reden halten als ihre männlichen Kollegen. Inwieweit dieses Ergebnis auf den Deutschen Bundestag übertragbar ist, wird im Folgenden geprüft.
 
+\citereset
 \begin{quote}
      \enquote{\emph{taking a lot of time} on the floor can in some sense be compared with reaching an important post—in important debates, parties are likely to control the floor agenda} \parencites[507]{back_2014}
 \end{quote}
@@ -384,7 +466,7 @@ Bedingt durch die Festlegung der Redezeit durch die Geschäftsordnung und den Ä
     \item Überprüft werden mit den Kontrollvariablen die Unterbrechungen und Rückfragen. 
 \end{itemize}
 
-\chapter{Datengrundlage und Methodik}
+\Chapter{Datengrundlage und Methodik}\label{kapitel:datengrundlage}
 
 Seit der 19. Wahlperiode liegen die Protokolle des Deutschen Bundestags als XML-Dateien (Extensible Markup Language) vor, die Struktur der abgelegten Protokolle sind umfassend dokumentiert \parencite{bundestag_2015}. Abgerufen werden können sie über das \emph{Open Data Portal} des Deutschen Bundestags.\footnote{\url{https://www.bundestag.de/service/opendata}} In Verbindung mit den dort abgelegten biografischen Daten aller Bundestagsabgeordneten können Aussagen über Anzahl und Inhalte der Reden nach Geschlecht, Alter, Fraktion und beispielsweise Anzahl der Bundestagsperioden getroffen werden.
 
@@ -495,7 +577,7 @@ Da sich das Redeverhalten und Rechte von fraktionslosen Abgeordneten zu den Abge
 \subsection{Erfassung von Unterbrechungen und Rückfragen}
 
 
-\chapter{Ergebnisse und Auswertungen}
+\Chapter{Ergebnisse und Auswertungen}
 
 \section{Genderinklusive Sprache}
 
@@ -507,9 +589,9 @@ Da sich das Redeverhalten und Rechte von fraktionslosen Abgeordneten zu den Abge
 
 \section{Unterbrechungen und Rückfragen}
 
-\chapter{Methodenkriktik und Forschungsausblick}
+\Chapter{Methodenkriktik und Forschungsausblick}
 
-\chapter{Diskussion}
+\Chapter{Diskussion}\label{kapitel:diskussion}
 
 \begin{quote}
     \enquote{Although women remain significantly under-represented in today’s parliaments, they are now looking beyond the numbers to focus on what they can actually do while in parliament — how they can make an impact, whatever their numbers may be. They are learning the rules of the game and using this knowledge and understanding to promote women’s issues and concerns from inside the world’s legislatures. In so doing, they are not only increasing the chances of their own success, but they are also paving the way for a new generation of women to enter the legislative process.} \parencite[3]{lovenduski_2015}
