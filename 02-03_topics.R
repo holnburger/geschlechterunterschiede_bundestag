@@ -57,19 +57,19 @@ plot(test_k)
 write_rds(test_k, "data/stm/test_k_multi.RDS")
 # Mit einer groben Bestimmung landen wir zwischen 100 und 120 Topics
 
-K_fine <- c(100:120)
+K_second <- c(100, 110, 120, 130, 140)
 
-test_k_fine <- searchK(out$documents, out$vocab, K_fine, cores = 6)
+test_k_second <- searchK(out$documents, out$vocab, K_second, cores = 6)
 
-plot(test_k_fine)
+plot(test_k_second)
 
 write_rds(test_k_fine, "data/stm/test_k_fine.RDS")
 
 test_k_fine <- read_rds("data/stm/test_k_fine.RDS")
 
-# Den besten fit haben wir bei etwa 90 Topics, dies muss im weiteren Verlauf noch verbessert werden
+# Den besten fit haben wir bei etwa 110 Topics, dies muss im weiteren Verlauf noch verbessert werden
 
-stm_speeches_fit <- stm(documents = out$documents, vocab = out$vocab, K = 110,
+stm_speeches_fit <- stm(documents = out$documents, vocab = out$vocab, K = 0,
                         prevalence = ~geschlecht, max.em.its = 500, data = out$meta,
                         init.type = "Spectral")
 
@@ -84,9 +84,9 @@ out$meta$geschlecht <- as.factor(out$meta$geschlecht)
 prep <- estimateEffect(~ geschlecht, stm_speeches,
                        meta = out$meta, uncertainty = "Global")
 
-plot(stm_speeches, topics = 38, type = "labels", labeltype = "frex")
-plot(stm_speeches, topics = 38, type = "labels", n = 30)
-labelTopics(stm_speeches, topics = c(20:30), n = 10)
+plot(stm_speeches_fit, topics = 1, type = "labels", labeltype = "frex")
+plot(stm_speeches_fit, topics = 1, type = "labels", n = 30)
+labelTopics(stm_speeches_fit, topics = c(1:10), n = 10)
 
 plot(prep, covariate = "geschlecht", topics = c(31:40),
      model = stm_speeches, method = "difference",
