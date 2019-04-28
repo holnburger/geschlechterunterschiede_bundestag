@@ -135,9 +135,11 @@ gfl_total %>%
   geom_boxplot() +
   labs(title = "Anteil geschlechterexklusiver Begriffe und Formulierungen pro Rede",
        subtitle = "Auswertung von 7.843 Reden des 19. Deutschen Bundestages nach Geschlecht",
-       y = "Anteil geschlechterexklusiver Begriffe und Formulieren",
-       x = "Geschlecht") +
+       y = "Anteil geschlechterexklusiver Begriffe und Formulierungen",
+       x = "Geschlecht MdB") +
   theme_minimal()
+
+ggsave("document/images/boxplot_gfl.pdf", device = "pdf", height = 15, width = 18, units = "cm", dpi = 300)
 
 # Abschließend wird ein T-Test durchgeführt um zu untersuchen, ob ein signifikanter 
 # Unterschiedzwischen den Gruppen festzustellen ist
@@ -146,6 +148,12 @@ gfl_total %>%
 leveneTest(prop_genderinkl_words ~ geschlecht, data = gfl_total)
 # Varianzen sind inhomogen, deshalb t-test mit var.equal FALSE
 t_test(prop_genderinkl_words ~ geschlecht, data = gfl_total, var.equal = FALSE) %>%
-  t_apa(., format = "latex") %>%
+  t_apa(., format = "latex", print = FALSE) %>%
   write_file(., "document/results/t-test_apa_result.tex")
 
+xtable(summarize(Orthodont, type = "numeric", group = "Sex",
+                 test = c("wilcox.test", "t.test")))
+
+t.test(prop_genderinkl_words ~ geschlecht, data = gfl_total, var.equal = FALSE) -> wat
+
+summarize(wat, type = "numeric", group = "Geschlecht", test = c("t.test")))
