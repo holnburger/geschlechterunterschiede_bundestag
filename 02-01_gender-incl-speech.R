@@ -1,6 +1,8 @@
 # Setup
 
 library(tidyverse)
+library(car)
+library(apa)
 library(knitr)
 library(kableExtra)
 
@@ -45,25 +47,6 @@ gend_dict %>%
 # Beispiel: Schüler --> Kinder. Hier macht es einen eklatanten Unterschied,
 # Es gibt auch üblicherweise mehr als einen erseztenden Begriff (Lehrling --> Azubi).
 
-# Test der Hypothese: Frauen benutzen eher genderinklusive Sprache als Männer.
-# Test über: Anteil genderinklusiver Sprache in den Reden von Frauen und Männern. Anteil über Wörter.
-
-# Diese Auswertung dauert sehr lange. Circa eine Stunde für die Auswertung.
-mdb_gfl_speeches <- mdb_full_speeches %>%
-  mutate(rede_full = tolower(rede_full)) %>%
-  mutate(genderexkl_words = 
-           str_extract_all(rede_full,
-                           paste(tolower(genderexkl_begriffe$word_list), collapse = "|"))) %>%
-  mutate(genderexkl_anzahl = lengths(genderexkl_words)) %>%
-  mutate(genderinkl_words = 
-           str_extract_all(rede_full,
-                           paste(tolower(genderinkl_begriffe$alternative_list), collapse = "|"))) %>%
-  mutate(genderinkl_anzahl = lengths(genderinkl_words)) %>%
-  arrange(-genderinkl_anzahl)
-
-write_rds(mdb_gfl_speeches, "data/BT_19/gfl_speeches.RDS")
-# mdb_gfl_speeches <- read_rds("data/BT_19/gfl_speeches.RDS")
-
 # Allerdings findet man nicht nur GFL Ansprache über das Diktionär, sondern auch über "Kolleginnen und Kollegen"
 # "Arzt und Ärztin". Wir versuchen, über regular expressions diese "Floskeln" zu finden.
 
@@ -97,13 +80,6 @@ mdb_gfl_phrases %>%
 
 gfl_modified_phrases <- read_csv("data/gfl_phrases_modified.csv")
 
-# Abschließende Tabelle mit der Anzahl an Begriffen.
-genderexkl_begriffe <- gend_dict %>%
-  distinct(word_list)
-
-genderinkl_begriffe <- gend_dict %>%
-  distinct(alternative_list)
-
 dict_summary_table <- tibble("Genderinklusive Formulierungen" = nrow(gfl_modified_phrases), 
   "Genderinklusive Begriffe" = nrow(genderinkl_begriffe), 
   "Genderexklusive Begriffe" = nrow(genderexkl_begriffe)) 
@@ -113,3 +89,63 @@ dict_summary_table %>%
   knitr::kable(format = "latex", booktabs = TRUE, linesep = "",
                col.names = c("", "Anzahl")) %>%
   write_file(., "document/tables/genderinklusive_woerter_anzahl.tex")
+
+
+## Test der Hypothesen
+# Test der Hypothese: Frauen benutzen eher genderinklusive Sprache als Männer.
+# Test über: Anteil genderinklusiver Sprache in den Reden von Frauen und Männern. Anteil über Wörter.
+
+# Abschließende Tabelle mit der Anzahl an Begriffen.
+genderexkl_begriffe <- gend_dict %>%
+  distinct(word_list)
+
+genderinkl_begriffe <- gend_dict %>%
+  distinct(alternative_list)
+
+
+# Diese Auswertung dauert sehr lange. Circa eine Stunde für die Auswertung.
+mdb_gfl_speeches <- mdb_full_speeches %>%
+  mutate(rede_full = tolower(rede_full)) %>%
+  mutate(genderexkl_words = 
+           str_extract_all(rede_full,
+                           paste(tolower(genderexkl_begriffe$word_list), collapse = "|"))) %>%
+  mutate(genderinkl_words = 
+           str_extract_all(rede_full,
+                           paste(tolower(genderinkl_begriffe$alternative_list), collapse = "|"))) %>%
+  mutate(gender_phrases = 
+           str_extract_all(rede_full,
+                           paste(gfl_modified_phrases$gfl_phrases, collapse = "|")))
+
+write_rds(mdb_gfl_speeches, "data/BT_19/gfl_speeches.RDS")
+# mdb_gfl_speeches <- read_rds("data/BT_19/gfl_speeches.RDS")
+
+# Nachdem wir alle inklusiven, exklusiven Begriffe und inklusiven Ansprachen extrahiert haben, können wir den Anteil der genderinklusiven Ansprache untersuchen.
+gfl_total <- mdb_gfl_speeches %>%
+  mutate(count_genderinkl_words = lengths(genderinkl_words), count_genderexkl_words = lengths(genderexkl_words),
+         count_genderinkl_phrases = lengths(gender_phrases)) %>%
+  select(rede_id, geschlecht, woerter, count_genderinkl_words, count_genderinkl_words, count_genderinkl_phrases) %>%
+  filter(woerter > 100) %>%      # Reden mit mindestens 100 Wörtern, ansonsten verfälschend, 7843 Reden insgesamt
+  mutate(count_genderinkl_total = count_genderinkl_words + count_genderinkl_phrases * 3) %>% # genderinklusive Ansprache besteht immer aus drei Wörtern
+  mutate(prop_genderinkl_words = count_genderinkl_total / woerter) %>%
+  mutate(prop_genderexkl_words = count_genderinkl_words / woerter) %>%
+  arrange(-prop_genderinkl_words)
+
+gfl_total %>%
+  ggplot(aes(x = geschlecht, y = prop_genderexkl_words)) +
+  geom_boxplot() +
+  labs(title = "Anteil geschlechterexklusiver Begriffe und Formulierungen pro Rede",
+       subtitle = "Auswertung von 7.843 Reden des 19. Deutschen Bundestages nach Geschlecht",
+       y = "Anteil geschlechterexklusiver Begriffe und Formulieren",
+       x = "Geschlecht") +
+  theme_minimal()
+
+# Abschließend wird ein T-Test durchgeführt um zu untersuchen, ob ein signifikanter 
+# Unterschiedzwischen den Gruppen festzustellen ist
+
+# Zunächst: Vergleich der Varianzen über den Levene-Test um die Homogeninität der Varianzen zu überprüfen
+leveneTest(prop_genderinkl_words ~ geschlecht, data = gfl_total)
+# Varianzen sind inhomogen, deshalb t-test mit var.equal FALSE
+t_test(prop_genderinkl_words ~ geschlecht, data = gfl_total, var.equal = FALSE) %>%
+  t_apa(., format = "latex") %>%
+  write_file(., "document/results/t-test_apa_result.tex")
+
