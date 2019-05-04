@@ -22,6 +22,9 @@ oppositions_parteien <- c("DIE LINKE", "FDP", "AfD", "BÜNDNIS 90/DIE GRÜNEN")
 links_parteien <- c("DIE LINKE", "BÜNDNIS 90/DIE GRÜNEN", "SPD")
 negativ_comments <- c("Zuruf", "Lachen", "Zwischenruf", "Gegenruf")
 
+### !!! TODO: Unterbrechung im Verhältnis zur Rede
+### AfD als Provoakteur, wie siehts ohne AfD aus?
+
 #--------------------#
 #  Data-Preperation  #
 #--------------------#
@@ -89,6 +92,12 @@ hist(bt_comments_overview$neg_kommentare, main = "Histogram: Unterbrechungen wä
 
 bt_comments_overview %>% select(gender, neg_kommentare) %>% split(.$gender) %>% map(summary)
 
+# !!!! Unbedingt noch Unterbrechung pro Länge der Rede untersuchen
+# !!! Fraktionsvorsitzende
+# !!! Fraktionsvorsitz extra häufig unterbrochen? Unabhängig von Länge der Rede.
+# !!! T-Test für Unterbrechungen nach Geschlecht und Vorsitz
+# !!! ANOVA für Fraktionen.
+
 #----------------------#
 #  Hypotheses Testing  #
 #----------------------#
@@ -108,6 +117,13 @@ stargazer(m1, m2, m3, m4, m5, m6, m7, type = "latex", omit.stat=c("LL","ser","f"
           dep.var.labels = c("Unterbrechungen in Reden"),
           covariate.labels = c("Geschlecht", "Opposition", "Rechts", "AfD", "Alter", "Anzahl Mandate im BT", "Fraktionsvorsitz"),
           out = "results/glm_nb_unterbrechungen.tex")
+
+stargazer(m1, m2, m3, m4, m5, m6, m7, type = "html", omit.stat=c("LL","ser","f"), no.space=TRUE, 
+          title = "Negative Binominalregression", dep.var.caption = "Abhängige Variable",
+          dep.var.labels = c("Unterbrechungen in Reden"),
+          covariate.labels = c("Geschlecht", "Opposition", "Rechts", "AfD", "Alter", "Anzahl Mandate im BT", "Fraktionsvorsitz"),
+          out = "results/glm_nb_unterbrechungen.html")
+
 
 #--------------------#
 #  Data-Preperation  #
