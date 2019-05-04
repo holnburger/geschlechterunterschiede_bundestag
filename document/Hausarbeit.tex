@@ -32,9 +32,9 @@
     backend=biber, 
     style=authoryear-icomp, 
     eprint=false,
-    url=false,
-    doi=false,
-    isbn=false,
+    url=true,
+    doi=true,
+    isbn=true,
     dashed=false,
     uniquename=false
     ]{biblatex}
@@ -148,7 +148,7 @@ In der vorliegenden Arbeit werden fünf Repräsentations-Dimensionen definiert u
     \item Ebene C: \emph{Berücksichtigung von Frauen in der Sprache der Parlamentsdebatten}: Werden in den Debatten Frauen ebenso wie Männer sprachlich repräsentiert? Wird Gender-Fair-Language (GFL) genutzt? Wird GFL von weiblichen und männlichen MPs in gleichem Maße genutzt? 
     \item Ebene D: \emph{Vermeidung von geschlechtsbezogenen Stereotypen}: Werden gesellschaftliche geschlechtsbezogene Stereotype reproduziert? Werden unterschiedliche Themen von weiblichen und männlichen MPs behandelt? Gibt es thematische Unterschiede innerhalb der Reden zu den gleichen Themen zwischen männlichen und weiblichen MPs? 
     \item Ebene E: \emph{Verhinderung von frauenfeindlichen Verhaltensmustern}: Werden in den Parlamentsdebatten frauenfeindliche Verhaltensmuster reproduziert? Werden Frauen häufiger negativ unterbrochen? 
-    
+    \todo[inline]{!!!Während die ersten drei Punkte die Repräsentation von Frauen effektiv erhöht, führen die letzten beiden Punkte zu einer verringerung der Repräsenation von Frauen. Etwa dadurch, dass die Kosten für eine Beteiligung erhöht wird oder irgendwie sowas.}
 \end{itemize}
 
 Der theoretische Hintergrund, die Relevanz des Untersuchungsgegenstandes sowie bisherige Untersuchungen zur Repräsentation von Frauen sollen zunächst detailliert dargestellt werden. Auf Basis dieses Hintergrunds ist eine anschließende Entwicklung von Hypothesen sowie die Konzeption des Forschungsdesigns möglich, welche eine umfassende Untersuchung der Repräsentation von Frauen in Parlamenten ermöglicht. Hierbei wird im Besonderen auch die von \textcite[18]{back_2018} hingewiesene Möglichkeit der automatisierten Textanalyse genutzt.
@@ -180,13 +180,13 @@ Doch auch wenn sich in den niedergeschriebenen Regeln und den zugrundeliegenden 
 
 \section{Legislative Gremien als maskuline Organisation}
 
-\todo[inline]{formatierung!!! JH: was meinst du damit? GG: ist ohne Zeilenabstand in der PDF }
-
+%
 Das Geschlechterregime der legislativen Gremien wird, ebenso wie andere von Männern dominierten Sektoren, häufig als \enquote{\emph{permeated by a culture of masculinity}} beschrieben \parencites[200]{erikson_2018}{lovenduski_2005}.
 In Anlehnung an \textcite{acker_1990} zeigt sich dies beispielsweise in der Existenz von formalen Regeln, die von Männern geschaffen wurden und einer männlich dominierten Organisation angepasst sind, sowie in Normen, wie sich ein (männlicher) Politiker präsentieren und verhalten soll \parencites[200]{erikson_2018}[48]{acker_1990}. Frauen werden infolgedessen mit dieser bereits existenten \emph{culture of masculinity} konfrontiert, welche als institutionelle Einschränkung fungieren kann wenn beispielsweise ihre Arbeit dadurch behindert wird \parencites[200]{erikson_2018}[47-56]{lovenduski_2005}. \textcite{erikson_2018} verweisen auf sozialpsychologische Erhebungen, wonach Frauen in männerdominierten Bereichen häufiger Diskriminierung ausgesetzt sind, da es an Übereinstimmungen zwischen den männerdominierten beruflichen Normen und den Eigenschaften mit denen Frauen typischerweise assoziiert werden, mangelt \parencites[vgl.][]{burgess_1999}{eagly_2002}{heilman_2001}{heilman_2004}. 
 %
 Frauen riskieren Diskriminierungen, weil sie entweder als weniger kompetent angesehen werden oder weil sie weibliche Attribute verletzen, wenn sie sich den Normen anpassen \parencite[200]{erikson_2018}. Die Folgen sind neben der Disqualifikation, die Abwertung der Leistungen sowie die ungleiche Behandlung von Frauen bis hin zu Belästigungen \parencites[200]{erikson_2018}{heilman_2001}{burgess_1999}:
 %
+
 \citereset
 \begin{quote}
      \endquote{The gendered consequences of masculine norms are often manifested in the first case in the disqualification of women or the devaluation of their performance, whereas they often take the form of a disparate treatment of women in the second, including harassment} \parencite[200]{erikson_2018}
@@ -351,6 +351,8 @@ Ausgehend von diesem Ergebnis sowie den vorherigen Annahmen, stellen wir die fol
 
 \textbf{Hypothese 1:} \emph{Weibliche MPs verwenden in ihren Reden häufiger GFL als männliche MPs}
 
+\todo[inline]{Hinweis darauf, dass nur genderinklusive Begriffe und Formulierungen verwendet werden, nicht genderexklusive. Vielleicht auch später bei der Methodik und Konzeption}
+
 
 \section{Hypothese Themen der Reden}\label{kapitel:hypothese2}
 
@@ -385,9 +387,10 @@ Diese Mehrbelastung kann laut \textcite{erikson_2018} zu höheren \enquote{Koste
 
 Es wird erwartet, dass ein solches negatives Verhalten gegenüber Frauen auch im Deutschen Bundestag zu beobachten ist. Entsprechend wird untersucht, wie häufig weibliche und männliche MPs in ihren Reden \emph{negativ} unterbrochen werden. Hierfür werden Reden bezüglich der Anzahl an Zurufen, Gegenrufen, Widerspruch und Lachen über den*die Redner*in untersucht.
 
-\textbf{Hypothese 3a:} \emph{Frauen werden häufiger als Männer während einer Rede negativ Unterbrochen}
+\textbf{Hypothese 3:} \emph{Frauen werden häufiger als Männer während einer Rede negativ Unterbrochen}
 
 Eine weitere \emph{negative} Unterbrechung der Render*innen können Rückfragen darstellen - allerdings ist hier eine eindeutige negative Intention nicht anzunehmen. Entsprechend sollen Rückfragen gesondert untersucht werden. Auf Basis der Arbeiten von \textcite{brescoll_2011} und \textcite{eagly_2002} wird erwartet, dass Frauen bei Themen, welche stereotypisch eher nicht mit Frauen verbunden werden, häufiger Inkompetenz unterstellt wird als männliche MPs. Dies kann sich in der Anzahl an Rückfragen äußern, welche während einer Rede gestellt werden. \todo[inline]{fehlt hier noch eine Hypothese?????? letzter Absatz wirkt ansonsten etwas verloren}
+\todo[inline]{das war die hypothese mit den Rückfragen, die haben wir jetzt ja rausgenommen. Sonst würde ich einfach diesen Absatz noch rausnehmen oder halb kürzen, dass Unterbrechungen nicht die einzige Art der negativen Verhaltens gegenüber Frauen sein muss.}
 
 \section{Weitere ergänzende Untersuchungen}
 
@@ -405,9 +408,14 @@ Früheren Studien zufolge wird angenommen, dass persönliche Charaktereigenschaf
 Der von \textcite{back_2014} untersuchte schwedische \emph{Riksdag} unterscheidet sich allerdings hinsichtlich der parlamentarischen Gepflogenheiten vom Deutschen Bundestag. Die Redeordnung und Redezeit wird im Bundestag über die Geschäftsordnung und den Ältestenrat festgelegt \parencite[64f.]{linn_2018}. Üblicherweise wird das Modell der \enquote{Berliner Stunde} angewandt -- die Redezeit bemisst sich hierbei über die Stärke der Fraktionen \parencite[vgl.][]{schreiner_2005}. Allerdings wurde im Ältestenrat des 19. Deutschen Bundestages hierzu noch keine Einigung gefunden \parencite[64]{linn_2018}, weshalb die Redezeit im aktuellen Bundestag auf die in der Geschäftsordnung vorgesehenen 15 Minuten begrenzt werden. Bei längeren Reden von Sprecher*innen der Regierung verlängern sich auch die Reden der Oppositionsfraktionen. Generell können die Fraktionen eine längere Redezeit von bis zu 45 Minuten beantragen \parencite{bundestag_2019}. In der \enquote{aktuellen Stunde} des Bundestages sind die Redebeiträge der Abgeordneten auf maximal fünf Minuten begrenzt \parencites[68]{linn_2018}[]{bundestag_2019}.
 
 Bedingt durch die Festlegung der Redezeit durch die Geschäftsordnung und den Ältestenrat sowie eine fehlende Protokollierung der Redezeiten durch den Stenografischen Dienst des Bundestages ist ein Vergleich der Redezeiten von weiblichen und männlichen MPs weder sinnvoll, noch möglich.
-\textcite{back_2018} konnte in dem Ländervergleich keine Korrelation zwischen der Anzahl an Frauen in den Fraktionen und der Anzahl an Reden in den Parlamenten feststellen. Dennoch soll in dieser Arbeit ein Überblick über die Anzahl der Reden von Frauen im Vergleich zu den Sitzanteilen in der Fraktion aufgenommen werden -- diese Erkenntnis dient hierbei deskriptivem als deduktivem Erkenntnisgewinn, weshalb für diese Untersuchung auch keine Hypothesen gebildet werden. Die Ergebnisse dieser Untersuchung können die bisherigen Ergebnisse von \textcite{back_2018} ergänzen und überprüfen.\todo[inline]{einem !!!!GGG:?? "hierbei deskriptivem als deduktivem Erkenntnisgewinn, weshalb für diese Untersuchung auch keine Hypothesen gebildet werden"""" Ergibt für mich gerade keinen Sinn, magst du mir das kurz erläutern?!?  - KÖNNEN WIR DAS NICHT ALS KONTROLLVARIABLEN verpacken? GGneu MEINT .... ich verstehe grammatikalisch nicht was deskriptivem als deduktivem er... meint... und Kontrollvariablen meint: ob Unterschieder zwischen m und f ggf nicht allgemein bestehen sondern nur in einigen Parteien... also kontrollieren ob das ergebniss evt. nur auf einige parteien zutrifft....}
+\textcite{back_2018} konnte in dem Ländervergleich keine Korrelation zwischen der Anzahl an Frauen in den Fraktionen und der Anzahl an Reden in den Parlamenten feststellen. Dennoch soll in dieser Arbeit ein Überblick über die Anzahl der Reden von Frauen im Vergleich zu den Sitzanteilen in der Fraktion aufgenommen werden -- diese Erkenntnis dient hierbei deskriptivem als deduktivem Erkenntnisgewinn, weshalb für diese Untersuchung auch keine Hypothesen gebildet werden. Die Ergebnisse dieser Untersuchung können die bisherigen Ergebnisse von \textcite{back_2018} ergänzen und überprüfen.\todo[inline]{einem !!!!GGG:?? "hierbei deskriptivem als deduktivem Erkenntnisgewinn, weshalb für diese Untersuchung auch keine Hypothesen gebildet werden"""" Ergibt für mich gerade keinen Sinn, magst du mir das kurz erläutern?!?  - KÖNNEN WIR DAS NICHT ALS KONTROLLVARIABLEN verpacken? GGneu MEINT .... ich verstehe grammatikalisch nicht was deskriptivem als deduktivem er... meint... und Kontrollvariablen meint: ob Unterschieder zwischen m und f ggf nicht allgemein bestehen sondern nur in einigen Parteien... also kontrollieren ob das ergebniss evt. nur auf einige parteien zutrifft....
+JH: Wir haben hierzu ja gar keine Hypothesen, wir untersuchen hier ja nur rein deskriptiv das Verhältnis von Sitzen und Reden durch Frauen. Eine Kontrollvariable können wir hier auch nicht einbauen, eben da wir nichts testen. Die Kontrollvariablen untersuchen ja z. B. die Unterbrechungen auf Drittvariablen wie \enquote{ist die Person auch Fraktionsvorsitzende}. EIch wüsste nicht, wie eine Kontrollvariable da eingebaut werden sollte. Der deskriptive Erkenntnisgewinn liegt hier bei: Intertessant, dass bei den Grünen sogar ein noch höherer Anteil an Reden von Frauen kommt, obwohl sie den höchsten Anteil an Frauen im Parlament haben. Da gibt's ja keine Drittvariablen zu testen.}
 
 \section{Kontrollvariablen}
+
+Natürlich wird die Anzahl an Unterbrechungen und die Nutzung genderinklusiver Sprache von mehr Faktoren als nur dem Geschlecht beeinflusst -- linke Parteien nutzen vermutlich häufiger genderinklusive Sprache als rechte Parteien, Fraktionsvorsitzende werden vermutlich häufiger unterbrochen als MPs, welche nicht den (stellvertretenden) Fraktionsvorsitz stellen.
+Anbei sollen einige Kontrollvariablen aufgeführt werden, welche bei den Hypothesen ebenfalls geprüft werden. Da es sich bei dieser Arbeit um eine x-zentrierte Forschungsfrage handelt (\emph{Inwiefern unterscheiden sich Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität}) \parencite[vgl.][4f.]{ganghof_2005} wird untersucht, inwiefern das Geschlecht eine Rolle bei den untersuchten Hypothesen spielt. 
+
 
 \begin{itemize}
     \item Geschlecht ist nur eine von vielen Variablen, welche sich beispielsweise auf die Anzahl der Unterbrechungen in einer Bundestagsrede auswirken könnte. Es ist davon auszugehen, dass Fraktionsvorsitzende z. B. während ihrer Reden häufiger unterbrochen werden als Abgeordnete, welche nicht den Vorsitz stellen.
@@ -501,15 +509,17 @@ Hierbei mussten zahlreiche Einträge entfernt werden, da sie für die zu untersu
 
 Die in Kapitel \ref{kapitel:gfl-studien} und \ref{kapitel:hypothese1} behandelte \emph{gender-fair language} umfasst jedoch mehr als nur einzelne Begriffe. In dieser Arbeit soll auch herausgefunden werden, ob Abgeordnete in ihren Reden eine genderinklusive Ansprache wählen -- beispielsweise, ob von \enquote{Kolleginnen und Kollegen} anstatt exklusiv von \enquote{Kollegen} oder \enquote{Kolleginnen} gesprochen wird\footnote{Der Stenografische Dienst des Bundestages protokolliert leider nicht, ob Abgeordnete mit einem sogenannten \emph{Gender-Gap} sprechen -- also das bewusste Pausieren vor der geschlechterspezifischen Endung, etwa bei \emph{Kolleg\_innen} \parencite[vgl.][]{reisigl_2017}. Gender-Gaps werden in den Bundestagsprotokollen als rein weibliche Aussprache protokolliert.}. 
 
+\todo[inline]{Kritik an dem entwickelten Diktionär bezüglich der geschickt-gendern --> teilweise findet zu viel (einbauen der 10 häufigsten und der 10 wenigsten) genderinklusiven wörter. --> Kritik Domänenabhängikeit: geschickt-gendern hier ein unpassendes Wörterbuch für die Untersuchung politischer reden. Im weiteren Verlauf untersuchen wir deshalb nur noch die Formulierungen. Kolleginnen und Kollegen nehmen wir mal raus und gucken uns das an.}
+
 Mittels sogenannter \emph{regular expressions} \parencite{thompson_1968} können die Protokolle nach solchen genderinklusiven Formulierungen untersucht werden -- hierfür wird mit Hilfe von spezifisch definierten Regeln nach diesen Passagen im Datensatz gesucht. In dieser Arbeit wurde nach Passagen gesucht, welche alle folgende Regeln erfüllen:
 \begin{itemize}
-    \setlength\itemsep{1em}
+    \setlength\itemsep{0em}
     \item Zwei Wörter, welche durch ein \enquote{und} oder \enquote{oder} getrennt werden.
     \item Eines dieser Wörter endet mit den Buchstaben \enquote{in} oder \enquote{innen}, das zweite Wort endet hingegen mit \enquote{e}, \enquote{er} oder \enquote{en}.
     \item Die Wörter bestehen aus jeweils mindestens vier Buchstaben vor den jeweiligen Endungen.
 \end{itemize}
 
-Mit diesen Regeln konnten zunächst 507 Formulierungen identifiziert werden, welche nach einer manueller Bereinigung auf 517 genderinklusive Formulierungen gekürzt wurden. Die zehn häufigsten Ansprachen, welche diesen Regeln entsprechen, sind in Tabelle \ref{table:top_gender_phrasen} aufgeführt. 
+Mit diesen Regeln konnten zunächst 507 Formulierungen identifiziert werden, welche nach einer manueller Bereinigung auf 417 genderinklusive Formulierungen gekürzt wurden.\footnote{Hierbei wurden zum einen Formulierungen, die durch diese Regelungen nicht gefunden werden können, etwa \enquote{Männer und Frauen}, manuell ergänzt und Formulierungen, welche nicht inklusiv sind aber diesen Regeln entsprechen, entfernt. So fand sich beispielsweise auch vier Mal die Kombination \enquote{Hitler und Stalin} -- welche die formulierten Regeln erfüllt.} Die zehn häufigsten Ansprachen, welche diesen Regeln entsprechen, sind in Tabelle \ref{table:top_gender_phrasen} aufgeführt. 
 
 \begin{table}[htb]
     \centering
@@ -604,7 +614,7 @@ Da der Stenografische Dienst des Bundestages nicht nur den Wortlaut der Reden so
     \enquote{Gender equal representation is not only about the proportion of men and women legislators or the outcomes of politics}\parencite[197]{erikson_2018}
 \end{quote}
 
-
+\todo[inline]{Eine Seite eines Protokolls als Beispiel in den Anhang packen.}
 
 \end{quote}
 \textbf{Hypothese 3b:} \emph{Frauen erfahren häufiger Rückfragen in ihren Reden, wenn wenige andere Frauen zu diesem Thema gesprochen haben}\footnote{Diese Hypothese kann nur in Verbindung mit der Hypothese 3 zur Thematisierung in den Reden überprüft werden.}
