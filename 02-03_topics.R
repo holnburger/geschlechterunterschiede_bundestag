@@ -77,25 +77,31 @@ prep <- estimateEffect(~ geschlecht, stm_speeches_fit,
 topics_split <- split(stm_labels %>% pull(Topic), ceiling(seq_along(stm_labels %>% pull(Topic))/15))
 labels_split <- split(stm_labels %>% pull(Label), ceiling(seq_along(stm_labels %>% pull(Label))/15))
 
-pdf(file='plot.pdf')
+pdf(file="document/images/stm_differences.pdf")
+par(mar=c(5,1,1,1)) # Oben und seitlich Platz abschneiden
 map2(topics_split, labels_split, 
      ~plot(prep, covariate = "geschlecht", topics = .x,
            model = stm_speeches_fit, method = "difference",
            xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
-           main = "Thematisierungen in den Bundestagsreden\nnach Geschlecht",
            custom.labels = .y, labeltype = "custom",
+           main=NULL,
            xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt"))
 dev.off()
 
-# Deutliche Unterschiede sind bei folgenden 
+# Deutliche Unterschiede sind bei folgenden Topics zu sehen:
 
-plot(prep, covariate = "geschlecht", topics = .x,
+significant_topics <- c(2,3,7,10,18,22,27,28,29,37,42,53,54,57,61,76,78,91)
+stm_significant_labels <- stm_labels %>%
+  filter(Topic %in% significant_topics)
+
+pdf(file="document/images/stm_differences_top.pdf", width = 8, height = 14, )
+plot(prep, covariate = "geschlecht", topics = stm_significant_labels$Topic,
      model = stm_speeches_fit, method = "difference",
      xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
      main = "Geschlechterspezifische Unterschiede in den Thematisierungen der Bundestagsreden",
-     custom.labels = .y, labeltype = "custom",
-     xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt"))
-     
+     custom.labels = stm_significant_labels$Label, labeltype = "custom",
+     xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt")
+dev.off()
 
 
 plot(stm_speeches_fit, topics = c(32, 50, 76, 62), type = "labels", labeltype = "frex")
