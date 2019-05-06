@@ -76,7 +76,7 @@ gfl_modified_phrases <- read_csv("data/gfl_phrases_modified.csv")
 
 gfl_modified_phrases %>%
   sample_n(10) %>%
-  rename(Forumulierung = gfl_phrases) %>%
+  rename(Formulierung = gfl_phrases) %>%
   knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
   write_file(., "document/tables/genderinklusive_formulierungen_zufall.tex")
 

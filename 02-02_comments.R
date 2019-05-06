@@ -2,39 +2,34 @@
 #       SETUP       #
 #-------------------#
 
-library(MASS)
 library(tidyverse)
 library(stargazer)
 
 # Überprüfung Hypothesen zu Unterbrechungen und Zwischenfragen
 # Basisdaten
 
-bt_overview <- read_rds("data/BT_19/overview.RDS")
-bt_data <- read_rds("data/mdb_data.RDS")
-bt_speeches <- read_rds("data/BT_19/speeches.RDS")
-fraktionsvorsitz <- read_rds("data/BT_19/fraktionsvorsitzende.RDS")
-
-# Ergänzende Daten
+# Laden der Dateien
+mdb_data <- read_rds("data/mdb_data.RDS")
+overview <- read_rds("data/BT_19/overview.RDS")
+speeches <- read_rds("data/BT_19/speeches.RDS")
+full_speeches <- read_rds("data/BT_19/full_speeches.RDS") %>%
+  select(rede_id, woerter, geschlecht)
 
 parteien <- c("SPD", "DIE LINKE", "FDP", "CDU/CSU", "AfD", "BÜNDNIS 90/DIE GRÜNEN")
 parteien_in_comments <- "\\[SPD\\]|\\[DIE LINKE\\]|\\[FDP\\]|\\[CDU/CSU\\]|\\[AfD\\]|\\[BÜNDNIS 90/DIE GRÜNEN\\]"
+fraktionsvorsitz <- read_rds("data/BT_19/fraktionsvorsitzende.RDS")
 oppositions_parteien <- c("DIE LINKE", "FDP", "AfD", "BÜNDNIS 90/DIE GRÜNEN")
 links_parteien <- c("DIE LINKE", "BÜNDNIS 90/DIE GRÜNEN", "SPD")
+fraktionsvorsitz <- read_rds("data/BT_19/fraktionsvorsitzende.RDS")
+
 negativ_comments <- c("Zuruf", "Lachen", "Zwischenruf", "Gegenruf")
-
-### !!! TODO: Unterbrechung im Verhältnis zur Rede
-### AfD als Provoakteur, wie siehts ohne AfD aus?
-
-#--------------------#
-#  Data-Preperation  #
-#--------------------#
 
 ## Negative Unterbrechungen (Lachen, Zurufe, Gegenrufe, Widerspruch)
 
-bt_comments <- bt_speeches %>%
-  left_join(bt_overview %>% select(rede_id, redner_rolle),
+mdb_comments <- speeches %>%
+  left_join(overview %>% select(rede_id, redner_rolle),
             by = "rede_id") %>%                          # Nur die Reden von MdBs
-  filter(is.na(redner_rolle)) %>%                       
+  filter(fraktion %in% parteien) %>%
   filter(typ == "kommentar") %>%                         # Nur die Kommentare
   separate_rows(rede, sep = "–") %>%                     # Kommentare bei Bindestrich in die nächst Datenreihe
   mutate(rede = str_remove_all(rede, "^\\s+|\\s+$")) %>% # Entfernt Leerzeichen vor und nach dem String
@@ -46,30 +41,49 @@ bt_comments <- bt_speeches %>%
     str_detect(rede, paste(negativ_comments, collapse = "|")) ~ TRUE,
     TRUE ~ FALSE))
 
-# Einfache Tabelle mit Dummy-Variablen und relevanten Untersuchungsvariablen
-
-bt_comments_overview <- bt_comments %>%
+mdb_comments_overview <- mdb_comments %>%
   filter(neg_kommentar == TRUE) %>%                      # Nur negative Kommentare, keine positiven
   group_by(rede_id) %>%                                  # Gruppieren nach Rede
   summarise(neg_kommentare = n()) %>%                    # Anzahl der negativen Kommentare
-  right_join(bt_overview %>%
-               filter(is.na(redner_rolle)),
-             by = "rede_id") %>%                         # Mit weiteren Angaben (Geschlecht, Partei, etc.) kombinieren
-  left_join(bt_data, by = c("redner_id" = "id")) %>%
+  right_join(overview %>% filter(redner_fraktion %in% parteien), by = "rede_id") %>%  # Mit weiteren Angaben (Geschlecht, Partei, etc.) kombinieren
+  left_join(mdb_data %>% select(-geschlecht), by = c("redner_id" = "id")) %>%
+  right_join(full_speeches, by = "rede_id") %>%
   mutate(name = paste0(redner_vorname, " ", redner_nachname, ", ", redner_fraktion)) %>% # Lesbare Angaben über Abgeordnete
   select(rede_id, redner_id, name, redner_fraktion,
          neg_kommentare, geburtsjahr, partei,
-         geschlecht, anzahl_wahlperioden) %>%
+         geschlecht, anzahl_wahlperioden, woerter) %>%                                       
+  filter(woerter > 100) %>%                                                         # Nur Reden mit mehr als 100 Wörtern
   mutate(neg_kommentare = replace_na(neg_kommentare, 0)) %>%                        # Werte ohne neg Unterbrechung als 0
   mutate(gender = ifelse(geschlecht == "männlich", 1, 0)) %>%                       # Dummy-Variable Geschlecht
   mutate(opposition = ifelse(redner_fraktion %in% oppositions_parteien, 1, 0)) %>%  # Dummy-Varibale Opposition               
   mutate(rechts = ifelse(redner_fraktion %in% links_parteien, 0, 1)) %>%            # Dummy-Variable rechts
   mutate(is_afd = ifelse(redner_fraktion == "AfD", 1, 0)) %>%                       # Dummy-Variable AfD
   mutate(alter = 2018 - geburtsjahr) %>%                                            # Angabe Alter
-  select(-geburtsjahr, -geschlecht) %>%
+  select(-geburtsjahr) %>%
+  mutate(prop_neg_kommentare = neg_kommentare/woerter) %>%                          # Anteilige Unterbrechungen nach Länge der Rede
   mutate(vorsitz = ifelse(str_detect(paste(fraktionsvorsitz$name, collapse = "|"), name), 1, 0))  # Dummy-Variable Fraktionsvorsitz
 
-write_rds(bt_comments_overview, "data/BT_19/comments_overview.RDS")
+# Datensatz ist jetzt vollständig
+
+write_rds(mdb_comments_overview, "data/BT_19/comments_overview.RDS")
+
+# Auswertung
+
+
+
+mdb_comments_overview %>%
+  ggplot(aes(x = as.character(geschlecht), y = neg_kommentare)) +
+  geom_jitter()
+
+mdb_comments_overview %>%
+  ggplot(aes(x = as.character(vorsitz), y = woerter)) +
+  geom_boxplot()
+
+mdb_comments_overview %>%
+  ggplot(aes(x = neg_kommentare)) +
+  geom_histogram()
+
+
 
 #--------------#
 #  Statsitics  #
