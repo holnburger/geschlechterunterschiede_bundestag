@@ -1,455 +1,500 @@
 Topic 1 Top Words:
- 	 Highest Prob: banken, risiken, heute, kind, bank, einlagensicherung, menschen, bankenunion, kredite, leben 
- 	 FREX: bluttest, bluttests, einlagensicherung, trisomie, downsyndrom, test, bankenunion, banken, kredite, großbanken 
- 	 Lift: abwicklungsmechanismus, aufseher, bankenabgabe, bankenmarkt, bankenmärkte, bluttest, chromosom, einlagensicherungssystem, einleger, fehlgeburten 
- 	 Score: banken, einlagensicherung, bankenunion, downsyndrom, test, kredite, bluttest, bluttests, verbriefungen, trisomie 
+ 	 Highest Prob: antrag, beraten, heute, afd, fdp, mal, thema, parlament, sagen, anhörung 
+ 	 FREX: beraten, ausschüsse, geschäftsordnung, anhörung, hauptausschuss, lesung, petitionsausschuss, plenum, parlamentarischen, fraktionen 
+ 	 Lift: aufmerksamkeitsdefizit-syndrom, geschäftsführerinnen, geschäftsordnungs, immunitätsausschuss, openpetition, schuldnern, totalreparation, vorältestenrat, freelancern, abweicht 
+ 	 Score: geschäftsordnung, petitionsausschuss, ausschüsse, aufsetzung, beraten, hauptausschuss, anhörung, parteiengesetz, grosse-brömer, vermittlungsausschuss 
 Topic 2 Top Words:
- 	 Highest Prob: demokratie, antrag, afd, heute, enquete-kommission, deutschen, bürger, unsere, direkte, menschen 
- 	 FREX: petitionsausschuss, direkte, enquete-kommission, petitionen, npd, direkter, einsetzung, demokratie, ausschüsse, expertenkommission 
- 	 Lift: „direkte, beschlussempfehlungen, bundesebene“, changeorg, geschäftsführerinnen, geschäftsordnungs, haug, immunitätsausschuss, kampfinstrument, petentinnen 
- 	 Score: petitionsausschuss, enquete-kommission, petitionen, npd, demokratie, einsetzung, direkter, geschäftsordnung, direkte, volksentscheide 
+ 	 Highest Prob: bank, banken, deutsche, deutschen, commerzbank, fusion, heute, wissen, unternehmen, minister 
+ 	 FREX: commerzbank, fusion, bank, kukies, finanzmarkt, goldman, cum-fake, sachs, steinbrück, banken 
+ 	 Lift: großbank, megabank, fusionsgespräche, bail--fähige, citibank, finanzanlage, personallücke, postbank, zollbehörde, zuspielen 
+ 	 Score: commerzbank, bank, fusion, banken, kukies, cum-fake, goldman, aktien, sachs, cumex 
 Topic 3 Top Words:
- 	 Highest Prob: frankreich, europa, europäischen, zusammenarbeit, europäische, unsere, deutsch-französische, heute, gemeinsam, vertrag 
- 	 FREX: deutsch-französische, deutsch-französischen, freundschaft, aachener, parlamentsabkommen, élysée-vertrag, franzosen, frankreich, französischen, resolution 
- 	 Lift: compiègne, parlamentsabkommen, „élysée, „la, amis, arend, aristide, beaucoup, boutros-ghali, briand 
- 	 Score: deutsch-französische, deutsch-französischen, freundschaft, aachener, élysée-vertrag, außenpolitik, parlamentsabkommen, sicherheitspolitik, sicherheitsrat, gaulle 
+ 	 Highest Prob: mandat, einsatz, soldaten, irak, sea, guardian, mittelmeer, unsere, bundeswehr, mission 
+ 	 FREX: sea, guardian, atalanta, piraterie, sophia, operation, waffenschmuggel, mandat, unifil, irak 
+ 	 Lift: „augsburg“, „magdeburg“, artikel-mission, atalanta-mandat, aufklärungsergebnisse, einsatzgruppenversorger, gesamtpolitischen, handelsrouten, inte­ressengruppen, is-koalition 
+ 	 Score: sea, guardian, mandat, soldaten, irak, mittelmeer, mission, operation, sophia, atalanta 
 Topic 4 Top Words:
- 	 Highest Prob: landwirtschaft, unsere, ernährung, landwirte, menschen, ministerin, bauern, liebe, prozent, immer 
- 	 FREX: bienen, zucker, bauern, landwirtschaft, ernährung, bäuerinnen, landwirtschaftlichen, landwirte, insekten, landwirt 
- 	 Lift: „ernährung, „lebensministerium“, anbaumethoden, anzuecken, bauernregeln, bienenkiller, bienenschutz, bodenphysik, dlg, düngemittel 
- 	 Score: landwirtschaft, landwirte, ernährung, bauern, glyphosat, zucker, bienen, bäuerinnen, lebensmittel, landwirtschaftlichen 
+ 	 Highest Prob: demokratie, antrag, afd, bürger, parlament, arbeit, dafür, ganz, immer, bürgerinnen 
+ 	 FREX: petitionen, petitionsausschuss, direkte, enquete-kommission, demokratie, direkter, direkten, petition, ausschüsse, amtszeitbegrenzung 
+ 	 Lift: „direkte, „politikverdrossenheit“, begleitschreiben, brexit-referendums, bundesebene“, bürgerentscheide, bürgerplenarstunde, bürgerplenarverfahren, direktdemokratische, direktdemokratischer 
+ 	 Score: demokratie, petitionsausschuss, petitionen, enquete-kommission, direkte, amtszeitbegrenzung, direkter, volksentscheide, bürgerbeteiligung, petition 
 Topic 5 Top Words:
- 	 Highest Prob: bamf, migration, land, flüchtlinge, wurde, beim, vielen, sicherheit, bürger, immer 
- 	 FREX: bamf, gefährder, grenzkontrollen, asylverfahren, asylanträge, abschiebung, abgeschoben, außenstelle, abschiebungen, asylgesetz 
- 	 Lift: amtsleitung, anerkennungsbescheide, bamf-zentrale, bamf“, behördenleiterin, betonpoller, bismarckhering, dublin-rückführungen, durchwinkekultur, einreiselegitimation 
- 	 Score: bamf, asylverfahren, gefährder, grenzkontrollen, asylanträge, abschiebungen, migration, bundesamt, abschiebung, asylbewerber 
+ 	 Highest Prob: gesagt, sagen, spd, worden, frage, mal, eigentlich, heute, wurde, koalition 
+ 	 FREX: positionierung, habt, schneider, rehberg, geschätzter, position, finanzplanung, gesagt, brinkhaus, haushaltsausschuss 
+ 	 Lift: energieministerrat, geziert, kapitalertragsteuererstattungen, referenzzeitraums, bofinger, rodung, gabor, steingart, vizekanzleramt, migrationszentren 
+ 	 Score: positionierung, scholz, altmaier, schneider, inhaltsstoffe, rehberg, haushaltsausschuss, finanzplanung, bewaffnungsfähige, geschätzter 
 Topic 6 Top Words:
- 	 Highest Prob: beschäftigten, unternehmen, arbeitnehmer, arbeitgeber, menschen, beschäftigte, arbeit, arbeitszeit, gibt, geht 
- 	 FREX: siemens, betriebsräte, befristungen, ryanair, mitbestimmung, betriebsverfassungsgesetz, betriebsrat, brückenteilzeit, beschäftigten, befristung 
- 	 Lift: altersstufen, altgewerkschaften, arbeitskämpfe, arbeitskonditionen, befristungsrecht, betrvg, beweglichere, bombardier, flexibilisierungselemente, flugbetrieb 
- 	 Score: beschäftigten, ryanair, siemens, arbeitszeit, betriebsräte, befristungen, tarifbindung, mitbestimmung, teilzeit, beschäftigte 
+ 	 Highest Prob: digitalisierung, intelligenz, digitale, digitalen, künstliche, strategie, zukunft, unsere, liebe, wirtschaft 
+ 	 FREX: intelligenz, künstliche, digitale, ki-strategie, künstlicher, digitalisierung, künstlichen, algorithmen, digitalen, enquete-kommission 
+ 	 Lift: „ai, bilderkennung, datenreichtum, digitalministeriums, digitalrat, doro, fachministerien, gigabitnetzen, innovationscluster, rechenleistung 
+ 	 Score: intelligenz, künstliche, digitale, digitalisierung, ki-strategie, enquete-kommission, digitalen, umsetzungsstrategie, künstlicher, künstlichen 
 Topic 7 Top Words:
- 	 Highest Prob: menschen, unsere, land, zukunft, geht, deswegen, unserem, unserer, gesellschaft, welt 
- 	 FREX: vollbeschäftigung, generationengerechtigkeit, future, globalisierung, rentenkommission, for, zusammenhalt, sdgs, revolution, strukturwandel 
- 	 Lift: unterrichtszeit, hagen, landesgruppenvorsitzender, nachhaltigste, schuldenfetisch, ungebundenen, zielvorstellungen, abgrunds, runterfällt, scientists 
- 	 Score: vollbeschäftigung, rentenkommission, future, haushalt, generationengerechtigkeit, zusammenhalt, sdgs, globalisierung, strukturwandel, arbeitnehmerinnen 
+ 	 Highest Prob: landwirtschaft, ernährung, landwirte, unsere, menschen, liebe, immer, betriebe, bauern, ministerin 
+ 	 FREX: ernährung, zucker, nitrat, landwirtschaftlichen, landwirte, bauern, gesunde, landwirtschaft, bäuerinnen, ernähren 
+ 	 Lift: „ernährung, „lebensministerium“, ampelkennzeichnung, anzuecken, badeseen, bauernregeln, düngerecht, düngerechts, ernährungsbereich, ernährungswende 
+ 	 Score: landwirtschaft, landwirte, ernährung, zucker, bauern, landwirtschaftlichen, lebensmittel, bäuerinnen, tiere, betriebe 
 Topic 8 Top Words:
- 	 Highest Prob: euro, prozent, fdp, antrag, soli, milliarden, entlastung, einkommen, steuern, entlasten 
- 	 FREX: soli, solidaritätszuschlag, grundsteuer, gewerbesteuer, einkommensteuer, vermögensteuer, solidaritätszuschlags, entlastung, entlasten, steuersätze 
- 	 Lift: „gerechtigkeit“, abbauschritt, abschreibungsbedingungen, afa-tabellen, anlagevermögens, einheitswerten, einkommensteuerreform, einkommensteuerzahler, geschäftsgrundstücken, objektsteuer 
- 	 Score: soli, grundsteuer, solidaritätszuschlag, progression, gewerbesteuer, einkommensteuer, vermögensteuer, entlastung, einkommen, solidaritätszuschlags 
+ 	 Highest Prob: bamf, land, migration, seehofer, sicherheit, bundesamt, flüchtlinge, beim, asylverfahren, menschen 
+ 	 FREX: bamf, asylverfahren, anker-zentren, bundesamt, bundespolizei, bremen, innenausschuss, gefährder, islamistischen, bundesinnenminister 
+ 	 Lift: behördenleiterin, konnex, kursen, mitarbeiterschaft, terrorverfahren, bamf“, cordt, haushaltsbereinigungssitzung, dublin-fälle, überstundenbelastung 
+ 	 Score: bamf, asylverfahren, migration, seehofer, bundespolizei, anker-zentren, gefährder, bundesamt, innenausschuss, islamistischen 
 Topic 9 Top Words:
- 	 Highest Prob: worden, gibt, glyphosat, wissen, heute, wurde, immer, geht, deshalb, fall 
- 	 FREX: glyphosat, iarc, adrs, geldwäsche, aktie, cumex, kapitalertragsteuer, fiu, aktien, masi 
- 	 Lift: echa, geldwäscheanzeigen, hinterlegungsscheine, krebsentstehung, lkas, pflügen, phantompapiere, beistoffe, bankenverband, behandelbare 
- 	 Score: glyphosat, adrs, iarc, cumex, aktie, kapitalertragsteuer, geldwäsche, fiu, pflanzenschutzmittel, aktien 
+ 	 Highest Prob: afd, heute, venezuela, land, menschen, six, deutschen, russland, yücel, gibt 
+ 	 FREX: six, billy, venezuela, yücel, maduro, deniz, freilassung, xinjiang, pressefreiheit, uiguren 
+ 	 Lift: billy, „journalist“, botschaftsangehörigen, ­chávez, chávez, chavismus, chavisten, einheitspartei, einzelhaft, falun 
+ 	 Score: six, billy, yücel, venezuela, maduro, deniz, freilassung, russland, xinjiang, pressefreiheit 
 Topic 10 Top Words:
- 	 Highest Prob: gesetzentwurf, jahren, seit, verbraucher, gesetz, heute, zwei, betriebe, ferkelkastration, unternehmen 
- 	 FREX: ebav, pensionskassen, ferkelkastration, fristverlängerung, pensionsfonds, betäubungslosen, altersversorgung, verweigerungshaltung, arzneimittel, bäuerliche 
- 	 Lift: auffangrechtsform, aufsichtsrechtlichen, berücksichtigenden, bewachung, bpt, bundesgesundheitsministerium, ebav-ii-richtlinie, ebermast-schweinen, eisenbahninfrastrukturen, ferkelaufzucht 
- 	 Score: ferkelkastration, ebav, fristverlängerung, betäubungslosen, pensionskassen, pensionsfonds, bpt, verbraucher, altersversorgung, lfgb 
+ 	 Highest Prob: frauen, menschenrechte, religionsfreiheit, afd, menschen, christen, islam, religion, land, antrag 
+ 	 FREX: religionsfreiheit, christen, muslime, religion, islam, religionen, religiöse, religions, weltanschauungsfreiheit, muslimen 
+ 	 Lift: „demonstrationsrechte, ahmadiyya, auslandsfinanzierung, ehrenmorde, gegendemonstranten, großscheich, gruppendruck, religionsfreiheitsbericht, theologie, weltanschauungsfreiheit 
+ 	 Score: religionsfreiheit, christen, islam, muslime, menschenrechte, religion, frauen, religionen, frauenrechte, religiöse 
 Topic 11 Top Words:
- 	 Highest Prob: menschen, arbeitsmarkt, arbeit, sozialen, hartz, leben, liebe, brauchen, sanktionen, geht 
- 	 FREX: langzeitarbeitslosen, arbeitsmarkt, langzeitarbeitslose, jobcentern, jobcenter, arbeitslos, langzeitarbeitslosigkeit, hartz, arbeitslosigkeit, arbeitslosen 
- 	 Lift: passiv-aktiv-transfer, „gründungsmitglieder“, abzuschreiben, aktivierungsideologie, alg-ii-bezieher, alibipolitik, arbeitsmarktferne, arbeitsmarktprogramm, arbeitsversicherung, aufstockende 
- 	 Score: arbeitsmarkt, langzeitarbeitslosen, hartz, jobcentern, jobcenter, langzeitarbeitslose, arbeitslos, langzeitarbeitslosigkeit, weiterbildung, arbeitslosigkeit 
+ 	 Highest Prob: menschen, sport, esport, liebe, gemeinnützigkeit, games, dank, unsere, athleten, gibt 
+ 	 FREX: athleten, olympics, athletinnen, esport, games, sport, special, dosb, olympischen, abgabenordnung 
+ 	 Lift: olympische, „invictus“, altersfreigabe, athleten, austragung, austragungsort, beförderungsmöglichkeiten, behindertensportler, bewerbungsphase, dosb 
+ 	 Score: esport, athleten, sport, olympics, games, special, athletinnen, gemeinnützigkeit, invictus, abgabenordnung 
 Topic 12 Top Words:
- 	 Highest Prob: jahren, strategie, dafür, digitalisierung, gibt, menschen, antrag, thema, viele, letzten 
- 	 FREX: it-sicherheit, strategie, mbit, bsi, ki-strategie, umsetzungsstrategie, sicherheitslücken, intelligenz, enquete-kommission, künstlicher 
- 	 Lift: cebit, it-sicherheitskennzeichen, „bits, „technologischen, „verschlüsselung“, abbrecher, auktionserlösen, bäume“, federführendes, koordinierendes 
- 	 Score: it-sicherheit, intelligenz, enquete-kommission, bsi, mbit, ki-strategie, umsetzungsstrategie, verschlüsselung, sicherheitslücken, künstliche 
+ 	 Highest Prob: gesetzentwurf, gesetz, verbraucher, verfahren, wäre, koalition, heute, zwei, beispiel, zensus 
+ 	 FREX: lfgb, zensus, löschfrist, planungs, verbraucherzentralen, bußgeldkatalog, verbraucherrechte, verstöße, planfeststellungsverfahren, anordnung 
+ 	 Lift: löschfrist, antragsfrist, aufzuchtverfahren, beratungskapazitäten, berücksichtigenden, dopingopfer-hilfegesetzes, doppelbeprobung, farblich, futtermittelgesetzbuch, geschäftsmethoden 
+ 	 Score: zensus, verbraucher, lfgb, verbraucherinnen, bußgeldkatalog, löschfrist, gesetzentwurf, zensusgesetz, verbraucherzentralen, planungs 
 Topic 13 Top Words:
- 	 Highest Prob: intelligenz, künstliche, entwicklung, unsere, immer, thema, liebe, geht, jahren, menschen 
- 	 FREX: künstliche, intelligenz, künstlichen, maschinen, ki-strategie, künstlicher, robotik, gründerszene, lte, forschungszentrum 
- 	 Lift: „ai, billiarden, binnenabsatz, förderzielen, forschungssystem, gliederung, ki“, magufuli, opensignal, rechenoperationen 
- 	 Score: intelligenz, künstliche, ki-strategie, künstlichen, lte, maschinen, gründerszene, künstlicher, enquete-kommission, robotik 
+ 	 Highest Prob: fahrverbote, städten, luft, gibt, scheuer, städte, menschen, mobilität, fahrzeuge, kommunen 
+ 	 FREX: plakette, fahrverbote, hardwarenachrüstung, nachrüstung, fahrverboten, hardwarenachrüstungen, fahrverbot, öpnv, fahrzeug, luft“ 
+ 	 Lift: abgasnorm, dieselkonzept, elektrobussen, euro‑-diesel, herumtanzen, restwert, schadstoffausstoßes, streckenbezogene, verbotszone, verkehrsverbote 
+ 	 Score: fahrverbote, scheuer, plakette, nachrüstung, öpnv, grenzwerte, fahrverboten, hardwarenachrüstung, fahrzeuge, verkehrsminister 
 Topic 14 Top Words:
- 	 Highest Prob: saudi-arabien, türkei, rüstungsexporte, waffen, jemen, deutschen, deutsche, syrien, krieg, immer 
- 	 FREX: jemen-krieg, rüstungsexporte, rüstungsexporten, rüstungsgüter, saudi-arabien, afrin, jemen, rüstungsgütern, rüstungsexportpolitik, rheinmetall 
- 	 Lift: „rüstungsexporte, „saudi-arabien, „sz“, „unmittelbar“, abwehrfähigkeit, abzuhelfen, aktionsplattform, al-hudaida, angriffskrieges, angriffswaffen 
- 	 Score: saudi-arabien, rüstungsexporte, jemen, türkei, waffen, afrin, rüstungsexporten, jemen-krieg, rüstungsgüter, syrien 
+ 	 Highest Prob: forschung, wissenschaft, hochschulen, innovation, unsere, unternehmen, brauchen, innovationen, neue, forschungsförderung 
+ 	 FREX: sprunginnovationen, forschungsförderung, transfer, forschungseinrichtungen, agentur, hochschulen, forschung, fachhochschulen, grundlagenforschung, hochschulpakt 
+ 	 Lift: „dynamisierung, absolventenzahlen, alzheimer, anwendungsforschung, ausgründung, beschäftigungsbedingungen, bmbf-haushalt, bundesbericht, clausus, darpa 
+ 	 Score: forschung, hochschulen, sprunginnovationen, forschungsförderung, agentur, transfer, hochschulpakt, innovation, forschungseinrichtungen, innovationen 
 Topic 15 Top Words:
- 	 Highest Prob: gibt, euro, gesetz, gesetzentwurf, jahre, verfahren, wurde, jahren, recht, heute 
- 	 FREX: isofluran, kastration, bundesgerichtshof, ferkel, bgh, wertgrenze, inkassounternehmen, ferkelzüchter, nichtzulassungsbeschwerden, ebermast 
- 	 Lift: beweiskraft, chirurgische, egzpo, ferkelzuchtbetriebe, friedrich-loeffler-institut, geschäftsbelastung, haushaltsgrundsätze, isofluran-narkose, jungebermast, sauenhaltung 
- 	 Score: kastration, ferkel, isofluran, bundesgerichtshof, landwirte, wertgrenze, bgh, ferkelzüchter, betäubung, ebermast 
+ 	 Highest Prob: menschen, gewalt, afd, gesellschaft, demokratie, unsere, land, chemnitz, extremismus, vielen 
+ 	 FREX: linksextremismus, extremismus, „demokratie, chemnitz, rechtsextremismus, leben“, freiwilligendienste, linksextreme, freiwilligendienst, bundesfreiwilligendienst 
+ 	 Lift: „zusammenhalt, antifa“, antifaschisten, antirassisten, bafza, bedeutungen, bfd-platz, bildungsdienst, demokratiebild, demokratiefeinde 
+ 	 Score: linksextremismus, extremismus, chemnitz, freiwilligendienste, „demokratie, leben“, gewalt, freiwilligendienst, verfassungsschutz, rechtsextremismus 
 Topic 16 Top Words:
- 	 Highest Prob: land, menschen, prozent, euro, politik, spd, endlich, immer, unserem, jahr 
- 	 FREX: vermögen, aussiedler, armut, reichtum, ungleichheit, niedriglohnsektor, steuersystem, gerechtes, vermögensteuer, spaltung 
- 	 Lift: bürgerentlastungsprogramm, christlich-soziale, exportabhängigkeit, hartz-gesetze, isabel, kindergeburtstagen, piketty, rausbekommen, rentenkonzepte, rentner-hartz 
- 	 Score: armut, vermögen, mindestlohn, aussiedler, vermögensteuer, niedriglohnsektor, rente, steuersystem, renten, grundsicherung 
+ 	 Highest Prob: saudi-arabien, jemen, waffen, rüstungsexporte, deutsche, deutschen, immer, welt, geht, unsere 
+ 	 FREX: rüstungsexportpolitik, saudi-arabien, jemen, rüstungsexporte, rüstungsgüter, rüstungsexporten, jemen-krieg, rüstungsgütern, rheinmetall, waffenlieferungen 
+ 	 Lift: ausfuhrkontrolle, bötchen, bündniszusammenhalt, exportentscheidung, genehmigungswerte, losgrößen, peene­werft, waffenexporteur, wehrsouveränität, kriegswaffenkontrollgesetz 
+ 	 Score: saudi-arabien, jemen, rüstungsexporte, waffen, rüstungsexporten, rüstungsgüter, jemen-krieg, rüstungsexportpolitik, patrouillenboote, rheinmetall 
 Topic 17 Top Words:
- 	 Highest Prob: antrag, deshalb, unternehmen, fdp, digitalen, liebe, unserer, unsere, wirtschaft, bereits 
- 	 FREX: bsi, lkw, zolls, empfehlung, digitalen, it-sicherheit, sozialschutz, play, infrastrukturen, it-sicherheitsgesetz 
- 	 Lift: arbeitspotenzials, beschäftigungen, cybersicherheitsbehörde, exzellenzcluster, gemeinschaftsmitteln, gwb-novelle, ineinandergreift, länderrisiken, ratsempfehlung, rückführungseinrichtungen 
- 	 Score: bsi, digitalen, lkw, digitale, it-sicherheit, play, it-sicherheitsgesetz, start-ups, sozialschutz, zolls 
+ 	 Highest Prob: menschen, spd, land, regelung, familiennachzug, unsere, gesetzentwurf, union, heute, personen 
+ 	 FREX: nachzug, punktesystem, zuwanderung, familiennachzug, arbeitsmigration, aussetzung, härtefälle, härtefallregelung, einwanderung, schutzberechtigten 
+ 	 Lift: „kompromiss“, aufnahmemöglichkeiten, ausgesetzten, einwanderungssystem, endlich“, flüchtlingsverteilung, groko-manier, kompromissregelung, kriegswirren, machokultur 
+ 	 Score: familiennachzug, nachzug, punktesystem, subsidiär, aussetzung, schutzberechtigten, härtefallregelung, arbeitsmigration, familiennachzugs, härtefälle 
 Topic 18 Top Words:
- 	 Highest Prob: familiennachzug, menschen, subsidiär, familie, eltern, kinder, gesetzentwurf, spd, aussetzung, monat 
- 	 FREX: wechselmodell, familiennachzug, subsidiär, familiennachzugs, aussetzung, schutzberechtigten, nachzug, härtefallregelung, schutzberechtigte, kontingent 
- 	 Lift: „unkontrollierter“, „weitergehende“, achtens, gfk-flüchtlingen, kompromissregelung, kontingentieren, kontingentlösung, nachzügen, neuntens, spd-bundesparteitags 
- 	 Score: familiennachzug, subsidiär, familiennachzugs, wechselmodell, schutzberechtigten, nachzug, aussetzung, härtefallregelung, schutzberechtigte, kontingent 
+ 	 Highest Prob: gibt, gesetz, tiere, gesetzentwurf, tierschutz, wurde, immer, jahre, zwei, deshalb 
+ 	 FREX: betäubung, tierschutz, schlachthöfen, schlachtung, tiere, kastration, veterinäre, kontrollen, tieren, befristungen 
+ 	 Lift: beweiskraft, bundesjagdgesetzes, zuchttieren, betäubt, tierschutzkontrollen, tierschutzverletzungen, tierschutzverstöße, „besonderen, „geheimsache, amtstierärzten 
+ 	 Score: tiere, tierschutz, betäubung, kastration, schlachthöfen, ferkel, tieren, schlachtung, veterinäre, befristungen 
 Topic 19 Top Words:
- 	 Highest Prob: menschen, behinderungen, sport, teilhabe, liebe, behinderung, esport, gesellschaft, antrag, gemeinnützigkeit 
- 	 FREX: olympics, esport, athleten, behinderungen, special, sport, dosb, bundesteilhabegesetz, athletinnen, barrierefreiheit 
- 	 Lift: „schwer--ordnung-ausweis“, austragung, behindertenbeauftragte, behindertensportler, bewerbungsphase, bgg, esport-abteilung, esport-abteilungen, gaming, legends 
- 	 Score: esport, behinderungen, olympics, athleten, special, sport, behinderung, athletinnen, games, gemeinnützigkeit 
+ 	 Highest Prob: kommission, heute, sagen, jahren, frage, ministerin, minister, regierung, gerade, parlament 
+ 	 FREX: regierungsbefragung, kommission, fragestunde, artensterben, strukturwandel, umweltministerin, kohlekommission, selbstverzwergung, kommissionen, außenhandelsüberschüsse 
+ 	 Lift: aktionsprogramms, altlastenbeseitigung, außenhandelsüberschüssen, ausstiegsdatums, edenhofer, ersatzkapazitäten, harsch, kanzlerbefragung, regierungspraxis, selbstverzwergung 
+ 	 Score: regierungsbefragung, kommission, umweltministerin, strukturwandel, selbstverzwergung, kohleausstieg, plastikvermüllung, kohlekommission, artensterben, fragestunde 
 Topic 20 Top Words:
- 	 Highest Prob: menschen, kindergeld, gibt, afd, viele, antrag, mal, problem, thema, immer 
- 	 FREX: wohnungslosigkeit, obdachlosigkeit, kindergeld, indexierung, lebenshaltungskosten, kindergeldzahlungen, obdachlosen, obdachlose, unterkunft, sozialleistungen 
- 	 Lift: „einwanderung, baurechtliches, fehlbeleger, jvas, kinderweihnachtsgeldes, leistungsdruck, mitgestimmt, pässen, schuldenspirale, schuldnerberaterinnen 
- 	 Score: kindergeld, wohnungslosigkeit, obdachlosigkeit, indexierung, obdachlose, obdachlosen, weihnachtsbeihilfe, lebenshaltungskosten, schwarzfahren, kindergeldzahlungen 
+ 	 Highest Prob: milliarden, wäre, euro, deutschen, heute, regierung, minister, gibt, deutsche, sei 
+ 	 FREX: steuerpflichtigen, strafzölle, luxemburg, italienische, progression, handelskrieg, steuererhöhungen, griechenland, bundesbank, finanzplan 
+ 	 Lift: efsf-kredite, einsprüchen, firmensitz, buchnachweise, censeo, ceterum, clown, debattenbrocken, einkommenszuwachs, euro-rettungskosten 
+ 	 Score: progression, ezb, bundesbank, steuerpflichtigen, milliarden, griechenland, kalten, italienische, soli, einkommensteuer 
 Topic 21 Top Words:
- 	 Highest Prob: fahrverbote, menschen, städten, luft, autos, liebe, prozent, fahrzeuge, automobilindustrie, städte 
- 	 FREX: öpnv, nachrüstung, dieselfahrzeuge, hardwarenachrüstung, autoindustrie, nachrüstungen, luftqualität, fahrverbote, fahrzeug, autos 
- 	 Lift: abgasnorm, dieselbussen, „öffentlicher, abfallbehandlung, abgasbelastung, abgasskandal“, abnahmen, ampelsysteme, außerorts, bundesverkehrsministers 
- 	 Score: fahrverbote, öpnv, nachrüstung, fahrzeuge, autoindustrie, scheuer, grenzwerte, automobilindustrie, verkehrsminister, hardwarenachrüstung 
+ 	 Highest Prob: gesetzentwurf, menschen, ländern, herkunftsstaaten, antrag, einstufung, länder, heute, prozent, grünen 
+ 	 FREX: einstufung, herkunftsstaaten, marokko, maghreb-staaten, algerien, tunesien, asylrecht, georgien, sicheren, sichere 
+ 	 Lift: flüchtlingsschutzes, grenzkodex, kabinettbeschluss, maghreb-ländern, regelvermutung, westbalkanstaaten, westsahara, wunschpartner, „tun, anerkennungswahrscheinlichkeit 
+ 	 Score: herkunftsstaaten, einstufung, marokko, tunesien, algerien, asylverfahren, asylrecht, georgien, maghreb-staaten, bamf 
 Topic 22 Top Words:
- 	 Highest Prob: afghanistan, land, menschen, syrien, gibt, eritrea, jahren, regierung, heute, deutschen 
- 	 FREX: afghanischen, eritrea, afghanistan, äthiopien, taliban, afghanische, afghanen, hindukusch, kamerun, afghanistans 
- 	 Lift: abzugsplan, afewerki, afghanistan-einsatzes, afghanistan-engagement, afghanistan-engagements, afghanistan-mandats, altruistisch, atareb, äthiopische, aufstandsbekämpfung 
- 	 Score: afghanistan, afghanischen, eritrea, äthiopien, taliban, afghanische, afghanen, soldaten, kamerun, syrien 
+ 	 Highest Prob: familiennachzug, menschen, subsidiär, familie, gesetzentwurf, aussetzung, familiennachzugs, flüchtlinge, recht, gesetz 
+ 	 FREX: subsidiär, familiennachzug, familiennachzugs, schutzberechtigte, aussetzung, kontingent, schutzberechtigten, geschützten, härtefallregelung, neuregelung 
+ 	 Lift: „unkontrollierter“, „weitergehende“, achtens, behördenzusammenarbeit, ehebestandszeit, ehefrauseinen, fallkonstellationen, geschwisternachzug, gfk-flüchtlingen, hinzunehmende 
+ 	 Score: familiennachzug, subsidiär, familiennachzugs, schutzberechtigte, schutzberechtigten, aussetzung, härtefallregelung, kontingent, geschützten, asylberechtigten 
 Topic 23 Top Words:
- 	 Highest Prob: pflege, menschen, patienten, versorgung, brauchen, krankenversicherung, spahn, pflegeversicherung, ärzte, minister 
- 	 FREX: krankenpflege, pflegebedarf, altenpflege, pflegeversicherung, pflegekräfte, pflege, patienten, versicherten, pflegebedürftigen, tsvg 
- 	 Lift: „beamtinnen, „bewerten“, „eigenanteile, akutfällen, allgemeinverbindliche, altenpflegekräfte, altenpflegeschulen, ambulant, ambulanter, angehörigenpflege 
- 	 Score: pflege, patienten, pflegeversicherung, altenpflege, versicherten, krankenversicherung, pflegekräfte, spahn, ärzte, pflegebedürftigen 
+ 	 Highest Prob: entwicklungszusammenarbeit, afrika, menschen, müller, antrag, entwicklung, ländern, entwicklungspolitik, länder, bildung 
+ 	 FREX: entwicklungszusammenarbeit, entwicklungspolitik, tansania, bmz, müller, afrika, entwicklungshilfe, gerd, entwicklungsländern, äthiopien 
+ 	 Lift: abeba, addis, anbaut, antarktischen, anton, countries, developed, flachsbarth, gasturbinenkraftwerk, giraffen 
+ 	 Score: entwicklungszusammenarbeit, afrika, entwicklungspolitik, tansania, bmz, müller, äthiopien, eritrea, entwicklungshilfe, afrikas 
 Topic 24 Top Words:
- 	 Highest Prob: mietpreisbremse, wohnungen, prozent, wohnraum, land, vermieter, jahren, grünen, mieter, lassen 
- 	 FREX: angespannten, vermieter, mietpreisbremse, wohnungsmärkten, wohnungsmarkt, vergleichsmiete, bezahlbarem, wohnungen, wohnraum, wohnraummisere 
- 	 Lift: neubauwohnungen, mietpreisbremse“, wohnraummisere, betrachtungszeitraums, eu-osterweiterung, förderweg, spd-planungsdezernenten, wohnraumbewirtschaftung, elbvertiefung, bauhauptgewerbe 
- 	 Score: mietpreisbremse, vermieter, wohnungen, mieter, wohnraum, wohnungsmarkt, angespannten, wohnungsmärkten, wohnraummisere, vergleichsmiete 
+ 	 Highest Prob: deutschen, immer, menschen, migranten, land, migration, recht, europa, deutsche, pakt 
+ 	 FREX: migranten, adrs, merkels, sozialsysteme, arbeitnehmerfreizügigkeit, migrationspakt, pakt, compact, unverbindlich, hinzurechnung 
+ 	 Lift: ebensolche, einzuwandern, gcr, sozialfälle, demontieren, neuansiedlungspolitik, erworbener, koffern, marquardt, gewesene 
+ 	 Score: migranten, pakt, migration, adrs, compact, migrationspakt, hinzurechnung, aktie, globalen, arbeitnehmerfreizügigkeit 
 Topic 25 Top Words:
- 	 Highest Prob: hilfe, menschen, humanitäre, humanitären, gibt, auswärtigen, amt, afghanistan, jahren, land 
- 	 FREX: humanitären, venezuela, humanitäre, maduro, auswärtige, hilfe, auswärtigen, kabul, amtes, humanitärer 
- 	 Lift: abdullah, baschir-regime, belagerungen, chávez, fluchtalternativen, humanitarian, interimspräsident, weltgipfel, autonomiebestrebungen, baschirs 
- 	 Score: humanitäre, humanitären, afghanistan, venezuela, maduro, kabul, auswärtigen, auswärtige, jemen, hilfe 
+ 	 Highest Prob: glyphosat, landwirtschaft, deshalb, heute, antrag, einsatz, thema, ministerin, gibt, liebe 
+ 	 FREX: glyphosat, bienen, pflanzenschutzmittel, efsa, iarc, insekten, zulassungsverfahren, pflanzenschutzmitteln, pflanzen, biodiversität 
+ 	 Lift: echa, pflügen, „kohleausstiegskommission“, „wahrscheinlich, abmindern, auernhammer, backwaren, bestandsgefährdet, bestimmungsgemäßem, bfr 
+ 	 Score: glyphosat, pflanzenschutzmittel, bienen, landwirtschaft, iarc, efsa, insekten, pflanzenschutzmitteln, pflanzen, biodiversität 
 Topic 26 Top Words:
- 	 Highest Prob: südsudan, bundeswehr, kinder, menschen, unmiss, soldaten, gibt, millionen, liebe, jugendhilfe 
- 	 FREX: unmiss, südsudan, jugendhilfe, kindersoldaten, minderjährigen, minderjährige, viii, altersfeststellung, rekrutierung, waffenembargo 
- 	 Lift: dienstverhältnis, erziehungsberechtigten, hamburg-eppendorf, inobhutnahmen, racheakte, revitalisierungsforum, röntgen, un-ausschusses, jugendämtern, militärbeobachter 
- 	 Score: südsudan, unmiss, bundeswehr, jugendhilfe, soldaten, kindersoldaten, minderjährigen, minderjährige, mission, altersfeststellung 
+ 	 Highest Prob: afghanistan, land, deutschen, soldaten, einsatz, heute, menschen, seit, regierung, jahren 
+ 	 FREX: afghanischen, afghanen, afghanistan, taliban, kamerun, hindukusch, afghanische, sicherheitskräfte, einsatzes, abzug 
+ 	 Lift: „rückführung“, afghanistan-engagements, afghanistan-mandats, aufstandsbekämpfung, drogenproduktion, patt, wohnraummisere, abzugsplan, afghanischem, afghanistan-einsatzes 
+ 	 Score: afghanistan, afghanischen, soldaten, taliban, afghanen, afghanische, kamerun, soldatinnen, hindukusch, sicherheitskräfte 
 Topic 27 Top Words:
- 	 Highest Prob: menschen, minister, entwicklungszusammenarbeit, liebe, dank, deshalb, bmz, bildung, heute, entwicklung 
- 	 FREX: oda-quote, bmz, agrarökologie, rahmenprogramm, krankheiten, beschaffung, nachhaltigkeit, gesundheitsforschung, entwicklungspolitik, entwicklungszusammenarbeit 
- 	 Lift: „leaving, „wirkungsorientierung“, agrarökologie, agrarökologischer, alzheimer, armutsbedingten, ausgründung, beschaffung“, entwicklungsbanken, entwicklungsinvestitionsfonds 
- 	 Score: bmz, entwicklungszusammenarbeit, oda-quote, agrarökologie, entwicklungspolitik, beschaffung, rahmenprogramm, krankheiten, gesundheitsforschung, sonderinitiative 
+ 	 Highest Prob: pflege, menschen, krankenversicherung, pflegeversicherung, brauchen, pflegekräfte, finanzierung, spahn, altenpflege, versorgung 
+ 	 FREX: altenpflege, pflegeversicherung, krankenpflege, krankenversicherung, pflegebedarf, pflege, pflegekräfte, pflegebedürftigen, bürgerversicherung, versicherten 
+ 	 Lift: krankenpflege, altenpflegeschulen, altwerden, angehörigenpflege, assistenzsysteme, aufgestockte, aussteiger, beitragssatzerhöhung, bettenführenden, demenzkranken 
+ 	 Score: pflege, pflegeversicherung, krankenversicherung, altenpflege, pflegekräfte, versicherten, pflegebedürftigen, spahn, krankenkassen, bürgerversicherung 
 Topic 28 Top Words:
- 	 Highest Prob: unternehmen, gibt, deutschen, geht, liebe, viele, kleinen, beispiel, mal, menschen 
- 	 FREX: tourismusstrategie, hinzurechnung, handwerker, datenschutz-grundverordnung, widerrufsrecht, ersatzfreiheitsstrafe, unternehmer, mittelstand, tourismus, forschungsförderung 
- 	 Lift: widerrufsfrist, anlegers, baugewerbes, bürokratiepflichten, busunternehmen, drückerkolonnen, dzt, gasgeräte, hintergehen, informationspflichten“ 
- 	 Score: hinzurechnung, tourismusstrategie, datenschutz-grundverordnung, ersatzfreiheitsstrafe, widerrufsrecht, mittelstand, handwerker, verbraucher, anleger, forschungsförderung 
+ 	 Highest Prob: russland, usa, europa, nato, welt, vertrag, staaten, abrüstung, inf-vertrag, heute 
+ 	 FREX: atomwaffen, abrüstung, inf-vertrag, atomwaffenverbotsvertrag, nuklearen, nukleare, mittelstreckenraketen, russische, russen, russland 
+ 	 Lift: abrüstungsbemühungen, atomkriegsuhr, atomwaffenfreie, atomwaffensperrvertrags, cuts, germans, hawaii, hiroshima, landgestützte, militärdoktrin 
+ 	 Score: russland, inf-vertrag, nato, abrüstung, atomwaffen, nuklearen, mittelstreckenraketen, nukleare, russische, atomwaffenverbotsvertrag 
 Topic 29 Top Words:
- 	 Highest Prob: mindestlohn, menschen, euro, minijobs, mindestlohns, fdp, arbeit, immer, liebe, gibt 
- 	 FREX: mindestlohns, mindestlohn, minijobs, mindestlohnkommission, minijob, dokumentationspflichten, minijobber, sozialversicherungspflichtige, schwarzarbeit, löhne 
- 	 Lift: armutsrente, aufzeichnung, aufzeichnungspflicht, erhöhungsschraube, minijobberinnen, sozialversicherungspflichtiges, tariflohnentwicklung, ankündigungsfrist, arbeitgeberprüfungen, armutslohn 
- 	 Score: mindestlohn, mindestlohns, minijobs, mindestlohnkommission, minijob, minijobber, löhne, mindestlohnes, tarifverträge, dokumentationspflichten 
+ 	 Highest Prob: alternativen, ferkelkastration, jahren, cducsu, fristverlängerung, ferkel, betäubungslosen, gibt, heute, seit 
+ 	 FREX: ferkelkastration, betäubungslosen, fristverlängerung, bmel, ferkel, bäuerliche, bundeslandwirtschaftsministerium, verweigerungshaltung, ferkelzüchter, enthornen 
+ 	 Lift: betäubungsfreien, betäubungsmethoden, bpt, ebermast-schweinen, eintagsküken, entschließungsantrags, ferkelaufzucht, ferkelzuchtbetriebe, gesetzesinhalt, marienkäfer 
+ 	 Score: ferkelkastration, betäubungslosen, fristverlängerung, ferkel, bmel, kastration, ferkelzüchter, landwirte, isofluran, bundeslandwirtschaftsministerium 
 Topic 30 Top Words:
- 	 Highest Prob: einsatz, mandat, soldaten, irak, mali, bundeswehr, syrien, heute, kosovo, unsere 
- 	 FREX: kosovo, kfor, irak, irakischen, malische, mali, mandat, irakische, malischen, nordirak 
- 	 Lift: albaner, anti-is-einsatz, anti-is-mandat, auslandseinsatzes, déby, eulex, françafrique, gaddafis, gesamtlösung, gesamtpolitischen 
- 	 Score: mali, irak, soldaten, kosovo, mandat, bundeswehr, irakischen, streitkräfte, malischen, syrien 
+ 	 Highest Prob: deutschen, geht, deutsche, unsere, gerade, welle, dank, menschenrechte, heute, mittel 
+ 	 FREX: ostdeutschen, kolonialen, welle, kontexten, humboldt, ostdeutsche, bundesbehörden, menschenrechtspolitik, review, west 
+ 	 Lift: verschränkung, akbp, entwicklungshilfemittel, handhabungen, mittelmäßige, museumsbestände, neonationalisten, raubkunst, stasiunterlagenbehörde, ungleichverteilung 
+ 	 Score: welle, kolonialen, ostdeutschen, menschenrechte, kontexten, bundesbehörden, humboldt, kulturpolitik, osten, hochschulen 
 Topic 31 Top Words:
- 	 Highest Prob: türkei, europäischen, union, europäische, demokratie, erdogan, rechtsstaatlichkeit, menschen, armenien, dank 
- 	 FREX: armenien, europarat, türkei, erdogan, menschenrechtskonvention, östlichen, rechtsstaatlichkeit, türkischen, partnerschaft, beitritt 
- 	 Lift: beitrittsprozess, entwicklungsmodell, partnerschaftsabkommens, samtene, staatsbediensteten, südkaukasus, sultanat, visaliberalisierung, vorbeitrittshilfen, armeniens 
- 	 Score: türkei, armenien, erdogan, europarat, türkischen, russland, menschenrechtskonvention, rechtsstaatlichkeit, östlichen, wirtschaftsunion 
+ 	 Highest Prob: prozent, mietpreisbremse, wohnungen, wohnraum, vermieter, mal, brauchen, menschen, heute, linken 
+ 	 FREX: vermieter, angespannten, mietpreisbremse, vergleichsmiete, wohnungsmarkt, auskunftspflicht, modernisierungsumlage, wohnungsmärkten, wohnraum, lay 
+ 	 Lift: „baukindergeld“, fledermaus, neubauwohnungen, landeseigenen, privatautonomie, mietpreisbremse“, verknappung, falschbehauptung, al-wazir, starnberg 
+ 	 Score: mietpreisbremse, vermieter, wohnungen, mieter, wohnraum, wohnungsmarkt, angespannten, vergleichsmiete, modernisierungsumlage, auskunftspflicht 
 Topic 32 Top Words:
- 	 Highest Prob: mittelmeer, menschen, sea, guardian, mandat, operation, europa, sophia, libyen, mission 
- 	 FREX: küstenwache, seenot, sea, guardian, eunavfor, mittelmeer, sophia, seenotrettung, operation, libyschen 
- 	 Lift: „augsburg“, artikel-mission, eu-operation, kooperationsplattform, küstenwachen, mittelmeerküste, nostrum, öltransporte, peene­werft, retterinnen 
- 	 Score: sea, guardian, mittelmeer, sophia, seenotrettung, küstenwache, operation, libyen, seenot, mission 
+ 	 Highest Prob: leben, gibt, beratung, ersatzfreiheitsstrafe, ganz, geht, deshalb, recht, arzt, frauen 
+ 	 FREX: ersatzfreiheitsstrafe, jusos, abtreibung, ungeborenen, ungeborene, geldstrafe, schwangerschaftsabbruch, lebensschutz, abtreibungen, werbung 
+ 	 Lift: ratenzahlungen, schwangerschaftsgewebe, augenarzttermin, busticket, allgemeinmedizinerin, informationsquellen, juso-beschluss, lebensschutzes, ratenzahlung, strafanspruch 
+ 	 Score: ersatzfreiheitsstrafe, ungeborenen, abtreibung, jusos, schwangerschaftsabbruch, ungeborene, geldstrafe, abtreibungen, arzt, ärzte 
 Topic 33 Top Words:
- 	 Highest Prob: menschen, gesellschaft, freiwilligendienste, land, jahr, viele, antrag, engagement, afd, vielen 
- 	 FREX: freiwilligendienste, freiwilligendienst, bundesfreiwilligendienst, freiwilligendiensten, bürgen, freiwilligen, taschengeld, engagieren, freiwilliges, senioren 
- 	 Lift: einsatzstelle, flüchtlingsbezug, flüchtlingsbezug“, föj, freiwilligendienste-teilzeit-gesetz, freiwilligendienstes, freiwilligendienstleistende, interrailticket, jugendfreiwilligendiensten, krankenbehandlung 
- 	 Score: freiwilligendienste, freiwilligendienst, bundesfreiwilligendienst, bürgen, freiwilligendiensten, taschengeld, teilzeit, freiwilligen, obdachlose, freiwilliges 
+ 	 Highest Prob: afghanistan, menschen, heute, soldaten, gibt, immer, sagen, regierung, land, sicherheitslage 
+ 	 FREX: kabul, afghanistan, taliban, sicherheitslage, afghanische, afghanischen, afghanistans, abschiebestopp, sicherheitskräfte, auswärtigen 
+ 	 Lift: abdullah, afghanistan“, baschir-regime, fluchtalternativen, truppenaufstockung, atareb, deeskalationszone, dostum, dschandschawid, eu-präsidentschaft 
+ 	 Score: afghanistan, kabul, taliban, soldaten, afghanischen, sicherheitslage, afghanische, afghanistans, abschiebestopp, auswärtigen 
 Topic 34 Top Words:
- 	 Highest Prob: grenzwerte, menschen, mikrogramm, grenzwert, fahrverbote, gibt, luft, pro, ganz, geht 
- 	 FREX: mikrogramm, grenzwert, kubikmeter, grenzwerte, messstellen, stickstoffdioxid, stickoxide, messstationen, fahrverbote, fahrverboten 
- 	 Lift: epidemiologie, gasherd, hintergrundbelastung, spitzenbelastung, umweltsenator, abgasversuche, antidieselkampagne, beatmungsmedizin, corneliusstraße, diesel-untersuchungsausschusses 
- 	 Score: mikrogramm, grenzwerte, grenzwert, fahrverbote, stickstoffdioxid, kubikmeter, messstellen, stickoxide, messstationen, fahrverboten 
+ 	 Highest Prob: parteien, afd, stiftungen, gesetzentwurf, demokratie, politischen, partei, heute, bundesverfassungsgericht, parteienfinanzierung 
+ 	 FREX: stiftungen, parteienfinanzierung, parteinahen, npd, bundespräsidenten, parteien, staatssekretäre, obergrenze, parteiengesetz, teilfinanzierung 
+ 	 Lift: „gleichstellung“, amtsdauer, angesehene, ansteckt, ärzteblatt, bodensee, bundesbankpräsidenten, bundesbankvorstand, diätenurteil, euro-rettungsvehikel 
+ 	 Score: stiftungen, parteinahen, parteienfinanzierung, npd, staatssekretäre, parteien, obergrenze, bundespräsidenten, parteiengesetz, gesetzentwurf 
 Topic 35 Top Words:
- 	 Highest Prob: menschen, organspende, leben, frauen, ärzte, entscheidung, widerspruchslösung, ärztinnen, liebe, deshalb 
- 	 FREX: widerspruchslösung, organspenden, transplantationsbeauftragten, organspende, entscheidungslösung, ärztinnen, schwangerschaftsabbrüche, schwangerschaftsabbruch, spender, organspender 
- 	 Lift: hirntod, organspenden, „organspende“, „weiß, ableben, abtreibungsgegnerinnen, allgemeinmedizinerin, altruistische, amtsgerichtes, angehörigenarbeit 
- 	 Score: organspende, widerspruchslösung, ärztinnen, organspenden, ärzte, schwangerschaftsabbrüche, organspender, schwangerschaftsabbruch, spender, ungeborenen 
+ 	 Highest Prob: menschen, jahren, land, heute, seit, unsere, letzten, jahr, entwicklung, deshalb 
+ 	 FREX: betreuer, vollbeschäftigung, langzeitarbeitslosen, erwerbsminderungsrente, zwangsverrentung, aufschwung, beruflich, älteren, betreuungsvereine, arbeitslose 
+ 	 Lift: arbeitspotenzials, tauglicher, abschlagsfrei, sozialhaushalt, aussiedlerinnen, sozialbeirat, tante, betreuungsvereine, „verlässlicher, generationenvertrag“ 
+ 	 Score: betreuer, arbeitsmarkt, langzeitarbeitslosen, erwerbsminderungsrente, rentenversicherung, zwangsverrentung, vollbeschäftigung, betreuungsvereine, rente, ostdeutschland 
 Topic 36 Top Words:
- 	 Highest Prob: rente, rentenversicherung, menschen, euro, prozent, gesetzlichen, liebe, gesetzliche, spd, alter 
- 	 FREX: rentenversicherung, rente, mütterrente, erwerbsminderungsrente, rentenniveau, rentenpaket, grundrente, selbstständigen, selbstständige, rentenpolitik 
- 	 Lift: ‑rentner, belastungsfaktor, börsch-supan, einklagbares, einkommensersatzfunktion, entgeltpunkt, grundsicherungsschwelle, heils, lebensstandardsicherung, rentenausgaben 
- 	 Score: rente, rentenversicherung, mütterrente, grundsicherung, erwerbsminderungsrente, rentenniveau, rentner, altersarmut, selbstständige, grundrente 
+ 	 Highest Prob: bundeswehr, soldaten, soldatinnen, unsere, einsatz, unserer, ministerin, heute, jahren, kosovo 
+ 	 FREX: kosovo, wehrbeauftragten, bundeswehr, truppe, verteidigungshaushalt, soldatinnen, soldaten, einsatzbereitschaft, ausrüstung, bündnisverteidigung 
+ 	 Lift: einsatzmedaille, „gefecht“, „trendwende, „trendwende“, „umzingelt, „verantwortung“, abnicker, afghanisierung, albanern, aufklärungsdrohnen 
+ 	 Score: bundeswehr, soldaten, soldatinnen, kosovo, streitkräfte, truppe, wehrbeauftragten, nato, mali, ausrüstung 
 Topic 37 Top Words:
- 	 Highest Prob: parteien, heute, demokratie, afd, deutschen, deshalb, sollten, gesetzentwurf, parteienfinanzierung, parlament 
- 	 FREX: parteienfinanzierung, staatssekretäre, parteien, parteiengesetz, obergrenze, regierungsbefragung, absolute, amtszeitbegrenzung, geschäftsordnung, teilfinanzierung 
- 	 Lift: gewaltenverschränkung, gönnern, mitgliederentscheide, sponsoring, steffens, südkurve, „verfassungsbruch, bodensee, grosse­brömer, herrenklo 
- 	 Score: parteienfinanzierung, staatssekretäre, parteiengesetz, parteien, regierungsbefragung, amtszeitbegrenzung, obergrenze, stiftungen, geschäftsordnung, teilfinanzierung 
+ 	 Highest Prob: familien, kinder, eltern, familie, kindern, kinderzuschlag, kinderarmut, euro, leistungen, kindergeld 
+ 	 FREX: kinderzuschlag, elterngeld, kinderarmut, familienpolitik, familien, teilhabepaket, bildungs, kindergrundsicherung, alleinerziehenden, familienpolitischen 
+ 	 Lift: „kinderarmut, „starke-bürokratie-gesetz“, „starke-familien-gesetz“, abbruchkanten, armutslage, auftragsspitzen, ausrotten, basiselterngeld, bedarfsorientiert, befristungstatbestände 
+ 	 Score: kinderzuschlag, kinderarmut, elterngeld, familien, kindergeld, familienpolitik, teilhabepaket, eltern, kindergrundsicherung, alleinerziehenden 
 Topic 38 Top Words:
- 	 Highest Prob: unternehmen, deutsche, welle, deutschen, euro, millionen, prozent, bank, geht, brauchen 
- 	 FREX: welle, kfw, commerzbank, fusion, kukies, wagniskapital, bank, eu-prospektverordnung, anlegerschutz, prospekt 
- 	 Lift: anlagerisiken, auslandsrundfunk, auslandssendern, bankster, cumex-schlupfloch, gmbh-anteile, recovery, sendern, türkischsprachigen, wertpapierprospekt 
- 	 Score: welle, commerzbank, kfw, banken, fusion, bank, kukies, anleger, anlegerschutz, wagniskapital 
+ 	 Highest Prob: rohingya, myanmar, menschen, antrag, deutschen, verbrechen, leben, regierung, gibt, land 
+ 	 FREX: rohingya, nama, myanmar, istgh, namibia, herero, bangladesch, völkermord, rakhine, verbrechen 
+ 	 Lift: „rohingya“, „völkermord“, aung, billigt, birma, birmanische, buddhismus, buddhistischen, chefanklägerin, deutsch-südwestafrika 
+ 	 Score: rohingya, myanmar, nama, namibia, herero, istgh, verbrechen, bangladesch, rakhine, völkermord 
 Topic 39 Top Words:
- 	 Highest Prob: heute, jahren, deswegen, portugal, letzten, endlich, gibt, brauchen, wurde, prozent 
- 	 FREX: portugal, iwf, vorletzten, freifunk, datenschutzbeauftragten, euro-zone, finanzwende, gigabyte, rückzahlung, grw 
- 	 Lift: eingeklinkt, iwf-kredite, killt, landesdatenschutzbeauftragten, mitte-links-regierung, zinslasten, asyl“, portugiesen, frequenzauktion, gigabyte 
- 	 Score: portugal, iwf, euro-zone, freifunk, datenschutz-grundverordnung, gigabyte, kredite, cumex, datenschutzbeauftragten, finanzwende 
+ 	 Highest Prob: sagen, geht, ganz, deswegen, gesagt, glaube, gibt, frage, thema, darüber 
+ 	 FREX: glaube, deswegen, sagen, gesagt, darüber, reden, finde, punkt, richtig, stelle 
+ 	 Lift: hausausweis, polizeistellen, v-leute, hinsieht, glaube, punkt, abseitsstehen, nachkriegsgeneration, deswegen, sagen 
+ 	 Score: glaube, sagen, deswegen, gesagt, thema, reden, kollege, finde, punkt, diskutieren 
 Topic 40 Top Words:
- 	 Highest Prob: energiewende, energien, erneuerbaren, prozent, brauchen, strom, liebe, klimaschutz, menschen, ausbau 
- 	 FREX: gigawatt, erneuerbaren, energiewende, sonderausschreibungen, energien, netzausbau, windenergieanlagen, strompreise, versorgungssicherheit, erneuerbare 
- 	 Lift: -gw-deckel, abstandsregeln, abtransportiert, abzuregeln, akteursvielfalt, akzeptanzenergiewende, amprion, anlagenzubau, anzeigeverfahren, biogas 
- 	 Score: energiewende, erneuerbaren, energien, kohleausstieg, strom, netzausbau, gigawatt, erneuerbare, strompreise, windenergie 
+ 	 Highest Prob: menschen, arbeitsmarkt, arbeit, sozialen, soziale, leben, liebe, brauchen, hartz, sanktionen 
+ 	 FREX: arbeitsmarkt, jobcenter, langzeitarbeitslosen, langzeitarbeitslose, jobcentern, arbeitslos, hartz, langzeitarbeitslosigkeit, arbeitslosen, arbeitslosigkeit 
+ 	 Lift: „gründungsmitglieder“, abzuschreiben, alg-ii-bezieher, alibipolitik, beratungsqualität, chancenkonto, eingliederungsvereinbarung, hartz-iv-agenda, langzeiterwerbslos, perspektivwechsel 
+ 	 Score: arbeitsmarkt, langzeitarbeitslosen, jobcenter, hartz, jobcentern, langzeitarbeitslose, arbeitslos, weiterbildung, langzeitarbeitslosigkeit, arbeitslosenversicherung 
 Topic 41 Top Words:
- 	 Highest Prob: klimawandel, frage, immer, gibt, vielen, dank, haus, sicherheit, gar, geht 
- 	 FREX: klimawandel, wirtschaftsdünger, betreffend, staatssekretärs, berlinale, eu-kommissare, amtes, überblick, heiko, büsche 
- 	 Lift: gesamtüberblick, rechtsverhältnisse, kälteste, wirtschaftsdünger, genesen“, berlinale, eu-kommissare, klimafolgeschäden, büsche, grethe 
- 	 Score: klimawandel, wirtschaftsdünger, maas, eu-kommissare, berlinale, staatssekretärs, amtes, auswärtigen, ddvg, vorsorgeprinzip 
+ 	 Highest Prob: türkei, syrien, region, erdogan, russland, menschen, türkischen, afrin, iran, deshalb 
+ 	 FREX: afrin, türkei, erdogan, türkische, völkerrechtswidrig, kurden, türkischen, assad, syriens, syrien 
+ 	 Lift: astana, beitrittsprozess, bevölkerungsteile, flüchtlingsabkommen, kredithilfen, nato-mitglieds, olivenzweig“, raketenangriffe, selahattin, staatsbediensteten 
+ 	 Score: türkei, syrien, erdogan, afrin, türkischen, kurden, türkische, assad, russland, iran 
 Topic 42 Top Words:
- 	 Highest Prob: afd, rechtsstaat, land, islam, wer, antrag, gibt, demokratie, recht, menschen 
- 	 FREX: islam, muslime, scharia, koran, grundordnung, volksverhetzung, freiheitlich-demokratische, imame, imamen, islamischen 
- 	 Lift: abdel-samad, auflehnen, augenbinde, auslandsfinanzierung, korans, maas’schen, predigten, schlagt, staatsfunk, theologie 
- 	 Score: islam, muslime, koran, scharia, straftaten, rechtsstaat, religionsfreiheit, volksverhetzung, grundordnung, imame 
+ 	 Highest Prob: ärzte, patienten, ärztinnen, frauen, versorgung, liebe, stgb, gesetz, gesetzentwurf, gibt 
+ 	 FREX: ärztinnen, patienten, ärzte, budgetierung, patientinnen, hänel, ärzten, schwangerschaftsabbrüche, terminservicestellen, tsvg 
+ 	 Lift: behandlungszeit, behördenseiten, blankoverordnung, fristenmodell, grundpauschalen, grundversorgenden, heilmittelerbringer, standesrecht, vergütungsanreizen, vertragsärztliche 
+ 	 Score: ärztinnen, ärzte, patienten, ärzten, stgb, patientinnen, schwangerschaftsabbrüche, hänel, budgetierung, tsvg 
 Topic 43 Top Words:
- 	 Highest Prob: buchpreisbindung, plattformen, europäischen, artikel, buch, unternehmen, gerade, bücher, vielfalt, vielen 
- 	 FREX: buchpreisbindung, verlage, bücher, buchhandlungen, urheberrecht, monopolkommission, uploadfilter, plattformen, buch, emissionshandel 
- 	 Lift: buchwesen, kleinemittenten, schriftstellerinnen, treibhausgas-emissionshandelsgesetz, verbriefungsprodukte, buchhandel, buchhandels, buchhandlungen, buchpreisbindung, buchpreise 
- 	 Score: buchpreisbindung, verlage, buchhandlungen, bücher, emissionshandel, uploadfilter, plattformen, monopolkommission, urheberrecht, buch 
+ 	 Highest Prob: grenzwerte, mikrogramm, menschen, grenzwert, fahrverbote, gibt, ganz, diesel, pro, luft 
+ 	 FREX: mikrogramm, grenzwert, kubikmeter, grenzwerte, stickstoffdioxid, stickoxide, messstationen, diesel, fahrverbote, luftschadstoffe 
+ 	 Lift: abgastests, abgasversuche, antidieselkampagne, bäuche, beatmungsmedizin, diesel-untersuchungsausschusses, emissionsgrenzwerten, epidemiologie, epidemiologische, fahrscheine 
+ 	 Score: mikrogramm, grenzwerte, grenzwert, fahrverbote, kubikmeter, stickoxide, stickstoffdioxid, diesel, nachrüstung, messstationen 
 Topic 44 Top Words:
- 	 Highest Prob: prozent, millionen, vielen, jahr, dank, zahlen, frage, ministerin, euro, bericht 
- 	 FREX: artensterben, hektar, tonnen, studenten, wirtschaftswachstum, rentenversicherungsbericht, rumänien, windkraftanlagen, naturschutz, klimafonds 
- 	 Lift: atommülls, altlastenbeseitigung, ausbildungsanfängerquote, bildungseinrichtung, eingangstests, gletschern, hochrisikogruppe, hotelwesen, kindergeldüberweisungen, mittelmäßige 
- 	 Score: tonnen, naturschutz, artensterben, hektar, umwelt, studenten, windkraftanlagen, rentenversicherungsbericht, wirtschaftswachstum, fledermäuse 
+ 	 Highest Prob: haushalt, euro, millionen, mittel, geld, milliarden, bereich, stellen, minister, möchte 
+ 	 FREX: haushalt, einzelplan, etat, haushaltsberatungen, haushaltsentwurf, aufwuchs, oda-quote, ausgaben, haushälter, mittel 
+ 	 Lift: bmz-etat, landschaftsgärten, oda-leistungen, ausgabevolumen, entwicklungsbereich, geschmolzen, gpei, heuer, luftfahrtforschungsprogramm, rekordetat 
+ 	 Score: haushalt, einzelplan, euro, etat, haushaltsberatungen, milliarden, oda-quote, bereinigungssitzung, haushaltsausschuss, haushaltsentwurf 
 Topic 45 Top Words:
- 	 Highest Prob: parlament, wurde, afd, heute, gesetzentwurf, antrag, deshalb, regierung, gibt, plenum 
- 	 FREX: ausschüsse, petition, ausschusssitzung, ausschüssen, plenum, stiftungen, arbeitsparlament, sitzungswochen, ältestenrat, ausschusssitzungen 
- 	 Lift: mühlendammschleuse, „sozialschädliche, anpassungsverfahren, berichterstattenden, braucht“, elternrecht, gewohnheitsverbrecher“, konrad-adenauer­stiftung, redeparlament, redezeiten 
- 	 Score: stiftungen, petition, arbeitsparlament, petitionen, redeparlament, ausschüsse, ältestenrat, regierungsbefragung, petitionsausschuss, gesetzentwurf 
+ 	 Highest Prob: europäischen, union, vertrag, antrag, deutschen, ganz, heute, frankreich, zusammenarbeit, europäische 
+ 	 FREX: deutsch-französischen, deutsch-französische, freundschaft, aachener, versammlung, parlamentsabkommen, vertrag, sicherheitspolitik, parlamente, élysée-vertrag 
+ 	 Lift: „zivilen, arend, colmar, defence, élysée, freundschaftsgruppen, freundschaftsverträge, israelkritische, ­lambsdorff, präsidien 
+ 	 Score: deutsch-französischen, aachener, deutsch-französische, freundschaft, parlamentsabkommen, sicherheitspolitik, vertrag, außenpolitik, versammlung, israels 
 Topic 46 Top Words:
- 	 Highest Prob: europa, europäischen, europäische, union, brauchen, europas, gemeinsame, macron, kommission, geht 
- 	 FREX: macron, europa, währungsunion, währungsfonds, mitgliedstaaten, europas, europäische, wirtschafts, euro-zone, europäischen 
- 	 Lift: bleigießen, europapartei, finanzrahmens, kompromisslos, „madame, aufsichtsfunktion, europapolitiker, expansiven, fortschrittsklausel, junckers 
- 	 Score: europa, macron, währungsunion, euro-zone, europäische, währungsfonds, mitgliedstaaten, esm, europas, europäischen 
+ 	 Highest Prob: deutsche, deutschen, welle, sprache, afd, menschen, gesetzentwurf, land, ganz, geht 
+ 	 FREX: welle, sprache, deutsch, optionspflicht, staatsbürgerschaft, staatsferne, auslandssender, news, aufgabenplanung, aufsichtsrat 
+ 	 Lift: doppelstaatler, „fremdstaatler“, „nichtaufgeklärten, assimilieren, auslandsrundfunk, doppelstaatlichkeit, lebenskultur, regionalsprachen, sendern, sprachangebote 
+ 	 Score: welle, staatsbürgerschaft, optionspflicht, umwelthilfe, deutsch, auslandssender, aufgabenplanung, limbourg, staatsferne, staatsangehörigkeit 
 Topic 47 Top Words:
- 	 Highest Prob: zensus, daten, warum, heute, deutsche, menschen, immer, gesetzentwurf, dafür, staatsbürgerschaft 
- 	 FREX: zensus, testlauf, gestützt, statistischen, meldedaten, staatsbürgerschaft, register, ewf, volkszählung, testlaufs 
- 	 Lift: registerlandschaft, testlaufs, übermittlungen, uninteressiert, „nichtaufgeklärten, grundrechteschonender, haushaltsstichproben, migrationserfahrungen, osci-schnittstelle, realitätsnähe 
- 	 Score: zensus, testlauf, staatsbürgerschaft, meldedaten, testlaufs, registermodernisierung, ewf, volkszählung, gestützt, statistischen 
+ 	 Highest Prob: sagen, seite, gibt, geht, wissen, wurde, liebe, thema, frage, dank 
+ 	 FREX: geldwäsche, aufklärung, vergaberecht, externer, fiu, kindersoldaten, aufgeklärt, externe, verteidigungsministerium, aufzuklären 
+ 	 Lift: lkas, geldwäscheanzeigen, vorsätzliche, grundrechtseinschränkungen, kanzlerwahl, freihändig, spitzenbeamten, entwickelnde, verniedlichung, schaden“ 
+ 	 Score: geldwäsche, aufklärung, „divers“, steuergeldverschwendung, fiu, externer, vergaberecht, bundeswehr, geldwäscheanzeigen, kindersoldaten 
 Topic 48 Top Words:
- 	 Highest Prob: menschen, politik, land, endlich, osten, immer, jahren, heute, regierung, brauchen 
- 	 FREX: ostdeutschland, ostdeutschen, bundesbehörden, osten, ostdeutscher, volksbegehren, einheit, ostdeutsche, hambacher, lebensverhältnisse 
- 	 Lift: „hambi, „mut“, eigenheimbau, einkommenssicherheit, einschnitten, ernteerträge, initiative“, inländerdiskriminierung, klimaschutzpolitischen, lebensängste 
- 	 Score: ostdeutschland, ostdeutschen, osten, bundesbehörden, volksbegehren, ostdeutscher, hambacher, ostdeutsche, kohleausstieg, lebensverhältnisse 
+ 	 Highest Prob: prozent, ziel, erreichen, gibt, antrag, dafür, koalitionsvertrag, deshalb, dank, drei 
+ 	 FREX: rheintal, tafeln, erwerbsminderungsrente, beeinträchtigung, pipelines, -ziel, zusatzbeitrag, wohnungseinbruch, kinderpornografie, erwerbstätige 
+ 	 Lift: dereguliert, managementpläne, überflusses, übernachtungszahlen, rheintal, pipelines, schlechtwetterfonds, omega-fettsäuren, verkehrsleistung, rehamaßnahme 
+ 	 Score: rheintal, erwerbsminderungsrente, tafeln, pipelines, beeinträchtigung, -ziel, schlechtwetterfonds, tonnen, zusatzbeitrag, weddellmeer 
 Topic 49 Top Words:
- 	 Highest Prob: handwerk, gibt, afd, antrag, problem, gab, wurde, immer, menschen, vielen 
- 	 FREX: handwerk, meisterpflicht, meisterbrief, handwerks, rheintal, handwerksnovelle, meister, dutschke, auszubildenden, meisterbriefs 
- 	 Lift: „meisterbrief“, b-gewerke, geselle, handwerke, handwerksberuf, handwerksnovelle, handwerksordnung, handwerkswesen, innung, klimamodelle 
- 	 Score: meisterpflicht, handwerk, meisterbrief, rheintal, handwerksnovelle, handwerks, meisterbriefs, dutschke, handwerksberufe, suder 
+ 	 Highest Prob: kinder, eltern, antrag, kind, wechselmodell, vielen, immer, dank, gibt, geht 
+ 	 FREX: wechselmodell, regelfall, weihnachten, trennung, kindeswohl, wechselmodells, elternteil, kinderfreibetrag, wohnkosten, elternteile 
+ 	 Lift: betreuungsmodell, familiensituationen, kindeswohlprinzip, regelfälle, residenzmodell, scheidungen, trennungskinder, trennungssituationen, umgangsrecht, umgangsrechts 
+ 	 Score: wechselmodell, eltern, wechselmodells, kindes, kindeswohl, kindergeld, elternteil, kinderfreibetrag, regelfall, elternteilen 
 Topic 50 Top Words:
- 	 Highest Prob: wolf, menschen, wölfe, tiere, antrag, deshalb, weidetierhalter, wolfes, unsere, prozent 
- 	 FREX: weidetierhalter, wolfes, jagdrecht, wolf, wölfe, wolfspopulation, weidetierhaltern, wölfen, population, herdenschutz 
- 	 Lift: „ernsten“, „geschützt“, „wölfe, ansitz, ansitze, artbezeichnung, artenschutzes, artenschutzrechtliche, arterhaltung, balkonbiologen 
- 	 Score: wolf, wölfe, wolfes, weidetierhalter, population, wölfen, tiere, herdenschutz, schweinepest, weidetierhaltung 
+ 	 Highest Prob: kinder, kind, leben, menschen, eltern, gesellschaft, liebe, frauen, test, frage 
+ 	 FREX: bluttest, bluttests, downsyndrom, test, trisomie, schwangerschaft, verhütungsmittel, tests, kassenleistung, schwangere 
+ 	 Lift: bluttest, abzutreiben, beratungsangeboten, biko, chromosom, diabetes-strategie, downsyndromkind, downsyndroms, empfängnisverhütung, fehlgeburten 
+ 	 Score: downsyndrom, test, bluttest, schwangerschaft, bluttests, trisomie, verhütungsmittel, eltern, kassenleistung, tests 
 Topic 51 Top Words:
- 	 Highest Prob: migration, pakt, menschen, migranten, afd, deutschen, land, recht, staaten, geht 
- 	 FREX: pakt, compact, migrationspakt, migration, migranten, global, paktes, flüchtlingspakt, unverbindlich, un-migrationspakt 
- 	 Lift: „persistent, angstkampagne, fake-news-kampagne, gcm, kooperationsrahmen, koordiniertes, objector“, souveränitätsrechte, umsiedlungsprogramm, un-flüchtlingspakt 
- 	 Score: pakt, migration, compact, migranten, migrationspakt, global, flüchtlingspakt, paktes, unverbindlich, un-migrationspakt 
+ 	 Highest Prob: kinder, qualität, länder, gesetz, daten, eltern, kitas, gibt, erzieherinnen, gute 
+ 	 FREX: erzieherinnen, erzieher, beitragsfreiheit, gute-kita-gesetz, kita, kitas, zensus, fachkraft-kind-schlüssel, testlauf, kindertagesbetreuung 
+ 	 Lift: dubletten, fachkraftoffensive, kindertagespflege, kitajahr, registerlandschaft, staffeln, testlaufs, übermittlungen, asd, elternbeiträge 
+ 	 Score: zensus, erzieherinnen, erzieher, beitragsfreiheit, kitas, kita, gute-kita-gesetz, testlauf, jugendhilfe, fachkraft-kind-schlüssel 
 Topic 52 Top Words:
- 	 Highest Prob: geht, deutschen, unsere, deutsche, gut, heute, liebe, unserer, aufarbeitung, europa 
- 	 FREX: namibia, rückgabe, kolonialismus, nama, herero, kolonialen, namibischen, aufarbeitung, dat, kulturgut 
- 	 Lift: antikolonialen, boden-luft-raketen, ethnologischen, fremdherrschaft, kolonialer, moralismus, museumsbundes, ngavirue, raubgut, sammlungsgut 
- 	 Score: namibia, herero, nama, rückgabe, kolonialen, namibischen, kolonialismus, aufarbeitung, kulturgut, kontexten 
+ 	 Highest Prob: antrag, fdp, liebe, grünen, unternehmen, vorsorgeprinzip, mal, immer, innovationen, beispiel 
+ 	 FREX: vorsorgeprinzip, innovationsprinzip, investitionsschutzabkommen, innovationen, sattelberger, gentherapie, investitionsschutz, investitionsgerichtshof, innovationsfähigkeit, crisprcas 
+ 	 Lift: „technologischen, cas, embryonalen, gentechnikgesetz, gesetzesfolgen, hineinträgt, husch, innovationsfreude, investitionsschutzabkommens, keimbahninterventionen 
+ 	 Score: vorsorgeprinzip, innovationsprinzip, innovationen, investitionsschutzabkommen, sattelberger, gentherapie, investitionsschutz, investitionsgerichtshof, ceta, innovationsprinzips 
 Topic 53 Top Words:
- 	 Highest Prob: soldaten, einsatz, soldatinnen, mali, unsere, mission, bundeswehr, menschen, dank, sicherheit 
- 	 FREX: unamid, atalanta, darfur, somalia, mali, soldatinnen, mission, invictus, minusma, piraterie 
- 	 Lift: somalischen, „frankfurt, „invictus“, „orion“, aden, belastungsstörung, darfurs, einsatzgeschädigte, einsatzgeschädigten, einsatzmedaillen 
- 	 Score: soldaten, soldatinnen, mali, unamid, mission, darfur, atalanta, somalia, bundeswehr, minusma 
+ 	 Highest Prob: sagen, gibt, immer, heute, antrag, progression, steuern, letzten, ganz, jahren 
+ 	 FREX: progression, kalte, portugal, tarif, steuersätze, jahressteuergesetz, unternehmensteuerreform, irland, steuerreform, gewerbesteuer 
+ 	 Lift: abzuflachen, außensteuergesetz, einkommensteuerzahler, hotelsteuer, optionsmodell, paradise“, tarifverlauf, unternehmensteuersatz, „gangster’s, „meter“ 
+ 	 Score: progression, kalte, portugal, cumex, tarif, gewerbesteuer, irland, unternehmensteuerreform, steuersätze, jahressteuergesetz 
 Topic 54 Top Words:
- 	 Highest Prob: antrag, mobilität, brauchen, fdp, forschung, innovationen, grünen, geht, unsere, menschen 
- 	 FREX: elektrokleinstfahrzeuge, elektromobilität, vorsorgeprinzip, kraftstoffe, innovationsprinzip, e-fuels, sattelberger, mobilität, hightech-strategie, kraftstoffen 
- 	 Lift: „kohleausstiegskommission“, autofahrten, batteriebetriebene, biomethan, bonus-malus-system, dieseläquivalent, e-scootern, elektrokleinstfahrzeug, elektrokleinstfahrzeuge, elektrokleinstfahrzeugen 
- 	 Score: elektrokleinstfahrzeuge, vorsorgeprinzip, elektromobilität, mobilität, innovationsprinzip, kraftstoffe, innovationen, e-fuels, elektroroller, sattelberger 
+ 	 Highest Prob: energiewende, energien, erneuerbaren, strom, brauchen, liebe, ausbau, immer, gas, prozent 
+ 	 FREX: erneuerbaren, zubau, windenergieanlagen, energien, energiewende, netzausbau, erneuerbare, windenergie, strompreise, gas 
+ 	 Lift: windrad, zubau, -gw-deckel, „efficiency, „klimapfade, abregelung, abstandsregeln, abtransportieren, abtransportiert, abzuregeln 
+ 	 Score: energiewende, erneuerbaren, energien, strom, netzausbau, gigawatt, erneuerbare, kohleausstieg, strompreise, windenergie 
 Topic 55 Top Words:
- 	 Highest Prob: gesetzentwurf, gesetz, menschen, ehe, heute, liebe, verfahren, vielen, gibt, entwurf 
- 	 FREX: ehe, „divers“, geschlecht, ehen, gesetzentwurf, gleichgeschlechtlichen, lebenspartnerschaft, geschlechts, abstammungsrecht, geschlechtseintrag 
- 	 Lift: geburtenregister, abstammungsrechtes, abstammungsrechts, ansetzende, atteste, binären, bunk, gelegenen, geschlechtseintrag, geschlechtszuordnung 
- 	 Score: gesetzentwurf, ehe, „divers“, geschlecht, lebenspartnerschaft, ehen, gleichgeschlechtlichen, abstammungsrecht, paare, personenstandsrecht 
+ 	 Highest Prob: gibt, immer, frage, sagen, gesagt, eigentlich, antrag, gar, tatsächlich, überhaupt 
+ 	 FREX: gewerbesteuer, hinzurechnung, bfv, betreffend, überblick, schrankenlos, brandner, grundrechtsverwirkung, hinzurechnungen, entschließungsanträge 
+ 	 Lift: beugung, grundrechtsverwirkung, landesverbänden, laufendem, realsteuer, weitervermietung, atomenergienutzung, pensionslasten, sphäre, eu-kommissare 
+ 	 Score: gewerbesteuer, hinzurechnung, bfv, schrankenlos, grundrechtsverwirkung, brandner, bgh, entschließungsanträge, hinzurechnungen, eu-kommissare 
 Topic 56 Top Words:
- 	 Highest Prob: menschen, verfahren, land, prozent, herkunftsstaaten, grünen, asylverfahren, unsere, sicheren, deshalb 
- 	 FREX: herkunftsstaaten, asylverfahren, asylrecht, asyl, sicheren, einstufung, asylpolitik, sichere, bamf, maghreb-staaten 
- 	 Lift: flüchtlingsschutzes, vermutungsregelung, „tun, anmahnt, asylbewerberzahlen, asylfremden, entfernten, familienvermögen, fluchtgruppen, hierherzukommen 
- 	 Score: herkunftsstaaten, asylverfahren, bamf, asylrecht, einstufung, asyl, tunesien, sicheren, asylpolitik, marokko 
+ 	 Highest Prob: menschen, organspende, widerspruchslösung, entscheidung, leben, spender, gesetz, angehörigen, organe, heute 
+ 	 FREX: organspende, widerspruchslösung, organspenden, organspender, transplantationsbeauftragten, entscheidungslösung, spender, spenderorgan, organe, zustimmungslösung 
+ 	 Lift: organspenden, „organspende“, „weiß, ableben, altruistische, altruistischen, angehörigenarbeit, angehörigenbetreuung, anonymisierter, behördengang 
+ 	 Score: organspende, widerspruchslösung, organspenden, organspender, transplantationsbeauftragten, spender, organe, entscheidungslösung, spenderorgan, spende 
 Topic 57 Top Words:
- 	 Highest Prob: euro, milliarden, ezb, griechenland, prozent, deutschen, deutsche, bundesbank, geld, heute 
- 	 FREX: bundesbank, target-salden, ezb, target, salden, target-system, griechenland, target-forderungen, zentralbank, zentralbanken 
- 	 Lift: abgeschöpften, amif, ankaufprogramme, ausdehnt, banks, besichert, bilanzbuchführung, billionenschweren, bonds, bruttoinlandprodukts 
- 	 Score: ezb, bundesbank, target-salden, target, griechenland, target-system, target-forderungen, zentralbank, salden, euro-zone 
+ 	 Highest Prob: europa, unsere, sicherheit, nato, welt, europäischen, russland, usa, europäische, brauchen 
+ 	 FREX: nato, pesco, sicherheitskonferenz, europäer, münchner, ukraine, amerikanischen, außenpolitik, weltordnung, sicherheitspolitik 
+ 	 Lift: combat, krisenbogen, eckhard, grenzschutzpolizei, großmacht, kernenergieanlagen, lufttransport, mitsprechen, pfeilers, postkolonialen 
+ 	 Score: nato, russland, außenpolitik, sicherheitspolitik, pesco, europa, sicherheitskonferenz, europäer, frieden, inf-vertrag 
 Topic 58 Top Words:
- 	 Highest Prob: rechtsstaat, recht, kultur, menschen, forum, karlsruhe, justiz, ganz, deshalb, heute 
- 	 FREX: karlsruhe, forum, kulturpolitik, rechtsstaat, kultur, leipzig, verbraucherschutz, justiz, kunst, museum 
- 	 Lift: „amtsgericht, „forum, „forum“, „karlsruhe“, „wanderungen, „zukunftsprogramm, ausstellungs, begegnungs, begegnungsstätte, begreifbar 
- 	 Score: rechtsstaat, karlsruhe, forum, verbraucherschutz, justiz, kultur, kulturpolitik, leipzig, pakt, museum 
+ 	 Highest Prob: bund, schulen, bildung, bereich, liebe, ganz, wichtig, menschen, besonders, gute 
+ 	 FREX: digitalpakt, lehrkräfte, grundgesetzänderung, kooperationsverbot, schülerinnen, benachteiligten, schulen, bildungsföderalismus, weiterbildung, lehrer 
+ 	 Lift: beschäftigungen, föderalisten, „passgenau“, beschäftigungsphase, erdbeeren, flugtickets, humanisierung, ihatec, koalitionsergebnisse, lernrückstände 
+ 	 Score: digitalpakt, grundgesetzänderung, lehrkräfte, weiterbildung, bildungsföderalismus, bund, kooperationsverbot, schulen, schülerinnen, bildungserfolg 
 Topic 59 Top Words:
- 	 Highest Prob: euro, millionen, prozent, afd, milliarden, jahr, circa, regierung, gibt, kosten 
- 	 FREX: diabetes, gesundheitsfonds, öffentlichkeitsarbeit, deckungsvermerke, bmel, gründerfonds, high-tech, hiv, unzureichende, circa 
- 	 Lift: bestäubungsleistung, behandlungskosten, bundesapothekerkammer, diabetes-strategie, medikation, notfallbehandlungen, pflichtbeitrag, pflichtbeiträgen, pflichtbeitrags, pflichtbeitragssätze 
- 	 Score: gesundheitsfonds, bmel, diabetes, deckungsvermerke, parteinahen, gkv, pflichtbeitrag, pflichtbeiträgen, tochterorganisationen, öffentlichkeitsarbeit 
+ 	 Highest Prob: gibt, kindergeld, menschen, kinder, ganz, sagen, afd, mal, vielleicht, gar 
+ 	 FREX: kindergeld, indexierung, schwarzfahren, rumänien, österreich, lebenshaltungskosten, lebende, kindergeldzahlungen, ticket, konten 
+ 	 Lift: grethe, schwarzparken, steuervergütung, strafwürdig, „einwanderung, „extra, absitzen, bewerbungsgesprächen, europarechtskonformer, hotelwesen 
+ 	 Score: kindergeld, indexierung, schwarzfahren, rumänien, kindergeldzahlungen, wirtschaftsdünger, lebenshaltungskosten, kindergeldes, ticket, eu-ausländer 
 Topic 60 Top Words:
- 	 Highest Prob: seehofer, menschen, minister, land, csu, horst, frage, innenminister, regierung, gibt 
- 	 FREX: seehofer, horst, innenminister, maaßen, lager, söder, yücel, masterplan, csu, bayern 
- 	 Lift: asylprüfung, morast, rücktrittsforderungen, superministerium, asylanwälte, csu-vorsitzender, unerschütterlicher, entleert, nebenwahlkampfzentrale, trutzburg 
- 	 Score: seehofer, horst, maaßen, innenminister, yücel, libyen, lager, masterplan, söder, heimatminister 
+ 	 Highest Prob: euro, prozent, milliarden, millionen, jahr, zahlen, geld, kosten, seit, pro 
+ 	 FREX: euro, milliarden, prozent, millionen, zahlen, rund, höhe, jährlich, pro, kosten 
+ 	 Lift: ausbildungsanfängerquote, behandlungskosten, referenzberufen, schnittblumen, subsahara-region, versicherungsfremder, teilhaushalt, eingeschleppten, gesundheitsuntersuchung, metaanalyse 
+ 	 Score: euro, milliarden, prozent, millionen, ausgaben, höhe, milliarde, pro, zahlen, steuerzahler 
 Topic 61 Top Words:
- 	 Highest Prob: sagen, ganz, geht, gesagt, frage, gibt, thema, glaube, deswegen, mal 
- 	 FREX: gesagt, sagen, glaube, reden, thema, darüber, deswegen, finde, vielleicht, punkt 
- 	 Lift: glaube, gesagt, diskutieren, punkt, sagen, dinge, bisschen, reden, gelesen, finde 
- 	 Score: glaube, sagen, gesagt, thema, finde, kollege, punkt, deswegen, reden, diskutieren 
+ 	 Highest Prob: klimaschutz, erreichen, menschen, verkehr, endlich, emissionen, liebe, emissionshandel, maßnahmen, vielen 
+ 	 FREX: emissionshandel, umweltpolitik, sektoren, klimaziele, klimapolitik, emissionen, verkehr, klimaschutz, co-preis, zertifikate 
+ 	 Lift: csu-verkehrsministern, emissionsrechte, hochwirksam, klimaschutzprojekte, mautsystem, notenpresse, rebound-effekt, schwerere, straßengüterverkehr, klimapolitikerin 
+ 	 Score: emissionshandel, klimaschutz, emissionen, verkehr, klimaziele, umweltpolitik, sektoren, klimapolitik, elektromobilität, lkw-maut 
 Topic 62 Top Words:
- 	 Highest Prob: euro, milliarden, millionen, haushalt, geld, jahr, mittel, bereich, stellen, verfügung 
- 	 FREX: haushalt, einzelplan, etat, milliarden, euro, millionen, verfügung, ausgaben, haushaltsberatungen, bundeshaushalt 
- 	 Lift: auen, berufsbildungsberichtes, dlr-institute, fachhochschülern, giraffen, grünanlagen, jugendmigrationsdienste, landschaftsgärten, linksmilitanter, radomski 
- 	 Score: haushalt, euro, milliarden, einzelplan, etat, bundeshaushalt, ausgaben, millionen, haushaltsentwurf, haushaltsberatungen 
+ 	 Highest Prob: menschen, endlich, europa, land, immer, dafür, brauchen, mittelmeer, viele, geht 
+ 	 FREX: retter, seenotretterinnen, seenotrettung, feuerwehren, hilfsorganisationen, frontex, küstenwache, „lifeline“, libysche, festung 
+ 	 Lift: arbeitsrechte, folterlager, freiwillige“, freiwilligenpass, gestaltungsansprüche, retterinnen, schleuserei, seenotretterinnen, aufnahmebereit, arbeitsmarktneutralität 
+ 	 Score: mittelmeer, seenotretterinnen, seenotrettung, retter, küstenwache, „lifeline“, libysche, hilfsorganisationen, libyschen, feuerwehren 
 Topic 63 Top Words:
- 	 Highest Prob: euro, milliarden, geld, spd, bundeswehr, sagen, jahr, mal, immer, heute 
- 	 FREX: drohnen, drohne, heron, leyen, kampfdrohnen, bewaffnungsfähige, beschaffung, finanzplanung, verteidigungshaushalt, bewaffnete 
- 	 Lift: bewaffnungsfähig, bewaffnungsfertig, etatsteigerungen, sparbüchse, aufklärungsdrohne, aufklärungsdrohnen, aufklärungszwecken, bewaffnungsfähiger, bewaffnungsfähigkeit, direktversicherungsgeschädigten 
- 	 Score: drohnen, drohne, heron, bundeswehr, kampfdrohnen, leyen, verteidigungshaushalt, bewaffnungsfähige, beschaffung, finanzplanung 
+ 	 Highest Prob: menschen, land, endlich, politik, immer, brauchen, heute, wohnungen, dafür, problem 
+ 	 FREX: obdachlosigkeit, wohnungslosigkeit, sozialwohnungen, wohnung, enteignung, wohnungsnot, obdachlose, wohnungen, wohnen, obdachlosen 
+ 	 Lift: konzernlenker, rechtsparteien, volksbegehrens, vonovia, wohnungsnotstand, „hambi, „mut“, bahnpreise, baurechtliches, brachliegen 
+ 	 Score: obdachlosigkeit, wohnungen, wohnungslosigkeit, sozialwohnungen, wohnung, wohnraum, wohnen, mieten, wohnungsnot, bezahlbaren 
 Topic 64 Top Words:
- 	 Highest Prob: frauen, kinder, familien, familie, eltern, männer, liebe, prozent, immer, gibt 
- 	 FREX: elterngeld, erzieherinnen, erzieher, frauen, vereinbarkeit, männer, kita, beruf, beitragsfreiheit, kitas 
- 	 Lift: anrede, entgeltgleichheit, entgeltgleichheitsgesetz, familienbedingte, frauenberufe, frauenberufen, frauenbewegungen, frauenhausplätzen, gewaltsituation, gleichstellungspolitische 
- 	 Score: frauen, elterngeld, erzieherinnen, erzieher, männer, kitas, eltern, vereinbarkeit, teilzeit, beruf 
+ 	 Highest Prob: migration, pakt, staaten, menschen, migranten, afd, geht, welt, gibt, antrag 
+ 	 FREX: compact, pakt, migrationspakt, migration, global, migranten, paktes, un-migrationspakt, globale, staaten 
+ 	 Lift: angstkampagne, fake-news-kampagne, hongkong-konvention, koordiniertes, souveränitätsrechte, migrationspaktes, „entwicklungshilfe“, „umvolkung“, cotonou-abkommen, entgleisung 
+ 	 Score: pakt, migration, compact, migrationspakt, migranten, global, staaten, paktes, un-migrationspakt, tunesien 
 Topic 65 Top Words:
- 	 Highest Prob: china, seit, jahren, liebe, deutschen, deshalb, trump, gibt, wäre, unsere 
- 	 FREX: finanztransaktionsteuer, chinas, freihandel, chinesischen, chinesische, zölle, notfalls, uiguren, donald, verstärkten 
- 	 Lift: außenhandelsüberschüssen, gelenkter, einreiseverbot, geringqualifizierten, menschenrechtsdialog, monarchie, unbesteuert, finanzgeschäfte, bekommt“, bundesbankpräsident 
- 	 Score: finanztransaktionsteuer, freihandel, chinas, zölle, trump, china, uiguren, donald, chinesische, chinesischen 
+ 	 Highest Prob: unternehmen, gesetzentwurf, gesetz, richtlinie, geht, datenschutz-grundverordnung, ganz, gibt, schutz, artikel 
+ 	 FREX: datenschutz-grundverordnung, uploadfilter, dsgvo, richtlinie, geschäftsgeheimnissen, geschäftsgeheimnisses, geschäftsgeheimnis, geschäftsgeheimnisse, meinungsfreiheit, urheber 
+ 	 Lift: ausnahmetatbestand, begriffsbestimmung, bundesdatenschutzgesetzes, ermittlungstaktischen, geeignetheit, geheimnisschutz, geheimnissen, kunsturhebergesetz, landesdatenschutzgesetz, meinungsäußerungsfreiheit 
+ 	 Score: richtlinie, datenschutz-grundverordnung, uploadfilter, dsgvo, geschäftsgeheimnissen, meinungsfreiheit, geschäftsgeheimnis, geschäftsgeheimnisses, angeklagten, geschäftsgeheimnisse 
 Topic 66 Top Words:
- 	 Highest Prob: frauen, afd, grundgesetz, artikel, grundgesetzes, unsere, menschen, sprache, gesellschaft, deutschen 
- 	 FREX: gleichberechtigung, frauenrechte, grundgesetz, quoten, männern, grundgesetzes, gleichheit, frauen, burka, vollverschleierung 
- 	 Lift: „gleichstellung“, bevölkerungsentwicklung“, burkaverbot, direktwahlkreise, förderauftrag, frauenbewegung, geschlechtertrennung, gleichstellungsauftrag, gruppendruck, halbmond 
- 	 Score: frauen, gleichberechtigung, frauenrechte, grundgesetz, vollverschleierung, burka, männern, männer, gleichheit, quoten 
+ 	 Highest Prob: brexit, europäischen, großbritannien, union, briten, europäische, abkommen, austritt, königreich, britische 
+ 	 FREX: austrittsabkommen, königreich, britische, briten, austritt, großbritannien, brexit, nordirland, vereinigte, brexits 
+ 	 Lift: haftungsbeschränkt, limited, „brexit“, arbeitsmarktzugang, auffanglösung, auffangrechtsform, aufschnüren, ausbildungsabschnitts, außerkrafttreten, austrittsabkommens 
+ 	 Score: brexit, briten, großbritannien, königreich, austrittsabkommen, austritt, britische, ceta, nordirland, brexits 
 Topic 67 Top Words:
- 	 Highest Prob: gesetzentwurf, menschen, wahlrecht, heute, gesetz, länder, bereits, betreuer, einstufung, ganz 
- 	 FREX: betreuer, angeklagten, wahlrechtsausschlüsse, wahlrecht, einstufung, hauptverhandlung, algerien, marokko, europawahl, betreuten 
- 	 Lift: „qualität, betreuers, betreuungsvereine, bundeswahlordnung, kabinettbeschluss, mittellose, passives, revisionshauptverhandlung, vollbetreuung, wahlrechtsausschluss 
- 	 Score: angeklagten, betreuer, einstufung, wahlrecht, wahlrechtsausschlüsse, hauptverhandlung, algerien, gesetzentwurf, marokko, tunesien 
+ 	 Highest Prob: wolf, antrag, menschen, tiere, wölfe, heute, unsere, weidetierhalter, wolfes, deshalb 
+ 	 FREX: wolfes, weidetierhalter, wolf, jagdrecht, wölfe, wölfen, population, schweinepest, herdenschutz, weidetierhaltern 
+ 	 Lift: problemwölfe, „ernsten“, „geschützt“, „wölfe, ansitz, artbezeichnung, artenschutzes, artenschutzrechtliche, balkonbiologen, bejagen 
+ 	 Score: wolf, wölfe, weidetierhalter, wolfes, tiere, population, wölfen, schweinepest, herdenschutz, jagdrecht 
 Topic 68 Top Words:
- 	 Highest Prob: bundeswehr, soldaten, unsere, soldatinnen, nato, sicherheit, unserer, ministerin, prozent, verteidigung 
- 	 FREX: wehrbeauftragten, truppe, ausrüstung, bundeswehr, einsatzbereitschaft, bündnisverteidigung, material, verteidigung, verteidigungshaushalt, verteidigungsministerium 
- 	 Lift: ausbildungsmethoden, ausrüstungsmängel, beschaffungsorganisation, beschaffungsprozesse, divisionen, hauptwaffensystemen, illkirch, mad, natoübung, rahmennation 
- 	 Score: bundeswehr, soldaten, soldatinnen, nato, wehrbeauftragten, truppe, bündnisverteidigung, ausrüstung, einsatzbereitschaft, streitkräfte 
+ 	 Highest Prob: unternehmen, euro, millionen, gerade, mittelstand, deutschen, kleine, gesetzentwurf, banken, kfw 
+ 	 FREX: anleger, kfw, anlegerschutz, prospekt, prospektpflicht, erp-sondervermögen, eu-prospektverordnung, bafin, dispo, mittelstand 
+ 	 Lift: prospektpflicht, angebotslücke, anlageentscheidung, anlageformen, anlagemöglichkeiten, anlagerisiken, anlageskandale, anlagestrategie, anlegers, anlegerschutzes 
+ 	 Score: anleger, anlegerschutz, kfw, prospekt, banken, prospektpflicht, bafin, mittelstand, eu-prospektverordnung, dispo 
 Topic 69 Top Words:
- 	 Highest Prob: ländlichen, digitalisierung, raum, land, menschen, brauchen, regionen, digitale, zukunft, unsere 
- 	 FREX: ländlichen, ländliche, räume, räumen, lebensverhältnisse, digitalisierung, regionen, raum, digitale, sprunginnovationen 
- 	 Lift: abbricht, anzuhalten, breitbandförderprogramm, datensouveränität, digitalministerin, dorfläden, exist-programms, förderstruktur, g-modellregionen, gemeinschaftsaufgaben 
- 	 Score: ländlichen, ländliche, digitale, digitalisierung, räume, lebensverhältnisse, mittelstand, intelligenz, räumen, innovationen 
+ 	 Highest Prob: antrag, mobilität, grünen, geht, elektromobilität, brauchen, gibt, natürlich, maßnahmen, zukunft 
+ 	 FREX: kraftstoffe, elektromobilität, e-fuels, synthetischen, synthetische, kraftstoffen, mobilität, technologieoffen, verbrennungsmotor, elektroautos 
+ 	 Lift: brennstoffzelle, mobilitätsgesetz, portabilität, aufladen, dieseläquivalent, elektromobilität“, gasantrieb, nachrüstpflicht, regenerativer, synthetischer 
+ 	 Score: elektromobilität, kraftstoffe, mobilität, synthetischen, e-fuels, kraftstoffen, synthetische, verbrennungsmotor, technologieoffen, öpnv 
 Topic 70 Top Words:
- 	 Highest Prob: cannabis, menschen, verbraucher, vielen, endlich, recht, liebe, gesetzentwurf, gerade, prozent 
- 	 FREX: cannabis, seeleute, rauchen, cannabiskonsum, drogenpolitik, tabakwerbung, tabak, drogen, alkohol, jugendschutz 
- 	 Lift: colorado, einstiegsdroge, fachgeschäften, kiffer, marihuana, netzwerkeffekt, nichtraucher, rauchens, raucherinnen, seearbeitsgesetzes 
- 	 Score: cannabis, seeleute, rauchen, drogenpolitik, tabakwerbung, cannabiskonsum, tabak, verbraucher, drogen, seemannsmissionen 
+ 	 Highest Prob: bahn, schiene, infrastruktur, wurde, gibt, liebe, menschen, beim, straße, dafür 
+ 	 FREX: rastatt, elektrokleinstfahrzeuge, schiene, ausweichstrecken, bahn, güterzüge, mittelrheintal, güterverkehr, schienengüterverkehr, strecken 
+ 	 Lift: -meter-netz, -tonner, „leiseres, autofahrten, bahninfrastruktur, bahnlärm, befahrensabgabe, e-scootern, eigenwirtschaftlichkeit, eisenbahnstrecken 
+ 	 Score: schiene, bahn, elektrokleinstfahrzeuge, rastatt, güterverkehr, schienengüterverkehr, maut, ausweichstrecken, mittelrheintal, güterzüge 
 Topic 71 Top Words:
- 	 Highest Prob: polizei, bundespolizei, straftaten, sicherheit, ganz, unsere, polizisten, immer, antrag, dafür 
- 	 FREX: kriminalstatistik, bundespolizei, polizeiliche, polizei, polizeilichen, sicherheitsbericht, polizisten, straftaten, messer, polizeibeauftragten 
- 	 Lift: ‑beamten, „nsu, aufgriffe, ausgangsstatistik, bundespolizeibeauftragten, differenzierungen, erstaufnahmeeinrichtung, hundertschaften, imk, periodische 
- 	 Score: kriminalstatistik, bundespolizei, straftaten, polizei, polizeiliche, sicherheitsbehörden, sicherheitsbericht, polizeilichen, polizisten, polizeibeauftragten 
+ 	 Highest Prob: klimawandel, klimaschutz, jahren, grad, gibt, unsere, menschen, vielen, seit, umwelt 
+ 	 FREX: grad, klimawandel, celsius, klimaforschung, klimawandels, erderwärmung, hambacher, menschengemachten, ipcc, klimaschutz 
+ 	 Lift: „gas, apokalyptischen, edles, erdzeitalter, erwärmt, erwiesener, forschungsrahmenprogramm, kälteste, klimaflüchtlingen, klimamodellen 
+ 	 Score: klimawandel, klimaschutz, grad, celsius, klimaforschung, hambacher, erderwärmung, ipcc, temperatur, menschengemachten 
 Topic 72 Top Words:
- 	 Highest Prob: menschenrechte, menschen, religionsfreiheit, christen, land, welt, liebe, weltweit, religion, leben 
- 	 FREX: christen, religionsfreiheit, rohingya, myanmar, religion, six, billy, menschenrechte, weltanschauungsfreiheit, religionen 
- 	 Lift: bamberger, buddhistische, christin, dimr, ilham, interreligiöse, interreligiösen, konfessionslosen, kopten, länderansatz 
- 	 Score: religionsfreiheit, christen, menschenrechte, rohingya, myanmar, six, religion, billy, religionen, muslime 
+ 	 Highest Prob: rechtsstaat, recht, menschen, karlsruhe, forum, justiz, heute, ganz, deshalb, projekt 
+ 	 FREX: karlsruhe, forum, rechtsstaat, museum, leipzig, gedenkstätten, justiz, freiwilligendienste, forums, erlebbar 
+ 	 Lift: „amtsgericht, „karlsruhe“, begegnungs, begreifbar, bohley, denkmale, fragenkreis, grundsatzbeschluss, hauptstadtkultur, innovationsschutz 
+ 	 Score: rechtsstaat, karlsruhe, forum, justiz, freiwilligendienste, museum, pakt, leipzig, gedenkstätten, forums 
 Topic 73 Top Words:
- 	 Highest Prob: afrika, entwicklungszusammenarbeit, menschen, minister, müller, länder, ländern, entwicklung, staaten, entwicklungspolitik 
- 	 FREX: entwicklungszusammenarbeit, entwicklungspolitik, afrika, müller, entwicklungshilfe, indonesien, afrikas, gerd, afrikanischen, regierungsführung 
- 	 Lift: abeba, addis, afrika-vereins, anwachsenden, ausbildungspartnerschaften, beek, bitterster, bohnen, cotonou-folgeabkommen, elfenbeinküste 
- 	 Score: entwicklungszusammenarbeit, afrika, entwicklungspolitik, afrikanischen, entwicklungshilfe, afrikas, indonesien, müller, äthiopien, gerd 
+ 	 Highest Prob: menschen, mali, hilfe, einsatz, humanitäre, nationen, soldaten, südsudan, vereinten, land 
+ 	 FREX: unamid, unmiss, südsudan, mali, darfur, sudan, friedensmission, minusma, malischen, humanitäre 
+ 	 Lift: afewerki, eingreiftruppe, entwaffnen, françafrique, friedensinitiativen, g-sahelstaaten, gaddafis, humanitarian, interkommunalen, isayas 
+ 	 Score: mali, südsudan, unamid, unmiss, darfur, soldaten, humanitäre, mission, minusma, soldatinnen 
 Topic 74 Top Words:
- 	 Highest Prob: daten, schutz, bürger, gesetz, gesetzentwurf, geht, unternehmen, datenschutz, bürgerinnen, sicherheit 
- 	 FREX: verschlüsselung, geschäftsgeheimnissen, vorratsdatenspeicherung, daten, datenschutz, dsgvo, informationelle, gespeichert, sicherheitslücken, geschäftsgeheimnisse 
- 	 Lift: „dieselsündern“, „ii, „verbundene, abhörsicher, amtsgerichte, anfallen“, anonymisierung, auslegungsprozess, ausnahmetatbestand, azr 
- 	 Score: zensus, daten, verschlüsselung, datenschutz, geschäftsgeheimnissen, vorratsdatenspeicherung, dsgvo, datenschutz-grundverordnung, informationelle, geschäftsgeheimnisses 
+ 	 Highest Prob: menschen, seehofer, europa, land, gibt, geht, frage, tun, sagen, dafür 
+ 	 FREX: horst, libyen, seehofer, maaßen, innenminister, ertrinken, lager, seenotrettung, „lifeline“, lagern 
+ 	 Lift: seenotretter, asylprüfung, einlaufen, lügenantrag, maltas, notkoalition, seenotrettungsprogramm, al-milad, ultimaten, asyltourismus 
+ 	 Score: seehofer, libyen, innenminister, seenotrettung, horst, mittelmeer, maaßen, „lifeline“, ertrinken, lager 
 Topic 75 Top Words:
- 	 Highest Prob: brexit, großbritannien, europäischen, union, briten, europäische, europa, austritt, königreich, britische 
- 	 FREX: austrittsabkommen, königreich, briten, britische, brexit, großbritannien, brexits, austritt, nordirland, may 
- 	 Lift: „brexit“, „times“, auffanglösung, aufschnüren, ausbildungsabschnitts, austrittsdatum, austrittsdatums, austrittsprozess, bafög-berechtigt, bausparkassengesetz 
- 	 Score: brexit, briten, großbritannien, königreich, austrittsabkommen, britische, austritt, britischen, may, brexits 
+ 	 Highest Prob: heute, menschen, liebe, gesetzentwurf, wahlrecht, bundesverfassungsgericht, antrag, spd, europawahl, wahl 
+ 	 FREX: wahlrecht, wahlrechtsausschlüsse, europawahl, wahlrechts, wahl, assistenz, vollbetreuung, bundesverfassungsgericht, gesetzentwürfe, ausschluss 
+ 	 Lift: europawahlgesetz, vollbetreuung, wahlassistenz, wahlrechtsausschluss, bundestagswahlrecht, bundeswahlgesetzes, bundeswahlordnung, einsichts, errungener, europawahlgesetzes 
+ 	 Score: wahlrechtsausschlüsse, wahlrecht, europawahl, wahlrechts, vollbetreuung, bundesverfassungsgericht, behinderung, bundeswahlgesetz, bundeswahlgesetzes, assistenz 
 Topic 76 Top Words:
- 	 Highest Prob: israel, iran, region, israels, libanon, syrien, antisemitismus, unsere, osten, nahen 
- 	 FREX: israels, israel, libanon, iran, existenzrecht, unifil, nahen, antisemitismus, hisbollah, israelische 
- 	 Lift: deutsch-israelische, „jude“, „nah“, „pulverfass“, antiisraelischen, antizionismus, atomenergiebehörde, bds-bewegung, ben-gurion, davidstern 
- 	 Score: israel, israels, iran, libanon, antisemitismus, juden, nahen, existenzrecht, unifil, syrien 
+ 	 Highest Prob: frauen, männer, prozent, arbeiten, gibt, beschäftigten, männern, arbeit, liebe, teilzeit 
+ 	 FREX: brückenteilzeit, männern, männer, frauen, gleichberechtigung, teilzeit, frauenanteil, rückkehrrecht, arbeitszeit, pay 
+ 	 Lift: anrede, beweglichere, buchhalterin, entgeltgleichheit, entgeltgleichheitsgesetz, familienbedingte, frauenberufe, frauenberufen, jobsharing, lohnstrukturen 
+ 	 Score: frauen, männer, teilzeit, brückenteilzeit, männern, arbeitszeit, gleichberechtigung, vollzeit, lohnlücke, pay 
 Topic 77 Top Words:
- 	 Highest Prob: familien, kinder, euro, eltern, kindern, bafög, kinderzuschlag, kinderarmut, kindergeld, kind 
- 	 FREX: kinderzuschlag, kinderarmut, bafög, teilhabepaket, kinderzuschlags, familien, kindergrundsicherung, bildungs, kindergeld, familienpolitik 
- 	 Lift: „brotkrumen“, „familienentlastungsgesetz“, „kinderarmut, „kinderzuschlag“, „starke-bürokratie-gesetz“, „starke-familien-gesetz“, abbruchkanten, abiball, antragsbürokratie, antragsleistung 
- 	 Score: kinderzuschlag, bafög, kinderarmut, kindergeld, familien, teilhabepaket, eltern, kinder, kindergrundsicherung, familienpolitik 
+ 	 Highest Prob: menschen, handwerk, afd, gibt, land, geht, antrag, heute, viele, immer 
+ 	 FREX: handwerk, meisterpflicht, meisterbrief, zwangsarbeit, handwerks, missbrauch, menschenhandel, familienkassen, ilo, schwarzarbeit 
+ 	 Lift: „kindergeldzahlungen, „meisterbrief“, anbahnung, b-gewerke, bunk, handwerke, handwerksberuf, handwerksordnung, handwerkswesen, identifikationsnummer 
+ 	 Score: handwerk, meisterpflicht, meisterbrief, zwangsarbeit, handwerks, familienkassen, kindergeld, ilo, menschenhandel, meisterbriefs 
 Topic 78 Top Words:
- 	 Highest Prob: wohnungen, wohnraum, bauen, mietpreisbremse, mieter, mieten, menschen, wohnungsbau, liebe, euro 
- 	 FREX: mieterinnen, mieter, mieten, quadratmeter, wohnungen, wohnraum, wohnung, miete, wohnungsbau, mietrecht 
- 	 Lift: -quadratmeter-wohnung, „bezahlbares, altmietverträgen, bauens, baugrundstücke, baukosten-tüv, baukostensenkungskommission, baulandpreise, baunebenkosten, bauordnungen 
- 	 Score: mieter, mietpreisbremse, wohnungen, mieterinnen, wohnraum, wohnungsbau, mieten, vermieter, baukindergeld, wohnungsmarkt 
+ 	 Highest Prob: bildung, bafög, menschen, ausbildung, berufliche, schulen, brauchen, ministerin, beruflichen, endlich 
+ 	 FREX: bafög, studierenden, berufliche, studium, beruflichen, studierende, bafög-novelle, bildung, studenten, studieren 
+ 	 Lift: „exzellenz“, abbrecher, abbruchquoten, angehende, arbeiterfamilien, aufstiegs-bafög, ausbildungsbetriebsquote, ausbildungsfähigkeit, ausbildungsgarantie, ausbildungsinfrastrukturen 
+ 	 Score: bafög, studierenden, bildung, berufliche, hochschulen, beruflichen, studium, studierende, karliczek, digitalpakt 
 Topic 79 Top Words:
- 	 Highest Prob: antrag, menschen, heute, deutschen, geschichte, opfer, wurde, gibt, sinti, roma 
- 	 FREX: sinti, roma, gedenken, denkmal, gedenkstätten, fremdrentengesetz, nationalsozialismus, spätaussiedler, opfergruppen, kontingentflüchtlinge 
- 	 Lift: „asoziale“, „asozialen“, „berufsverbrechern“, „gedenken, „gedenkort, alteingesessene, antiziganistische, aufseherin, ausgegrenzte, beachtete 
- 	 Score: sinti, roma, juden, gedenkstätten, denkmal, gedenken, jüdischen, kontingentflüchtlinge, sowjetunion, opfergruppen 
+ 	 Highest Prob: ländlichen, raum, regionen, land, menschen, räume, brauchen, ländliche, unsere, liebe 
+ 	 FREX: ländlichen, ländliche, räume, räumen, lebensverhältnisse, raum, gemeinschaftsaufgabe, regionen, gleichwertige, tourismus 
+ 	 Lift: arbeitserleichterung, chöre, chören, defibrillator, erntebericht, forstinstituts, forstwirten, g-modellregionen, gesundheitsinfrastruktur, gottberg 
+ 	 Score: ländlichen, ländliche, räume, landwirtschaft, räumen, lebensverhältnisse, regionen, tourismus, gak, gemeinschaftsaufgabe 
 Topic 80 Top Words:
- 	 Highest Prob: brauchen, europa, menschen, geht, unsere, sagen, gibt, ganz, land, dafür 
- 	 FREX: spielregeln, stahl, handel, stärkeres, verträgen, ceta, kommission, freihandel, handelskrieg, welthandel 
- 	 Lift: ersatzkapazitäten, hartwig, kernenergieanlagen, tpp, timmermans, frans, nafta, entscheidungsmöglichkeit, abseitsstehen, ausgabenkritik 
- 	 Score: ceta, trump, freihandel, stahl, spielregeln, abkommen, vorsorgeprinzip, europa, handel, diplomatie 
+ 	 Highest Prob: spd, liebe, menschen, politik, land, mal, afd, antrag, sagen, endlich 
+ 	 FREX: rentenpolitik, befristungen, sachgrundlosen, genossen, genossinnen, befristung, kahrs, vermögensteuer, solis, sachgrundlos 
+ 	 Lift: bürgergeldes, geldgeschenke, arbeitnehmerflügel, auszahler, datennetze, dessert, fall“, gaspedal, lebensleistungsrente, melancholie 
+ 	 Score: rentenpolitik, befristungen, sachgrundlosen, rente, mütterrente, soli, vermögensteuer, genossinnen, befristung, sachgrundlos 
 Topic 81 Top Words:
- 	 Highest Prob: opfer, gewalt, anschlag, unsere, untersuchungsausschuss, menschen, wurde, antrag, land, breitscheidplatz 
- 	 FREX: breitscheidplatz, anschlag, untersuchungsausschuss, amri, hinterbliebenen, untersuchungsausschusses, linksextremismus, rechter, gewalttaten, opfer 
- 	 Lift: amris, härteleistungen, „entschädigung“, basay-yildiz, beweisbeschlüsse, beweissicherung, breitscheidplatzes, bundesrepublikanischen, einzelfehler, ermittlungsfehler 
- 	 Score: untersuchungsausschuss, anschlag, breitscheidplatz, linksextremismus, hinterbliebenen, untersuchungsausschusses, sicherheitsbehörden, gewalt, extremismus, amri 
+ 	 Highest Prob: menschen, ehe, gesetzentwurf, liebe, heute, kinder, lassen, vielen, gesellschaft, geht 
+ 	 FREX: ehe, gleichgeschlechtlichen, ehen, gleichgeschlechtliche, lebenspartnerschaft, geschlecht, „divers“, abstammungsrecht, paare, geschlechts 
+ 	 Lift: attestpflicht, ehebegriffs, eheöffnungsgesetz, geschlechtsangleichenden, gleichgeschlechtlicher, intergeschlechtlichen, intersexuell, lebenspartnerschaftsverträge, lesbischer, pathologisieren 
+ 	 Score: ehe, geschlecht, paare, „divers“, gleichgeschlechtlichen, lebenspartnerschaft, gleichgeschlechtliche, ehen, abstammungsrecht, personenstandsrecht 
 Topic 82 Top Words:
- 	 Highest Prob: vertrag, russland, europa, inf-vertrag, abrüstung, usa, welt, atomwaffen, heute, nukleare 
- 	 FREX: inf-vertrag, atomwaffen, mittelstreckenraketen, abrüstung, nukleare, nuklearen, inf-vertrages, atomwaffenverbotsvertrag, rüstungskontrolle, atomaren 
- 	 Lift: atomwaffensperrvertrags, militärdoktrin, nuklearwaffenstaaten, urananreicherungsanlage, abrüstungsbericht, us-atomwaffen, abrüstungsabkommen, abrüstungsregime, amerikanisch-russischen, angereichertes 
- 	 Score: inf-vertrag, abrüstung, atomwaffen, mittelstreckenraketen, nuklearen, russland, nukleare, atomwaffenverbotsvertrag, inf-vertrages, vertrag 
+ 	 Highest Prob: unternehmen, brauchen, wirtschaft, antrag, wettbewerb, heute, gerade, digitalen, liebe, dafür 
+ 	 FREX: play, mbit, wettbewerbsrecht, facebook, wirtschaftspolitik, plattformen, whatsapp, marktmacht, altmaier, google 
+ 	 Lift: herrenknecht, ministererlaubnis, „missbrauchsunabhängige, bundeskartellamtes, bürokratiefreies, entflechtungsmöglichkeit, ertragssituation, fernstraßen-bundesamt, gummistiefel, missbrauchsunabhängigen 
+ 	 Score: play, mbit, facebook, plattformen, digitalen, wettbewerbsrecht, altmaier, whatsapp, wirtschaftspolitik, marktmacht 
 Topic 83 Top Words:
- 	 Highest Prob: bahn, schiene, euro, wurde, prozent, infrastruktur, brauchen, beim, straße, jahren 
- 	 FREX: lkw-maut, schiene, bahn, rastatt, schienengüterverkehr, maut, güterverkehr, ausweichstrecken, trassenpreise, güterzüge 
- 	 Lift: -meter-netz, -tonner, bahninfrastruktur, bahnnetz, befahrensabgabe, bemautung, bundesfernstraßenmautgesetz, bundesverkehrswegeplans, burkert, eigenwirtschaftlichkeit 
- 	 Score: schiene, bahn, lkw-maut, maut, scheuer, güterverkehr, rastatt, schienengüterverkehr, trassenpreise, verkehrsminister 
+ 	 Highest Prob: polizei, sicherheit, daten, bürger, sicherheitsbehörden, antrag, straftaten, immer, staat, behörden 
+ 	 FREX: kriminalstatistik, it-sicherheit, bsi, verschlüsselung, sicherheitsbehörden, polizeiliche, sicherheitslücken, polizeibeauftragten, polizeilichen, polizei 
+ 	 Lift: „nsu, anfallen“, anonymisierung, ausgangsstatistik, briefumschlag, eld, föderalismusreformen, it-grundrecht, it-sicherheitslücken, mitliest 
+ 	 Score: kriminalstatistik, sicherheitsbehörden, polizei, straftaten, bsi, bundespolizei, it-sicherheit, verschlüsselung, sicherheitslücken, polizeiliche 
 Topic 84 Top Words:
- 	 Highest Prob: bildung, bund, länder, kommunen, schulen, ländern, hochschulen, forschung, liebe, milliarden 
- 	 FREX: hochschulen, digitalpakt, grundgesetzänderung, hochschulpakt, kooperationsverbot, berufliche, beruflichen, bildung, bildungsföderalismus, bund 
- 	 Lift: alltagserfahrungen, arbeiterkindern, bafög-entlastung, beeindruckendes, bildungsrepublik, bund-länder-zusammenarbeit, bundesunterstützung, dauerstellen, entflechtungsgesetz, entflechtungsmitteln 
- 	 Score: hochschulen, bildung, digitalpakt, bund, grundgesetzänderung, berufliche, hochschulpakt, kommunen, beruflichen, kooperationsverbot 
+ 	 Highest Prob: europa, europäischen, europäische, union, frankreich, europas, brauchen, heute, gemeinsame, macron 
+ 	 FREX: macron, europa, europas, währungsunion, europäische, deutsch-französische, frankreich, emmanuel, juncker, binnenmarkt 
+ 	 Lift: binnenmarktregeln, farage, kompromisslos, nigel, selbstschädigung, sperrminorität, abtrünnigen, austerität, auszieht, brexit-drama 
+ 	 Score: europa, macron, europäische, währungsunion, deutsch-französische, brexit, europäischen, europas, frankreich, mitgliedstaaten 
 Topic 85 Top Words:
- 	 Highest Prob: mal, afd, dafür, partei, land, chemnitz, gibt, dank, heute, immer 
- 	 FREX: bundespräsidenten, chemnitz, verfassungsschutz, uploadfilter, demonstrationen, bundespräsident, hooligans, linksextremismus, kahrs, gauland 
- 	 Lift: gewaltorientierte, humors, videostreams, ruhebezüge, eigenschutz, ehrensold, falschbehauptung, hooligans, aufgeheizten, wulff 
- 	 Score: chemnitz, bundespräsidenten, verfassungsschutz, uploadfilter, linksextremismus, hooligans, gauland, maaßen, ehrensold, extremismus 
+ 	 Highest Prob: rente, rentenversicherung, menschen, prozent, grundsicherung, euro, alter, gesetzliche, heute, einkommen 
+ 	 FREX: rentenversicherung, rente, rentenniveau, grundsicherung, mütterrente, rentner, birkwald, rentnerinnen, altersarmut, grundrente 
+ 	 Lift: ‑rentnern, „altersarmut“, „maybrit, anrechenbaren, anrechnungsfrei, anrechnungsfreistellungen, betriebsrentenstärkungsgesetzes, entgeltpunkt, erwerbsminderungsrentnerinnen, erwerbsminderungsrentnern 
+ 	 Score: rente, rentenversicherung, grundsicherung, mütterrente, rentenniveau, rentner, altersarmut, erwerbsminderungsrente, renten, grundrente 
 Topic 86 Top Words:
- 	 Highest Prob: tiere, antrag, bereits, immer, deshalb, menschen, gibt, viele, beim, vielen 
- 	 FREX: keime, schlachthöfen, plastik, tiere, schlachtung, tierschutz, veterinäre, kontrollen, tiertransporte, meere 
- 	 Lift: „geheimsache, „ocean, amtstierärzte, amtstierärzten, approbation, argon, arztberuf, behandlungsfehlern, bestimmungsort, betäubt 
- 	 Score: tiere, tierschutz, schlachthöfen, betäubung, keime, schlachtung, plastik, veterinäre, tieren, tiertransporte 
+ 	 Highest Prob: wohnungen, wohnraum, bauen, mieter, mietpreisbremse, liebe, mieten, wohnungsbau, menschen, sozialen 
+ 	 FREX: mieterinnen, mieter, mieten, grunderwerbsteuer, quadratmeter, miete, wohnraum, mietrecht, wohnungsbau, wohnungen 
+ 	 Lift: mieterschaft, preisregime, baukostensenkungskommission, wohngipfels, -quadratmeter-wohnung, „altersgerecht, „rundgang, „share, „wohnraumoffensive“, „wohnungen 
+ 	 Score: mieter, mietpreisbremse, wohnungen, mieterinnen, wohnraum, mieten, wohnungsbau, vermieter, baukindergeld, wohnungsmarkt 
 Topic 87 Top Words:
- 	 Highest Prob: haushalt, scholz, sagen, euro, koalition, milliarden, zukunft, minister, progression, geld 
- 	 FREX: progression, scholz, kalte, kahrs, haushaltspolitik, rehberg, schwarze, null, finanzminister, bundesfinanzminister 
- 	 Lift: ausgabenorgien, einkommenszuwachs, fitzelchen, gentlemanlike, inflationsentwicklung, inflationsspirale, kreditermächtigung, melancholie, mobilfunklizenzen, pickel 
- 	 Score: progression, scholz, haushalt, kalte, kahrs, finanzminister, soli, kalten, tarif, rehberg 
+ 	 Highest Prob: antrag, afd, ezb, grundsteuer, europäischen, deshalb, gibt, deutschen, geht, bundesbank 
+ 	 FREX: target-salden, grundsteuer, target, target-system, bundesbank, salden, fragerecht, zentralbank, ezb, target-forderungen 
+ 	 Lift: ankäufe, salden, abwicklungsausschuss, anfrage“, banca, bankenunionale, bankenunionalen, beachtenswert, besichert, betriebskostenverordnung 
+ 	 Score: grundsteuer, target-salden, ezb, bundesbank, target, target-system, zentralbank, salden, fragerecht, target-forderungen 
 Topic 88 Top Words:
- 	 Highest Prob: klimaschutz, gerade, ministerin, maßnahmen, vielen, frage, umwelt, erreichen, dank, umweltpolitik 
- 	 FREX: umweltpolitik, umweltministerium, klimaschutz, umweltministerin, klimapolitik, schulze, klimaziele, klimaschutzplan, co-preis, sektoren 
- 	 Lift: aktionsprogramms, jahresscheiben, umweltpolitiker, abschlussdatums, cop, aktionsprogramme, treibhausgasreduzierung, bepreisungssystem, koalitionshaushälter, klimaschutzinitiative 
- 	 Score: klimaschutz, umweltpolitik, klimaziele, umweltministerium, naturschutz, co-preis, umweltministerin, emissionshandel, klimaschutzplan, klimapolitik 
+ 	 Highest Prob: opfer, antisemitismus, heute, menschen, antrag, juden, deutschen, israel, gibt, geschichte 
+ 	 FREX: antisemitismus, sinti, roma, juden, jüdischen, breitscheidplatz, jüdinnen, jüdische, gedenken, anschlag 
+ 	 Lift: „asozialen“, „asoziale“, „berufsverbrecher“, „berufsverbrechern“, „entschädigung“, „gedenken, „gedenkort, „jude“, „juden, alteingesessene 
+ 	 Score: antisemitismus, juden, sinti, israel, roma, jüdischen, anschlag, untersuchungsausschuss, jüdinnen, breitscheidplatz 
 Topic 89 Top Words:
- 	 Highest Prob: verfahren, musterfeststellungsklage, unternehmen, antrag, verbraucher, geht, europäischen, ceta, recht, liebe 
- 	 FREX: ceta, musterfeststellungsklage, investitionsgerichtshof, investitionsschutz, investitionsschutzabkommen, schiedsgerichte, klagebefugnis, rechtsschutz, kanada, vattenfall 
- 	 Lift: „klageindustrie“, abwicklungsausschuss, achmea-urteil, anwaltsgebühren, arrogantes, atg-novelle, ausformung, befangenheit, betriebsgeheimnisse, buxtehude 
- 	 Score: ceta, musterfeststellungsklage, investitionsschutz, verbraucher, schiedsgerichte, investitionsgerichtshof, investitionsschutzabkommen, klagebefugnis, rechtsschutz, abkommen 
+ 	 Highest Prob: verfahren, musterfeststellungsklage, recht, verbraucher, justiz, gesetzentwurf, liebe, rechtsstaat, antrag, vielen 
+ 	 FREX: musterfeststellungsklage, klagebefugnis, bundesgerichtshof, kollektiven, gerichte, zpo, wertgrenze, rechtsschutz, klage, bundesverwaltungsgericht 
+ 	 Lift: „---klage“, asylsachen, formfehler, haftgrund, obergerichtlichen, prozesshandlungen, prozessrechts, sprungrevision, uneinheitlichkeit, vergleichsportalen 
+ 	 Score: musterfeststellungsklage, verbraucher, justiz, klagebefugnis, bundesgerichtshof, verbraucherschutz, verbraucherinnen, gerichte, bundesverwaltungsgericht, bgh 
 Topic 90 Top Words:
- 	 Highest Prob: russland, nato, usa, immer, sanktionen, europa, deutschen, heute, russischen, politik 
- 	 FREX: krim, russland, russische, putin, annexion, russischen, ukraine, moskau, russlands, völkerrechtswidrig 
- 	 Lift: „playboy“, doppelagenten, germans, gündogan, ismay, wirtschaftskrieg, abrüstet, annektiert, ansteckt, antirussischen 
- 	 Score: russland, nato, krim, russischen, russische, ukraine, putin, russlands, annexion, völkerrecht 
+ 	 Highest Prob: mal, geht, menschen, sagen, wäre, unsere, vielen, dank, antrag, prozent 
+ 	 FREX: duh, peta, greta, doppelverbeitragung, umwelthilfe, vorsorgen, munich, klimapolitik, thunberg, kohleausstieg 
+ 	 Lift: graus, ppm, selbstlosigkeit, notstromaggregat, kernzeiten, munich, mitgliederzahl, raucherinnen, rückversicherer, schulschwänzen 
+ 	 Score: umwelthilfe, energiewende, kohleausstieg, grenzwerte, verkehrsminister, duh, peta, scheuer, doppelverbeitragung, gemeinnützigkeit 
 Topic 91 Top Words:
- 	 Highest Prob: wann, konkret, minister, vielen, dank, interessieren, lautet, frage, danke, fragen 
- 	 FREX: wann, konkret, interessieren, minister, lautet, vielen, dank, kurzintervention, danke, fragen 
- 	 Lift: wann, interessieren, konkret, kurzintervention, lautet, minister, zuge, demokraten, grenze, möchten 
- 	 Score: wann, interessieren, konkret, minister, kurzintervention, lautet, vielen, bericht, dank, zuge 
+ 	 Highest Prob: banken, europa, heute, europäischen, risiken, griechenland, kredite, europäische, krise, bankenunion 
+ 	 FREX: einlagensicherung, esm, bankenunion, kredite, euro-zone, ewf, iwf, staatsanleihen, währungsfonds, verbriefungen 
+ 	 Lift: bankenrettungen, eigenkapitalquoten, finanzbinnenmarkt, finanzgeschäfte, finanzjongleuren, investmentbank, kernkapitalquote, npls, tranchen, verschuldungsquote 
+ 	 Score: banken, einlagensicherung, bankenunion, kredite, euro-zone, esm, finanzkrise, staatsanleihen, ewf, griechenland 
+Topic 92 Top Words:
+ 	 Highest Prob: frage, zoll, dank, wurde, vielen, minister, gibt, jahr, stellen, letzten 
+ 	 FREX: zoll, zolls, lkw-maut, bmvi, schwarzarbeit, zeitplan, zollverwaltung, berlinale, esug, zöllnerinnen 
+ 	 Lift: eisenbahnvermögen, flughafengesellschaft, ressortabgestimmte, standortkonzept, wirtschaftlichkeitsgutachten, zollkodex, zöllnern, spezialeinheit, immobilienmärkte, generalzolldirektion 
+ 	 Score: zoll, lkw-maut, scheuer, zolls, schwarzarbeit, bmvi, geldwäsche, esug, berlinale, brexit 
+Topic 93 Top Words:
+ 	 Highest Prob: buchpreisbindung, kultur, buch, vielfalt, bücher, heute, gibt, menschen, antrag, vielen 
+ 	 FREX: buchpreisbindung, bücher, buchhandlungen, verlage, monopolkommission, buch, kulturgut, kunst, buchmarkt, autoren 
+ 	 Lift: affiliate-programme, anmaßendes, bauhaus, bestseller, bestsellern, börsenverein, börsenvereins, büchermarkt, buchhandel, buchhandels 
+ 	 Score: buchpreisbindung, bücher, buchhandlungen, verlage, kulturgut, monopolkommission, buch, buchmarkt, kunst, buchhandel 
+Topic 94 Top Words:
+ 	 Highest Prob: mindestlohn, antrag, menschen, fdp, minijobs, arbeit, mindestlohns, immer, löhne, gibt 
+ 	 FREX: mindestlohn, mindestlohns, minijobs, mindestlohnkommission, tarifbindung, minijob, tarifverträge, löhne, tarifautonomie, dokumentationspflichten 
+ 	 Lift: ‑euro-job, allgemeinverbindlicherklärungen, arbeitgeberprüfungen, arbeitsstunde, armutslohn, armutsrente, aufzeichnung, aufzeichnungspflicht, bundesurlaubsgesetz, erhöhungsschraube 
+ 	 Score: mindestlohn, mindestlohns, minijobs, mindestlohnkommission, tarifbindung, tarifverträge, löhne, minijob, arbeitszeit, tarifautonomie 
+Topic 95 Top Words:
+ 	 Highest Prob: einrichtungen, umsetzung, gesetzentwurf, bereits, altersversorgung, betrieblichen, daher, gilt, altersvorsorge, gesetz 
+ 	 FREX: ebav, pensionskassen, altersversorgung, seeleute, pensionsfonds, betrieblichen, altersvorsorge, betriebliche, doppelverbeitragung, seemannsmissionen 
+ 	 Lift: „doppelverbeitragung“, „jahressteuergesetz“, aeg, altverträgen, anwesenheitspflicht, aufsichtsrechtlichen, ausgeglichener, auslandsbeteiligungen, auszahlungsbetrag, bankbereich 
+ 	 Score: ebav, altersversorgung, pensionskassen, seeleute, betrieblichen, pensionsfonds, betriebliche, altersvorsorge, doppelverbeitragung, seemannsmissionen 
+Topic 96 Top Words:
+ 	 Highest Prob: grünen, danke, viele, beispiel, gibt, wurde, brauchen, menschen, beim, vielen 
+ 	 FREX: plastik, weltmeere, mikroplastik, meere, beschaffung, entsorgt, abfälle, gesundheitsfonds, verpackungsgesetz, müll 
+ 	 Lift: bundesapothekerkammer, friedenssichernde, kunststoffe, medikation, meeresströmungen, müllentsorgung, notfallbehandlungen, pflichtbeitrags, pflichtbeitragssätze, plastikabfällen 
+ 	 Score: plastik, beschaffung, meere, weltmeere, mikroplastik, abfälle, lebensmittel, gesundheitsfonds, kunststoffe, verpackungsgesetz 
+Topic 97 Top Words:
+ 	 Highest Prob: länder, milliarden, bund, euro, kommunen, geld, haushalt, investitionen, liebe, land 
+ 	 FREX: soli, schulden, entlastungen, entlastung, bundeshaushalt, kommunen, solidaritätszuschlag, wohnungsbau, entlasten, bund 
+ 	 Lift: deckblätter, dreisatz, satisfaktionsfähig, wohnungsbau“, „schwarze, „zusätzlichkeit“, bafög-entlastung, bildungsmanagement, entflechtungsgesetz, entflechtungsmitteln 
+ 	 Score: soli, milliarden, kommunen, wohnungsbau, entlastung, bund, haushalt, solidaritätszuschlag, euro, investitionen 
+Topic 98 Top Words:
+ 	 Highest Prob: beschäftigten, unternehmen, siemens, mitbestimmung, ryanair, betriebsräte, geht, betriebsrat, gibt, liebe 
+ 	 FREX: ryanair, betriebsräte, siemens, mitbestimmung, betriebsrat, betriebsverfassungsgesetz, görlitz, sozialpartnerschaft, betriebsräten, gewerkschaften 
+ 	 Lift: aktiengesetz, altersteilzeit, arbeitskämpfe, arbeitsplatzwechsel, betriebsrätegesetz, betriebsrates, betriebsrats, betriebsratsarbeit, betriebsratsgarantie, betriebsverfassung 
+ 	 Score: ryanair, siemens, betriebsräte, mitbestimmung, betriebsrat, betriebsverfassungsgesetz, beschäftigten, görlitz, sozialpartnerschaft, betriebsräten 
+Topic 99 Top Words:
+ 	 Highest Prob: europäischen, union, europäische, recht, deutsche, unsere, interessen, dafür, gibt, europa 
+ 	 FREX: armenien, indonesien, richtlinie, korruption, eu-steuern, eu-haushalt, verständigung, wirtschaftsunion, lte, beschuldigten 
+ 	 Lift: südkaukasus, versuchsstrafbarkeit, „marshallplan, armenischen, europapolitiker, gemeinschaftsmittel, genderprojekte, kaczynski, wirtschaftsmächte, umsetzungsbedarf 
+ 	 Score: armenien, richtlinie, indonesien, mitgliedstaaten, lte, bdbos, menschenrechte, cepa, armenischen, eu-steuern 
+Topic 100 Top Words:
+ 	 Highest Prob: cannabis, menschen, drogen, gibt, alkohol, cannabiskonsum, drogenpolitik, rauchen, schwarzmarkt, dank 
+ 	 FREX: cannabiskonsum, drogenpolitik, cannabis, alkohol, schwarzmarkt, drogen, kontrollierte, rauchen, jugendschutz, legalisierung 
+ 	 Lift: colorado, kiffer, einstiegsdroge, fachgeschäften, gekifft, genussmittel, suchtfragen, suchtprävention, cannabiskonsum, drogenpolitik 
+ 	 Score: cannabis, drogenpolitik, cannabiskonsum, drogen, schwarzmarkt, alkohol, rauchen, kontrollierte, tabak, jugendschutz 

@@ -50,10 +50,12 @@ processed <- textProcessor(speeches_clean$rede_full,
 
 out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
 
-set.seed(123)
+set.seed(132)
 stm_speeches_fit <- stm(documents = out$documents, vocab = out$vocab, K = 0,
                         prevalence = ~geschlecht, max.em.its = 500, data = out$meta,
                         init.type = "Spectral")
+
+write_rds(stm_speeches_fit, "data/stm/stm_speeches_fit.RDS")
 
 stm_speeches_fit <- read_rds("data/stm/stm_speeches_fit.RDS")
 
@@ -61,21 +63,50 @@ stm_speeches_fit <- read_rds("data/stm/stm_speeches_fit.RDS")
 
 capture.output(labelTopics(stm_speeches_fit, n = 10), file = "results/stm_topics.txt")
 
+# Die Labels müssen anschließend benannt werden, unsinnige Topics werden aussortiert
+stm_labels <- read_csv("results/stm_labels.csv") %>%
+  filter(!str_detect(Label, "!"))    # Labels mit Ausrufezeichen (kritisch) aussortieren
+
 # Geschlechterunterschiede im Bundestag
 
 out$meta$geschlecht <- as.factor(out$meta$geschlecht)
 prep <- estimateEffect(~ geschlecht, stm_speeches_fit,
                        meta = out$meta, uncertainty = "Global")
 
-# Beispiele für Wörter in einem Topic
+# Splitten der Topics und Labels in Vektoren für die weitere bearbeitung
+topics_split <- split(stm_labels %>% pull(Topic), ceiling(seq_along(stm_labels %>% pull(Topic))/15))
+labels_split <- split(stm_labels %>% pull(Label), ceiling(seq_along(stm_labels %>% pull(Label))/15))
 
-plot(stm_speeches_fit, topics = c(49, 51, 4, 9, 11), type = "labels", labeltype = "frex")
+pdf(file='plot.pdf')
+map2(topics_split, labels_split, 
+     ~plot(prep, covariate = "geschlecht", topics = .x,
+           model = stm_speeches_fit, method = "difference",
+           xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
+           main = "Thematisierungen in den Bundestagsreden\nnach Geschlecht",
+           custom.labels = .y, labeltype = "custom",
+           xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt"))
+dev.off()
 
-plot(prep, covariate = "geschlecht", topics = c(35, 51, 4, 9, 11),
+# Deutliche Unterschiede sind bei folgenden 
+
+plot(prep, covariate = "geschlecht", topics = .x,
      model = stm_speeches_fit, method = "difference",
      xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
-     main = "Geschlechterspezifische Effekte zu den Topics im Bundestag",
-     custom.labels = c("Schwangerschaftsabbruch", "Klimaschutz", "Grenzschutz", "Brexit", "Bildungspolitik"), labeltype = "custom",
+     main = "Geschlechterspezifische Unterschiede in den Thematisierungen der Bundestagsreden",
+     custom.labels = .y, labeltype = "custom",
+     xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt"))
+     
+
+
+plot(stm_speeches_fit, topics = c(32, 50, 76, 62), type = "labels", labeltype = "frex")
+
+plot(prep, covariate = "geschlecht", topics = )
+
+plot(prep, covariate = "geschlecht", topics = c(32, 50, 76, 62),
+     model = stm_speeches_fit, method = "difference",
+     xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
+     main = "Geschlechterspezifische Unterschiede in den Thematisierungen der Bundestagsreden",
+     custom.labels = c("Schwangerschaftsabbruch Strafen", "Schwangerschaft Diagnostik", "Gender Pay Gap und Teilzeit", "Seenotrettung"), labeltype = "custom",
      xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt")
 
 findThoughts(stm_speeches_fit, texts = speeches_clean$rede_full, topics = 4)
