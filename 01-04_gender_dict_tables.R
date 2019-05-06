@@ -50,7 +50,7 @@ gend_dict %>%
 # Allerdings findet man nicht nur GFL Ansprache über das Diktionär, sondern auch über "Kolleginnen und Kollegen"
 # "Arzt und Ärztin". Wir versuchen, über regular expressions diese "Floskeln" zu finden.
 
-mdb_gfl_phrases <- mdb_gfl_speeches %>%                                  # extrahiert alle mit "und" oder "oder" getrennten Wörter
+mdb_gfl_phrases <- mdb_full_speeches %>%                                  # extrahiert alle mit "und" oder "oder" getrennten Wörter
   mutate(gfl_phrases = str_extract_all(rede_full, "(\\w+\\sund\\s\\w+|\\w+\\soder\\s\\w+)")) %>%     
   select(rede_id, gfl_phrases) %>%                                     # wir brauchen nur die rede_id und die Wörter
   unnest(gfl_phrases) %>%                                              # wir suchen nur Kombinationen, die mit *innen oder *in Enden
@@ -68,12 +68,6 @@ mdb_gfl_phrases <- mdb_gfl_speeches %>%                                  # extra
 
 write_csv(mdb_gfl_phrases %>% select(gfl_phrases), "data/gfl_phrases.csv")
 # mdb_gfl_phrases <- read_csv("data/gfl_phrases.csv")
-
-mdb_gfl_phrases %>%
-  head(10) %>%
-  rename(Forumulierung = gfl_phrases) %>%
-  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
-  write_file(., "document/tables/genderinklusive_formulierungen_top.tex")
 
 # Auch hier muss die Tabelle wieder manuell angepasst werden, da dies nicht immer funktioniert.
 # Tabelle als Beispiel für die zehn häufigst genutzten Genderinklusiven Ansprachen.
