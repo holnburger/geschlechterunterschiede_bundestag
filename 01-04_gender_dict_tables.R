@@ -70,9 +70,17 @@ write_csv(mdb_gfl_phrases %>% select(gfl_phrases), "data/gfl_phrases.csv")
 # mdb_gfl_phrases <- read_csv("data/gfl_phrases.csv")
 
 # Auch hier muss die Tabelle wieder manuell angepasst werden, da dies nicht immer funktioniert.
-# Tabelle als Beispiel für die zehn häufigst genutzten Genderinklusiven Ansprachen.
+# Die modifizierte Tabelle wird geladen und anschließend zufällige Beispiele gezeigt.
 
 gfl_modified_phrases <- read_csv("data/gfl_phrases_modified.csv")
+
+gfl_modified_phrases %>%
+  sample_n(10) %>%
+  rename(Forumulierung = gfl_phrases) %>%
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
+  write_file(., "document/tables/genderinklusive_formulierungen_zufall.tex")
+
+# Zusammenfassende Tabelle aller Begriffe und Formulierungen
 
 dict_summary_table <- tibble("Genderinklusive Formulierungen" = nrow(gfl_modified_phrases), 
   "Genderinklusive Begriffe" = nrow(genderinkl_begriffe), 
