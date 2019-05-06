@@ -94,7 +94,7 @@ significant_topics <- c(2,3,7,10,18,22,27,28,29,37,42,53,54,57,61,76,78,91)
 stm_significant_labels <- stm_labels %>%
   filter(Topic %in% significant_topics)
 
-pdf(file="document/images/stm_differences_top.pdf", width = 8, height = 14, )
+pdf(file="document/images/stm_differences_top.pdf", width = 8, height = 12)
 plot(prep, covariate = "geschlecht", topics = stm_significant_labels$Topic,
      model = stm_speeches_fit, method = "difference",
      xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
@@ -102,18 +102,6 @@ plot(prep, covariate = "geschlecht", topics = stm_significant_labels$Topic,
      custom.labels = stm_significant_labels$Label, labeltype = "custom",
      xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt")
 dev.off()
-
-
-plot(stm_speeches_fit, topics = c(32, 50, 76, 62), type = "labels", labeltype = "frex")
-
-plot(prep, covariate = "geschlecht", topics = )
-
-plot(prep, covariate = "geschlecht", topics = c(32, 50, 76, 62),
-     model = stm_speeches_fit, method = "difference",
-     xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
-     main = "Geschlechterspezifische Unterschiede in den Thematisierungen der Bundestagsreden",
-     custom.labels = c("Schwangerschaftsabbruch Strafen", "Schwangerschaft Diagnostik", "Gender Pay Gap und Teilzeit", "Seenotrettung"), labeltype = "custom",
-     xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt")
 
 findThoughts(stm_speeches_fit, texts = speeches_clean$rede_full, topics = 4)
 
