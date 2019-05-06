@@ -13,8 +13,7 @@ mdb_full_speeches <- read_rds("data/BT_19/full_speeches.RDS")
 
 # Gender-Dictionär laden mit den genderinklusvien und genderexklusiven Begriffen
 gender_dict <- read_csv("data/gender_dict_modified.csv")
-gender_phrases <- read_csv("data/gfl_phrases_modified.csv") %>%
-  filter(gfl_phrases != "kolleginnen und kollegen")
+gender_phrases <- read_csv("data/gfl_phrases_modified.csv")
 
 
 # Kontrollvariablen
@@ -56,6 +55,17 @@ mdb_gfl_speeches <- mdb_full_speeches %>%
 
 write_rds(mdb_gfl_speeches, "data/BT_19/gfl_speeches.RDS")
 mdb_gfl_speeches <- read_rds("data/BT_19/gfl_speeches.RDS")
+
+# Tabelle mit den häufigsten genderinklusiven Formulierungen
+
+mdb_gfl_speeches %>%
+  ungroup() %>%
+  unnest(gender_phrases) %>%
+  count(gender_phrases, sort = TRUE) %>%
+  rename("Genderinklusive Formulierungen" = gender_phrases) %>%
+  mutate(n = scales::comma(n, big.mark = ".", decimal.mark = ",")) %>%
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
+  write_file(., "document/tables/genderinklusive_formulierungen_top.tex")
 
 # Untersuchung der Anteile von genderinklusiven und genderexklusiven Begriffen und Formulierungen in den Reden
 gfl_total <- mdb_gfl_speeches %>%
