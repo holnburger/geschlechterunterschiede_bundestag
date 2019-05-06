@@ -62,10 +62,22 @@ mdb_gfl_speeches %>%
   ungroup() %>%
   unnest(gender_phrases) %>%
   count(gender_phrases, sort = TRUE) %>%
+  head(10) %>%
   rename("Genderinklusive Formulierungen" = gender_phrases) %>%
   mutate(n = scales::comma(n, big.mark = ".", decimal.mark = ",")) %>%
   knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
   write_file(., "document/tables/genderinklusive_formulierungen_top.tex")
+
+# Tabelle mit den häufigsten genderinklusiven Begriffen
+mdb_gfl_speeches %>%
+  ungroup() %>%
+  unnest(genderinkl_words) %>%
+  count(genderinkl_words, sort = TRUE) %>%
+  head(10) %>%
+  rename("Genderinklusive Begriffe" = genderinkl_words) %>%
+  mutate(n = scales::comma(n, big.mark = ".", decimal.mark = ",")) %>%
+  knitr::kable(format = "latex", booktabs = TRUE, linesep = "") %>%
+  write_file(., "document/tables/genderinklusive_begriffe_top.tex")
 
 # Untersuchung der Anteile von genderinklusiven und genderexklusiven Begriffen und Formulierungen in den Reden
 gfl_total <- mdb_gfl_speeches %>%
