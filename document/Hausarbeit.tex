@@ -637,11 +637,11 @@ Mittels einer Boxplot-Grafik können die Mittelwerte und die Streuung der Unterb
     \label{table:top_gender_begriffe}
 \end{table}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{document/images/boxplot_gfl.pdf}
     % Der Teil in eckigen Klammern ist der Kurztitel für das Table of Contents
-    \caption[Anteil geschlechterinklusiver Begriffe und Formulierung pro Rede im Deutschen Bundestag]{Anteil geschlechterinklusiver Begriffe und Formulierung pro Rede im Deutschen Bundestag. Quelle: Eigene Erhebung}
+    \caption[Anteil geschlechterinklusiver Begriffe und Formulierung pro Rede im Deutschen Bundestag]{Anteil geschlechterinklusiver Begriffe und Formulierung pro Rede im Deutschen Bundestag.}
     \label{fig:boxplot_gfl}
 \end{figure}
 
@@ -653,36 +653,37 @@ Mittels einer Boxplot-Grafik können die Mittelwerte und die Streuung der Unterb
 
 Wie in Kapitel \ref{kapitel:methode_inhalte} bereits beschrieben bietet STM den Vorteil, dass die Anzahl der Topics des Datensatzes nicht vorgegeben werden muss -- mittels der sogenannten \emph{spectral analysis} lässt sich die Anzahl der Topic eines Dokuments reproduzierbar bestimmen \parencites[11]{roberts_2018}[30ff.]{roberts_2016}.\footnote{Ein anderes Vorgehen zur Bestimmung der Anzahl der Topics findet sich bei \citetitle{roberts_2014} von \textcite[6ff.]{roberts_2014}. Hierbei wird mit einer Vielzahl an unterschiedlichen Topicanzahlen gearbeitet um anschließend manuell die Anzahl der Topics zu selektieren. Da ein solches Verfahren den Umfang dieser Arbeit aber übersteigen würde, wurde das einfachere -- wenn auch weniger akkurate -- Spektralverfahren gewählt.} Diese Analyse berechnet 100 Topics in den untersuchten Reden des 19. Deutschen Bundestages (Reden mit mehr als 100 Wörtern, von Abgeordneten mit Fraktionszugehörigkeit).
 
-Anschließend werden die Topics, wie in Kapitel \ref{kapitel:methode_inhalte} beschrieben, mit Labels versehen. Beispielhaft sollen hier auf die wahrscheinlichsten Wörter eines Topics \ref{kapitel:methode_inhalte} und die Wörter, welche mittels des FREX-Algorithmus ausgewertet wurden, in Abbildung \ref{fig:example_labels} verwiesen werden. 
+Anschließend werden die Topics, wie in Kapitel \ref{kapitel:methode_inhalte} beschrieben, mit Labels versehen. Beispielhaft sollen hier auf die wahrscheinlichsten Wörter eines Topics \ref{kapitel:methode_inhalte} und die Wörter, welche mittels des FREX-Algorithmus ausgewertet wurden, in Abbildung \ref{fig:example_labels} verwiesen werden. Während \emph{highest probablitiy} die Wörter anzeigt, welche mit der höchsten Wahrscheinlichkeit in diesem Topic vorkommen, zeigt \emph{FREX} gewichtet die exklusivsten Wörter an. Da die höchste Wahrscheinlichkeit vor allem aber auf sogenannte \emph{Stopwörter} (\enquote{und}, \enquote{du}, \enquote{ich}, \enquote{sie}, ...) wurden diese und auch weitere, in diesem Datensatz besonders häufig genutzte Wörter (\enquote{Bundestag}, \enquote{Kolleginnen}, \enquote{Präsident}, ...), aus der Erhebung entfernt.
 
 \begin{figure}
     \centering
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics[width=.4\linewidth]{document/images/stm_label_prob_example.pdf}
-      \caption{Wörter mit der höchsten Wahrscheinlichkeit nach Topic}
+      \includegraphics[width=.9\linewidth]{document/images/stm_label_prob_example.pdf}
+      \caption{\emph{highest probability}}
       \label{fig:sub1}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
       \centering
-      \includegraphics[width=.4\linewidth]{document/images/stm_label_frex_example.pdf}
-      \caption{Wörter mit der höchsten, gewichteten Exklusivität nach Topic}
+      \includegraphics[width=.9\linewidth]{document/images/stm_label_frex_example.pdf}
+      \caption{\emph{FREX}}
       \label{fig:sub2}
     \end{subfigure}
-    \caption[Labeling am Beispiel der Topics 6, 28 und 76 mittels der wahrscheinlichsten und exklusivsten Wörter eines Topics]{Labeling am Beispiel der Topics 6, 28 und 76 mittels der wahrscheinlichsten und exklusivsten Wörter eines Topics.}
+    \caption[Labeling am Beispiel der Topics 6, 28 und 76 mittels des \emph{highest probability} und \emph{FREX}-Algorithmus]{Labeling am Beispiel der Topics 6, 28 und 76 mittels des \emph{highest probability} und \emph{FREX}-Algorithmus.}
     \label{fig:example_labels}
 \end{figure}
 
-Das Labeling wurde unabhängig durch die beiden Autor*innen vorgenommen und anschließend die Ergebnisse verglichen. Es wurden 13 Topics aus dem Datensatz entfernt, da sie entweder aus zusammenhanglosen Wörtern oder beispielsweise nur aus Dankes- und Begrüßungswörtern bestanden. Bei 26 Topics bestand keine Einigkeit bezüglich des Labels -- hier wurden die Reden, welche den Topics zugeordnet werden können, gesichtet und anschließend ein Labeling vorgenommen oder auch diese aus der Erhebung entfernt. Nach dieser Überprüfung bleiben 85 Topics, welche auf mögliche Unterschiede zwischen männlichen und weiblichen Abgeordneten untersucht werden können.
+Das Labeling wurde unabhängig durch die beiden Autor*innen vorgenommen und anschließend die Ergebnisse verglichen. Es wurden 13 Topics aus dem Datensatz entfernt, da sie entweder aus zusammenhanglosen Wörtern oder beispielsweise nur aus Dankes- und Begrüßungswörtern bestanden. Bei 26 Topics bestand keine Einigkeit bezüglich des Labels -- hier wurden die Reden, welche am meisten den Topics zugeordnet werden können, gesichtet und anschließend das Labeling vorgenommen oder auch diese aus der Erhebung entfernt. Nach dieser Überprüfung bleiben 85 Topics, welche auf mögliche Unterschiede zwischen männlichen und weiblichen Abgeordneten untersucht werden können.
 
+Betrachtet man die Topics, welche ein signifikantes Ergebnis bezüglich zeigen (Konfidenzintervall von 80\%)
 
-
+Mit Betrachtung der Topics, welche einen signifikanten Unterschied bezüglich der Topicanteile von männlichen und weiblichen Abgeordneten aufweisen (vgl. Abb. \ref{fig:differences_stm_top}) kann eine Reproduktion von Stereotypen bezüglich der Thematisierung in den Bundestagsreden nachgewiesen werden.\footnote{Die Ergebnisse aller Topics mit Label finden sich im Anhang, vgl. Abb. \ref{fig:differences_stm}} Die Ergebnisse, welche \textcite[501ff.]{back_2014} im schwedischen Reichstag erhoben hatten, können in unserer Arbeit reproduziert werden. Auch wenn in dieser Arbeit eine Klassifizierung von \enquote{hard policies}, wie sie bei \citeauthor{back_2014} vorgenommen wurde, nicht angewandt wird, zeigt sich, dass männliche Abgeordnete signifikant mehr über Außen- und Verteidigungspolitik (INF-Vertrag, EU-Außenpolitik, Bundeswehreinsatz im Mittelmeer \enquote{Sea Guardian}) und Finanzpolitik (Steuern, Finanzen, Banken) sowie Energiepolitik im Bundestag sprechen. 
 
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.6]{images/stm_differences_top.pdf}
-    \caption[Thematisierungen in den Bundestagsreden mit signifikanten Unterschieden zwischen den Geschlechtern]{Thematisierungen in den Bundestagsreden mit signifikanten Unterschieden zwischen den Geschlechtern. Auswertung der Themen mit \emph{stm topic models}. Reihenfolge durch \emph{stm}. Quelle: Eigene Erhebung}
+    \caption[Thematisierungen in den Bundestagsreden mit signifikanten Unterschieden zwischen den Geschlechtern]{Thematisierungen in den Bundestagsreden mit signifikanten Unterschieden zwischen den Geschlechtern. Auswertung der Themen mit \emph{stm topic models}. Diese Abbildung zeigt die Punktschätzung und das 80\% Konfidenzintervall der mittleren Differenz der Themenanteile. Tangiert das Konfidenzintervall die Nullinie, gilt das Ergebnis als nicht signifikant.}
     \label{fig:differences_stm_top}
 \end{figure}
 
@@ -853,7 +854,8 @@ H3: Frauen werden häufiger als Männer während einer Rede negativ Unterbrochen
        \includegraphics[page=5,width=.45\textwidth]{images/stm_differences.pdf} &
        \includegraphics[page=6,width=.45\textwidth]{images/stm_differences.pdf}
    \end{tabular}
-    \caption[Thematisierungen in den Bundestagsreden nach Geschlecht der Abgeordneten]{Thematisierungen in den Bundestagsreden nach Geschlecht der Abgeordneten. Auswertung der Themen mit \emph{stm topic models}. Quelle: Eigene Erhebung}
+    \caption[Thematisierungen in den Bundestagsreden nach Geschlecht der Abgeordneten]{Thematisierungen in den Bundestagsreden nach Geschlecht der Abgeordneten. Auswertung der Themen mit \emph{stm topic models}.
+    Diese Abbildung zeigt die Punktschätzung und das 80\% Konfidenzintervall der mittleren Differenz der Themenanteile. Tangiert das Konfidenzintervall die Nullinie, gilt das Ergebnis als nicht signifikant.}
     \label{fig:differences_stm}
 \end{figure}
 \end{appendices}
