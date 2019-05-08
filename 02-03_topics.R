@@ -62,13 +62,6 @@ stm_speeches_fit <- read_rds("data/stm/stm_speeches_fit.RDS")
 # Labeling der Topics, export der Wörter pro Topic
 capture.output(labelTopics(stm_speeches_fit, n = 10), file = "results/stm_topics.txt")
 
-# Beispielgrafik für Topic Label mit Most Probable Words
-plot(stm_speeches_fit, type = "labels", labeltype = "frex", topics = 1)
-
-# Die Labels müssen anschließend benannt werden, unsinnige Topics werden aussortiert
-stm_labels <- read_csv("results/stm_labels.csv") %>%
-  filter(!str_detect(Label, "!"))    # Labels mit Ausrufezeichen (kritisch) aussortieren
-
 # Beispiele für most-probable words und FREX Beschreibung für den Text
 pdf(file="document/images/stm_label_prob_example.pdf", width = 7, height = 5)
 par(mar=c(0,0,0,0)) # Oben und seitlich Platz abschneiden
@@ -83,9 +76,15 @@ dev.off()
 # Die Labels werden von zwei Personen kontrolliert, strittige Labels werden mit den entsprechenden Redepassagen überprüft
 stm_critical_topics <- read_csv("results/critical_topics.csv")
 
+capture.output(stm::findThoughts(stm_speeches_fit, texts = out$meta$rede_full,
+                                 topics = 49),
+               file = "results/critical_topics_text.txt")
+
+# Die Labels müssen anschließend benannt werden, unsinnige Topics werden aussortiert
+stm_labels <- read_csv("results/stm_labels.csv") %>%
+  filter(!str_detect(Label, "!"))    # Labels mit Ausrufezeichen (kritisch) aussortieren
 
 # Geschlechterunterschiede im Bundestag
-
 out$meta$geschlecht <- as.factor(out$meta$geschlecht)
 prep <- estimateEffect(~ geschlecht, stm_speeches_fit,
                        meta = out$meta, uncertainty = "Global")
@@ -102,7 +101,7 @@ map2(topics_split, labels_split,
            xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
            custom.labels = .y, labeltype = "custom",
            main=NULL,
-           xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt"))
+           xlab = "Unterschiede in den Topicanteilen (Männer-Frauen)"))
 dev.off()
 
 # Deutliche Unterschiede sind bei folgenden Topics zu sehen:
@@ -117,5 +116,5 @@ plot(prep, covariate = "geschlecht", topics = stm_significant_labels$Topic,
      xlim = c(-.1, .1), cov.value1 = "weiblich", cov.value2 = "männlich",
      main = "Geschlechterspezifische Unterschiede in den Thematisierungen der Bundestagsreden",
      custom.labels = stm_significant_labels$Label, labeltype = "custom",
-     xlab = "Eher von Männern behandelt ... Eher von Frauen behandelt")
+     xlab = "Unterschiede in den Topicanteilen (Männer-Frauen)")
 dev.off()
