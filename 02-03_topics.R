@@ -59,9 +59,12 @@ write_rds(stm_speeches_fit, "data/stm/stm_speeches_fit.RDS")
 
 stm_speeches_fit <- read_rds("data/stm/stm_speeches_fit.RDS")
 
-# Labeling der Topics, export der Wörter pro Topi
+# Labeling der Topics, export der Wörter pro Topic
 
 capture.output(labelTopics(stm_speeches_fit, n = 10), file = "results/stm_topics.txt")
+
+# Beispielgrafik für Topic Label mit Most Probable Words
+plot(stm_speeches_fit, type = "labels", labeltype = "frex", topics = 1)
 
 # Die Labels müssen anschließend benannt werden, unsinnige Topics werden aussortiert
 stm_labels <- read_csv("results/stm_labels.csv") %>%
