@@ -401,7 +401,7 @@ Diese Mehrbelastung kann laut \textcite{erikson_2018} zu höheren \enquote{Koste
 
 Es wird erwartet, dass ein solches negatives Verhalten gegenüber Frauen auch im Deutschen Bundestag zu beobachten ist. Entsprechend wird untersucht, wie häufig weibliche und männliche MPs in ihren Reden \emph{negativ} unterbrochen werden. Hierfür werden Reden bezüglich der Anzahl an Zurufen, Gegenrufen, Widerspruch und Lachen über den*die Redner*in untersucht.
 
-\textbf{Hypothese 3:} \emph{Frauen werden häufiger als Männer während einer Rede negativ Unterbrochen}
+\textbf{Hypothese 3:} \emph{Frauen werden häufiger als Männer während einer Rede negativ unterbrochen}
 
 \todo[inline]{ SO?? GG NEU!!!!: Eine weitere Unterbrechung der Render*innen können Rückfragen darstellen - allerdings ist hier eine eindeutige negative Intention nicht anzunehmen. Auf Basis der Arbeiten von \textcite{brescoll_2011} und \textcite{eagly_2002} wäre zu erwarten, dass weiblichen MPs bei Themen, welche stereotypisch tendenziell nicht mit Frauen verbunden werden, häufiger Inkompetenz unterstellt wird. Eine Untersuchung dieser Annahme (!!!! einfügen Fußnote: z.b. dies anhand der Anzahl an Rückfragen äußern, welche während einer Rede gestellt werden!!!!) bleibt allerdings in der vorliegenden Arbeit ausgespart}
 
@@ -441,7 +441,7 @@ Anbei sollen einige Kontrollvariablen aufgeführt werden, welche bei den Hypothe
     \item Überprüft werden mit diesen Kontrollvariablen die Unterbrechungen und Rückfragen. 
 \end{itemize}
 
-\todo[inline]{ÜBERSICHT DER HYPOTHESEN NOCHMA!!! oder?}
+\todo[inline]{ÜBERSICHT DER HYPOTHESEN NOCHMA!!! oder? Vorschlag: Wir nehemn hier die Kontrollvarialben raus }
 
 \Chapter{Datengrundlage und Methodik}\label{kapitel:datengrundlage}
 
@@ -554,12 +554,12 @@ Für zukünftige weitere Erhebungen benötigt es ein möglichst interdisziplinä
 \end{table}
 
 Mittels des Diktionärs kann nun der Anteil genderinklusiver Begriffe und Formulierungen in den jeweiligen Reden untersucht und Hypothese 1 (siehe Kapitel \ref{kapitel:hypothese1}) überprüft werden. Es ist allerdings zu berücksichtigen, dass ein bloßes zählen geschlechterinklusiver Begriffe und Formulierungen nicht ausreichend für die Hypothesenprüfung ist:
-Die unterschiedliche Länge der Reden bedingt, dass längere Reden vermutlich mehr geschlechterinklusive Passagen enthalten. Sehr kurze Reden\footnote{Beispielsweise sei hier die Wahl des Bundestagspräsidenten bei der ersten Sitzung des 19. Bundestages genannt: \enquote{Der Kollege Dr. Wolfgang Schäuble ist vorgeschlagen. – Ich darf Sie fragen: Sind Sie bereit, zu kandidieren?} Dr. Wolfgang Schäuble (CDU/CSU): \enquote{Ja, Herr Präsident.}. Die Antwort Wolfgang Schäubles wird als Rede in den digitalen Protokollen des Bundestages vermerkt.} enthalten hingegegen vermutlich keine genderinklusiven Begriffe und Formulierungen. Aufgrund dieser Umstände wird der Anteil an geschlechterinklusiven Wörtern im Verhältnis zur Länge der Reden untersucht. 
+Die unterschiedliche Länge der Reden bedingt, dass längere Reden vermutlich mehr geschlechterinklusive Passagen enthalten. Sehr kurze Reden\footnote{Beispielsweise sei hier die Wahl des Bundestagspräsidenten bei der ersten Sitzung des 19. Bundestages genannt: \enquote{Der Kollege Dr. Wolfgang Schäuble ist vorgeschlagen. -- Ich darf Sie fragen: Sind Sie bereit, zu kandidieren?} Dr. Wolfgang Schäuble (CDU/CSU): \enquote{Ja, Herr Präsident.}. Die Antwort Wolfgang Schäubles wird als Rede in den digitalen Protokollen des Bundestages vermerkt.} enthalten hingegegen vermutlich keine genderinklusiven Begriffe und Formulierungen. Aufgrund dieser Umstände wird der Anteil an geschlechterinklusiven Wörtern im Verhältnis zur Länge der Reden untersucht. 
 Reden, welche kürzer als 100 Wörter sind (460 von den untersuchten 81.86 Reden) werden in der Analyse nicht berücksichtigt, da diese sich im Charakter von der übrigen Plenardebatte deutlich unterscheiden. Hierbei handelt es sich zumeist um Antworten an das Präsidium oder Rückfragen an Redner*innen.
 
 Mittels einer Boxplot-Grafik können die Mittelwerte und die Streuung der Anteile genderinklusiver Begriffe sowie die Formulierungen in den Reden anschließend visualisiert werden. Ein t-Test \parencite[vgl.][164ff.]{diaz-bone_2018} ermöglicht anschließend eine Hypothesenprüfung gegen die Nullhypothese $H_0$ (\emph{Frauen und Männer verwenden in ihren Reden gender-fair language gleich häufig.}).
 
-\subsection{Automatisierte Erfassung von Themen der Reden}
+\subsection{Automatisierte Erfassung von Themen der Reden} \label{kapitel:methode_inhalte}
 
 \citeauthor{back_2018} weisen in ihrer ländervergleichenden Untersuchung bereits auf die Möglichkeiten der automatisierten Erfassung von Themen und Stimmung in Texten (\enquote{automated
 content analysis methods}) hin \parencite*[18]{back_2018}. Mittels solcher automatisierter Inhaltsanalysen ist es möglich, große Datensätze auszuwerten und zu erfassen. Zwar ist es auch zunehmend mit qualitativen Methoden möglich, große Textmengen zu bearbeiten und zu bewerten \parencite[vgl.][]{raediker_2019} -- allerdings ist trotz computergestützter und immer komplexerer Auswertungssoftware auch dem Grenzen gesetzt (!!!GRAMMA!!!). Ein Großteil der Codierung muss weiterhin manuell erfolgen und Kategorien müssen eigenständig definiert werden \parencite[52f.]{raediker_2019}. 
@@ -582,25 +582,27 @@ Eine Analyse mittels LDA setzt z.B. voraus, dass die Anzahl der Themen eines Dat
 
 Aus diesen Gründen wird auf das kürzlich entwickelte \emph{structural topic model} (STM) zurückgegriffen -- eine Variante von LDA, welche die beschriebende Limitierung durch Erweiterungen umgehen kann \parencite[640]{mishler_2015}.\footnote{STM wurde 2018 mit dem \emph{Statistical Software Award} der {Society of Political Methodology} (SPM) ausgezeichnet und für zuletzt für eine Vielzahl an Pubikationen genutzt. Die Breite der Anwendungsmöglichkeiten zeigt sich schon durch die Vielfältigkeit der Untersuchungsgegenstände: Etwa die Untersuchung von Twitter-Nachrichten während der Ukraine Krise \parencite{mishler_2015}, eine Analyse der Texte Francis Bacons des 17. Jahrhunderts \parencite{grajzl_2019} oder die -- dieser Untersuchung sehr nahen -- Studie über die Reden des 18. Deutschen Bundestages zur sogenannten \emph{Flüchtlingskrise} \parencite{geese_2019}.}
 
-Mittels der Protokolle des 19. Deutschen Bundestages und STM ist es möglich, sowohl die Häufigkeit als auch den Inhalt der Themen der Parlamentsdebatten zu bestimmen und Unterschiede in den Thematisierungen nach Geschlecht der Abgeordneten festzustellen. Anders als \textcite{back_2014} kann somit \emph{ohne Vorannahmen} bezüglich der Themenwahl von männlichen und weiblichen MPs vorgegangen werden und eine vorherige Unterteilung in \emph{soft} und \emph{hard policies}, welche geschlechtsspezifisch favorisiert würden, kann ausgespart bleiben. Mittels dieser Methode ist es außerdem möglich, Themen zu entdecken, welche bisher noch nicht als geschlechtsspezifisch identifiziert wurden.
+Mittels der Protokolle des 19. Deutschen Bundestages und STM ist es möglich, sowohl die Häufigkeit als auch den Inhalt der Themen der Parlamentsdebatten zu bestimmen und Unterschiede in den Thematisierungen nach Geschlecht der Abgeordneten festzustellen. Anders als \textcite{back_2014} kann somit \emph{ohne Vorannahmen} bezüglich der Themenwahl von männlichen und weiblichen MPs vorgegangen werden und eine vorherige Unterteilung in \emph{soft} und \emph{hard policies}, welche geschlechtsspezifisch favorisiert würden, kann ausgespart bleiben. Mittels dieser Methode ist es außerdem möglich, Themen zu entdecken, welche bisher noch nicht als vermeintlich geschlechtsspezifisch identifiziert wurden.
 
-Um die Hypothese 2 (siehe Kapitel \ref{kapitel:hypothese2}) zur Thematisierung von Reden nach Geschlecht zu untersuchen, werden zunächst die Anzahl der Themen sowie die mit diesen Themen verbundenen Wörter bestimmt. Anschließend werden die Topics mit einem oder mehreren Schlagwörtern (\emph{Label}) versehen. Um diese Labels möglichst präzise zu definieren, werden sowohl die zehn Wörter, welche mit der höchsten Wahrscheinlichkeit (\emph{highest probablity}) in diesem Topic vorkommen und die Wörter, welche am exklusivsten\footnote{Hierfür wird der \emph{FREX}-Algorithmus, welcher auf der Arbeit von \textcite{airoldi_2016} basieren \parencite[12]{roberts_2018}, genutzt. Dieser wichtet die in den Topics vorhandenen Wörter nach ihrer Gesamthäufigkeit und wie exklusiv diese in diesem Topic im Vergleich zu den anderen Topics vorkommen \parencite[13f.]{roberts_2018}.} in diesem Topic vertreten sind, individuell ausgewertet und verglichen \parencite[13f.]{roberts_2018}. So könnten für die in Abb. \ref{fig:lda_example} gezeigten Beispiele etwa die Labels \emph{Gen} (gelb), \emph{Organismus} (rosa), \emph{Nervenbahnen} (grün) und \emph{Datenverarbeitung} (blau) vergeben werden.
-Es ist davon auszugehen, dass auch Topics gefunden werden, welche nicht mit einem Label versehen werden können – etwa ein Topic, welches nur aus Begrüßungs- und Verabschiedungsfloskeln besteht\footnote{Da diese Wortkombinationen besonders gehäuft auftreten, wird hier ein gemeinsames Topic vermutet – allerdings ist es für diese Auswertung nicht interessant, da jeder Redebeitrag im Bundestag mit einer Begrüßung beginnt.}. Auch Topics, welche sich nicht sinnvoll zusammenführen lassen, sind bei automatisierten Topic Models üblich \parencites[262]{mimno_2011}[11]{grajzl_2018}. Diese Topics werden, wenn beide Autor*innen übereinstimmen, aus der weiteren Auswertung entfernt. Bei Uneinigkeit bezüglich der Labels der Topics werden die Reden, welche vor allem dieses Topic beinhalten, herangezogen und anschließend ein Label vergeben.
+Um die Hypothese 2 (siehe Kapitel \ref{kapitel:hypothese2}) zur Thematisierung von Reden nach Geschlecht zu untersuchen, werden zunächst die Anzahl der Themen sowie die mit diesen Themen verbundenen Wörter bestimmt. Anschließend werden die Topics mit einem oder mehreren Schlagwörtern (\emph{Label}) versehen. Um diese Labels möglichst präzise zu definieren, werden sowohl die zehn Wörter, welche mit der höchsten Wahrscheinlichkeit (\emph{highest probablity}) in diesem Topic vorkommen und die Wörter, welche am exklusivsten\footnote{Hierfür wird der \emph{FREX}-Algorithmus, welcher auf der Arbeit von \textcite{airoldi_2016} basieren \parencite[12]{roberts_2018}, genutzt. Dieser wichtet die in den Topics vorhandenen Wörter nach ihrer Gesamthäufigkeit und wie exklusiv diese in diesem Topic im Vergleich zu den anderen Topics vorkommen \parencite[13f.]{roberts_2018}.} in diesem Topic vertreten sind, individuell ausgewertet und verglichen \parencite[13f.]{roberts_2018}. 
 
-Abschließend dann eine Untersuchung bezüglich der Thematisierung nach Geschlecht der Abgeordneten möglich – hierbei wird untersucht, ob ein signifikanter Unterschied zwischen den beiden Gruppen (männliche und weibliche Abgeordnete) zu beobachten ist \parencite[vgl.][3]{roberts_2013}. 
+Es ist davon auszugehen, dass auch Topics gefunden werden, welche nicht mit einem Label versehen werden können -- etwa ein Topic, welches nur aus Begrüßungs- und Verabschiedungsfloskeln besteht\footnote{Da diese Wortkombinationen besonders gehäuft auftreten, wird hier ein gemeinsames Topic vermutet -- allerdings ist es für diese Auswertung nicht interessant, da jeder Redebeitrag im Bundestag mit einer Begrüßung beginnt.}. Auch Topics, welche sich nicht sinnvoll zusammenführen lassen, sind bei automatisierten Topic Models üblich \parencites[262]{mimno_2011}[11]{grajzl_2018}. Diese Topics werden, wenn beide Autor*innen übereinstimmen, aus der weiteren Auswertung entfernt. Bei Uneinigkeit bezüglich der Labels der Topics werden die Reden, welche vor allem dieses Topic beinhalten, herangezogen und anschließend ein Label vergeben.
+
+Abschließend dann eine Untersuchung bezüglich der Thematisierung nach Geschlecht der Abgeordneten möglich -- hierbei wird untersucht, ob ein signifikanter Unterschied zwischen den beiden Gruppen (männliche und weibliche Abgeordnete) zu beobachten ist \parencite[vgl.][3]{roberts_2013}. 
 
 
 \subsection{Erfassung von Unterbrechungen}
 
 Da der Stenografische Dienst des Bundestages nicht nur den Wortlaut der Reden sondern auch Unterbrechungen, Zustimmung, Rückfragen und auch sonstige Zwischenfälle dokumentiert, es es möglich, die Unterbrechungen der Reden auszuwerten (vgl. Abb. \ref{fig:protokoll_bsp}). Hierbei kann zwischen positiv intendierten Unterbrechungen (Beifall, Heiterkeit, Zustimmung) und negativ intendierten Unterbrechungen (Widerspruch, Zwischenruf, Lachen\footnote{Der Stenografische Dienst dokumentiert das Lachen beispielsweise über einen Witz als Heiterkeit im Unterschied zu (aus)lachen.}) unterschieden werden.
-Sofern möglich, dokumentieren die Stenograf*innen des Bundestags auch, wer den Zwischenruf geäußert hat und wie der Zwischenruf lautete. Diese Dokumentation ist auch in den XML-Dateien der Bundestagsprotokolle (siehe Kapitel \ref{datengrundlage-und-operationalisierung}) vorhanden und kann genutzt werden, um die Anzahl der Unterbrechungen pro Rede auszuwerten.
+Sofern möglich, dokumentieren die Stenograf*innen des Bundestags auch, wer den Zwischenruf geäußert hat und wie der Zwischenruf lautete. Diese Dokumentation ist auch in den XML-Dateien der Bundestagsprotokolle (siehe Kapitel \ref{kapitel:datengrundlage}) vorhanden und kann genutzt werden, um die Anzahl der Unterbrechungen pro Rede auszuwerten.
 
-Wie in Kapitel \ref{kap:redenanteile} bereits erläutert gibt es bezüglich der Redezeiten im 19. Deutschen Bundestag nicht die bis dato übliche Regelung der sogenannten Berliner Stunde \parencite[vgl.][]{schreiner_2005}. Die Redezeit der Abgeordneten darf somit nicht länger als 15 Minuten sein, wobei längere Reden beantragt werden können und bei längeren Berichten der Bundesregierung auch der Opposition ein längeres Rederecht zugestanden wird. Es ist davon auszugehen, dass längere Beiträge häufiger unterbrochen werden, da hier eine 
+Wie in Kapitel \ref{kap:redenanteile} bereits erläutert gibt es bezüglich der Redezeiten im 19. Deutschen Bundestag nicht die bis dato übliche Regelung der sogenannten Berliner Stunde \parencite[vgl.][]{schreiner_2005}. Die Redezeit der Abgeordneten darf somit nicht länger als 15 Minuten sein, wobei längere Reden beantragt werden können und bei längeren Berichten der Bundesregierung auch der Opposition ein längeres Rederecht zugestanden wird. Es ist davon auszugehen, dass längere Beiträge häufiger unterbrochen werden. Deshalb wird für die weitere Auswertung nicht die absolute Anzahl an Unterbrechung sondern die Unterbrechungen im Verhältnis zur Länge der Rede in Wörtern untersucht.
 
-\todo[inline]{Erklärung der Unterschiedlichen Arten von Unterbrechungen. Verweis auf Abb. \ref{fig:protokoll_bsp}.
-Lachen vs. Heiterkeit. Zurufe und Widerspruch. 
-Überprüfung Fraktionsvorsitz
-ANOVA?}
+Des Weiteren wird davon ausgegangen, dass Fraktionsvorsitzende und stellvertretende Fraktionsvorsitzende ebenfalls häufiger unterbrochen werden, da sie eher bei Themen sprechen, welche eine größere Medienaufmerksamkeit bedienen und hierbei oft mehr Abgeordnete anwesend sind\footnote{Eine besonders intensive Auseinandersetzung mit Unterbrechungen und deren Häufigkeiten findet sich in der Auswertung \enquote{Das gespaltene Parlament} der Süddeutschen Zeitung von 24. April 2018 \parencite{sueddeutsche_2018}}.
+
+Aus diesen Gründen soll, neben der Rolle des Geschlechts bei Unterbrechungen, auch untersucht werden, ob (stellvertretende) Fraktionsvorsitzende im Vergleich zu anderen Abgeordneten häufiger unterbrochen werden und ob sich Unterschiede bei den Parteien bezüglich negativ intendierter Unterbrechungen feststellen lassen.
+
+Mittels einer Boxplot-Grafik können die Mittelwerte und die Streuung der Unterbrechungen in den Reden visualisiert werden. Ein t-Test \parencite[vgl.][164ff.]{diaz-bone_2018} ermöglicht anschließend eine Hypothesenprüfung gegen die Nullhypothese $H_0$ (\emph{Frauen und Männer werden in den Reden gleich häufig negativ unterbrochen.}). Es wird anschließend verglichen, ob ein Unterschied bei Fraktionsvorsitzenden bezüglich der Unterbrechungen festzustellen ist. Unterschiede zwischen den Parteien werden über eine Varianzanalyse überprüft.
 
 \Chapter{Ergebnisse und Auswertungen}
 
@@ -616,7 +618,7 @@ ANOVA?}
 
 %
 
-\begin{table}
+\begin{table}[htb]
     \centering
     \caption[Die zehn häufigsten genderinklusiven Formulierungen in den Reden des Bundestages]{Die zehn häufigsten genderinklusiven Formulierungen in den Reden des Bundestages. Die Kleinschreibung ist technisch bedingt.}
     \input{document/tables/genderinklusive_formulierungen_top.tex}
@@ -644,7 +646,9 @@ ANOVA?}
 
 \section{Themen der Reden}
 
-\todo[inline]{JOSEF: es fehlt noch ein Überblick wie die labels gebildet wurden...  }
+Wie in Kapitel \ref{kapitel:methode_inhalte} bereits beschrieben bietet STM den Vorteil, dass die Anzahl der Topics des Datensatzes nicht vorgegeben werden muss -- mittels der sogenannten \emph{spectral analysis} lässt sich die Anzahl der Topic eines Dokuments reproduzierbar bestimmen \parencites[11]{roberts_2018}[30ff.]{roberts_2016}.\footnote{Ein anderes Vorgehen zur Bestimmung der Anzahl der Topics findet sich bei \citetitle{roberts_2014} von \textcite[6ff.]{robert_2014}. Hierbei wird mit einer Vielzahl an unterschiedlichen Topicanzahlen gearbeitet um anschließend manuell die Anzahl der Topics zu selektieren. Da ein solches Verfahren den Umfang dieser Arbeit aber übersteigen würde, wurde das einfachere -- wenn auch weniger akkurate -- Spektralverfahren gewählt.} Diese Analyse berechnet 100 Topics in den untersuchten Reden des 19. Deutschen Bundestages (Reden mit mehr als 100 Wörtern, von Abgeordneten mit Fraktionszugehörigkeit).
+
+Anschließend werden die Topics, wie in Kapitel \ref{kapitel:methode_inhalte} beschrieben, mit Labels versehen. Beispielhaft sollen hier auf die wahrscheinlichsten Wörter eines Topics \ref{kapitel:methode_inhalte} und die Wörter, welche mittels des FREX-Algorithmus ausgewertet wurden, in Abbildung \ref{fig:example_labels} verwiesen werden. 
 
 
 
