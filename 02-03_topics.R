@@ -60,7 +60,6 @@ write_rds(stm_speeches_fit, "data/stm/stm_speeches_fit.RDS")
 stm_speeches_fit <- read_rds("data/stm/stm_speeches_fit.RDS")
 
 # Labeling der Topics, export der Wörter pro Topic
-
 capture.output(labelTopics(stm_speeches_fit, n = 10), file = "results/stm_topics.txt")
 
 # Beispielgrafik für Topic Label mit Most Probable Words
@@ -69,6 +68,21 @@ plot(stm_speeches_fit, type = "labels", labeltype = "frex", topics = 1)
 # Die Labels müssen anschließend benannt werden, unsinnige Topics werden aussortiert
 stm_labels <- read_csv("results/stm_labels.csv") %>%
   filter(!str_detect(Label, "!"))    # Labels mit Ausrufezeichen (kritisch) aussortieren
+
+# Beispiele für most-probable words und FREX Beschreibung für den Text
+pdf(file="document/images/stm_label_prob_example.pdf", width = 7, height = 5)
+par(mar=c(0,0,0,0)) # Oben und seitlich Platz abschneiden
+plot(stm_speeches_fit, type = "labels", topics = c(6,28,76))
+dev.off()
+
+pdf(file="document/images/stm_label_frex_example.pdf", width = 7, height = 5)
+par(mar=c(0,0,0,0)) # Oben und seitlich Platz abschneiden
+plot(stm_speeches_fit, type = "labels", labeltype = "frex", topics = c(6,28,76))
+dev.off()
+
+# Die Labels werden von zwei Personen kontrolliert, strittige Labels werden mit den entsprechenden Redepassagen überprüft
+stm_critical_topics <- read_csv("results/critical_topics.csv")
+
 
 # Geschlechterunterschiede im Bundestag
 
