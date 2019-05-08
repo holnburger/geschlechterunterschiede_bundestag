@@ -1,101 +1,101 @@
-Topic,Label
-1,!Antragsberatung
-2,Banken
-3,Bundeswehr Mittelmeer
-4,Petitionen
-5,!Haushalt
-6,Digitalisierung
-7,Landwirtschaft
-8,Asyl
-9,Venezuela
-10,Religionsfreiheit
-11,Sport
-12,!Zensus
-13,Fahrverbote
-14,Forschung
-15,Extremismus
-16,Krieg im Jemen
-17,Zuwanderung
-18,Tierschutz
-19,Strukturwandel
-20,!Zölle
-21,Sichere Herkunftsstaaten
-22,Familiennachzug
-23,Entwicklungszusammenarbeit
-24,Migration und Freizügigkeit
-25,Glyphosat
-26,Afghanistaneinsatz
-27,Pflege
-28,INF-Vertrag
-29,Ferkelkastration
-30,!Kolonialismus
-31,Mietpreise
-32,Schwangerschaftsabbruch (Strafen)
-33,Afghanistan
-34,Finanzierung Parteien
-35,Arbeitsmarkt
-36,Verteidigungspolitik
-37,Familienpolitik
-38,Rohingya-Völkermord
-39,!Unsinn
-40,Hartz IV
-41,Türkei
-42,Schwangerschaftsabbruch (Werbung)
-43,Stickoxid-Grenzwerte
-44,Haushalt
-45,Frankreich und EU
-46,!Deutsche Welle
-47,!Geldwäsche
-48,!Unsinn
-49,Wechselmodell
-50,Diagnostik Schwangerschaft
-51,Kinderbetreuung
-52,Investitionsschutz
-53,Steuern
-54,Energiewende
-55,Gewerbesteuer
-56,Organspende
-57,Verteidigungspolitik
-58,!Föderalismus
-59,!Kindergeld Rumänien
-60,!Ausgaben
-61,Klimaschutz
-62,Seenotrettung
-63,Wohnungsnot
-64,Migrationspakt
-65,Datenschutz
-66,Brexit
-67,Wolf
-68,Anlegerschutz
-69,Elektromobilität
-70,Schienenverkehr
-71,Klimawandel
-72,!Rechtsstaatlichkeit
-73,Humanitäre Missionen
-74,Innenministerium und Seenotrettung
-75,Wahlen
-76,Gender Pay Gap und Teilzeit
-77,Handwerk
-78,Bildung
-79,Ländlicher Raum
-80,!Renten
-81,Gleichgeschlechtliche Ehe
-82,Digitaler Wettbewerb
-83,Kriminalstatistik und IT-Sicherheit
-84,Europa
-85,Rente
-86,Wohnungsmarkt
-87,Banken
-88,Antisemitismus
-89,Rechtsfragen
-90,!Umweltschutzdemonstrationen
-91,Bankenrettung
-92,Zoll
-93,Buchpreisbindung
-94,Mindestlohn
-95,Altersvorsorgung
-96,Plastik
-97,!Finanzen
-98,Arbeitskampf
-99,!Armenien
-100,Cannabis
+Topic,Labels_JH,Labels_GG,Label
+1,!Antragsberatung,!,!
+2,Banken,Banken ,Banken
+3,Bundeswehr Mittelmeer,sea guardian,Sea Guardian
+4,Petitionen,Demokratie,
+5,!Haushalt,!,!
+6,Digitalisierung,KI,"Digitalisierung, KI"
+7,Landwirtschaft,Landwirtschaft,Landwirtschaft
+8,Asyl,Asylverfahren,Asylverfahren
+9,Venezuela,!,!
+10,Religionsfreiheit,Religionsfreiheit,Religionsfreiheit
+11,Sport,Sport,Sport
+12,!Zensus,Verbraucher*innenrechte,
+13,Fahrverbote,Fahrverbote,Fahrverbote
+14,Forschung,Forschung ,Forschung
+15,Extremismus,Extremismus,Extremismus
+16,Krieg im Jemen,Rüstungsexporte,
+17,Zuwanderung,subsidär Familiennachzug,subsidiär Schutzberechtigte
+18,Tierschutz,Tierschutz,Tierschutz
+19,Strukturwandel,Kommission,
+20,!Zölle,!,!
+21,Sichere Herkunftsstaaten,Herkunftsstaaten,Herkunfststaaten
+22,Familiennachzug,subsidär Familiennachzug,subsidiär Schutzberechtigte
+23,Entwicklungszusammenarbeit,Entwicklungszusammenarbeit,Entwicklungszusammenarbeit
+24,Migration und Freizügigkeit,Migration ,Migration
+25,Glyphosat,Landwirtschaft,
+26,Afghanistaneinsatz,Afghanistan,Afghanistaneinsatz
+27,Pflege,Pflege,Pflege
+28,INF-Vertrag,INF-Vertag,INF-Vertrag
+29,Ferkelkastration,Ferkelkastration,Ferkelkastration
+30,!Kolonialismus,!,!
+31,Mietpreise,Mietpreise,Mietpreise
+32,Schwangerschaftsabbruch (Strafen),Paragraf 219a,
+33,Afghanistan,Afghanistan,Afghanistan
+34,Finanzierung Parteien,Parteienfinanzierung,Parteienfinanzierung
+35,Arbeitsmarkt,Langzeitarbeitslose,
+36,Verteidigungspolitik,Bundeswehr,Verteidigungspolitik
+37,Familienpolitik,Familienpolitk,Familienpolitik
+38,Rohingya-Völkermord,Rohingya,Rohingya
+39,!Unsinn,!,!
+40,Hartz IV,Arbeitsmarkt,
+41,Türkei,!,
+42,Schwangerschaftsabbruch (Werbung),Ärzt*innen,
+43,Stickoxid-Grenzwerte,Fahrverbote,
+44,Haushalt,Bundeshaushalt,Bundeshaushalt
+45,Frankreich und EU,deutsch-französische Beziehung ,Deutsch-französische Beziehung
+46,!Deutsche Welle,!,!
+47,!Geldwäsche,!,!
+48,!Unsinn,!,!
+49,Wechselmodell,Kinder,Kinder
+50,Diagnostik Schwangerschaft,Schwangerschaft,Schwangerschaft
+51,Kinderbetreuung,Kitas,Kinderbetreuung
+52,Investitionsschutz,Innovationen,Investitionsschutz
+53,Steuern,Steuern,Steuern
+54,Energiewende,Energiewende,Energiewende
+55,Gewerbesteuer,!,Gewerbesteuer
+56,Organspende,Organspende,Organspende
+57,Verteidigungspolitik,EU Außenpolitik,
+58,!Föderalismus,Bildung,
+59,!Kindergeld Rumänien,Kindergeld,
+60,!Ausgaben,!,!
+61,Klimaschutz,Klimaschutz,Klimaschutz
+62,Seenotrettung,Seenotrettung,Seenotrettung
+63,Wohnungsnot,Wohnraum,Wohnraum
+64,Migrationspakt,Migration ,Migration
+65,Datenschutz,Datenschutz-grundverordnung,Datenschutz
+66,Brexit,Brexit,Brexit
+67,Wolf,Weidetierhaltung,
+68,Anlegerschutz,kfw,
+69,Elektromobilität,Mobilität,
+70,Schienenverkehr,Infrastruktur,Infrastruktur
+71,Klimawandel,Klimawandel,Klimawandel
+72,!Rechtsstaatlichkeit,Karlsruhe,
+73,Humanitäre Missionen,humanitäre Hilfe,Humanitäre Hilfe
+74,Innenministerium und Seenotrettung,!,
+75,Wahlen,Europawahl,
+76,Gender Pay Gap und Teilzeit,gleichberechtigung,Gleichberechtigung
+77,Handwerk,!Handwerk,
+78,Bildung,Studium/Bildung,Studium/Bildung
+79,Ländlicher Raum,ländlicher raum,Ländlicher Raum
+80,!Renten,!,!
+81,Gleichgeschlechtliche Ehe,Ehe für Alle,Ehe für Alle
+82,Digitaler Wettbewerb,Wirtschaftspolitik,
+83,Kriminalstatistik und IT-Sicherheit,Sicherheit,Sicherheit
+84,Europa,EU,EU
+85,Rente,Rentenversicherung,Rente
+86,Wohnungsmarkt,Wohnraum,Wohnungsmarkt
+87,Banken,Banken ,Banken
+88,Antisemitismus,Antisemitismus,Antisemitismus
+89,Rechtsfragen,musterfestellungsklage,
+90,!Umweltschutzdemonstrationen,!,!
+91,Bankenrettung,Finanzen,Finanzen
+92,Zoll,Zoll,Zoll
+93,Buchpreisbindung,Buchpreisbindung,Buchpreisbindung
+94,Mindestlohn,Mindestlohn,Mindestlohn
+95,Altersvorsorgung,Altersversorgung,Altersvorsorgung
+96,Plastik,Mikroplastik,Plastik
+97,!Finanzen,Bundeshaushalt,
+98,Arbeitskampf,Unternehmen,
+99,!Armenien,!,!
+100,Cannabis,Cannabis ,Cannabis
