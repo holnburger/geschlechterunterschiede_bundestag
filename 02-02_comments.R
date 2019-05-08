@@ -3,6 +3,7 @@
 #-------------------#
 
 library(tidyverse)
+library(gridExtra)
 library(stargazer)
 
 # Überprüfung Hypothesen zu Unterbrechungen und Zwischenfragen
@@ -67,31 +68,37 @@ mdb_comments_overview <- mdb_comments %>%
 
 write_rds(mdb_comments_overview, "data/BT_19/comments_overview.RDS")
 
-# Auswertung
+#------------#
+# Auswertung #
+#------------#
 
+# Grafiken: Histogramme für die Länge der Reden in Wörtern und Anzahl der Unterbrechungen
+histo_woerter <- mdb_comments_overview %>%
+  ggplot(aes(woerter)) +
+  geom_histogram(binwidth = 30) +
+  labs(title = "Länge der Reden in Wörtern",
+       subtitle = "Auswertung von 7.843 Reden des Bundestages mit mehr als 100 Wörtern",
+       y = "Anzahl der Reden",
+       x = "Anzahl der Wörter") +
+  theme_minimal()
 
+histo_unterbrechung <- mdb_comments_overview %>%
+  ggplot(aes(neg_kommentare)) +
+  geom_histogram(binwidth = 1) +
+  labs(title = "Negative Unterbrechungen pro Reden Bundestagsrede",
+       subtitle = "Auswertung von 7.843 Reden des Bundestages mit mehr als 100 Wörtern",
+       y = "Anzahl der Reden",
+       x = "Negative Unterbrechungen") +
+  theme_minimal()
 
-mdb_comments_overview %>%
-  ggplot(aes(x = as.character(geschlecht), y = neg_kommentare)) +
-  geom_jitter()
-
-mdb_comments_overview %>%
-  ggplot(aes(x = as.character(vorsitz), y = woerter)) +
-  geom_boxplot()
-
-mdb_comments_overview %>%
-  ggplot(aes(x = neg_kommentare)) +
-  geom_histogram()
-
-
+ggsave("document/images/histogram_unterbrechung.pdf", arrangeGrob(histo_woerter, histo_unterbrechung))
 
 #--------------#
 #  Statsitics  #
 #--------------#
 
-bt_comments_overview %>% 
-  mutate(Geschlecht = ifelse(gender == 0, "weiblich", "männlich")) %>%
-  group_by(Geschlecht) %>%
+mdb_comments_overview %>% 
+  group_by(geschlecht) %>%
   summarise(min = min(neg_kommentare), 
             max = max(neg_kommentare),
             mean = mean(neg_kommentare),
@@ -100,11 +107,6 @@ bt_comments_overview %>%
             var = var(neg_kommentare)) %>%
   knitr::kable(format = "latex", booktabs = TRUE) %>%
   write_file(., "results/unterbrechungen_pro_rede.tex")
-
-hist(bt_comments_overview$neg_kommentare, main = "Histogram: Unterbrechungen während \n Bundestagsreden", 
-     xlab = "Unterbrechungen")
-
-bt_comments_overview %>% select(gender, neg_kommentare) %>% split(.$gender) %>% map(summary)
 
 # !!!! Unbedingt noch Unterbrechung pro Länge der Rede untersuchen
 # !!! Fraktionsvorsitzende
