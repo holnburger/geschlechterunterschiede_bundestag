@@ -20,6 +20,7 @@
 \usepackage{etoolbox}
 \usepackage{pdfpages}
 \usepackage{subcaption}
+\usepackage{tablefootnote}
 \usepackage{chngcntr}
 \usepackage[hyphens]{url}
 \usepackage[
@@ -161,7 +162,7 @@ Der anfängliche Versuch alle 5 Ebenen mit einem \emph{Repräsentationsbegriff} 
 
 Der theoretische Hintergrund, die Relevanz des Untersuchungsgegenstandes sowie bisherige Untersuchungen zur Repräsentation von Frauen sollen zunächst detailliert dargestellt werden. Auf Basis dieses Hintergrunds ist eine anschließende Entwicklung von Hypothesen sowie die Konzeption des Forschungsdesigns möglich, welche eine umfassende Untersuchung der Repräsentation von Frauen in Parlamenten ermöglicht. Hierbei wird im Besonderen auch die von \textcite[18]{back_2018} hingewiesene Möglichkeit der automatisierten Textanalyse genutzt.
 
-Im Anschluss wird die Forschungsfrage \enquote{\emph{Inwiefern unterscheiden sich Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität}} umfassend untersucht. Während eine Vielzahl an Studien den Schwedischen Riksdag \parencites{!!!!!??????} \todo[inline]{würde jetzt nicht sagen, dass eine Vielzahl den schwedischen Riksdag untersuchen -- nur, dass es wenige oder keine gibt, die sowas schon beim Bundestag gemacht haben. Bäck legt halt den Fokus auf den Riksdag. Man kann ja noch als Ausnahme Bäck 2018 dazu nehmen, die einen Ländervergleich macht in dem auch Deutschland vorkommt.}fokussiert, ist der Deutsche Bundestag in Hinblick auf geschlechtsbezogene Repräsentationsunterschiede in den Parlamentsdebatten bis dato weniger bis gar nicht erforscht und daher Gegenstand dieser Untersuchung.
+Im Anschluss wird die Forschungsfrage \enquote{\emph{Inwiefern unterscheiden sich Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität}} umfassend untersucht. Während eine Vielzahl an Studien den Schwedischen Riksdag \parencites{!!!!!??????} \todo[inline]{würde jetzt nicht sagen, dass eine Vielzahl den schwedischen Riksdag untersuchen -- nur, dass es wenige oder keine gibt, die sowas schon beim Bundestag gemacht haben. Bäck legt halt den Fokus auf den Riksdag. Man kann ja noch als Ausnahme Bäck 2018 dazu nehmen, die einen Ländervergleich macht in dem auch Deutschland vorkommt. JH: Und bitte keine Fragezeichen und ausrufezeichen in eine Funktion schreiben, das rendern dauert dann ewig ;)}fokussiert, ist der Deutsche Bundestag in Hinblick auf geschlechtsbezogene Repräsentationsunterschiede in den Parlamentsdebatten bis dato weniger bis gar nicht erforscht und daher Gegenstand dieser Untersuchung.
 
 In der abschließenden Diskussion in Kapitel \ref{kapitel:diskussion} wird ausführlich auf die einzelnen Dimensionen der Repräsentation am Beispiel des 19. Bundestages eingegangen.\todo[inline]{hier noch einige Infos zu den Ergebnissen anschließen und die Dimensionen in die Arbeit einbauen - ...?!?!?! JH: Jap }
 
@@ -432,7 +433,7 @@ Alle dieser Arbeit zugrunde liegenden Daten und die zur Auswertung und Aufbereit
 
 \section{Überblick der erfassten Reden}\label{kapitel:ueberblick_reden}
 
-Bis zum 12. April 2019 wurden 8.764 Reden im 19. Deutschen Bundestag gehalten -- diese beinhalten auch Reden von Gästen und Regierungsmitgliedern. Allerdings stellt das \emph{Open Data Portal} des Bundestages umfassende (biografische) Daten (beispielsweise Geburtsjahr, Geschlecht, Wahlkreis, Ausschussmitgliedschaften) nur für Abgeordnete bereit. Da nachfolgend die Debatten im Parlament ausgewertet werden und die Reden von Regierungsmitgliedern eher einen berichtenden und die Reden von Gästen einen informellen (!!!! besser : informativen oder wie ist informell hier gemeint? !!! Was denkst du? -) Charakter besitzen, sollen nachfolgend nur die Redebeiträge von Abgeordneten untersucht werden.
+Bis zum 12. April 2019 wurden 8.764 Reden im 19. Deutschen Bundestag gehalten -- diese beinhalten auch Reden von Gästen und Regierungsmitgliedern. Allerdings stellt das \emph{Open Data Portal} des Bundestages umfassende (biografische) Daten (beispielsweise Geburtsjahr, Geschlecht, Wahlkreis, Ausschussmitgliedschaften) nur für Abgeordnete bereit. Da nachfolgend die Debatten im Parlament ausgewertet werden und die Reden von Regierungsmitgliedern und Gästen eher einen berichtenden Charakter besitzen, sollen nachfolgend nur die Redebeiträge von Abgeordneten untersucht werden.
 
 Der Anteil an Reden von weiblichen MPs entspricht mit 31,0\% (vgl. Tabelle \ref{table:uebersicht_reden}) annähernd dem Frauenanteil im Bundestag von 31,8\% (222 Frauen)\footnote{\url{siehe-https://www.bundestag.de/abgeordnete/biografien/mdb_zahlen_19/frauen_maenner-529508}}.
 
@@ -457,14 +458,15 @@ Der von \textcite{back_2018} beschriebene \emph{backlash effect}, wonach ein hö
 \end{table}
 
 In der weiteren Auswertung wird nicht auf die Reden von fraktionslosen Abgeordneten eingegangen. Hintergrund hierfür ist sowohl die geringe Anzahl an fraktionslosen Redner*innen im Bundestag (zum Auswertungszeitraum waren lediglich vier der 709 Abgeordneten fraktionslos\footnote{Frauke Petry und Mario Mieruch traten kurz nach der Wahl aus der AfD aus und waren von Beginn des 19. Bundestags nicht Mitglied einer Fraktion. Im November 2018 verlies der Abgeordnete Marco Bülow die SPD-Bundestagsfraktion, im Dezember 2018 trat Uwe Kamann aus der AfD-Fraktion aus.}) als auch Probleme in der Erhebung -- Marco Bülow und Uwe Kamann hielten ihre Reden sowohl als Mitglieder ihrer Fraktion (SPD bzw. AfD) und später auch als fraktionslose Abgeordnete des Bundestags. Der Redeanteil von Frauen bei fraktionslosen Abgeordneten (vgl. Tablle \ref{table:vergleich_sitze_reden}) ist deshalb stark verzerrt -- zum Teil trifft dies auch auf die Rede- und Sitzanteile bei den Fraktionen der AfD und der SPD zu, allerdings ist diese Verzerrung aufgrund einer deutlich größeren Anzahl an Reden und Sitzen vernachlässigbar.
-Gleichzeitig gelten für fraktionslose Abgeordnete angepasste Regelungen bezüglich Anzahl der Reden und Redezeit im Vergleich zu den übrigen Abgeordneten \parencite[vgl.][583f.]{schreiner_2005}. Wie in Tabelle \ref{table:top_redner} ersichtlich, machen die fraktionslosen Abgeordneten Frauke Petry und Mario Mieruch besonders häufig von ihrem Rederecht Gebrauch.\footnote{\todo[inline]{!!!Diese Fußnote an die dazugehörige Tabelle und dann die Fußnote auf die gleiche Seite wie die Tabelle !!!}Diese Tabelle berücksichtigt nur Bundestagsabgeordnete. Die meisten Reden wurden durch Angela Merkel (126), Heiko Maas (98) und Jens Spahn (76) gehalten.} Dies lässt sich unter anderem durch die insgesamt politisch schwächere Position von fraktionslosen Abgeordneten erklären \parencite[372]{morlok_2018} -- da sie kein Antragsrecht und keine Stimmrecht und Rederecht in Ausschüssen besitzen \parencite[vgl.][]{morlok_2018}, nutzen diese vor allem ihr Rederecht im Plenum.
+Gleichzeitig gelten für fraktionslose Abgeordnete angepasste Regelungen bezüglich Anzahl der Reden und Redezeit im Vergleich zu den übrigen Abgeordneten \parencite[vgl.][583f.]{schreiner_2005}. Wie in Tabelle \ref{table:top_redner} ersichtlich, machen die fraktionslosen Abgeordneten Frauke Petry und Mario Mieruch besonders häufig von ihrem Rederecht Gebrauch. Dies lässt sich unter anderem durch die insgesamt politisch schwächere Position von fraktionslosen Abgeordneten erklären \parencite[372]{morlok_2018} -- da sie kein Antragsrecht und keine Stimmrecht und Rederecht in Ausschüssen besitzen \parencite[vgl.][]{morlok_2018}, nutzen diese vor allem ihr Rederecht im Plenum.
 
 Da sich das Redeverhalten sowie die Rechte von fraktionslosen Abgeordneten zu den Abgeordneten in Fraktionen derart unterscheidet, werden diese in der weiteren Auswertung nicht berücksichtigt, um eine Verzerrung der Ergebnisse zu vermeiden. Es werden insgesamt 8.186 Reden von insgesamt 677 Abgeordneten\footnote{Im Untersuchungszeitraum haben noch nicht alle Abgeordneten mindestens ein Mal eine Rede gehalten -- entsprechend ergibt sich die Differenz zwischen den insgesamt 709 Abgeordneten und der Anzahl an Abgeordneten in diesem Datensatz.} untersucht. 
 
 \begin{table}[htb]
     \centering
-    \caption[Abgeordnete mit den meisten Reden im 19. Deutschen Bundestag.]{Abgeordnete mit den meisten Reden im 19. Deutschen Bundestag. Auswertungszeitraum: 24. Oktober 2017 bis 12. April 2019}
+    \caption[Abgeordnete mit den meisten Reden im 19. Deutschen Bundestag.]{Abgeordnete mit den meisten Reden im 19. Deutschen Bundestag. Auswertungszeitraum: 24. Oktober 2017 bis 12. April 2019\textsuperscript{a}}
     \input{document/tables/top_redner.tex}
+    \small\textsuperscript{a} Diese Tabelle berücksichtigt nur Bundestagsabgeordnete. Die meisten Reden wurden durch Angela Merkel (126), Heiko Maas (98) und Jens Spahn (76) gehalten.
     \label{table:top_redner}
 \end{table}
 
@@ -609,15 +611,15 @@ Wie umfänglich dargelegt, wird vermutet, dass weibliche MPs häufiger als ihre 
     \label{fig:boxplot_gfl}
 \end{figure}
 
-Dies zeigt sich auch im Vergleich der Fraktionen (vgl. Abb. \ref{fig:boxplot_gfl_fraktion}). Eine Varianzanalyse mittels des Kruskal-Wallis-Test\footnote{Da der Anteil an GFL-Begriffen und Formulierungen nicht normalverteilt ist und der Levene-Test zeigt, dass die Daten nicht homoskedastisch verteilt sind, kann eine klassische einfaktorielle Fisher's ANOVA nicht durchgeführt werden \parencite[64]{huber_2014}. Auch der Boxplot (vgl. Abb. \ref{fig:boxplot_gfl_fraktion}) zeigt zahlreiche Ausreißer. Aus diesen Gründen wird der Krukal-Wallis-Test herangezogen, welche üblicherweise bei der Verletzung der Varianzhomogenität herangezogen wird \parencite[339]{kuhlenkasper_2017}. Der Kruskall-Wallis-Test vernachlässigt die Varianzhomogenität, indem die metrische, abhängige Variable (in diesem Fall der Anteil an GFL-Begriffen und Formulierungen) in Ränge umgewandelt wird \parencite[339f]{kuhlenkamp}. Im Anschluss werden die Mittelwerte der Rangsummen $bar{R}_j$ statt der metrischen Mittelwerte zwischen den Gruppen verglichen \parencite[340ff.]{kuhlenkasper_2017}} weist hier auf signifikante Unterschiede (${\chi}^2 = 120.68$, $p < 0.01$, df = 5) zwischen den Fraktionen hin.
+Dies zeigt sich auch im Vergleich der Fraktionen (vgl. Abb. \ref{fig:boxplot_gfl_fraktion}). Eine Varianzanalyse mittels des Kruskal-Wallis-Test\footnote{Da der Anteil an GFL-Begriffen und Formulierungen nicht normalverteilt ist und der Levene-Test zeigt, dass die Daten nicht homoskedastisch verteilt sind, kann eine klassische einfaktorielle Fisher's ANOVA nicht durchgeführt werden \parencite[64]{huber_2014}. Auch der Boxplot (vgl. Abb. \ref{fig:boxplot_gfl_fraktion}) zeigt zahlreiche Ausreißer. Aus diesen Gründen wird der Krukal-Wallis-Test herangezogen, welche üblicherweise bei der Verletzung der Varianzhomogenität herangezogen wird \parencite[339]{kuhlenkasper_2017}. Der Kruskall-Wallis-Test vernachlässigt die Varianzhomogenität, indem die metrische, abhängige Variable (in diesem Fall der Anteil an GFL-Begriffen und Formulierungen) in Ränge umgewandelt wird \parencite[339f]{kuhlenkasper_2017}. Im Anschluss werden die Mittelwerte der Rangsummen $\bar{R}_j$ statt der metrischen Mittelwerte zwischen den Gruppen verglichen \parencite[340ff.]{kuhlenkasper_2017}} weist hier auf signifikante Unterschiede (${\chi}^2 = 120.68$, $p < 0.01$, df = 5) zwischen den Fraktionen hin.
 Es handelt sich bei dem Kruskal-Wallis-Test um einen sogenannten Omnibus-Test \parencite[184]{backhaus_2016} -- es wird hier lediglich geprüft, ob ein signifikanter Unterschied zwischen den Gruppen festzustellen ist, nicht jedoch, welche Gruppen sich untereinander signifikant unterschieden. Eine solche Überprüfung kann mit einem sogenannten Post-Hoc-Test nachgelagert werden \parencite[196]{backhaus_2016}. In diesem Fall wird der Bonferroni-Dunn-Test genutzt. 
 
-\include{document/tables/dunn-test.tex}
+\input{document/tables/dunn-test.tex}
 
 Die Auswertung mittels des Bonferroni-Dunn-Test (siehe Tab. \ref{table:dunn_test}) zeigt, dass sich die AfD und B90/Die Grünen nicht signifikant unterschieden (die AfD unterscheidet sich allerdings signifikant von allen anderen Parteien). Dies Ergebnis widerspricht den Erwartungen. Die AfD hat sich in ihrem Bundestagswahlprogramm klar gegen die Nutzung von GFL ausgesprochen -- \enquote{Wir lehnen daher Bestrebungen auf nationaler wie internationaler Ebene ab, diese Ideologie durch Instrumente wie
 Gender-Studies, Quotenregelungen z.B. für Frauen, Propagandaaktionen wie den „Equal Pay Day“ oder die „geschlechterneutrale Sprache“ umzusetzen.} \parencite[40]{afd_2017} -- während das Bundestagswahlprogramm von B90/Die Grünen im Gegensatz hierzu in geschlechterinklusiver Sprache verfasst wurde \parencite{b90/diegrunen_2017}.
 
-Bei genauerer Betrachtung 
+Bei genauerer Betrachtung zeigt sich, dass das entwickelte Diktionär auf Basis der Arbeit von \url{geschicktgendern.de} für diese Arbeit leider unzureichend ist. Der am häufigsten genutzte, genderinklusive Begriff lautet \enquote{alle}  -- dieser findet sich im geschicktgendern-Wörterbuch als genderinklusive Variante für den Begriff \enquote{jeder}. In den Reden findet sich der Begriff \enquote{alle} 22.231 mal wieder (vgl. Tab. \ref{table:top_gender_begriffe}). Der zweithäufigste Begriff 
 
 \todo[inline]{Kritik an dem entwickelten DIktionär bzgl. der geschickt gendern -> teilweise findet zu viel (einbauen der 10 häufigsten und 10 wenigsten) genderinklusoven Wörter -> kritik DOmänenabhängigkeit : geschickt-gendern hier ein unpassendes Wörterbuch für die Untersuchung politischer Reden. Auch eine Betrachtung der GFL ohne Formulierungen wie "Kolleginnen und Kollegen" zeigen hier keine Unterschiede. Diktionär ist deshalb ungenügend für die Auswertung. Sie auch: Häufigster inklusiver Begriff \enquote{alle} -- dieser findet sich im geschickt-gendern Wörterbuch als genderinklusive Variante von \enquote{jeder}. Er sit allerdings so unspezifisch, dass er die Erhebung verzerrt. Im Vergleich zu den anderen Begriffen wird er 22.231 mal in den Reden gefunden, der zweithäufigste inklusive Begriff \enquote{frei} findet sich 7.095 mal in den Reden -- dieser wird auf der geschickt-gendern Webseite als genderinklusive Variante von \enquote{herrenlos} vorgeschlagen, wird in den Reden allerdings vermutlich eher unspezifischer verwendet. Auch Parteien werden untersucht.}
 
@@ -811,28 +813,28 @@ Die Forderungen einer deskriptiven parlamentarischen Geschlechtergleichheit habe
 
 Um geschlechtsbezogene Repräsenatationsunterschiede auf allen fünf Ebenen zu analysieren wird die Frage \emph{‚Inwiefern unterscheiden sich Redebeiträge und Verhalten von weiblichen und männlichen Abgeordneten im 19. Deutschen Bundestag bezüglich Häufigkeit, Thematik und Geschlechterneutralität?‘} wird mit Hilfe von drei übergeordneten Hypothesen untersucht:
 \begin{itemize}
-    \item \emp{H1 : Weibliche MPs verwenden in ihren Reden häufiger GFL als männliche MPs}
+    \item \emph{H1 : Weibliche MPs verwenden in ihren Reden häufiger GFL als männliche MPs}
     \end{itemize}
     
 Zu H1: 
 
 
     \begin{itemize}
-    \item \emp{H2 : Es sind unterschiedliche Thematisierungen in den Reden der Abgeordneten feststellbar}
+    \item \emph{H2 : Es sind unterschiedliche Thematisierungen in den Reden der Abgeordneten feststellbar}
     \end{itemize}
     
 Zu H2:     
     
     \begin{itemize}
-    \item \emp{H3 : Frauen werden häufiger als Männer während einer Rede negativ Unterbrochen}
+    \item \emph{H3 : Frauen werden häufiger als Männer während einer Rede negativ Unterbrochen}
 \end{itemize}
 
 
 Zu H3:
-Frühere Untersuchungen konnten zeigen dass Frauen und Männer innerhalb der gesetzgebenden Gremien nicht nur unterschiedliche Politik betreiben, sondern außerdem unterschiedlich behandelt werden \parencites[201]{erikson_2018}{childs_2004}. Laut \textcite{kathlene_1994} gibt es Hinweise darauf, dass männliche MPs bei einem zunehmenden Frauenanteil im Parlament, unhöflich und respektlos gegenüber weiblichen Gesetzgeberinnen sein können \parencites[201]{erikson_2018} und dass weibliche Gesetzgeberinnen offener Diskriminierungen und sexueller Belästigung ausgesetzt sind \parencites[201]{erikson_2018}[76]{lovenduski_2005}{lovenduski_2004}. Die Schlussfolgerung, dass weibliche MPs in ihren Reden häufiger negativ unterbrochen werden (H3) konnte in dieser Arbeit jedoch nicht festgestellt werden: \emp {Weibliche MPs werden in ihren Reden im Deutschen Bundestag nicht häufiger unterbrochen als ihre männlichen Kollegen.} 
+Frühere Untersuchungen konnten zeigen dass Frauen und Männer innerhalb der gesetzgebenden Gremien nicht nur unterschiedliche Politik betreiben, sondern außerdem unterschiedlich behandelt werden \parencites[201]{erikson_2018}{childs_2004}. Laut \textcite{kathlene_1994} gibt es Hinweise darauf, dass männliche MPs bei einem zunehmenden Frauenanteil im Parlament, unhöflich und respektlos gegenüber weiblichen Gesetzgeberinnen sein können \parencites[201]{erikson_2018} und dass weibliche Gesetzgeberinnen offener Diskriminierungen und sexueller Belästigung ausgesetzt sind \parencites[201]{erikson_2018}[76]{lovenduski_2005}{lovenduski_2004}. Die Schlussfolgerung, dass weibliche MPs in ihren Reden häufiger negativ unterbrochen werden (H3) konnte in dieser Arbeit jedoch nicht festgestellt werden: \emph{Weibliche MPs werden in ihren Reden im Deutschen Bundestag nicht häufiger unterbrochen als ihre männlichen Kollegen.} 
 
 
-Insgesamt wurden 8.764 Reden im 19. Deutschen Bundestag bis zum 12. April 2019 gehalten.  Der Anteil an Reden von weiblichen MPs entspricht mit 31,0\% (vgl. Tabelle \ref{table:uebersicht_reden}) annähernd dem Frauenanteil im Bundestag von 31,8\% (222 Frauen)\footnote{\url{siehe-https://www.bundestag.de/abgeordnete/biografien/mdb_zahlen_19/frauen_maenner-529508}}. Dementsprechend halten weibliche MPs absolut weniger Reden als ihre männlichen Kollegen, relativ zu der Anzahl an Frauen im Parlament unterscheidet sich die Anzahl von Reden zwischen weiblichen und männlichen MPs hingegen kaum: \emp{Es gibt keinen signifikanten Unterschied in der relativen Anzahl an Reden von weiblichen und männlichen MPs.}
+Insgesamt wurden 8.764 Reden im 19. Deutschen Bundestag bis zum 12. April 2019 gehalten.  Der Anteil an Reden von weiblichen MPs entspricht mit 31,0\% (vgl. Tabelle \ref{table:uebersicht_reden}) annähernd dem Frauenanteil im Bundestag von 31,8\% (222 Frauen)\footnote{\url{siehe-https://www.bundestag.de/abgeordnete/biografien/mdb_zahlen_19/frauen_maenner-529508}}. Dementsprechend halten weibliche MPs absolut weniger Reden als ihre männlichen Kollegen, relativ zu der Anzahl an Frauen im Parlament unterscheidet sich die Anzahl von Reden zwischen weiblichen und männlichen MPs hingegen kaum: \emph{Es gibt keinen signifikanten Unterschied in der relativen Anzahl an Reden von weiblichen und männlichen MPs.}
 
 
 
