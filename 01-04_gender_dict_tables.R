@@ -1,8 +1,6 @@
 # Setup
 
 library(tidyverse)
-library(car)
-library(apa)
 library(knitr)
 library(kableExtra)
 
