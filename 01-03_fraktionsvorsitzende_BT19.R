@@ -68,4 +68,4 @@ fraktionsvorsitz <- bind_rows(vorsitz_cducsu,
   mutate(fraktionsvorsitz = 1)
   
 
-write_rds(fraktionsvorsitz, "data/BT_19/fraktionsvorsitzende.RDS")
+write_csv(fraktionsvorsitz, "data/BT_19/fraktionsvorsitzende_u_stellv.csv")
