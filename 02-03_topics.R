@@ -106,7 +106,7 @@ dev.off()
 
 # Deutliche Unterschiede sind bei folgenden Topics zu sehen:
 
-significant_topics <- c(2,3,7,10,18,22,27,28,29,37,42,53,54,57,61,76,78,91)
+significant_topics <- c(2,3,7,10,18,22,24,27,28,29,37,42,53,54,57,61,70,76,78,91,97)
 stm_significant_labels <- stm_labels %>%
   filter(Topic %in% significant_topics)
 

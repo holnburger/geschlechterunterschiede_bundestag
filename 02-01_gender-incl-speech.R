@@ -1,10 +1,14 @@
 # Setup
 
 library(tidyverse)
-library(car)
-library(apa)
 library(knitr)
 library(kableExtra)
+library(car)
+library(apa)
+library(PMCMRplus) # K-W und Post-Hoc Test
+library(onewaytests) # ANOVA
+library(multcompView) # Darstellung des Post-Hoc Test
+require(scales)
 
 # Daten laden
 mdb_overview <- read_rds("data/BT_19/overview.RDS")
@@ -88,26 +92,36 @@ gfl_total <- mdb_gfl_speeches %>%
   mutate(prop_genderexkl_words = count_genderinkl_words / woerter) %>%
   arrange(-prop_genderinkl_words) %>%
   mutate(prop_gender_phrases = count_genderinkl_phrases*3 / woerter) %>%
+  mutate(prop_gender_total = count_genderinkl_phrases*3+count_genderinkl_words) %>%
+  mutate(prop_gender_total = prop_gender_total/woerter) %>%
   select(rede_id, geschlecht, name, redner_fraktion, partei, anzahl_wahlperioden, gender, opposition, rechts, vorsitz, is_afd,
-         alter, prop_genderinkl_words, prop_genderexkl_words, prop_gender_phrases, woerter) %>%
-  filter(prop_gender_phrases > 0.05)
-
+         alter, prop_genderinkl_words, prop_genderexkl_words, prop_gender_phrases, woerter, prop_gender_total)
 
 #### Auswertung
 
 # Boxplot: GFL-Nutzung gegen Geschlecht
 gfl_total %>% 
-  ggplot(aes(x = as.character(geschlecht), y = prop_gender_phrases)) +
+  ggplot(aes(x = as.character(geschlecht), y = prop_gender_total)) +
   geom_boxplot() +
-  labs(title = "Anteil geschlechterexklusiver Begriffe und Formulierungen pro Rede",
-       subtitle = "Auswertung von 7.843 Reden des 19. Deutschen Bundestages nach Geschlecht",
-       y = "Anteil geschlechterexklusiver Begriffe und Formulierungen",
+  labs(#title = "Anteil GFL-Begriffe und Formulierungen\npro Rede",
+       #subtitle = "Auswertung von 7.843 Reden des\n19. Deutschen Bundestages nach Geschlecht",
+       y = "Anteil geschlechterinklusiver Begriffe und Formulierungen",
        x = "Geschlecht MdB") +
   theme_minimal()
 
-ggsave("document/images/boxplot_gfl.pdf", device = "pdf", height = 15, width = 18, units = "cm", dpi = 300)
+ggsave("document/images/boxplot_gfl.pdf", device = "pdf", height = 15, width = 10, units = "cm", dpi = 300)
 
+gfl_total %>% 
+  mutate(redner_fraktion = ifelse(redner_fraktion == "BÜNDNIS 90/DIE GRÜNEN", "BÜNDNIS 90/\nDIE GRÜNEN", redner_fraktion)) %>%
+  ggplot(aes(x = as.character(redner_fraktion), y = prop_gender_total)) +
+  geom_boxplot() +
+  labs(#title = "Anteil GFL-Begriffe und Formulierungen\npro Rede",
+    #subtitle = "Auswertung von 7.843 Reden des\n19. Deutschen Bundestages nach Geschlecht",
+    y = "Anteil geschlechterinklusiver Begriffe und Formulierungen",
+    x = "Fraktion") +
+  theme_minimal()
 
+ggsave("document/images/boxplot_gfl_fraktion.pdf", device = "pdf", height = 15, width = 10, units = "cm", dpi = 300)
 
 ## Test der Hypothesen
 # Test der Hypothese: Frauen benutzen eher genderinklusive Sprache als Männer.
@@ -117,20 +131,47 @@ ggsave("document/images/boxplot_gfl.pdf", device = "pdf", height = 15, width = 1
 # Unterschiedzwischen den Gruppen festzustellen ist
 
 # Zunächst: Vergleich der Varianzen über den Levene-Test um die Homogeninität der Varianzen zu überprüfen
-leveneTest(prop_gender_phrases ~ geschlecht, data = gfl_total)
+leveneTest(prop_gender_total ~ geschlecht, data = gfl_total)
 # Varianzen sind inhomogen, deshalb t-test mit var.equal FALSE
-t_test(prop_gender_phrases ~ geschlecht, data = gfl_total, var.equal = FALSE) 
-
-%>%
+t_test(prop_gender_phrases ~ fct_relevel(gfl_total$geschlecht, "weiblich"), 
+       data = gfl_total, var.equal = FALSE, alternative = c("greater")) %>%
   t_apa(., format = "latex", print = FALSE) %>%
   write_file(., "document/results/t-test_apa_result.tex")
 
-xtable(summarize(Orthodont, type = "numeric", group = "Sex",
-                 test = c("wilcox.test", "t.test")))
+## Untersuchung der unterschiede zwischen den Parteien
 
-t.test(prop_genderinkl_words ~ geschlecht, data = gfl_total, var.equal = FALSE) -> wat
+## ANOVA 
+res_anova <- aov(prop_gender_total ~ redner_fraktion, data = gfl_total)
+qqnorm(res_anova$residuals)
+summary(res_anova)
 
-summarize(wat, type = "numeric", group = "Geschlecht", test = c("t.test")))
+# Signifikanter Unterschied zwischen den Parteien.
+xtable(summary.lm(res_anova), type = "latex")
 
+# Keine Normalverteilung, prüfen von Homoskedastizität - erst in Faktoren umwandeln
+gfl_anova_test <- gfl_total %>% ungroup() %>% mutate(redner_fraktion = as.factor(redner_fraktion))
+homog.test(prop_gender_total ~ redner_fraktion, data = wat)
+# Auch keine Homoskedastiziät
 
+# Lösung: Nonparametrische Varianzanalyse mit dem Kruskal-Wallis test
 
+kruskal.test(prop_gender_total ~ redner_fraktion, data = gfl_anova_test)
+
+# Kruskal-Wallis test ist signifkant mit p < 0.01
+# Tabelle erstellen mit Post-Hoc Bonferroni-Dunn-Test
+
+out <- dunnettT3Test(x = gfl_anova_test$prop_gender_total, g=gfl_anova_test$redner_fraktion, dist="bonf")
+out <- posthoc.kruskal.dunn.test(x = gfl_anova_test$prop_gender_total, g=gfl_anova_test$redner_fraktion, dist="bonf") 
+out.p <- get.pvalues(out) 
+out.mcV <- multcompLetters(out.p, threshold=0.05) 
+Rij <- rank(gfl_anova_test$prop_gender_total) 
+Rj.mean <- tapply(Rij, gfl_anova_test$redner_fraktion, mean) 
+dat <- data.frame(Group = names(Rj.mean), 
+                  meanRj = Rj.mean, 
+                  M = out.mcV$Letters) 
+dat.x <- xtable(dat) 
+caption(dat.x) <- c("Post-Hoc Bonferroni-Dunn-Test. Unterschiedliche Buchstaben (M) 
+weisen auf signifikante Unterschiede ($p < 0.05$) zwischen den Fraktionen hin.", "Post-Hoc Bonferroni-Dunn-Test") 
+colnames(dat.x) <- c("Partei", "$\\bar{R}_{j}$", "M")
+digits(dat.x) <- 1
+print(dat.x, include.rownames = F, file = "document/tables/dunn-test.tex")
