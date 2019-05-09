@@ -9,6 +9,8 @@ library(PMCMRplus) # K-W und Post-Hoc Test
 library(onewaytests) # ANOVA
 library(multcompView) # Darstellung des Post-Hoc Test
 require(scales)
+library(xtable)
+library(PMCMR)
 
 # Daten laden
 mdb_overview <- read_rds("data/BT_19/overview.RDS")
@@ -176,4 +178,4 @@ weisen auf signifikante Unterschiede ($p < 0.05$) zwischen den Fraktionen hin.",
 colnames(dat.x) <- c("Fraktion", "$\\bar{R}_{j}$", "M")
 digits(dat.x) <- 1
 label(dat.x) <- "tab:dunn-test"
-print(dat.x, include.rownames = F, file = "document/tables/dunn-test.tex")
+print(dat.x, include.rownames = F, file = "document/tables/dunn-test.tex", sanitize.text.function=function(x){x})
