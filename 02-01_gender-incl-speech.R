@@ -177,5 +177,5 @@ caption(dat.x) <- c("Post-Hoc Bonferroni-Dunn-Test. Unterschiedliche Buchstaben 
 weisen auf signifikante Unterschiede ($p < 0.05$) zwischen den Fraktionen hin.", "Post-Hoc Bonferroni-Dunn-Test") 
 colnames(dat.x) <- c("Fraktion", "$\\bar{R}_{j}$", "M")
 digits(dat.x) <- 1
-label(dat.x) <- "tab:dunn-test"
+label(dat.x) <- "table:dunn-test"
 print(dat.x, include.rownames = F, file = "document/tables/dunn-test.tex", sanitize.text.function=function(x){x})
