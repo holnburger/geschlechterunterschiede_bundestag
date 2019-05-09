@@ -157,6 +157,16 @@ mdb_comments_overview %>%
 
 ggsave("document/images/boxplot_unterbrechung_fraktion.pdf", device = "pdf", height = 15, width = 13, units = "cm", dpi = 300)
 
+# Test: Unterbrechung Geschlecht ohne AfD
+mdb_comments_overview %>%
+  filter(is_afd == 0) %>%
+  ggplot(aes(x = geschlecht, y = prop_neg_kommentare)) +
+  geom_boxplot() +
+  labs(#title = "Anteil GFL-Begriffe und Formulierungen\npro Rede",
+    #subtitle = "Auswertung von 7.843 Reden des\n19. Deutschen Bundestages nach Geschlecht",
+    y = "Anteil Unterbrechungen pro Rede",
+    x = "Geschlecht MdB") +
+  theme_minimal()
 
 ## Test der Hypothesen
 # Test der Hypothese: Frauen werden eher unterbrochen als Männer.
@@ -181,11 +191,6 @@ t_test(prop_neg_kommentare ~ fct_relevel(recode(mdb_comments_overview$vorsitz, "
   write_file(., "document/results/t-test_apa_result_unterbrechung.tex")
 
 ## Überprüfung der Fraktionen
-# Mit ANOVA
-
-
-## Untersuchung der unterschiede zwischen den Parteien
-
 ## ANOVA 
 res_anova <- aov(prop_neg_kommentare ~ redner_fraktion, data = mdb_comments_overview)
 qqnorm(res_anova$residuals)
