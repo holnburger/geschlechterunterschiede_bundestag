@@ -153,8 +153,7 @@ mdb_comments_overview %>%
     x = "Fraktion") +
   theme_minimal()
 
-
-ggsave("document/images/boxplot_unterbrechung_vorsitz.pdf", device = "pdf", height = 15, width = 10, units = "cm", dpi = 300)
+ggsave("document/images/boxplot_unterbrechung_fraktion.pdf", device = "pdf", height = 15, width = 13, units = "cm", dpi = 300)
 
 
 ## Test der Hypothesen

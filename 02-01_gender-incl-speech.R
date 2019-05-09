@@ -103,7 +103,7 @@ gfl_total <- mdb_gfl_speeches %>%
 mdb_gfl_speeches %>% ungroup() %>% unnest(gender_phrases) %>% count(gender_phrases, sort = TRUE) %>% filter(n == 1)
 
 # Nur einmal genutzt Formulierungen
-mdb_gfl_speeches %>% ungroup() %>% unnest(genderinkl_words) %>% count(genderinkl_words, sort = TRUE) %>% filter(n == 1) %>% View()
+mdb_gfl_speeches %>% ungroup() %>% unnest(genderinkl_words) %>% count(genderinkl_words, sort = TRUE) %>% filter(n == 1)
 
 # Reden, in denen "Damen und Herren" vorkommen
 mdb_gfl_speeches %>% unnest(gender_phrases) %>% filter(gender_phrases %in% c("damen und herren", "kolleginnen und kollegen")) %>% distinct(rede_id) %>% nrow()
