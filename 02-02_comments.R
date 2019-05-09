@@ -79,7 +79,7 @@ write_rds(mdb_comments_overview, "data/BT_19/comments_overview.RDS")
 #------------#
 
 # Grafiken: Histogramme für die Länge der Reden in Wörtern und Anzahl der Unterbrechungen
-histo_woerter <- mdb_comments_overview %>%
+mdb_comments_overview %>%
   ggplot(aes(woerter)) +
   geom_histogram(binwidth = 30) +
   labs(title = "Länge der Reden in Wörtern",
@@ -87,8 +87,10 @@ histo_woerter <- mdb_comments_overview %>%
        y = "Anzahl der Reden",
        x = "Anzahl der Wörter") +
   theme_minimal()
+ggsave("document/images/histo_laenge_rede.pdf", device = "pdf", height = 8, width = 15, units = "cm", dpi = 300)
 
-histo_unterbrechung <- mdb_comments_overview %>%
+
+mdb_comments_overview %>%
   ggplot(aes(neg_kommentare)) +
   geom_histogram(binwidth = 1) +
   labs(title = "Negative Unterbrechungen pro Reden Bundestagsrede",
@@ -96,8 +98,8 @@ histo_unterbrechung <- mdb_comments_overview %>%
        y = "Anzahl der Reden",
        x = "Negative Unterbrechungen") +
   theme_minimal()
+ggsave("document/images/histo_anzahl_unterbrechung.pdf", device = "pdf", height = 8, width = 15, units = "cm", dpi = 300)
 
-ggsave("document/images/histogram_unterbrechung.pdf", arrangeGrob(histo_woerter, histo_unterbrechung))
 
 #--------------#
 #  Statsitics  #
@@ -215,10 +217,10 @@ dat <- data.frame(Group = names(Rj.mean),
                   M = out.mcV$Letters) 
 dat.x <- xtable(dat) 
 caption(dat.x) <- c("Post-Hoc Bonferroni-Dunn-Test. Unterschiedliche Buchstaben (M) 
-weisen auf signifikante Unterschiede ($p < 0.05$) zwischen den Fraktionen hin.", "Post-Hoc Bonferroni-Dunn-Test") 
+weisen auf signifikante Unterschiede ($p < 0.05$) bezüglich der Unterbrechungen der jeweiligen Fraktionen hin.", "Post-Hoc Bonferroni-Dunn-Test Unterbrechungen") 
 colnames(dat.x) <- c("Fraktion", "$\\bar{R}_{j}$", "M")
 digits(dat.x) <- 1
-label(dat.x) <- "table:dunn-test"
+label(dat.x) <- "table:dunn-test-unterbrechung"
 print(dat.x, include.rownames = F, file = "document/tables/dunn-test-unterbrechungen.tex", sanitize.text.function=function(x){x})
 
 
