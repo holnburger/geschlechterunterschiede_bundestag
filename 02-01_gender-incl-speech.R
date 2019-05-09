@@ -112,7 +112,8 @@ gfl_total %>%
 ggsave("document/images/boxplot_gfl.pdf", device = "pdf", height = 15, width = 10, units = "cm", dpi = 300)
 
 gfl_total %>% 
-  mutate(redner_fraktion = ifelse(redner_fraktion == "BÜNDNIS 90/DIE GRÜNEN", "BÜNDNIS 90/\nDIE GRÜNEN", redner_fraktion)) %>%
+  mutate(redner_fraktion = ifelse(redner_fraktion == "BÜNDNIS 90/DIE GRÜNEN", "B90/\nDIE GRÜNEN", redner_fraktion)) %>%
+  mutate(redner_fraktion = ifelse(redner_fraktion == "CDU/CSU", "CDU/\nCSU", redner_fraktion)) %>%
   ggplot(aes(x = as.character(redner_fraktion), y = prop_gender_total)) +
   geom_boxplot() +
   labs(#title = "Anteil GFL-Begriffe und Formulierungen\npro Rede",
@@ -150,7 +151,7 @@ xtable(summary.lm(res_anova), type = "latex")
 
 # Keine Normalverteilung, prüfen von Homoskedastizität - erst in Faktoren umwandeln
 gfl_anova_test <- gfl_total %>% ungroup() %>% mutate(redner_fraktion = as.factor(redner_fraktion))
-homog.test(prop_gender_total ~ redner_fraktion, data = wat)
+homog.test(prop_gender_total ~ redner_fraktion, data = gfl_anova_test)
 # Auch keine Homoskedastiziät
 
 # Lösung: Nonparametrische Varianzanalyse mit dem Kruskal-Wallis test
@@ -172,6 +173,7 @@ dat <- data.frame(Group = names(Rj.mean),
 dat.x <- xtable(dat) 
 caption(dat.x) <- c("Post-Hoc Bonferroni-Dunn-Test. Unterschiedliche Buchstaben (M) 
 weisen auf signifikante Unterschiede ($p < 0.05$) zwischen den Fraktionen hin.", "Post-Hoc Bonferroni-Dunn-Test") 
-colnames(dat.x) <- c("Partei", "$\\bar{R}_{j}$", "M")
+colnames(dat.x) <- c("Fraktion", "$\\bar{R}_{j}$", "M")
 digits(dat.x) <- 1
+label(dat.x) <- "tab:dunn-test"
 print(dat.x, include.rownames = F, file = "document/tables/dunn-test.tex")
