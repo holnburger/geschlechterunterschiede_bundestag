@@ -582,15 +582,15 @@ Mittels einer Boxplot-Grafik können die Mittelwerte und die Streuung der Unterb
 
 Wie umfänglich dargelegt, wird vermutet, dass weibliche MPs häufiger als ihre männlichen Kollegen Gebrauch von genderinklusiven Begriffen und Formulierungen machen (siehe Kapitel \ref{kapitel:gfl-studien} und \ref{kapitel:hypothese2}). Eine Überprüfung mittels des entwickelten Diktionärs (vgl. Kapitel \ref{kapitel:diktionär}) zeigt jedoch, dass ein signifikanter Unterschiede in der Nutzung von genderinklusiver Sprache zwischen den Geschlechtern zwar festzustellen ist, der Unterschied hierbei aber marginal ist. So zeigt das Ergebnis des t-Test (\input{results/t-test_apa_result.tex}), dass die Nullhypothese $H_0$ (\emph{Frauen und Männer verwenden in ihren Reden gender-fair language gleich häufig)} zugunsten der Alternativhypothese $H_1$ (\emph{Frauen verwenden in ihren Reden häufiger gender-fair language als Männer} abgelehnt werden kann. Vergleicht man aber die Mittelwerte (0,014 vs. 0,013 Anteil an GFL-Begriffen und Formulierungen in den Reden) und betrachtet den Boxplot (vgl. Abb. \ref{fig:boxplot_gfl_geschlecht}), zeigt sich ein nur unwesentlicher Unterschied in der Nutzung von GFL.
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.4\textwidth}
       \centering
       \includegraphics[width=.9\linewidth]{images/boxplot_gfl.pdf}
       \caption{Anteil GFL nach Geschlecht}
       \label{fig:boxplot_gfl_geschlecht}
     \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.4\textwidth}
       \centering
       \includegraphics[width=.9\linewidth]{images/boxplot_gfl_fraktion.pdf}
       \caption{Anteil GFL nach Fraktion}
@@ -664,15 +664,15 @@ Mit Betrachtung der Topics, welche einen signifikanten Unterschied (Konfidenzint
 
 Allerdings finden sich in unserer Erhebung, anders als bei \textcite{back_2014}, eine signifikant mehrheitliche Thematisierung von \enquote{soft policies} \parencite[510]{back_2014} durch Frauen -- etwa zu den Themen Gesundheit (Pflege), Bildung (Studium/Bildung), und Sozialwesen (Familienpolitik). \textcite{back_2014} konnten in ihrer Untersuchung bei diesen Thematisierungen keine Unterschiede bezüglich der Häufigkeit von Reden im Bezug auf das Geschlecht feststellen \parencite[512]{back_2014}. \textcite{wangnerud_2000} fasst in ihrer Untersuchung allerdings zusammen, dass Frauen schon immer die Gruppe waren, die sich in der parlamentarischen Arbeit sozialpolitische Themen am stärksten einsetzten.
 
-\begin{figure}[htb]
+\begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{images/stm_differences_top.pdf}
+    \includegraphics[scale=0.5]{images/stm_differences_top.pdf}
     \caption[Thematisierungen in den Parlamentsdebatten mit signifikanten Unterschieden zwischen den Geschlechtern]{Thematisierungen in den Parlamentsdebatten mit signifikanten Unterschieden zwischen den Geschlechtern. Diese Abbildung zeigt die Punktschätzung und das 80\% Konfidenzintervall der mittleren Differenz der Themenanteile. Tangiert das Konfidenzintervall die Nullinie, gilt das Ergebnis als nicht signifikant.}
     \label{fig:differences_stm_top}
 \end{figure}
 
 
-Unsere Ergebnisse zeigen, dass unterschiedliche Thematisierungen der Reden von Abgeordneten feststellbar sind -- die Nullhypothese $H_0$ (\emph{Es gibt keine Unterschiede in den Thematisierungen der Reden der Abgeordneten}) kann in Bezug auf das Geschlecht demnach abgelehnt werden. Es findet überwiegend eine Reproduktion von Stereotypen statt -- während Männer überwiegend zu \enquote{hard policies} sprechen, findet sich auch eine signifikanter Unterschied bei der Thematisierung von \enquote{soft policies} durch Frauen.
+Die Ergebnisse zeigen, dass unterschiedliche Thematisierungen der Reden von Abgeordneten feststellbar sind -- die Nullhypothese $H_0$ (\emph{Es gibt keine Unterschiede in den Thematisierungen der Reden der Abgeordneten}) kann in Bezug auf das Geschlecht demnach abgelehnt werden. Es findet überwiegend eine Reproduktion von Stereotypen statt -- während Männer überwiegend zu \enquote{hard policies} sprechen, findet sich auch eine signifikanter Unterschied bei der Thematisierung von \enquote{soft policies} durch Frauen.
 Die in dieser Untersuchung gewählte Technik des \emph{structural topic modeling} funktioniert auch ohne eine solche Kategorisierung. Da in dieser Arbeit keine vorherige Identifikation von \enquote{hard} und \enquote{soft policies} vorgenommen wurden, konnten außerdem Topics identifiziert werden, welche keine dieser beiden Kategorien zugeordnet werden können: weibliche MPs thematisieren häufiger Klimaschutz, Landwirtschaft und Religionsfreiheit (vgl. Abb. \ref{fig:differences_stm_top}).
 
 \begin{quote}
@@ -698,7 +698,7 @@ Es zeigt sich außerdem, dass die Anzahl der Unterbrechungen pro Rede eine recht
       \centering
       \includegraphics[width=.9\linewidth]{images/histo_laenge_rede.pdf}
       \caption{Länge der Reden}
-      \label{fig:histo_laenge}
+      \label{fig:histo_laenge}g
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
       \centering
@@ -717,13 +717,13 @@ Die Vermutung, dass Fraktionsvorsitzende häufiger unterbrochen werden als Abgeo
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.4\textwidth}
       \centering
       \includegraphics[width=.9\linewidth]{images/boxplot_unterbrechung_geschlecht.pdf}
       \caption{Unterbrechungen Geschlecht}
       \label{fig:boxplot_unterbrechung_geschlecht}
     \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.4\textwidth}
       \centering
       \includegraphics[width=.9\linewidth]{images/boxplot_unterbrechung_vorsitz.pdf}
       \caption{Unterbrechungen Vorsitz}
@@ -768,7 +768,7 @@ Eine solche Analyse ermöglicht eine viel tiefgreifendere Analyse möglicher Dis
 
 Allerdings können mit den hier genutzten, quantitativen Verfahren auch noch weitere interessante Forschungsfragen beantwortet werden. So wurde in dieser Erhebung nicht untersucht, welche Personen, Fraktionen oder Gruppen besonders häufig andere Redner*innen unterbrechen. Ursprünglich sollte auch untersucht werden, bei welchen Themen und welchen Redner*innen beispielsweise besonders viele Rückfragen gestellt werden. Hier könnten auch explorativ interessante Erkenntnisse erhoben werden.
 
-\Chapter{Fazit}\label{kapitel:fazit}
+\chapter{Fazit}\label{kapitel:fazit}
 
 %
 \citereset
@@ -792,22 +792,26 @@ Die Forderungen einer deskriptiven parlamentarischen Geschlechtergleichheit habe
 
 \noindent
 \textbf{Ebene A: Repräsentation von Frauen im Parlament}
+
 \noindent
 Im Deutschen Bundestag sind 222 Frauen vertreten. Die Größe des Bundestags umfasst 709 Sitze. Somit sind Frauen im derzeitigen Parlament unterrepräsentiert (31,8 Prozent). Eine deskriptive Repräsentation wurde bisher nicht erreicht und hat sich in den vergangenen Jahren sogar verschlechtert.\\
 
 
 \noindent
 \textbf{Ebene B: Beteiligung von weiblichen MPs an den Parlamentsdebatten}
+
 \noindent
 Vom 24. Oktober 2017 bis zum 12. April 2019 wurden 5.719 Reden von männlichen und 2.575 Reden von weiblichen MPs gehalten. Während die absoluten Zahlen zeigen, dass Frauen weniger Reden im Parlament halten, liegt der relative Anteil an Reden von weiblichen MPs mit 31,0 Prozent nur marginal unter dem Frauenanteil im Bundestag (31,8 Prozent). Demnach nehmen Frauen \emph{in Relation zu ihren Sitzanteilen} gleich viel an den Parlamentsdebatten teil wie männliche MPs.\\
 
 \noindent
 \textbf{Ebene C: Berücksichtigung von Frauen in der Sprache der Parlamentsdebatten}
+
 \noindent
 Ob Frauen in der Parlamentsdebatte durch eine genderinklusive Sprache Berücksichtigung finden, konnte mit dieser Arbeit nicht abschließend und eindeutig geklärt werden. Da die zugrundeliegenden Daten, welche eine solche Überprüfung ermöglichen sollten, sich als nicht geeignet für den Untersuchungsgegenstand herausstellten, müssen hierzu weitere Forschungen und Erhebungen durchgeführt werden. Hierbei benötigt es vor allem eine interdisziplinäre Zusammenarbeit mit Linguist*innen und Informatiker*innen, um ein geeignetes Werkzeug für diese Untersuchung zu entwickeln. Eine Basis hierfür kann das im Rahmen dieser Arbeit entwickelte Wörterbuch zu genderinklusiver Sprache darstellen.\\
 
 \noindent    
 \textbf{Ebene D: Vermeidung von geschlechtsbezogenen Stereotypen}
+
 \noindent
 Ein signifikanter Unterschied in der Thematisierung der Reden durch männliche und weibliche Abgeordnete konnte in dieser Arbeit festgestellt werden. Dabei konnten bisherige Untersuchungen überwiegend reproduziert werden. Während Frauen signifikant häufiger zu den Themen Erziehung, soziale Sicherung und Bildung sprechen, reden männliche Abgeordnete häufiger über Wirtschaft, Energie, Infrastruktur sowie Verteidigungs- und Außenpolitik. Eine solche Trennung reproduziert möglicherweise in der Gesellschaft verankerte Stereotypen. Da Parlamentsdebatten nicht nur ein wichtiges Instrument für die Gesetzgebung darstellen, sondern ebenfalls an der öffentlichen Meinungsbildung mitwirken \parencite[188]{dahlerup_2018}, kann eine solche Trennung Stereotypen manifestieren.
 Dennoch ist ebenso festzuhalten, dass durchaus spezifische Bedürfnisse, Interessen und Bedenken existieren, welche überwiegend oder ausschließlich Frauen betreffen -- und deshalb auch überwiegend durch diese im Bundestag debattiert und adressiert werden. Beispielhaft seien hier die Themen Schwangerschaftsabbruch und Gleichstellung genannt (vgl. Abb. \ref{fig:differences_stm_top}).\\
@@ -815,6 +819,7 @@ Dennoch ist ebenso festzuhalten, dass durchaus spezifische Bedürfnisse, Interes
 
 \noindent
 \textbf{Ebene E: Verhinderung von frauenfeindlichen Verhaltensmustern}
+
 \noindent
 Basierend auf den Untersuchungsergebnissen von \textcite{erikson_2018} wurde vermutet, dass weibliche MPs häufiger als männliche MPs in den Parlamentsdebatten unterbrochen werden und somit möglicherweise ein frauenfeindliches Verhaltensmuster zu erkennen wäre. Ein solches Verhalten konnte im 19. Deutschen Bundestag nicht beobachtet werden. Die Ergebnisse deuten sogar darauf hin, dass männliche Abgeordnete signifikant häufiger unterbrochen werden -- es zeigt sich allerdings nur ein marginaler Unterschied zwischen den beiden Gruppen. Im Rahmen dieser Arbeit wurde allerdings nur ein sehr kleiner Aspekt möglicher frauenfeindlicher Verhaltensmuster untersucht. Die Ergebnisse von \textcite{erikson_2018} zeigen, dass viele Diskriminierungsmuster vermutlich nicht öffentlich sichtbar sind und deshalb die Methoden, wie sie in dieser Arbeit gewählt wurden, vermutlich weniger geeignet sind, um solche Verhaltensmuster zu entdecken.
 
